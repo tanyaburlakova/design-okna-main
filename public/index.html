@@ -6,13 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Дизайн окна</title>
 
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,900,500,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/app.css">
-<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+	<!--[if lt IE 9]>
+    	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
+<body ng-controller="MainCtrl">
 	<!-- Header -->
 	<header class="site-header">
 		<div class="container">
@@ -174,9 +175,143 @@
 	</header>
 	<!-- Main content -->
 	<main class="main-content">
-		<!-- Slider -->
-		<div class="slider">
-
+		<!-- Slider big -->
+		<div class="slider slider_big">
+			<div
+				id="bigCarousel"
+				items="1"
+				pagination="true"
+				transition-style="'fade'"
+				mouse-drag="false"
+				owl-carousel="bigSliderItems">
+				<div class="item">
+					<img ng-src="{{item}}" alt="">
+				</div>
+			</div>
+		</div>
+		<!-- Steps -->
+		<div class="steps">
+			<ul class="steps__list">
+				<li class="steps__item">
+					<i class="icon icon-lense"></i>
+					<span class="steps__counter">
+						1
+					</span>
+					<span class="steps__text">
+						Найдите красивые жалюзи ипользуя <a href="#" class="steps__link">конструктор</a>
+					</span>
+				</li>
+				<li class="steps__item">
+					<i class="icon icon-phone"></i>
+					<span class="steps__counter">
+						2
+					</span>
+					<span class="steps__text">
+						Оформите заказ и наш менеджер перезвонит Вам
+					</span>
+				</li>
+				<li class="steps__item">
+					<i class="icon icon-measure"></i>
+					<span class="steps__counter">
+						3
+					</span>
+					<span class="steps__text">
+						К Вам бесплатно приедет замерщик с образцами
+					</span>
+				</li>
+				<li class="steps__item">
+					<i class="icon icon--worker"></i>
+					<span class="steps__counter">
+						4
+					</span>
+					<span class="steps__text">
+						Изготовление за 3-5 дней, установка специалистом
+					</span>
+				</li>
+			</ul>
+		</div>
+		<!-- News -->
+		<div class="news">
+			<!-- Img -->
+			<div
+				style="background: url('img/slide-1.jpg') no-repeat; background-size: cover;"
+				class="news__img">
+			</div>
+			<div class="news__container">
+				<!-- Status -->
+				<div class="news__label">
+					Акция
+				</div>
+				<!-- Title -->
+				<h2 class="news__title">
+					Экономьте до 28% с нами
+				</h2>
+				<!-- Text -->
+				<p class="news__text">
+					При заказе жалюзи и щтор мы даем возможность каждому сэкономить до 28%. для этого Вам необходимо гайти купоны на скидку на нашем промо сайте
+				</p>
+				<!-- Btn -->
+				<a href="#" class="btn btn_blue">
+					Узнать подробности
+				</a>
+			</div>
+		</div>
+		<!-- Question -->
+		<div class="question">
+			<!-- Number -->
+			<div class="question__number">
+				Вопрос № 14
+			</div>
+			<!-- New question -->
+			<a href="#" class="question__btn">
+				<i class="icon icon-reload"></i>
+			</a>
+			<!-- Img -->
+			<img src="#" alt="" class="question__img">
+			<!-- Title -->
+			<h2 class="question__title">
+				Как установить жалюзи самостоятельно?
+			</h2>
+			<!-- Description -->
+			<div class="question__description">
+				отвечает мастер Максим
+			</div>
+			<!-- Btn -->
+			<a href="#" class="btn btn_red">
+				Читать статью
+			</a>
+		</div>
+		<!-- Benefits -->
+		<div class="benefits">
+			<!-- Label -->
+			<div class="benefits__label">
+				Преимущества
+			</div>
+			<!-- Slider -->
+			<div
+				id="benefitsCarousel"
+				items="1"
+				pagination="true"
+				mouse-drag="false"
+				owl-carousel="benefitsItems">
+				<div class="item">
+					<!-- Benefit -->
+					<div
+						ng-style="{'background': url('{{item.bgImg}}'), 'background-size': cover}"
+						class="benefit">
+						<!-- Img -->
+						<img ng-src="{{item.img}}" alt="" class="benefit__img">
+						<!-- Title -->
+						<h2 class="benefit__title">
+							{{item.title}}
+						</h2>
+						<!-- Text -->
+						<p class="benefit__text">
+							{{item.text}}
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</main>
 	<!-- Footer -->
