@@ -22,15 +22,6 @@ var app = angular.module('myApp', [
 		}
 	]);
 
-angular.module('mainCtrl', [])
-	.controller('MainCtrl', [
-		'$scope',
-		function ($scope) {
-			'use strict';
-
-		}
-	]);
-
 angular.module('someDirective', [])
 	.controller('SomeCtrl', [
 		'$scope',
@@ -48,6 +39,15 @@ angular.module('someDirective', [])
 			scope: {}
 		};
 	});
+
+angular.module('mainCtrl', [])
+	.controller('MainCtrl', [
+		'$scope',
+		function ($scope) {
+			'use strict';
+
+		}
+	]);
 
 app.service('ItemService', ['$http', '$q',
 	function ($http, $q) {

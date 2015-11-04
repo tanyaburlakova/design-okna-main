@@ -17,10 +17,19 @@
 		"test",
 		"tests"
 	],
-	"overrides": {},
+	"overrides": {
+		"angular-owl-carousel1": {
+			"main": "src/angular-owl-carousel.js"
+		},
+		"owl-carousel": {
+			"main": "owl-caroisel/owl.carousel.js"
+		}
+	},
 	"dependencies": {
 		"angular": "1.4.7",
 		"angular-route": "1.4.7",
-		"angular-loader": "1.4.7"
+		"angular-loader": "1.4.7",
+		"owl-carousel": "1.3.2",
+		"angular-owl-carousel1": "1.0.1"
 	}
 }
