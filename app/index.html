@@ -314,91 +314,7 @@
 			</div>
 		</div>
 		<!-- Product -->
-		<div class="product">
-			<!-- Img -->
-			<div
-				style="background: url('img/slide-1.jpg'); background-size: cover"
-				class="product__img">
-				<!-- Review -->
-				<div class="product__review">
-					<ul class="product__review-list">
-						<li class="product__review-item">
-							<i class="icon icon-star-active"></i>
-						</li>
-						<li class="product__review-item">
-							<i class="icon icon-star-active"></i>
-						</li>
-						<li class="product__review-item">
-							<i class="icon icon-star-active"></i>
-						</li>
-						<li class="product__review-item">
-							<i class="icon icon-star-active"></i>
-						</li>
-						<li class="product__review-item">
-							<i class="icon icon-star"></i>
-						</li>
-					</ul>
-					<!-- Review label -->
-					<div class="product__review-label">
-						<span class="product__review-count">220</span>
-						отзывов
-					</div>
-				</div>
-			</div>
-			<!-- Cart btn -->
-			<a href="#" class="product__cart-btn">
-				<i class="icon icon-cart"></i>
-				<span class="product__cart-label">
-					В корзину
-				</span>
-			</a>
-			<!-- Label -->
-			<div class="product__label">
-				<i class="icon icon-label-red"></i>
-				<div class="product__label-text">
-					-30%
-				</div>
-			</div>
-			<div class="product__container">
-				<!-- Title -->
-				<h2 class="product__title">
-					Жалюзи Гофре
-				</h2>
-				<!-- Subtitle -->
-				<h3 class="product__subtitle">
-					Плиссе
-				</h3>
-				<!-- Colors -->
-				<div class="product__colors">
-					<h3 class="product__colors-title">
-						<span>45</span> цветов и текстур
-					</h3>
-					<ul class="product__colors-list">
-						<li class="product__colors-item"></li>
-						<li class="product__colors-item"></li>
-						<li class="product__colors-item"></li>
-					</ul>
-				</div>
-			</div>
-			<!-- Footer -->
-			<footer class="product__footer">
-				<!-- Price container -->
-				<div class="product__price-container">
-					<!-- Old price -->
-					<div class="product__price-old">
-						2300 р./м<sup>2</sup>
-					</div>
-					<!-- New price -->
-					<div class="product__price-new">
-						<strong>от 2300 р.</strong>/м<sup>2</sup>
-					</div>
-				</div>
-				<!-- Btn -->
-				<a href="#" class="btn btn_blue">
-					Детали
-				</a>
-			</footer>
-		</div>
+		<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
 		<!-- Article -->
 		<article class="article">
 			<div class="article__container">
@@ -437,6 +353,25 @@
 			<a href="#" class="btn btn_green">
 				Перейти в конструктор
 			</a>
+		</div>
+		<!-- Catalog -->
+		<div class="catalog">
+			<ul class="catalog__list">
+				<li class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+				</li>
+				<li class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+				</li>
+				<li class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+				</li>
+			</ul>
+			<!-- More btn -->
+			<div class="catalog__more">
+				<i class="icon icon-more"></i>
+				Показать больше новинок
+			</div>
 		</div>
 	</main>
 	<!-- Footer -->
