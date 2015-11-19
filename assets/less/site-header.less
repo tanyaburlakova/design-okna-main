@@ -1,5 +1,38 @@
+@header-color: #fff;
+@header-border-color: darken(#E5E5E5, 10%);
 .site-header {
+	position: fixed;
+	width: 100%;
+	height: 84px;
+	background: url('../img/menu_bg.png') 0 bottom repeat-x;
+	top: 0;
+	backface-visibility: hidden;
+	z-index: 20;
+	&__container-wrapper {
+		background: @header-color;
+	}
 	&__container {
-
+		position: relative;
+		.btn {
+			margin-top: -10px/4;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1px;
+			height: 63px;
+			background: linear-gradient(to bottom, rgba(204,204,204,1) 0%,rgba(204,204,204,1) 1%,rgba(204,204,204,0.79) 92%,rgba(204,204,204,0) 100%);
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 1px;
+			height: 63px;
+			background: linear-gradient(to bottom, rgba(204,204,204,1) 0%,rgba(204,204,204,1) 1%,rgba(204,204,204,0.79) 92%,rgba(204,204,204,0) 100%);
+		}
 	}
 }
