@@ -1,11 +1,36 @@
 .cart {
+	.clearfix();
+	display: inline-block;
+	position: relative;
+	padding-right: 10px;
+	&:after {
+		content: '';
+		width: 1px;
+		height: 20px;
+		background: @header-border-color;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 	&__container {
-
+		float: left;
+		position: relative;
+		padding-right: 20px;
 	}
 	&__counter {
-
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: @green;
+		position: absolute;
+		top: 5px;
+		left: 30px;
+		.no-select();
 	}
 	&__text {
-
+		float: left;
+		line-height: 35px;
 	}
 }
