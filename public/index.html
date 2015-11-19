@@ -237,121 +237,133 @@
 				</ul>
 			</div>
 		</div>
-		<!-- News -->
 		<div class="container">
-			<div class="news">
-				<div class="news__inner">
-					<!-- Img -->
-					<div
-						style="background: url('img/slide-1.jpg') center no-repeat; background-size: cover;"
-						class="news__img">
-					</div>
-					<div class="news__container">
-						<!-- Status -->
-						<div class="news__label">
-							<div class="news__label-text">
-								Акция
-							</div>
+			<div class="column-3">
+				<!-- News -->
+				<div class="news">
+					<div class="news__inner">
+						<!-- Img -->
+						<div
+							style="background: url('img/slide-1.jpg') center no-repeat; background-size: cover;"
+							class="news__img">
 						</div>
+						<div class="news__container">
+							<!-- Status -->
+							<div class="news__label">
+								<div class="news__label-text">
+									Акция
+								</div>
+							</div>
+							<!-- Title -->
+							<h2 class="news__title">
+								Экономьте до 28% с нами
+							</h2>
+							<!-- Text -->
+							<p class="news__text">
+								При заказе жалюзи и щтор мы даем возможность каждому сэкономить до 28%. для этого Вам необходимо гайти купоны на скидку на нашем промо сайте
+							</p>
+							<!-- Btn -->
+							<a href="#" class="btn btn_blue">
+								Узнать подробности
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column-1">
+				<!-- Question -->
+				<div class="question">
+					<div class="question__inner">
+						<!-- Number -->
+						<div class="question__number">
+							Вопрос № 14
+						</div>
+						<!-- New question -->
+						<a href="#" class="question__btn">
+							<i class="icon icon-reload"></i>
+						</a>
+						<!-- Img -->
+						<img src="#" alt="" class="question__img">
 						<!-- Title -->
-						<h2 class="news__title">
-							Экономьте до 28% с нами
+						<h2 class="question__title">
+							Как установить жалюзи самостоятельно?
 						</h2>
-						<!-- Text -->
-						<p class="news__text">
-							При заказе жалюзи и щтор мы даем возможность каждому сэкономить до 28%. для этого Вам необходимо гайти купоны на скидку на нашем промо сайте
-						</p>
+						<!-- Description -->
+						<div class="question__description">
+							отвечает мастер Максим
+						</div>
 						<!-- Btn -->
-						<a href="#" class="btn btn_blue">
-							Узнать подробности
+						<a href="#" class="btn btn_red">
+							Читать статью
 						</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Question -->
-		<div class="question">
-			<div class="question__inner">
-				<!-- Number -->
-				<div class="question__number">
-					Вопрос № 14
-				</div>
-				<!-- New question -->
-				<a href="#" class="question__btn">
-					<i class="icon icon-reload"></i>
-				</a>
-				<!-- Img -->
-				<img src="#" alt="" class="question__img">
-				<!-- Title -->
-				<h2 class="question__title">
-					Как установить жалюзи самостоятельно?
-				</h2>
-				<!-- Description -->
-				<div class="question__description">
-					отвечает мастер Максим
-				</div>
-				<!-- Btn -->
-				<a href="#" class="btn btn_red">
-					Читать статью
-				</a>
-			</div>
-		</div>
-		<!-- Benefits -->
-		<div class="benefits">
-			<!-- Label -->
-			<div class="benefits__label">
-				Преимущества
-			</div>
-			<!-- Slider -->
-			<div
-				id="benefitsCarousel"
-				items="1"
-				pagination="true"
-				mouse-drag="false"
-				owl-carousel="benefitsItems">
-				<div class="item">
-					<!-- Benefit -->
+		<div class="container">
+			<div class="column-1">
+				<!-- Benefits -->
+				<div class="benefits">
+					<!-- Label -->
+					<div class="benefits__label">
+						Преимущества
+					</div>
+					<!-- Slider -->
 					<div
-						ng-style="{'background': url('{{item.bgImg}}'), 'background-size': cover}"
-						class="benefit">
-						<!-- Img -->
-						<img ng-src="{{item.img}}" alt="" class="benefit__img">
+						id="benefitsCarousel"
+						items="1"
+						pagination="true"
+						mouse-drag="false"
+						owl-carousel="benefitsItems">
+						<div class="item">
+							<!-- Benefit -->
+							<div
+								ng-style="{'background': url('{{item.bgImg}}'), 'background-size': cover}"
+								class="benefit">
+								<!-- Img -->
+								<img ng-src="{{item.img}}" alt="" class="benefit__img">
+								<!-- Title -->
+								<h2 class="benefit__title">
+									{{item.title}}
+								</h2>
+								<!-- Text -->
+								<p class="benefit__text">
+									{{item.text}}
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column-1">
+				<!-- Product -->
+				<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+			</div>
+			<div class="column-2">
+				<!-- Article -->
+				<article class="article">
+					<div class="article__container">
 						<!-- Title -->
-						<h2 class="benefit__title">
-							{{item.title}}
+						<h2 class="article__title">
+							Тренды в оформлении окон 2015
 						</h2>
 						<!-- Text -->
-						<p class="benefit__text">
-							{{item.text}}
+						<p class="article__text">
+							О последних новинках в индустрии жалюзи и о том как будет модно оформлять окна в 2016 году расскажет жизайнер интерьеров >
 						</p>
+						<!-- Author -->
+						<div class="article__author">
+							<img src="#" alt="" class="article__author-avatar">
+							<div class="article__author-name">
+								Вероника Маркина
+							</div>
+						</div>
+						<!-- Img -->
+						<img src="#" alt="" class="article__img">
 					</div>
-				</div>
+				</article>
 			</div>
 		</div>
-		<!-- Product -->
-		<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-		<!-- Article -->
-		<article class="article">
-			<div class="article__container">
-				<!-- Title -->
-				<h2 class="article__title">
-					Тренды в оформлении окон 2015
-				</h2>
-				<!-- Text -->
-				<p class="article__text">
-					О последних новинках в индустрии жалюзи и о том как будет модно оформлять окна в 2016 году расскажет жизайнер интерьеров >
-				</p>
-				<!-- Author -->
-				<div class="article__author">
-					<img src="#" alt="" class="article__author-avatar">
-					<div class="article__author-name">
-						Вероника Маркина
-					</div>
-				</div>
-				<!-- Img -->
-				<img src="#" alt="" class="article__img">
-			</div>
-		</article>
 		<!-- Jumbotron -->
 		<div class="jumbotron">
 			<!-- Img -->

@@ -5,9 +5,26 @@ body {
 * {
 	box-sizing: border-box;
 }
+a, input, textarea, select, button {
+	&:focus {
+		outline: none;
+	}
+}
 .container {
 	max-width: 1280px;
 	margin: 0 auto;
+	.clearfix();
+	[class^="column-"] {
+		float: left;
+		padding: 0 10px;
+		.clearfix();
+		&:first-of-type {
+			padding-left: 0;
+		}
+		&:last-of-type {
+			padding-right: 0;
+		}
+	}
 	&_menu {
 		position: absolute;
 		width: 100%;
@@ -16,4 +33,16 @@ body {
 		transform: translateX(-50%);
 		z-index: 1;
 	}
+}
+.column-1 {
+	width: 100%/4;
+}
+.column-2 {
+	width: 100%/2;
+}
+.column-3 {
+	width: 100%/4*3;
+}
+.column-4 {
+	width: 100%;
 }
