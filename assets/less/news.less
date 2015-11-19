@@ -1,12 +1,38 @@
 .news {
+	float: left;
+	width: (100%/4*3);
+	padding-right: 10px;
+	&__inner {
+		background: #fff;
+		.clearfix();
+	}
 	&__img {
-
+		width: (100%/3*2);
+		height: 380px;
+		float: left;
 	}
 	&__container {
-
+		float: left;
+		width: (100%/3);
+		padding: 40px;
+		position: relative;
 	}
 	&__label {
-
+		background: url('../img/ribbon.svg');
+		width: 110px;
+		height: 33px;
+		display: inline-block;
+		position: absolute;
+		top: 5px;
+		right: -10px;
+		text-align: center;
+	}
+	&__label-text {
+		line-height: 33px;
+		margin-top: 3px;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 12px;
 	}
 	&__title {
 
