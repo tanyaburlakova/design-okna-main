@@ -1,7 +1,19 @@
 body {
 	font-family: 'Roboto', sans-serif;
+	background: #eee;
+}
+* {
+	box-sizing: border-box;
 }
 .container {
 	max-width: 1280px;
 	margin: 0 auto;
+	&_menu {
+		position: absolute;
+		width: 100%;
+		top: 60px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1;
+	}
 }

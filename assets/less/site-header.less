@@ -3,11 +3,19 @@
 .site-header {
 	position: fixed;
 	width: 100%;
-	height: 84px;
-	background: url('../img/menu_bg.png') 0 bottom repeat-x;
 	top: 0;
 	backface-visibility: hidden;
 	z-index: 20;
+	.container {
+		max-width: 1092px;
+	}
+	&__inner {
+		background: url('../img/menu_bg.png') 0 bottom repeat-x;
+		width: 100%;
+		height: 84px;
+		position: relative;
+		z-index: 20;
+	}
 	&__container-wrapper {
 		background: @header-color;
 	}

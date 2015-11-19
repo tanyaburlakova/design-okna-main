@@ -10,10 +10,8 @@
 		console.log('main ctrl');
 
 		$scope.bigSliderItems = [
-			'img/slide-1.jpg',
-			'img/slide-1.jpg',
-			'img/slide-1.jpg',
-			'img/slide-1.jpg'
+			'img/slide-2.jpg',
+			'img/slide-3.jpg'
 		];
 
 		$scope.benefitsItems = [{
