@@ -19,10 +19,16 @@
 		float: left;
 		margin-right: 10px;
 		.main-menu__list {
+			position: absolute;
 			display: none;
 		}
 		&:last-of-type {
 			margin-right: 0;
+		}
+		&:hover {
+			.main-menu__list {
+				display: inline-block;
+			}
 		}
 	}
 	&__link {
@@ -47,6 +53,16 @@
 			transform: rotate(-2deg);
 			top: 30px;
 		}
+		.main-menu__item {
+			.main-menu__list {
+				margin: 0;
+				padding-left: 30px;
+				transform: rotate(0deg);
+				left: -2px;
+				top: 37px;
+				.img('submenu_green.png');
+			}
+		}
 	}
 	&_blue {
 		top: 2px;
@@ -62,6 +78,16 @@
 			margin-left: 20px;
 			transform: rotate(-2.4deg);
 			top: 32px;
+		}
+		.main-menu__item {
+			.main-menu__list {
+				margin: 0;
+				padding-left: 30px;
+				transform: rotate(2.4deg);
+				left: -10px;
+				top: 29px;
+				.img('submenu_blue.png');
+			}
 		}
 	}
 	&_left {
