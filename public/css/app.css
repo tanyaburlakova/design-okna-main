@@ -1375,7 +1375,7 @@ button:focus {
 .product__review {
   position: absolute;
   left: 20px;
-  bottom: 20px;
+  top: -30px;
   zoom: 1;
 }
 .product__review:before,
@@ -1438,9 +1438,13 @@ button:focus {
   -webkit-transition: -webkit-transform 0.3s, bottom 0.3s;
   transition: transform 0.3s, bottom 0.3s;
 }
+.product__colors {
+  background: #ccc;
+}
 .product__colors-list {
   list-style: none;
   padding: 0;
+  padding: 10px;
   margin: 0;
   zoom: 1;
 }
@@ -1454,9 +1458,11 @@ button:focus {
 }
 .product__colors-item {
   float: left;
-  width: 5px;
-  height: 5px;
-  background: red;
+  width: 10px;
+  height: 10px;
+  background: orange;
+  margin-right: 20px;
+  border-radius: 50%;
 }
 .product__footer {
   position: absolute;
@@ -1481,6 +1487,54 @@ button:focus {
 }
 .product__price-container {
   float: left;
+}
+.article {
+  background: #fff;
+  width: 100%;
+  height: 380px;
+  zoom: 1;
+}
+.article:before,
+.article:after {
+  content: "";
+  display: table;
+}
+.article:after {
+  clear: both;
+}
+.article__container {
+  float: left;
+  width: 50%;
+  padding: 30px;
+}
+.article__author {
+  zoom: 1;
+}
+.article__author:before,
+.article__author:after {
+  content: "";
+  display: table;
+}
+.article__author:after {
+  clear: both;
+}
+.article__author-avatar {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: solid 3px #c35545;
+  float: left;
+  margin-right: 20px;
+}
+.article__author-name {
+  float: left;
+  line-height: 44px;
+}
+.article__img {
+  float: left;
+  width: 50%;
+  height: 380px;
 }
 
 /*# sourceMappingURL=../css/app.css.map */
