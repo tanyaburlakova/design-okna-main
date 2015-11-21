@@ -504,6 +504,11 @@ button:focus {
   width: 20px;
   height: 20px;
 }
+.icon-star {
+  background: url('../img/star.svg') no-repeat center;
+  width: 20px;
+  height: 20px;
+}
 /*
  * 	Core Owl Carousel CSS File
  *	v1.3.2
@@ -1349,6 +1354,133 @@ button:focus {
 }
 .benefit__shevron_right {
   right: 0;
+}
+.product {
+  width: 100%;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+.product:hover .product__container {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  bottom: 65px;
+}
+.product__img {
+  height: 260px;
+  padding: 20px;
+  position: relative;
+}
+.product__review {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  zoom: 1;
+}
+.product__review:before,
+.product__review:after {
+  content: "";
+  display: table;
+}
+.product__review:after {
+  clear: both;
+}
+.product__review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+  float: left;
+  zoom: 1;
+}
+.product__review-list:before,
+.product__review-list:after {
+  content: "";
+  display: table;
+}
+.product__review-list:after {
+  clear: both;
+}
+.product__review-item {
+  float: left;
+}
+.product__review-label {
+  float: left;
+}
+.product__cart-btn {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.product__label {
+  position: absolute;
+  top: -2px;
+  right: -12px;
+  width: 80px;
+  height: 50px;
+  background: url('../img/sale.svg') no-repeat;
+  text-align: center;
+}
+.product__label-text {
+  line-height: 38px;
+  color: #fff;
+}
+.product__container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 125px;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  background: green;
+  -webkit-transition: -webkit-transform 0.3s, bottom 0.3s;
+  transition: transform 0.3s, bottom 0.3s;
+}
+.product__colors-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  zoom: 1;
+}
+.product__colors-list:before,
+.product__colors-list:after {
+  content: "";
+  display: table;
+}
+.product__colors-list:after {
+  clear: both;
+}
+.product__colors-item {
+  float: left;
+  width: 5px;
+  height: 5px;
+  background: red;
+}
+.product__footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 65px;
+  background: orange;
+  padding: 16px;
+  zoom: 1;
+}
+.product__footer:before,
+.product__footer:after {
+  content: "";
+  display: table;
+}
+.product__footer:after {
+  clear: both;
+}
+.product__footer .btn {
+  float: right;
+}
+.product__price-container {
+  float: left;
 }
 
 /*# sourceMappingURL=../css/app.css.map */
