@@ -7,6 +7,9 @@
 			bottom: 65px;
 		}
 	}
+	&__wrapper {
+		padding: 0 10px;
+	}
 	&__inner {
 		position: relative;
 		width: 100%;
@@ -115,11 +118,12 @@
 	&__label {
 		position: absolute;
 		top: -2px;
-		right: -12px;
+		right: -2px;
 		width: 80px;
 		height: 50px;
 		background: url('../img/ribbon-red.svg') no-repeat;
 		text-align: center;
+		.no-select();
 		z-index: 5;
 	}
 	&__label-text {
@@ -179,12 +183,15 @@
 		list-style: none;
 		padding: 0;
 		padding: 10px;
+		padding-bottom: 0;
 		margin: 0;
 		.clearfix();
 	}
 	&__colors-item {
 		float: left;
 		margin-right: 12px;
+		margin-bottom: 12px;
+		transition: transform @animation-time;
 		input {
 			visibility: hidden;
 			position: absolute;
@@ -194,6 +201,12 @@
 				}
 			}
 		}
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+	&__colors-label {
+		cursor: pointer;
 	}
 	&__colors-dot {
 		background: orange;

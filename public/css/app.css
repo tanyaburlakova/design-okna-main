@@ -1417,6 +1417,9 @@ button:focus {
   transform: translateY(0);
   bottom: 65px;
 }
+.product__wrapper {
+  padding: 0 10px;
+}
 .product__inner {
   position: relative;
   width: 100%;
@@ -1551,11 +1554,16 @@ button:focus {
 .product__label {
   position: absolute;
   top: -2px;
-  right: -12px;
+  right: -2px;
   width: 80px;
   height: 50px;
   background: url('../img/ribbon-red.svg') no-repeat;
   text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
   z-index: 5;
 }
 .product__label-text {
@@ -1618,6 +1626,7 @@ button:focus {
   list-style: none;
   padding: 0;
   padding: 10px;
+  padding-bottom: 0;
   margin: 0;
   zoom: 1;
 }
@@ -1632,6 +1641,9 @@ button:focus {
 .product__colors-item {
   float: left;
   margin-right: 12px;
+  margin-bottom: 12px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
 }
 .product__colors-item input {
   visibility: hidden;
@@ -1639,6 +1651,14 @@ button:focus {
 }
 .product__colors-item input:checked + .product__colors-dot:before {
   opacity: 1;
+}
+.product__colors-item:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.product__colors-label {
+  cursor: pointer;
 }
 .product__colors-dot {
   background: orange;
@@ -1768,7 +1788,7 @@ button:focus {
 .catalog__item {
   float: left;
   width: 25%;
-  padding: 0 20px;
+  padding: 0 10px;
   margin-bottom: 40px;
 }
 .catalog__more {
