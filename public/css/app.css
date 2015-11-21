@@ -424,6 +424,9 @@ button:focus {
 .container_margin-bottom {
   margin-bottom: 20px;
 }
+.container_catalog {
+  max-width: 1320px;
+}
 .column-1 {
   width: 25%;
 }
@@ -508,6 +511,11 @@ button:focus {
   background: url('../img/star.svg') no-repeat center;
   width: 20px;
   height: 20px;
+}
+.icon-more {
+  background: url('../img/more.svg') no-repeat center;
+  width: 24px;
+  height: 6px;
 }
 /*
  * 	Core Owl Carousel CSS File
@@ -1595,6 +1603,49 @@ button:focus {
 }
 .catalog__more-text {
   float: left;
+}
+.site-footer {
+  background: #fff;
+}
+.site-footer__row {
+  zoom: 1;
+}
+.site-footer__row:before,
+.site-footer__row:after {
+  content: "";
+  display: table;
+}
+.site-footer__row:after {
+  clear: both;
+}
+.site-footer__column {
+  float: left;
+}
+.site-footer__column_left {
+  width: 25%;
+}
+.site-footer__column_right {
+  width: 75%;
+}
+.menu-vertical {
+  zoom: 1;
+}
+.menu-vertical:before,
+.menu-vertical:after {
+  content: "";
+  display: table;
+}
+.menu-vertical:after {
+  clear: both;
+}
+.menu-vertical__column {
+  float: left;
+  width: 25%;
+}
+.menu-vertical__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=../css/app.css.map */
