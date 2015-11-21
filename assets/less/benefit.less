@@ -1,11 +1,41 @@
 .benefit {
+	.purple-blue-gradient();
+	width: 100%;
+	height: 380px;
+	position: relative;
+	text-align: center;
+	&__inner {
+		position: relative;
+		padding: 30px;
+		z-index: 5;
+	}
+	&__bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: .05;
+		z-index: 1;
+	}
 	&__img {
-
+		width: 90px;
 	}
 	&__title {
 
 	}
 	&__text {
 
+	}
+	&__shevron {
+		position: absolute;
+		top: 100px;
+		z-index: 10;
+		&_left {
+			left: 0;
+		}
+		&_right {
+			right: 0;
+		}
 	}
 }

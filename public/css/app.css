@@ -491,6 +491,16 @@ button:focus {
   width: 20px;
   height: 20px;
 }
+.icon-shevron-left {
+  background: url('../img/shevron-left.svg') no-repeat center;
+  width: 20px;
+  height: 20px;
+}
+.icon-shevron-right {
+  background: url('../img/shevron-right.svg') no-repeat center;
+  width: 20px;
+  height: 20px;
+}
 /*
  * 	Core Owl Carousel CSS File
  *	v1.3.2
@@ -1289,6 +1299,53 @@ button:focus {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+.benefits {
+  position: relative;
+}
+.benefits__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+.benefit {
+  background: #c86892;
+  background: -webkit-linear-gradient(top, #c86892 0%, #9ac6df 100%);
+  background: linear-gradient(to bottom, #c86892 0%, #9ac6df 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c86892', endColorstr='#9ac6df', GradientType=0);
+  width: 100%;
+  height: 380px;
+  position: relative;
+  text-align: center;
+}
+.benefit__inner {
+  position: relative;
+  padding: 30px;
+  z-index: 5;
+}
+.benefit__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .05;
+  z-index: 1;
+}
+.benefit__img {
+  width: 90px;
+}
+.benefit__shevron {
+  position: absolute;
+  top: 100px;
+  z-index: 10;
+}
+.benefit__shevron_left {
+  left: 0;
+}
+.benefit__shevron_right {
+  right: 0;
 }
 
 /*# sourceMappingURL=../css/app.css.map */

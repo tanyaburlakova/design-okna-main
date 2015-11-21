@@ -313,28 +313,46 @@
 					<div class="benefits__label">
 						Преимущества
 					</div>
+					<!-- Left -->
+					<a
+						href
+						ng-click="owlCarousel.benefitsCarousel.prev()"
+						class="benefit__shevron benefit__shevron_left">
+						<i class="icon icon-shevron-left"></i>
+					</a>
+					<!-- Right -->
+					<a
+						href
+						ng-click="owlCarousel.benefitsCarousel.next()"
+						class="benefit__shevron benefit__shevron_right">
+						<i class="icon icon-shevron-right"></i>
+					</a>
 					<!-- Slider -->
 					<div
 						id="benefitsCarousel"
 						items="1"
-						pagination="true"
+						pagination="false"
 						mouse-drag="false"
 						owl-carousel="benefitsItems">
 						<div class="item">
 							<!-- Benefit -->
-							<div
-								ng-style="{'background': url('{{item.bgImg}}'), 'background-size': cover}"
-								class="benefit">
-								<!-- Img -->
-								<img ng-src="{{item.img}}" alt="" class="benefit__img">
-								<!-- Title -->
-								<h2 class="benefit__title">
-									{{item.title}}
-								</h2>
-								<!-- Text -->
-								<p class="benefit__text">
-									{{item.text}}
-								</p>
+							<div class="benefit">
+								<div
+									ng-style="{'background': 'url({{item.bgImg}}) center no-repeat', 'background-size': cover}"
+									class="benefit__bg">
+								</div>
+								<div class="benefit__inner">
+									<!-- Img -->
+									<img ng-src="{{item.img}}" alt="" class="benefit__img">
+									<!-- Title -->
+									<h2 class="benefit__title">
+										{{item.title}}
+									</h2>
+									<!-- Text -->
+									<p class="benefit__text">
+										{{item.text}}
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>

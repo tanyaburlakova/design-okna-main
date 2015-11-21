@@ -42,17 +42,17 @@ var app = angular.module('myApp', [
 		$scope.benefitsItems = [{
 			bgImg: 'img/slide-1.jpg',
 			title: 'Экологичность материалов1',
-			img: 'img/slide-1.jpg',
+			img: 'img/tree.svg',
 			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
 		}, {
-			bgImg: 'img/slide-1.jpg',
+			bgImg: 'img/slide-2.jpg',
 			title: 'Экологичность материалов2',
-			img: 'img/slide-1.jpg',
+			img: 'img/tree.svg',
 			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
 		}, {
-			bgImg: 'img/slide-1.jpg',
+			bgImg: 'img/slide-3.jpg',
 			title: 'Экологичность материалов3',
-			img: 'img/slide-1.jpg',
+			img: 'img/tree.svg',
 			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
 		}];
 	}
