@@ -46,23 +46,52 @@
 					отзывов
 				</div>
 			</div>
-			<!-- Title -->
-			<h2 class="product__title">
-				Жалюзи Гофре
-			</h2>
-			<!-- Subtitle -->
-			<h3 class="product__subtitle">
-				Плиссе
-			</h3>
+			<header class="product__header">
+				<!-- Title -->
+				<h2 class="product__title">
+					Жалюзи Гофре
+				</h2>
+				<!-- Subtitle -->
+				<h3 class="product__subtitle">
+					Плиссе
+				</h3>
+			</header>
 			<!-- Colors -->
 			<div class="product__colors">
 				<h3 class="product__colors-title">
 					<span>45</span> цветов и текстур
 				</h3>
-				<ul class="product__colors-list">
-					<li class="product__colors-item"></li>
-					<li class="product__colors-item"></li>
-					<li class="product__colors-item"></li>
+				<ul class="product__colors-list" ng-init="product.color=1">
+					<li class="product__colors-item">
+						<label class="product__colors-label">
+							<input
+								type="radio"
+								name="product"
+								value="1"
+								ng-model="product.color">
+							<div class="product__colors-dot"></div>
+						</label>
+					</li>
+					<li class="product__colors-item">
+						<label class="product__colors-label">
+							<input
+								type="radio"
+								name="product"
+								value="2"
+								ng-model="product.color">
+							<div class="product__colors-dot"></div>
+						</label>
+					</li>
+					<li class="product__colors-item">
+						<label class="product__colors-label">
+							<input
+								type="radio"
+								name="product"
+								value="3"
+								ng-model="product.color">
+							<div class="product__colors-dot"></div>
+						</label>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -76,11 +105,11 @@
 				</div>
 				<!-- New price -->
 				<div class="product__price-new">
-					<strong>от 2300 р.</strong>/м<sup>2</sup>
+					<strong>от {{1300 * product.color}} р.</strong>/м<sup>2</sup>
 				</div>
 			</div>
 			<!-- Btn -->
-			<a href="#" class="btn btn_blue">
+			<a href="#" class="btn btn_blue btn_size-1">
 				Детали
 			</a>
 		</footer>

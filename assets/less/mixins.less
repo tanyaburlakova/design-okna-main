@@ -56,6 +56,9 @@
 	text-overflow: ellipsis;
 	.no-wrap();
 }
+.letter-spacing(@spacing) {
+	letter-spacing: @spacing/1000em;
+}
 // Background image
 .img(@img) {
 	@img-path: '../img/@{img}';

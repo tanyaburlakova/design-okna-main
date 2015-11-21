@@ -17,12 +17,30 @@
 		height: 260px;
 		padding: 20px;
 		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			border: solid 1px rgba(255,255,255,.9);
+			box-sizing: border-box;
+		}
 	}
 	&__review {
 		position: absolute;
 		left: 20px;
 		top: -30px;
 		.clearfix();
+		&:hover {
+			.product__review-label {
+				opacity: .7;
+			}
+			.product__review-list {
+				opacity: .7;
+			}
+		}
 	}
 	&__review-list {
 		list-style: none;
@@ -30,21 +48,69 @@
 		margin: 0;
 		margin-right: 10px;
 		float: left;
+		opacity: .4;
+		transition: opacity @animation-time;
 		.clearfix();
 	}
 	&__review-item {
 		float: left;
+		margin-right: 4px;
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 	&__review-label {
 		float: left;
+		font-size: 10px;
+		color: #fff;
+		opacity: .2;
+		line-height: 20px;
+		padding: 0 20px;
+		border-radius: 10px;
+		background: rgba(0,0,0,.5);
+		transition: opacity @animation-time;
+		.no-select();
+		.letter-spacing(50);
 	}
 	&__cart-btn {
 		position: absolute;
 		left: 20px;
 		top: 20px;
+		text-decoration: none;
+		line-height: 20px;
+		display: inline-block;
+		opacity: .5;
+		.no-select();
+		cursor: pointer;
+		transition: opacity @animation-time;
+		.icon {
+			position: relative;
+			z-index: 5;
+		}
+		&:hover {
+			opacity: 1;
+			.product__cart-label {
+				opacity: 1;
+			}
+		}
 	}
 	&__cart-label {
-
+		opacity: 0;
+		border-radius: 10px;
+		background: @blue;
+		font-size: 10px;
+		font-weight: @medium;
+		color: #fff;
+		display: inline-block;
+		padding-left: 25px;
+		padding-right: 12px;
+		text-transform: uppercase;
+		position: absolute;
+		left: 13px;
+		top: 8px;
+		transition: opacity @animation-time;
+		.letter-spacing(50);
+		.no-break();
 	}
 	&__label {
 		position: absolute;
@@ -57,7 +123,10 @@
 		z-index: 5;
 	}
 	&__label-text {
-		line-height: 38px;
+		line-height: 37px;
+		font-size: 12px;
+		font-weight: @medium;
+		.letter-spacing(100);
 		color: #fff;
 	}
 	&__container {
@@ -65,21 +134,46 @@
 		width: 100%;
 		left: 0;
 		bottom: 65px+60px;
-		transform: translateY(100%);
-		background: green;
+		transform: translateY(103%);
+		background: #fff;
 		transition: transform @animation-time, bottom @animation-time;
 	}
+	&__header {
+		height: 75px;
+		background: #fff;
+		padding: 18px 0;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 	&__title {
-
+		margin: 0;
+		margin-bottom: 4px;
+		font-size: 14px;
+		font-weight: @medium;
+		color: #353535;
+		.letter-spacing(50);
 	}
 	&__subtitle {
-
+		margin: 0;
+		font-size: 13px;
+		color: #a1a1a1;
+		font-weight: @normal;
+		.letter-spacing(50);
 	}
 	&__colors {
-		background: #ccc;
+		background: #f7f7f7;
+		padding: 18px 11px;
+		padding-bottom: 11px;
 	}
 	&__colors-title {
-
+		margin: 0;
+		margin-bottom: 14px;
+		padding-left: 5px;
+		padding-right: 5px;
+		font-size: 10px;
+		text-transform: uppercase;
+		font-weight: @medium;
+		.letter-spacing(50);
 	}
 	&__colors-list {
 		list-style: none;
@@ -90,11 +184,37 @@
 	}
 	&__colors-item {
 		float: left;
-		width: 10px;
-		height: 10px;
+		margin-right: 12px;
+		input {
+			visibility: hidden;
+			position: absolute;
+			&:checked + .product__colors-dot {
+				&:before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	&__colors-dot {
 		background: orange;
-		margin-right: 20px;
+		width: 18px;
+		height: 18px;
 		border-radius: 50%;
+		border: solid 2px #fff;
+		position: relative;
+		&:before {
+			content: '';
+			opacity: 0;
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			border: solid 2px @blue;
+			position: absolute;
+			left: -4px;
+			top: -4px;
+			transition: opacity @animation-time;
+		}
 	}
 	&__footer {
 		position: absolute;
@@ -102,8 +222,8 @@
 		bottom: 0;
 		width: 100%;
 		height: 65px;
-		background: orange;
-		padding: 16px;
+		background: #fff;
+		padding: 16px 20px;
 		.clearfix();
 		.btn {
 			float: right;
@@ -113,9 +233,20 @@
 		float: left;
 	}
 	&__price-old {
-
+		font-size: 11px;
+		font-weight: @medium;
+		color: #9e5a50;
+		text-decoration: line-through;
+		.letter-spacing(50);
 	}
 	&__price-new {
-
+		font-size: 16px;
+		color: #b5b5b5;
+		font-weight: @black;
+		.letter-spacing(50);
+		strong {
+			font-weight: @black;
+			color: #353535;
+		}
 	}
 }
