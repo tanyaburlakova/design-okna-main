@@ -517,6 +517,26 @@ button:focus {
   width: 24px;
   height: 6px;
 }
+.icon-vk {
+  background: url('../img/vk.svg') no-repeat center;
+  width: 40px;
+  height: 40px;
+}
+.icon-fb {
+  background: url('../img/fb.svg') no-repeat center;
+  width: 40px;
+  height: 40px;
+}
+.icon-ok {
+  background: url('../img/ok.svg') no-repeat center;
+  width: 40px;
+  height: 40px;
+}
+.icon-insta {
+  background: url('../img/insta.svg') no-repeat center;
+  width: 40px;
+  height: 40px;
+}
 /*
  * 	Core Owl Carousel CSS File
  *	v1.3.2
@@ -1608,6 +1628,7 @@ button:focus {
   background: #fff;
 }
 .site-footer__row {
+  border-bottom: solid 1px #ccc;
   zoom: 1;
 }
 .site-footer__row:before,
@@ -1618,6 +1639,9 @@ button:focus {
 .site-footer__row:after {
   clear: both;
 }
+.site-footer__row:last-child {
+  border-bottom: none;
+}
 .site-footer__column {
   float: left;
 }
@@ -1626,6 +1650,28 @@ button:focus {
 }
 .site-footer__column_right {
   width: 75%;
+}
+.contacts__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.socials__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  zoom: 1;
+}
+.socials__list:before,
+.socials__list:after {
+  content: "";
+  display: table;
+}
+.socials__list:after {
+  clear: both;
+}
+.socials__item {
+  float: left;
 }
 .menu-vertical {
   zoom: 1;
