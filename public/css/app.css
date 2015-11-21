@@ -421,6 +421,9 @@ button:focus {
   transform: translateX(-50%);
   z-index: 1;
 }
+.container_margin-bottom {
+  margin-bottom: 20px;
+}
 .column-1 {
   width: 25%;
 }
