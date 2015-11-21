@@ -1536,5 +1536,48 @@ button:focus {
   width: 50%;
   height: 380px;
 }
+.catalog__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  zoom: 1;
+}
+.catalog__list:before,
+.catalog__list:after {
+  content: "";
+  display: table;
+}
+.catalog__list:after {
+  clear: both;
+}
+.catalog__item {
+  float: left;
+  width: 25%;
+  padding: 0 20px;
+  margin-bottom: 40px;
+}
+.catalog__more {
+  padding-top: 0px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+.catalog__more-link {
+  display: inline-block;
+  zoom: 1;
+}
+.catalog__more-link:before,
+.catalog__more-link:after {
+  content: "";
+  display: table;
+}
+.catalog__more-link:after {
+  clear: both;
+}
+.catalog__more-link .icon {
+  float: left;
+}
+.catalog__more-text {
+  float: left;
+}
 
 /*# sourceMappingURL=../css/app.css.map */

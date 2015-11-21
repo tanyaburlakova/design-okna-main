@@ -1,11 +1,29 @@
 .catalog {
 	&__list {
-
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		.clearfix();
 	}
 	&__item {
-
+		float: left;
+		width: 100%/4;
+		padding: 0 20px;
+		margin-bottom: 40px;
 	}
 	&__more {
-
+		padding-top: 0px;
+		padding-bottom: 70px;
+		text-align: center;
+	}
+	&__more-link {
+		display: inline-block;
+		.clearfix();
+		.icon {
+			float: left;
+		}
+	}
+	&__more-text {
+		float: left;
 	}
 }

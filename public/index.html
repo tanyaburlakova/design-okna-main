@@ -410,20 +410,20 @@
 		<!-- Catalog -->
 		<div class="catalog">
 			<ul class="catalog__list">
-				<li class="catalog__item">
-					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-				</li>
-				<li class="catalog__item">
-					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-				</li>
-				<li class="catalog__item">
+				<li
+					ng-repeat="(key, value) in catalogItems"
+					class="catalog__item">
 					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
 				</li>
 			</ul>
 			<!-- More btn -->
 			<div class="catalog__more">
-				<i class="icon icon-more"></i>
-				Показать больше новинок
+				<a href class="catalog__more-link">
+					<i class="icon icon-more"></i>
+					<span class="catalog__more-text">
+						Показать больше новинок
+					</span>
+				</a>
 			</div>
 		</div>
 	</main>
