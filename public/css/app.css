@@ -474,8 +474,8 @@ button:focus {
 }
 .icon-search-big {
   background: url('../img/search2.svg') no-repeat center;
-  width: 42px;
-  height: 42px;
+  width: 41px;
+  height: 41px;
 }
 .icon-phone {
   background: url('../img/phone.svg') no-repeat center;
@@ -939,7 +939,8 @@ button:focus {
   display: none;
 }
 .links-set {
-  margin-top: 10px;
+  margin-top: 12px;
+  font-size: 13px;
 }
 .links-set__list {
   list-style: none;
@@ -957,14 +958,13 @@ button:focus {
 }
 .links-set__item {
   float: left;
-  margin-right: 20px;
-}
-.links-set__item:last-child {
-  margin-right: 0;
 }
 .links-set__link {
   text-decoration: none;
   display: inline-block;
+  color: #373534;
+  font-weight: 400;
+  padding: 0 18px;
   zoom: 1;
 }
 .links-set__link:before,
@@ -1012,7 +1012,7 @@ button:focus {
 }
 .main-menu__item {
   float: left;
-  margin-right: 10px;
+  padding: 0 13px;
 }
 .main-menu__item .main-menu__list {
   position: absolute;
@@ -1021,13 +1021,26 @@ button:focus {
 .main-menu__item:last-of-type {
   margin-right: 0;
 }
+.main-menu__item:hover.with-sub > .main-menu__link:after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  border: 10px solid transparent;
+  border-bottom-color: white;
+  margin-left: -5px;
+}
 .main-menu__item:hover .main-menu__list {
   display: inline-block;
 }
 .main-menu__link {
+  color: #3f4512;
+  font-size: 13px;
+  font-weight: 500;
   text-decoration: none;
   line-height: 42px;
   display: inline-block;
+  position: relative;
 }
 .main-menu_green {
   background: url('../img/menu_green.png') no-repeat center;
@@ -1061,6 +1074,15 @@ button:focus {
   background: url('../img/submenu_green.png') no-repeat center;
   width: 459px;
   height: 53px;
+}
+.main-menu_green .main-menu__item .main-menu__list .main-menu__link {
+  opacity: 0.8;
+  color: #373534;
+  font-size: 13px;
+  font-weight: 400;
+}
+.main-menu_green .main-menu__item .main-menu__list .main-menu__link:hover {
+  opacity: 1;
 }
 .main-menu_blue {
   top: 2px;
@@ -1109,7 +1131,7 @@ button:focus {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  margin: 0;
+  margin: 0 0 0 11px;
 }
 .logo__img {
   width: 120px;
@@ -1119,7 +1141,9 @@ button:focus {
   zoom: 1;
   display: inline-block;
   position: relative;
-  padding-right: 10px;
+  padding-right: 25px;
+  vertical-align: top;
+  margin-top: 14px;
 }
 .cart:before,
 .cart:after {
@@ -1153,8 +1177,14 @@ button:focus {
   border-radius: 50%;
   background: #c6d557;
   position: absolute;
-  top: 5px;
-  left: 30px;
+  top: 8px;
+  left: 23px;
+  color: #747c3a;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  padding: 5px 0;
+  text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1164,12 +1194,14 @@ button:focus {
 .cart__text {
   float: left;
   line-height: 35px;
+  font-size: 13px;
 }
 .call-me {
   zoom: 1;
   display: inline-block;
   margin-right: 20px;
   margin-top: 10px;
+  vertical-align: top;
 }
 .call-me:before,
 .call-me:after {
@@ -1181,23 +1213,31 @@ button:focus {
 }
 .call-me .icon {
   float: left;
-  margin-right: 10px;
+  margin: 4px 12px 4px 20px;
 }
 .call-me__link {
   float: left;
   text-decoration: none;
-  line-height: 35px;
-  margin-right: 10px;
+  line-height: 1;
+  margin: 15px 18px 15px 0;
+  color: #373534;
+  font-size: 15px;
+  font-weight: 700;
 }
 .call-me__time {
   float: left;
   background: #f1e281;
-  padding: 2px 5px;
-  margin: 5px 0;
+  padding: 4px 9px;
+  margin: 12px 0;
+  border-radius: 3px;
+  color: #86817e;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
 }
 .steps {
   background: #fff;
-  margin-top: -30px;
+  margin-top: -24px;
   margin-bottom: 20px;
   position: relative;
   z-index: 5;
@@ -1219,13 +1259,16 @@ button:focus {
 .steps__item {
   float: left;
   width: 25%;
-  padding: 30px;
-  padding-left: 70px;
+  padding: 43px 30px 43px 100px;
   position: relative;
+  color: #373534;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
 }
 .steps__item .icon {
   position: absolute;
-  left: 10px;
+  left: 40px;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);

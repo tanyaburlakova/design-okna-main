@@ -17,7 +17,7 @@
 	}
 	&__item {
 		float: left;
-		margin-right: 10px;
+		padding: 0 13px;
 		.main-menu__list {
 			position: absolute;
 			display: none;
@@ -25,16 +25,29 @@
 		&:last-of-type {
 			margin-right: 0;
 		}
-		&:hover {
+		&:hover{
+			&.with-sub>.main-menu__link:after{
+				content: '';
+				position: absolute;
+				bottom: 3px;
+				left: 50%;
+				border: 10px solid transparent;
+				border-bottom-color: white;
+				margin-left: -5px;
+			}
 			.main-menu__list {
 				display: inline-block;
 			}
 		}
 	}
 	&__link {
+		color: #3f4512;
+		font-size: 13px;
+		font-weight: 500;
 		text-decoration: none;
 		line-height: 42px;
 		display: inline-block;
+		position: relative;
 		&.active {
 
 		}
@@ -61,6 +74,15 @@
 				left: -3px;
 				top: 37px;
 				.img('submenu_green.png');
+				.main-menu__link{
+					opacity: 0.8;
+					color: #373534;
+					font-size: 13px;
+					font-weight: 400;
+					&:hover{
+						opacity: 1;
+					}
+				}
 			}
 		}
 	}

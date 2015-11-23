@@ -2,7 +2,9 @@
 	.clearfix();
 	display: inline-block;
 	position: relative;
-	padding-right: 10px;
+	padding-right: 25px;
+	vertical-align: top;
+	margin-top: 14px;
 	&:after {
 		content: '';
 		width: 1px;
@@ -25,12 +27,19 @@
 		border-radius: 50%;
 		background: @green;
 		position: absolute;
-		top: 5px;
-		left: 30px;
+		top: 8px;
+		left: 23px;
+		color: #747c3a;
+		font-size: 10px;
+		font-weight: 900;
+		line-height: 1;
+		padding: 5px 0;
+		text-align: center;
 		.no-select();
 	}
 	&__text {
 		float: left;
 		line-height: 35px;
+		font-size: 13px;
 	}
 }
