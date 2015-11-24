@@ -1,0 +1,32 @@
+.article-set {
+	background: #fff;
+	&__title {
+		margin: 0;
+		padding: 20px;
+		border-bottom: solid 1px #ccc;
+	}
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		.clearfix();
+	}
+	&__item {
+
+	}
+	&__link {
+		padding: 20px;
+		padding-right: 30px;
+		display: inline-block;
+		width: 100%;
+		position: relative;
+		text-decoration: none;
+		color: @text-color;
+		.icon {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 10px;
+		}
+	}
+}
