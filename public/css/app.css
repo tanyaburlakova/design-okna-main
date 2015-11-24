@@ -2228,5 +2228,23 @@ button:focus {
   transform: translateY(-50%);
   right: 10px;
 }
+.products-set__title {
+  margin: 0;
+  padding: 20px 0;
+}
+.products-set__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.products-set__item {
+  margin-bottom: 20px;
+}
+.products-set__item .product__wrapper {
+  padding: 0;
+}
+.products-set__item .product__label {
+  right: -10px;
+}
 
 /*# sourceMappingURL=../css/app.css.map */
