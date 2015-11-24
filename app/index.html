@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Дизайн окна</title>
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-	<link href='https://fonts.googleapis.com/css?family=Lobster|Roboto:400,500,700,900,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,500,700,900,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/app.css">
 	<!--[if lt IE 9]>
     	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -180,7 +180,7 @@
 	<!-- Main content -->
 	<main class="main-content">
 		<!-- Slider big -->
-		<div class="slider slider_big">
+		<section class="slider slider_big">
 			<div
 				id="bigCarousel"
 				items="1"
@@ -193,9 +193,9 @@
 					<img ng-src="{{item}}" alt="">
 				</div>
 			</div>
-		</div>
+		</section>
 		<!-- Steps -->
-		<div class="container">
+		<section class="container">
 			<div class="steps">
 				<ul class="steps__list">
 					<li class="steps__item">
@@ -236,16 +236,16 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</section>
+		<section class="container__holder">
 		<div class="container container_margin-bottom">
 			<div class="column-3">
 				<!-- News -->
 				<div class="news">
 					<div class="news__inner">
 						<!-- Img -->
-						<div
-							style="background: url('img/slide-1.jpg') center no-repeat; background-size: cover;"
-							class="news__img">
+						<div class="news__img">
+							<div style="background: url('img/slide-1.jpg') center no-repeat; background-size: cover;" class="news__img-inside"></div>
 						</div>
 						<div class="news__container">
 							<!-- Status -->
@@ -256,7 +256,7 @@
 							</div>
 							<!-- Title -->
 							<h2 class="news__title">
-								Экономьте до 28% с нами
+								Экономьте до&nbsp;28%&nbsp;с&nbsp;нами
 							</h2>
 							<!-- Text -->
 							<p class="news__text">
@@ -305,6 +305,7 @@
 				</div>
 			</div>
 		</div>
+		</section>
 		<div class="container">
 			<div class="column-1">
 				<!-- Benefits -->
