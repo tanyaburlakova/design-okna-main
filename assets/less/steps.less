@@ -13,12 +13,15 @@
 	&__item {
 		float: left;
 		width: 100%/4;
-		padding: 43px 30px 43px 100px;
+		padding: 40px 30px 40px 100px;
 		position: relative;
-		color: #373534;
+		color: lighten(#373534,20%);
 		font-size: 13px;
 		line-height: 20px;
 		font-weight: 400;
+		&+&{
+			border-left: 1px solid #ebebeb;
+		}
 		.icon {
 			position: absolute;
 			left: 40px;
@@ -30,9 +33,9 @@
 
 	}
 	&__text {
-
 	}
 	&__link {
-
+		color: lighten(#373534,20%);
+		text-decoration: underline;
 	}
 }

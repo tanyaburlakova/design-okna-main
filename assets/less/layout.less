@@ -14,6 +14,19 @@ a, input, textarea, select, button {
 	max-width: 1280px;
 	margin: 0 auto;
 	.clearfix();
+	&__holder{
+		position: relative;
+		overflow: hidden;
+	}
+	&__inside{
+		margin: 0 -10px;
+		[class^="column-"]:first-child{
+			padding-left: 10px;
+		}
+		[class^="column-"]:last-child{
+			padding-right: 10px;
+		}
+	}
 	[class^="column-"] {
 		float: left;
 		padding: 0 10px;
