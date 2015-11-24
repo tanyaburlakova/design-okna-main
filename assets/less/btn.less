@@ -9,17 +9,27 @@
 	padding: 0 30px;
 	border-radius: 3px;
 	font-size: 11px;
-	font-weight: @medium;
 	text-align: center;
+	transition: background @animation-time;
+	.letter-spacing(50);
 	.no-break();
 	&_blue {
 		background: @blue;
+		&:hover {
+			background: darken(@blue, 10%);
+		}
 	}
 	&_red {
 		background: @red;
+		&:hover {
+			background: darken(@red, 10%);
+		}
 	}
 	&_green {
 		background: @green;
+		&:hover {
+			background: darken(@green, 10%);
+		}
 	}
 	&_big {
 		line-height: 38px;

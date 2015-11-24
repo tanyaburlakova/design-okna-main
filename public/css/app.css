@@ -1286,18 +1286,29 @@ button:focus {
   padding: 0 30px;
   border-radius: 3px;
   font-size: 11px;
-  font-weight: 500;
   text-align: center;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  letter-spacing: 0.05em;
   white-space: nowrap;
 }
 .btn_blue {
   background: #9ac6df;
 }
+.btn_blue:hover {
+  background: #73b0d3;
+}
 .btn_red {
   background: #c35545;
 }
+.btn_red:hover {
+  background: #a14234;
+}
 .btn_green {
   background: #c6d557;
+}
+.btn_green:hover {
+  background: #b5c732;
 }
 .btn_big {
   line-height: 38px;
