@@ -1,0 +1,75 @@
+.article {
+	background: #fff;
+	&__header {
+		position: relative;
+	}
+	&__rubric {
+
+	}
+	&__title {
+
+	}
+	&__label {
+		position: absolute;
+		top: -2px;
+		right: -12px;
+		width: 80px;
+		height: 50px;
+		background: url('../img/ribbon-red.svg') no-repeat;
+		text-align: center;
+		.no-select();
+		z-index: 5;
+	}
+	&__label-text {
+		line-height: 70px;
+		font-size: 12px;
+		font-weight: @medium;
+		.letter-spacing(100);
+		color: #fff;
+	}
+	&__img {
+		height: 360px;
+	}
+	&__container {
+
+	}
+	&__socials {
+		float: left;
+		.clearfix();
+	}
+	&__socials-text {
+		float: left;
+	}
+	&__socials-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		float: left;
+		.clearfix();
+	}
+	&__socials-item {
+		float: left;
+	}
+	&__socials-link {
+		.icon {
+			width: 25px;
+			height: 25px;
+		}
+	}
+	&__date {
+		float: right;
+	}
+	&__content {
+		display: inline-block;
+		width: 100%;
+		p {
+
+		}
+		img {
+
+		}
+		a {
+
+		}
+	}
+}
