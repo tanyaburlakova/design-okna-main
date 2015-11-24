@@ -1235,6 +1235,9 @@ button:focus {
   font-weight: 700;
   line-height: 1;
 }
+.main-content {
+  margin-top: 55px;
+}
 .steps {
   background: #fff;
   margin-top: -24px;
@@ -1377,6 +1380,10 @@ button:focus {
   background: linear-gradient(to bottom, #1ebbef 0%, #c6d557 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1ebbef', endColorstr='#c6d557', GradientType=0);
 }
+.question .btn {
+  position: relative;
+  z-index: 5;
+}
 .question__inner {
   position: relative;
   z-index: 5;
@@ -1390,6 +1397,15 @@ button:focus {
   position: absolute;
   top: 0;
   right: 0;
+}
+.question__btn .icon {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+.question__btn:hover .icon {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 .question__img {
   position: absolute;
@@ -1777,37 +1793,37 @@ button:focus {
   font-weight: 900;
   color: #353535;
 }
-.article {
+.article-preview {
   background: #fff;
   width: 100%;
   height: 380px;
   zoom: 1;
 }
-.article:before,
-.article:after {
+.article-preview:before,
+.article-preview:after {
   content: "";
   display: table;
 }
-.article:after {
+.article-preview:after {
   clear: both;
 }
-.article__container {
+.article-preview__container {
   float: left;
   width: 50%;
   padding: 30px;
 }
-.article__author {
+.article-preview__author {
   zoom: 1;
 }
-.article__author:before,
-.article__author:after {
+.article-preview__author:before,
+.article-preview__author:after {
   content: "";
   display: table;
 }
-.article__author:after {
+.article-preview__author:after {
   clear: both;
 }
-.article__author-avatar {
+.article-preview__author-avatar {
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -1816,11 +1832,11 @@ button:focus {
   float: left;
   margin-right: 20px;
 }
-.article__author-name {
+.article-preview__author-name {
   float: left;
   line-height: 44px;
 }
-.article__img {
+.article-preview__img {
   float: left;
   width: 50%;
   height: 380px;

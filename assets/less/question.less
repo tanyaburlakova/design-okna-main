@@ -6,6 +6,10 @@
 	position: relative;
 	text-align: center;
 	.blue-green-gradient();
+	.btn {
+		position: relative;
+		z-index: 5;
+	}
 	&__inner {
 		position: relative;
 		z-index: 5;
@@ -19,6 +23,14 @@
 		position: absolute;
 		top: 0;
 		right: 0;
+		.icon {
+			transition: transform @animation-time;
+		}
+		&:hover {
+			.icon {
+				transform: rotate(360deg);
+			}
+		}
 	}
 	&__img {
 		position: absolute;
