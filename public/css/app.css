@@ -1915,6 +1915,7 @@ button:focus {
 }
 .article__socials-text {
   float: left;
+  margin-right: 10px;
 }
 .article__socials-list {
   list-style: none;
@@ -1933,6 +1934,10 @@ button:focus {
 }
 .article__socials-item {
   float: left;
+  margin-right: 10px;
+}
+.article__socials-item:last-child {
+  margin-right: 0;
 }
 .article__socials-link .icon {
   width: 25px;
@@ -2056,6 +2061,9 @@ button:focus {
 }
 .catalog__more-text {
   float: left;
+}
+.catalog_3 .catalog__item {
+  width: 33.33333333%;
 }
 .site-footer {
   background: #fff;

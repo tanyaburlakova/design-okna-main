@@ -4,9 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Дизайн окна</title>
+	<title>Дизайн окна - Каталог</title>
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-	<link href='https://fonts.googleapis.com/css?family=Lobster|Roboto:300,400,500,700,900,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lobster|Roboto:400,500,700,900,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/app.css">
 	<!--[if lt IE 9]>
     	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -75,7 +75,7 @@
 							+7 (495) 542-64-84
 						</a>
 						<div class="call-me__time">
-							9-21ч
+							9-14ч
 						</div>
 					</div>
 				</div>
@@ -90,7 +90,7 @@
 				</h2>
 				<ul class="main-menu__list">
 					<li class="main-menu__item">
-						<a href="catalog.html" class="main-menu__link active">
+						<a href="#" class="main-menu__link active">
 							Горизонтальные
 						</a>
 					</li>
@@ -99,7 +99,7 @@
 							Вертикальные
 						</a>
 					</li>
-					<li class="main-menu__item with-sub">
+					<li class="main-menu__item">
 						<a href="#" class="main-menu__link">
 							Деревянные
 						</a>
@@ -135,7 +135,7 @@
 					Шторы
 				</h2>
 				<ul class="main-menu__list">
-					<li class="main-menu__item with-sub">
+					<li class="main-menu__item">
 						<a href="#" class="main-menu__link active">
 							Горизонтальные
 						</a>
@@ -179,276 +179,99 @@
 	</header>
 	<!-- Main content -->
 	<main class="main-content">
-		<!-- Slider big -->
-		<section class="slider slider_big">
-			<div
-				id="bigCarousel"
-				items="1"
-				pagination="false"
-				transition-style="'fade'"
-				mouse-drag="false"
-				auto-play="true"
-				owl-carousel="bigSliderItems">
-				<div class="item">
-					<img ng-src="{{item}}" alt="">
-				</div>
+		<!-- Image gradient -->
+		<div
+			class="image-gradient"
+			style="background: url(img/slide-1.jpg) center no-repeat; -webkit-background-size: cover; background-size: cover;">
+		</div>
+		<!-- Search info -->
+		<div class="search-info">
+			<div class="container">
+				По запросу <strong>Горизонтальные жалюзи</strong> найдено 35 предложений
 			</div>
-		</section>
-		<!-- Steps -->
-		<section class="container">
-			<div class="steps">
-				<ul class="steps__list">
-					<li class="steps__item">
-						<i class="icon icon-search-big"></i>
-						<span class="steps__counter">
-							1
-						</span>
-						<span class="steps__text">
-							Найдите красивые жалюзи ипользуя <a href="#" class="steps__link">конструктор</a>
-						</span>
+		</div>
+		<!-- Sort -->
+		<div class="sort">
+			<div class="container">
+				<div class="sort__text">
+					Сортировать по:
+				</div>
+				<ul class="sort__list">
+					<li class="sort__item">
+						<a href="#" class="btn">
+							<i class="icon icon-ruble"></i>
+							<span class="btn__text">
+								Стоимости
+							</span>
+						</a>
 					</li>
-					<li class="steps__item">
-						<i class="icon icon-phone"></i>
-						<span class="steps__counter">
-							2
-						</span>
-						<span class="steps__text">
-							Оформите заказ и наш менеджер перезвонит Вам
-						</span>
-					</li>
-					<li class="steps__item">
-						<i class="icon icon-pen"></i>
-						<span class="steps__counter">
-							3
-						</span>
-						<span class="steps__text">
-							К Вам бесплатно приедет замерщик с образцами
-						</span>
-					</li>
-					<li class="steps__item">
-						<i class="icon icon-worker"></i>
-						<span class="steps__counter">
-							4
-						</span>
-						<span class="steps__text">
-							Изготовление за 3-5 дней, установка специалистом
-						</span>
+					<li class="sort__item active">
+						<a href="#" class="btn">
+							<i class="icon icon-star"></i>
+							<span class="btn__text">
+								Рейтингу
+							</span>
+						</a>
 					</li>
 				</ul>
 			</div>
-		</section>
-		<section class="container__holder">
-		<div class="container container_margin-bottom">
-			<div class="column-3">
-				<!-- News -->
-				<div class="news">
-					<div class="news__inner">
-						<!-- Img -->
-						<div class="news__img">
-							<div style="background: url('img/slide-1.jpg') center no-repeat; background-size: cover;" class="news__img-inside"></div>
-						</div>
-						<div class="news__container">
-							<!-- Status -->
-							<div class="news__label">
-								<div class="news__label-text">
-									Акция
-								</div>
+		</div>
+		<div class="container">
+			<div class="column-1">
+				<!-- Filter -->
+				<div class="form form_filter">
+					<form action="#">
+						<!-- Prices range -->
+						<fieldset class="form__fieldset">
+							<legend class="form__legend">
+								Диапазон цен
+							</legend>
+							<!-- Range -->
+							<div class="field">
+								Range
 							</div>
-							<!-- Title -->
-							<h2 class="news__title">
-								Экономьте до&nbsp;28%&nbsp;с&nbsp;нами
-							</h2>
-							<!-- Text -->
-							<p class="news__text">
-								При заказе жалюзи и щтор мы даем возможность каждому сэкономить до 28%. для этого Вам необходимо гайти купоны на скидку на нашем промо сайте
-							</p>
-							<!-- Btn -->
-							<a href="#" class="btn btn_blue">
-								Узнать подробности
+						</fieldset>
+						<!-- Blinds type -->
+						<fieldset class="form__fieldset">
+							<legend class="form__legend">
+								Тип горизонтальны жалюзи
+							</legend>
+							<div class="field">
+								<label class="checkbox">
+
+								</label>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+			<div class="column-3">
+				<!-- Catalog -->
+				<div class="container container_catalog">
+					<div class="catalog catalog_3">
+						<ul class="catalog__list">
+							<li
+								ng-repeat="(key, value) in catalogItems"
+								class="catalog__item">
+								<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+							</li>
+						</ul>
+						<!-- More btn -->
+						<div class="catalog__more">
+							<a href class="catalog__more-link">
+								<i class="icon icon-more"></i>
+								<span class="catalog__more-text">
+									Показать больше новинок
+								</span>
 							</a>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="column-1">
-				<!-- Question -->
-				<div class="question">
-					<!-- Img -->
-					<div
-						style="background: url(img/bg_our_advantages.jpg) center no-repeat; background-size: cover;"
-						class="question__img">
-					</div>
-					<div class="question__inner">
-						<!-- Number -->
-						<div class="question__number">
-							Вопрос № 14
-						</div>
-						<!-- Avatar -->
-						<img src="img/ava1.jpg" alt="" class="question__avatar">
-						<!-- New question -->
-						<a href="#" class="question__btn">
-							<i class="icon icon-reload"></i>
-						</a>
-						<!-- Title -->
-						<h2 class="question__title">
-							Как установить жалюзи самостоятельно?
-						</h2>
-						<!-- Description -->
-						<div class="question__description">
-							отвечает мастер Максим
-						</div>
-					</div>
-					<!-- Btn -->
-					<a href="article.html" class="btn btn_red">
-						Читать статью
-					</a>
-				</div>
-			</div>
-		</div>
-		</section>
-		<div class="container">
-			<div class="column-1">
-				<!-- Benefits -->
-				<div class="benefits">
-					<!-- Label -->
-					<div class="benefits__label">
-						Преимущества
-					</div>
-					<!-- Left -->
-					<a
-						href
-						ng-click="owlCarousel.benefitsCarousel.prev()"
-						class="benefit__shevron benefit__shevron_left">
-						<i class="icon icon-shevron-left"></i>
-					</a>
-					<!-- Right -->
-					<a
-						href
-						ng-click="owlCarousel.benefitsCarousel.next()"
-						class="benefit__shevron benefit__shevron_right">
-						<i class="icon icon-shevron-right"></i>
-					</a>
-					<!-- Slider -->
-					<div
-						id="benefitsCarousel"
-						items="1"
-						pagination="false"
-						mouse-drag="false"
-						owl-carousel="benefitsItems">
-						<div class="item">
-							<!-- Benefit -->
-							<div class="benefit">
-								<div
-									ng-style="{'background': 'url({{item.bgImg}}) center no-repeat', 'background-size': cover}"
-									class="benefit__bg">
-								</div>
-								<div class="benefit__inner">
-									<!-- Img -->
-									<img ng-src="{{item.img}}" alt="" class="benefit__img">
-									<!-- Title -->
-									<h2 class="benefit__title">
-										{{item.title}}
-									</h2>
-									<!-- Text -->
-									<p class="benefit__text">
-										{{item.text}}
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="column-1">
-				<!-- Product -->
-				<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-			</div>
-			<div class="column-2">
-				<!-- Article preview -->
-				<article class="article-preview">
-					<div class="article-preview__container">
-						<!-- Title -->
-						<h2 class="article-preview__title">
-							Тренды в оформлении окон 2015
-						</h2>
-						<!-- Text -->
-						<p class="article-preview__text">
-							О последних новинках в индустрии жалюзи и о том как будет модно оформлять окна в 2016 году расскажет жизайнер интерьеров >
-						</p>
-						<!-- Author -->
-						<div class="article-preview__author">
-							<img src="img/ava2.jpg" alt="" class="article-preview__author-avatar">
-							<div class="article-preview__author-name">
-								Вероника Маркина
-							</div>
-						</div>
-					</div>
-					<!-- Img -->
-					<div
-						style="background: url('img/trends.jpg') left center no-repeat; background-size: cover;"
-						class="article-preview__img">
-					</div>
-				</article>
-			</div>
-		</div>
-		<!-- Jumbotron -->
-		<div class="jumbotron">
-			<div class="container">
-				<!-- Img -->
-				<img src="#" alt="" class="jumbotron__img">
-				<!-- Title -->
-				<h2 class="jumbotron__title">
-					Используйте конструктор
-				</h2>
-				<!-- Text -->
-				<p class="jumbotron__text">
-					Сложно подобрать жалюзи или шторы? Ипользуйте наш удобный конструктор, легко меняя типы жалюзи, цвет и текстуры.
-				</p>
-				<!-- Btn -->
-				<a href="#" class="btn btn_green">
-					Перейти в конструктор
-				</a>
-			</div>
-		</div>
-		<!-- Catalog -->
-		<div class="container container_catalog">
-			<div class="catalog">
-				<ul class="catalog__list">
-					<li
-						ng-repeat="(key, value) in catalogItems"
-						class="catalog__item">
-						<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-					</li>
-				</ul>
-				<!-- More btn -->
-				<div class="catalog__more">
-					<a href class="catalog__more-link">
-						<i class="icon icon-more"></i>
-						<span class="catalog__more-text">
-							Показать больше новинок
-						</span>
-					</a>
 				</div>
 			</div>
 		</div>
 	</main>
 	<!-- Footer -->
 	<footer class="site-footer">
-		<!-- Seo -->
-		<div class="seo">
-			<div class="container">
-				<!-- Logo -->
-				<img src="#" alt="" class="seo__logo">
-				<div class="seo__container">
-					<p class="seo__text">
-						Дизайн Окна &mdash; это производстводственная по современному оформлению окон. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, tempore doloribus nihil commodi a perspiciatis. Tempora pariatur hic deserunt repudiandae.
-					</p>
-					<a href="#" class="seo__link">
-						подробнее о нас
-					</a>
-				</div>
-			</div>
-		</div>
 		<div class="container">
 			<!-- Top -->
 			<div class="site-footer__row">
@@ -752,23 +575,6 @@
 							</ul>
 						</div>
 					</div>
-				</div>
-			</div>
-			<!-- Vendor -->
-			<div class="vendor">
-				<div class="container">
-					<!-- Logo -->
-					<img src="#" alt="" class="vendor__logo">
-					<p class="vendor__text">
-						Все придумано и разработано командой <a href="http://brainmaze.net" class="vendor__link">brainmaze.net</a>, а дизайн помещения сделан друзьями из <a href="#" class="vendor__link">brainmaze.net</a>
-					</p>
-					<p class="vendor__text vendor__text_grey">
-						Авторство фотографий
-					</p>
-					<p class="vendor__text">
-						<i class="icon icon-lock"></i>
-						Передача данных зашифрована и безопасна
-					</p>
 				</div>
 			</div>
 		</div>
