@@ -1,6 +1,7 @@
 var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
+		'checkboxDirective',
 		'angular-owl-carousel'
 	])
 	.config([

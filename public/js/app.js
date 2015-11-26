@@ -1,6 +1,7 @@
 var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
+		'checkboxDirective',
 		'angular-owl-carousel'
 	])
 	.config([
@@ -57,27 +58,41 @@ var app = angular.module('myApp', [
 		}];
 
 		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+
+		$scope.catalogData = {};
 	}
 
 })();
 
-angular.module('someDirective', [])
-	.controller('SomeCtrl', [
-		'$scope',
-		function ($scope) {
-			'use strict';
+(function () {
+	'use strict';
 
+	angular.module('checkboxDirective', [])
+		.directive('checkbox', [
+			checkboxDirective
+		]);
 
-		}
-	])
-	.directive('some', function () {
-		'use strict';
+	function checkboxDirective() {
 		return {
 			restrict: 'E',
-			controller: 'MainCtrl',
-			scope: {}
+			templateUrl: 'views/directives/checkbox.html',
+			scope: {
+				model: '=',
+				checked: '@',
+				disabled: '@',
+				name: '@',
+				label: '@',
+				value: '@'
+			},
+			replace: true,
+			link: checkboxDirectiveLink
 		};
-	});
+	}
+
+	function checkboxDirectiveLink(scope, el, attr) {
+
+	}
+})();
 
 app.service('ItemService', ['$http', '$q',
 	function ($http, $q) {
