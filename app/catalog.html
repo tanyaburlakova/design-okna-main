@@ -13,7 +13,7 @@
     	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-controller="MainCtrl">
+<body ng-controller="CatalogCtrl">
 	<!-- Header -->
 	<header class="site-header">
 		<div class="site-header__inner">
@@ -184,15 +184,13 @@
 			class="image-gradient"
 			style="background: url(img/slide-1.jpg) center no-repeat; -webkit-background-size: cover; background-size: cover;">
 		</div>
-		<!-- Search info -->
-		<div class="search-info">
-			<div class="container">
+		<div class="container">
+			<!-- Search info -->
+			<div class="search-info">
 				По запросу <strong>Горизонтальные жалюзи</strong> найдено 35 предложений
 			</div>
-		</div>
-		<!-- Sort -->
-		<div class="sort">
-			<div class="container">
+			<!-- Sort -->
+			<div class="sort">
 				<div class="sort__text">
 					Сортировать по:
 				</div>
@@ -260,6 +258,8 @@
 						</fieldset>
 					</form>
 				</div>
+				<!-- Question -->
+				<question></question>
 			</div>
 			<div class="column-3">
 				<!-- Catalog -->

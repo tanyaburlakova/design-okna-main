@@ -16,15 +16,14 @@
 		};
 
 		$scope.getQuestion = function () {
-			$log.log('get question');
-			QuestionService.getQuestion().
-			then(function (data) {
-				// Success
-				$scope.question = data;
-			}, function (err) {
-				// Error
-				$log.error(err);
-			});
+			QuestionService.getQuestion()
+				.then(function (data) {
+					// Success
+					$scope.question = data;
+				}, function (err) {
+					// Error
+					$log.error(err);
+				});
 		};
 
 		$scope.init();

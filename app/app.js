@@ -1,6 +1,7 @@
 var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
+		'catalogCtrl',
 		'checkboxDirective',
 		'questionDirective',
 		'angular-owl-carousel'

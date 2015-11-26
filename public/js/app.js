@@ -1,6 +1,7 @@
 var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
+		'catalogCtrl',
 		'checkboxDirective',
 		'questionDirective',
 		'angular-owl-carousel'
@@ -29,14 +30,32 @@ app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
+	angular.module('catalogCtrl', [])
+		.controller('CatalogCtrl', [
+			'$scope',
+			'$log',
+			catalogCtrl
+		]);
+
+	function catalogCtrl($scope, $log) {
+		$log.log('catalog ctrl');
+
+		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+	}
+
+})();
+
+(function () {
+	'use strict';
 	angular.module('mainCtrl', [])
 		.controller('MainCtrl', [
 			'$scope',
+			'$log',
 			mainCtrl
 		]);
 
-	function mainCtrl($scope) {
-		console.log('main ctrl');
+	function mainCtrl($scope, $log) {
+		$log.log('main ctrl');
 
 		$scope.bigSliderItems = [
 			'img/slide-2.jpg',
@@ -60,16 +79,7 @@ app.constant('API_PATH', 'data/');
 			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
 		}];
 
-		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
-
 		$scope.catalogData = {};
-
-		$scope.question = {
-			number: 12,
-			title: 'Как установить жалюзи самостоятельно?',
-			description: 'отвечает мастер Максим',
-			link: 'article.html'
-		};
 	}
 
 })();
@@ -92,15 +102,14 @@ app.constant('API_PATH', 'data/');
 		};
 
 		$scope.getQuestion = function () {
-			$log.log('get question');
-			QuestionService.getQuestion().
-			then(function (data) {
-				// Success
-				$scope.question = data;
-			}, function (err) {
-				// Error
-				$log.error(err);
-			});
+			QuestionService.getQuestion()
+				.then(function (data) {
+					// Success
+					$scope.question = data;
+				}, function (err) {
+					// Error
+					$log.error(err);
+				});
 		};
 
 		$scope.init();

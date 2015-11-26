@@ -2509,5 +2509,58 @@ button:focus {
 .checkbox:hover .checkbox__check {
   border-color: #a7cde3;
 }
+.search-info {
+  float: left;
+}
+.sort {
+  float: right;
+}
+.sort__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  zoom: 1;
+}
+.sort__list:before,
+.sort__list:after {
+  content: "";
+  display: table;
+}
+.sort__list:after {
+  clear: both;
+}
+.sort__item {
+  float: left;
+}
+.form {
+  zoom: 1;
+}
+.form:before,
+.form:after {
+  content: "";
+  display: table;
+}
+.form:after {
+  clear: both;
+}
+.form__fieldset {
+  border: 0;
+  padding: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+  min-width: 0;
+  background: #fff;
+  display: inline-block;
+  width: 100%;
+}
+.form__legend {
+  float: left;
+  width: 100%;
+}
+.field {
+  margin-bottom: 5px;
+  display: inline-block;
+  width: 100%;
+}
 
 /*# sourceMappingURL=../css/app.css.map */
