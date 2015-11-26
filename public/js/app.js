@@ -2,6 +2,7 @@ var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
 		'checkboxDirective',
+		'questionDirective',
 		'angular-owl-carousel'
 	])
 	.config([
@@ -23,6 +24,8 @@ var app = angular.module('myApp', [
 				});*/
 		}
 	]);
+
+app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
@@ -60,6 +63,47 @@ var app = angular.module('myApp', [
 		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
 
 		$scope.catalogData = {};
+
+		$scope.question = {
+			number: 12,
+			title: 'Как установить жалюзи самостоятельно?',
+			description: 'отвечает мастер Максим',
+			link: 'article.html'
+		};
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('questionCtrl', ['questionService'])
+		.controller('QuestionCtrl', [
+			'$scope',
+			'$log',
+			'QuestionService',
+			questionCtrl
+		]);
+
+	function questionCtrl($scope, $log, QuestionService) {
+		$log.log('question ctrl');
+
+		$scope.init = function () {
+			$scope.getQuestion();
+		};
+
+		$scope.getQuestion = function () {
+			$log.log('get question');
+			QuestionService.getQuestion().
+			then(function (data) {
+				// Success
+				$scope.question = data;
+			}, function (err) {
+				// Error
+				$log.error(err);
+			});
+		};
+
+		$scope.init();
 	}
 
 })();
@@ -94,31 +138,69 @@ var app = angular.module('myApp', [
 	}
 })();
 
-app.service('ItemService', ['$http', '$q',
-	function ($http, $q) {
-		'use strict';
-		var item = this;
-		item.items = {};
+(function () {
+	'use strict';
 
-		filter.getItems = function () {
-			var url = 'api/url/',
+	angular.module('questionDirective', ['questionCtrl'])
+		.directive('question', [
+			questionDirective
+		]);
+
+	function questionDirective() {
+		return {
+			restrict: 'E',
+			templateUrl: 'views/directives/question.html',
+			controller: 'QuestionCtrl',
+			scope: {
+				number: '@',
+				title: '@',
+				description: '@',
+				link: '@'
+			},
+			replace: true,
+			link: questionDirectiveLink
+		};
+	}
+
+	function questionDirectiveLink(scope, el, attr) {
+		attr.link = attr.link || '#';
+	}
+})();
+
+(function () {
+	'use strict';
+	angular.module('questionService', []).
+	factory('QuestionService', [
+		'API_PATH',
+		'$http',
+		'$q',
+		questionService
+	]);
+
+	function questionService(API_PATH, $http, $q) {
+		var service = {
+			getQuestion: getQuestion
+		};
+		return service;
+
+		function getQuestion() {
+			var url = API_PATH + 'questions.json',
 				defer = $q.defer();
+
 			$http.get(url)
 				.success(function (data) {
-					filter.types = data;
 					defer.resolve(data);
 				})
-				.error(function (data) {
+				.error(function (res, errCode) {
 					defer.reject({
-						error: 'api access [%s] error!'.replace('%s', url)
+						code: errCode,
+						text: 'api access [%s] error!'.replace('%s', url)
 					});
 				});
 
 			return defer.promise;
-		};
-
-		return item;
+		}
 	}
-]);
+})();
 
 //# sourceMappingURL=../js/app.js.map

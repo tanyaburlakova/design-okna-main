@@ -2,6 +2,7 @@ var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
 		'checkboxDirective',
+		'questionDirective',
 		'angular-owl-carousel'
 	])
 	.config([
@@ -23,3 +24,5 @@ var app = angular.module('myApp', [
 				});*/
 		}
 	]);
+
+app.constant('API_PATH', 'data/');
