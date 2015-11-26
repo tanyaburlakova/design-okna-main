@@ -437,9 +437,6 @@ button:focus {
 .container_margin-bottom {
   margin-bottom: 20px;
 }
-.container_catalog {
-  max-width: 1320px;
-}
 .column-1 {
   width: 25%;
 }
@@ -526,9 +523,12 @@ button:focus {
   height: 15px;
 }
 .icon-more {
-  background: url('../img/more.svg') no-repeat center;
-  width: 24px;
+  margin: 0 9px;
+  width: 6px;
   height: 6px;
+  border-radius: 50%;
+  background-color: #9e9e9e;
+  box-shadow: 9px 0 0 0 #9e9e9e, -9px 0 0 0 #9e9e9e;
 }
 .icon-vk {
   background: url('../img/vk.svg') no-repeat center;
@@ -549,6 +549,11 @@ button:focus {
   background: url('../img/insta.svg') no-repeat center;
   width: 40px;
   height: 40px;
+}
+.icon-lock {
+  background: url('../img/lock.svg') no-repeat center;
+  width: 14px;
+  height: 20px;
 }
 /*
  * 	Core Owl Carousel CSS File
@@ -1355,6 +1360,7 @@ button:focus {
   line-height: 30px;
   text-transform: uppercase;
   margin: 23px 0 42px;
+  letter-spacing: 0.1em;
 }
 .news__text {
   opacity: 0.8;
@@ -1968,7 +1974,7 @@ button:focus {
 .article-preview__container {
   float: left;
   width: 50%;
-  padding: 30px;
+  padding: 40px;
 }
 .article-preview__title {
   opacity: 0.9;
@@ -1977,7 +1983,8 @@ button:focus {
   font-weight: 900;
   line-height: 30px;
   text-transform: uppercase;
-  margin: 23px 0 42px;
+  margin: 23px 0 18px;
+  letter-spacing: 0.1em;
 }
 .article-preview__text {
   opacity: 0.8;
@@ -1985,7 +1992,7 @@ button:focus {
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
-  margin-bottom: 45px;
+  margin-bottom: 40px;
 }
 .article-preview__author {
   zoom: 1;
@@ -2019,6 +2026,40 @@ button:focus {
   width: 50%;
   height: 380px;
 }
+.jumbotron {
+  height: 480px;
+  margin: 40px 0;
+  color: #fff;
+}
+.jumbotron .container {
+  padding: 0 40px;
+}
+.jumbotron__img {
+  height: 480px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.jumbotron__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-top: 170px;
+  letter-spacing: 0.1em;
+}
+.jumbotron__text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 26px;
+  margin-bottom: 20px;
+  width: 40%;
+  letter-spacing: 0.02em;
+}
 .catalog__list {
   list-style: none;
   padding: 0;
@@ -2041,26 +2082,25 @@ button:focus {
 }
 .catalog__more {
   padding-top: 0px;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
   text-align: center;
 }
 .catalog__more-link {
   display: inline-block;
-  zoom: 1;
+  color: #a1a1a1;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+  padding: 20px;
 }
-.catalog__more-link:before,
-.catalog__more-link:after {
-  content: "";
-  display: table;
-}
-.catalog__more-link:after {
-  clear: both;
-}
-.catalog__more-link .icon {
-  float: left;
+.catalog__more-link:hover {
+  opacity: 1;
 }
 .catalog__more-text {
-  float: left;
+  margin-left: 10px;
 }
 .catalog_3 .catalog__item {
   width: 33.33333333%;
@@ -2069,7 +2109,6 @@ button:focus {
   background: #fff;
 }
 .site-footer__row {
-  border-bottom: solid 1px #ccc;
   zoom: 1;
 }
 .site-footer__row:before,
@@ -2088,14 +2127,65 @@ button:focus {
 }
 .site-footer__column_left {
   width: 25%;
+  padding: 0 20px;
 }
 .site-footer__column_right {
   width: 75%;
+  padding: 0 20px;
+}
+.site-footer__menu {
+  padding: 68px 0 56px;
+}
+.site-footer__title {
+  opacity: 0.9;
+  color: #363537;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 25px;
+  letter-spacing: 0.1em;
+}
+.site-footer__text {
+  opacity: 0.7;
+  color: #363537;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 0 30px;
+}
+.site-footer__delimeter {
+  border-style: solid;
+  border-color: #9e9e9e;
+  border-width: 1px;
+  border-top: none;
+  opacity: .1;
+  margin: 50px 20px 50px;
+}
+.contacts {
+  color: #b3b3b3;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 25px;
 }
 .contacts__list {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.contacts__item {
+  margin-bottom: 1em;
+  line-height: 20px;
+}
+.contacts__link {
+  color: #4d4d4d;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.contacts__link:hover {
+  color: #000;
 }
 .socials__list {
   list-style: none;
@@ -2114,8 +2204,15 @@ button:focus {
 .socials__item {
   float: left;
 }
+.socials__item + .socials__item {
+  margin-left: 15px;
+}
 .menu-vertical {
   zoom: 1;
+  color: #4d4d4d;
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: 400;
 }
 .menu-vertical:before,
 .menu-vertical:after {
@@ -2129,10 +2226,21 @@ button:focus {
   float: left;
   width: 25%;
 }
+.menu-vertical__title {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 0 6px;
+  line-height: 20px;
+}
 .menu-vertical__list {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.menu-vertical__link {
+  color: #4d4d4d;
+  text-decoration: none;
 }
 @-webkit-keyframes fadeInRight {
   from {
@@ -2253,6 +2361,68 @@ button:focus {
 }
 .products-set__item .product__label {
   right: -10px;
+}
+.seo {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  padding: 43px 0;
+  overflow: hidden;
+}
+.seo > .container {
+  padding: 0 20px;
+}
+.seo__logo {
+  float: left;
+  margin-top: 7px;
+}
+.seo__container {
+  padding-left: 110px;
+}
+.seo__text {
+  margin: 0 0 10px;
+  opacity: 0.6;
+  color: #363537;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.seo__link {
+  color: #363537;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.vendor {
+  padding: 20px 0;
+  background: #efefef;
+}
+.vendor > .container {
+  padding: 0 20px;
+}
+.vendor__logo {
+  vertical-align: middle;
+}
+.vendor__text {
+  font-size: 12px;
+  line-height: 20px;
+  color: #363537;
+  font-weight: 400;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+.vendor__text .icon {
+  vertical-align: bottom;
+  margin-right: 5px;
+}
+.vendor__text_grey {
+  opacity: 0.6;
+  color: #898989;
+}
+.vendor__link {
+  color: #2b2b2b;
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=../css/app.css.map */
