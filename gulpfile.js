@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	browserSync = require('browser-sync'),
 	minifyCSS = require('gulp-minify-css'),
+	fileinclude = require('gulp-file-include'),
 	mainBowerFiles = require('main-bower-files'),
 	bowerFiles = mainBowerFiles(),
 	uglify = require('gulp-uglify'),
@@ -58,6 +59,7 @@ gulp.task('copyAssets', function () {
 gulp.task('copyViews', function () {
 	'use strict';
 	gulp.src('app/**/*html')
+		.pipe(fileinclude())
 		.pipe(gulp.dest('public'));
 });
 
