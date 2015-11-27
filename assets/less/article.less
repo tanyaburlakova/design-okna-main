@@ -1,13 +1,28 @@
 .article {
 	background: #fff;
+	margin-bottom: 100px;
 	&__header {
 		position: relative;
+		padding: 38px 30px;
 	}
 	&__rubric {
-
+		opacity: 0.8;
+		color: #363537;
+		font-size: 12px;
+		line-height: 1;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		margin-bottom: 13px;
 	}
 	&__title {
-
+		height: 23px;
+		color: #363537;
+		font-size: 24px;
+		font-weight: 900;
+		text-transform: uppercase;
+		margin: 0 0 43px;
+		letter-spacing: 0.1em;
 	}
 	&__label {
 		position: absolute;
@@ -29,9 +44,9 @@
 	}
 	&__img {
 		height: 360px;
-	}
-	&__container {
-		padding: 20px;
+		margin: 0 -30px 30px;
+		background: center no-repeat;
+		background-size: cover;
 	}
 	&__socials {
 		float: left;
@@ -39,7 +54,12 @@
 	}
 	&__socials-text {
 		float: left;
-		margin-right: 10px;
+		margin: 8px 20px 0 0;
+		color: #363537;
+		font-size: 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 	}
 	&__socials-list {
 		list-style: none;
@@ -57,22 +77,41 @@
 	}
 	&__socials-link {
 		.icon {
-			width: 25px;
-			height: 25px;
+			width: 30px;
+			height: 30px;
 		}
 	}
 	&__date {
 		float: right;
+		opacity: 0.7;
+		color: #000;
+		font-size: 11px;
+		font-style: italic;
+		margin-top: 8px;
 	}
 	&__content {
 		display: inline-block;
 		width: 100%;
-		padding: 20px;
+		padding: 43px 30px;
+		opacity: 0.8;
+		color: #000;
+		& h1, & h2{
+			font-size: 18px;
+			font-weight: 700;
+			margin: 20px 0;
+		}
+		p:first-child{
+			margin-top: 0;
+		}
 		p {
-
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
+			margin: 20px 0;
 		}
 		img {
-
+			width: 100%;
+			margin: 20px 0;
 		}
 		a {
 
