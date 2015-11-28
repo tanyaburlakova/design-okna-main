@@ -19,10 +19,22 @@
 		.clearfix();
 		.icon {
 			float: left;
+			opacity: 0.6;
+			transition: opacity .2s;
 		}
 	}
 	&__text {
 		float: left;
 		line-height: 35px;
+		transition: opacity .2s;
+		opacity: 0.8;
+	}
+	&__link:hover{
+		.icon{
+			opacity: 1
+		}
+	}
+	&__link:hover &__text{
+		opacity: 1;
 	}
 }
