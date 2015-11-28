@@ -4,6 +4,7 @@ var app = angular.module('myApp', [
 		'catalogCtrl',
 		'checkboxDirective',
 		'questionDirective',
+		'rangeDirective',
 		'angular-owl-carousel'
 	])
 	.config([

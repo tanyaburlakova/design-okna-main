@@ -4,6 +4,7 @@ var app = angular.module('myApp', [
 		'catalogCtrl',
 		'checkboxDirective',
 		'questionDirective',
+		'rangeDirective',
 		'angular-owl-carousel'
 	])
 	.config([
@@ -41,6 +42,15 @@ app.constant('API_PATH', 'data/');
 		$log.log('catalog ctrl');
 
 		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+
+		$scope.priceSlider = {
+			min: 100,
+			max: 180,
+			options: {
+				floor: 0,
+				ceil: 450
+			}
+		};
 	}
 
 })();
@@ -173,6 +183,35 @@ app.constant('API_PATH', 'data/');
 
 	function questionDirectiveLink(scope, el, attr) {
 		attr.link = attr.link || '#';
+	}
+})();
+
+(function () {
+	'use strict';
+
+	angular.module('rangeDirective', ['rzModule'])
+		.directive('range', [
+			rangeDirective
+		]);
+
+	function rangeDirective() {
+		return {
+			restrict: 'E',
+			templateUrl: 'views/directives/range.html',
+			scope: {
+				min: '=',
+				max: '=',
+				options: '='
+			},
+			replace: true,
+			link: rangeDirectiveLink
+		};
+	}
+
+	function rangeDirectiveLink(scope, el, attr) {
+		scope.$watch('min', function (value) {
+			console.log(value);
+		});
 	}
 })();
 
