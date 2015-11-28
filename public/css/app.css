@@ -1310,6 +1310,10 @@ button:focus {
 .main-content {
   margin-top: 55px;
 }
+.slider__img {
+  width: 100%;
+  height: 480px;
+}
 .steps {
   background: #fff;
   margin-top: -24px;
