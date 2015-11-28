@@ -563,6 +563,12 @@ button:focus {
   width: 10px;
   height: 10px;
 }
+.icon-ruble {
+  background: url(../img/rouble.svg) no-repeat center;
+  background-size: 100% 100%;
+  width: 8px;
+  height: 11px;
+}
 /*
  * 	Core Owl Carousel CSS File
  *	v1.3.2
@@ -1444,6 +1450,14 @@ button:focus {
   transition: background 0.3s;
   letter-spacing: 0.05em;
   white-space: nowrap;
+}
+.btn > .icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.btn__text {
+  vertical-align: middle;
+  display: inline-block;
 }
 .btn_blue {
   background: #9ac6df;
@@ -2623,9 +2637,9 @@ button:focus {
 .checkbox__label {
   color: #535354;
   float: left;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: normal;
-  line-height: 18px;
+  line-height: 20px;
   text-align: left;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
@@ -2640,11 +2654,28 @@ button:focus {
 }
 .search-info {
   float: left;
+  opacity: 0.9;
+  color: #373534;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
 }
 .sort {
   float: right;
+  margin: 0 0 40px;
+}
+.sort__text {
+  color: #363537;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
 }
 .sort__list {
+  display: inline-block;
+  vertical-align: middle;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -2661,6 +2692,9 @@ button:focus {
 .sort__item {
   float: left;
 }
+.sort__item + .sort__item {
+  margin-left: 20px;
+}
 .form {
   zoom: 1;
 }
@@ -2674,20 +2708,24 @@ button:focus {
 }
 .form__fieldset {
   border: 0;
-  padding: 20px;
+  padding: 40px 20px;
   margin: 0;
   margin-bottom: 20px;
   min-width: 0;
   background: #fff;
-  display: inline-block;
-  width: 100%;
 }
 .form__legend {
   float: left;
   width: 100%;
+  opacity: 0.89;
+  color: #363537;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 0 20px;
 }
 .field {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   display: inline-block;
   width: 100%;
 }
@@ -2706,7 +2744,7 @@ rzslider {
   display: inline-block;
   width: 100%;
   height: 4px;
-  margin: 35px 0 15px 0;
+  margin: 10px 0 30px 0;
   vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -2747,44 +2785,37 @@ rzslider .rz-bar {
   z-index: 1;
   width: 100%;
   height: 4px;
-  background: #d8e0f3;
+  background-color: #e0e0e0;
   border-radius: 2px;
 }
 rzslider .rz-bar.rz-selection {
   z-index: 2;
-  background: #0db9f0;
+  background-color: #b47b94;
   border-radius: 2px;
 }
 rzslider .rz-pointer {
-  top: -14px;
+  top: -8px;
   z-index: 3;
-  width: 32px;
-  height: 32px;
   cursor: pointer;
-  background-color: #0db9f0;
-  border-radius: 16px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #e8e8e8;
+  border: 1px solid #e9e9e1;
+  box-shadow: 1.5px 2.6px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: border-color 0.2s, background-color 0.2s;
+  transition: border-color 0.2s, background-color 0.2s;
 }
-rzslider .rz-pointer:after {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 8px;
-  height: 8px;
-  background: #ffffff;
-  border-radius: 4px;
-  content: '';
-}
-rzslider .rz-pointer:hover:after {
-  background-color: #ffffff;
-}
-rzslider .rz-pointer.rz-active:after {
-  background-color: #451aff;
+rzslider .rz-pointer.rz-active {
+  background: #cfcfcf;
+  border-color: #d3d3c4;
 }
 rzslider .rz-bubble {
   bottom: 16px;
   padding: 1px 3px;
   color: #55637d;
   cursor: default;
+  display: none;
 }
 rzslider .rz-bubble.rz-selection {
   top: 16px;
@@ -2828,6 +2859,24 @@ rzslider .rz-ticks .tick .tick-value {
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
+}
+.range__text {
+  color: #373534;
+  font-size: 13px;
+  font-weight: 400;
+  display: inline-block;
+  vertical-align: middle;
+}
+.range .input {
+  border: 1px solid #d4d7d6;
+  border-radius: 3px;
+  width: 70px;
+  vertical-align: middle;
+  color: #373534;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 5px 5px 10px;
+  margin: 0 5px;
 }
 
 /*# sourceMappingURL=../css/app.css.map */
