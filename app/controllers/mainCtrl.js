@@ -14,6 +14,8 @@
 			'img/slide-1.jpg'
 		];
 
+		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+
 		$scope.benefitsItems = [{
 			bgImg: 'img/slide-1.jpg',
 			title: 'Экологичность материалов1',

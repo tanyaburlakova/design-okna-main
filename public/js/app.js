@@ -2,6 +2,7 @@ var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
 		'catalogCtrl',
+		'productPageCtrl',
 		'checkboxDirective',
 		'questionDirective',
 		'rangeDirective',
@@ -28,6 +29,123 @@ var app = angular.module('myApp', [
 	]);
 
 app.constant('API_PATH', 'data/');
+
+(function () {
+	'use strict';
+	angular.module('catalogCtrl', [])
+		.controller('CatalogCtrl', [
+			'$scope',
+			'$log',
+			catalogCtrl
+		]);
+
+	function catalogCtrl($scope, $log) {
+		$log.log('catalog ctrl');
+
+		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+
+		$scope.priceSlider = {
+			min: 100,
+			max: 180,
+			options: {
+				floor: 0,
+				ceil: 450
+			}
+		};
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('mainCtrl', [])
+		.controller('MainCtrl', [
+			'$scope',
+			'$log',
+			mainCtrl
+		]);
+
+	function mainCtrl($scope, $log) {
+		$log.log('main ctrl');
+
+		$scope.bigSliderItems = [
+			'img/slide-1.jpg'
+		];
+
+		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+
+		$scope.benefitsItems = [{
+			bgImg: 'img/slide-1.jpg',
+			title: 'Экологичность материалов1',
+			img: 'img/tree.svg',
+			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
+		}, {
+			bgImg: 'img/slide-2.jpg',
+			title: 'Экологичность материалов2',
+			img: 'img/tree.svg',
+			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
+		}, {
+			bgImg: 'img/slide-3.jpg',
+			title: 'Экологичность материалов3',
+			img: 'img/tree.svg',
+			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
+		}];
+
+		$scope.catalogData = {};
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('productPageCtrl', [])
+		.controller('ProductPageCtrl', [
+			'$scope',
+			'$log',
+			productPageCtrl
+		]);
+
+	function productPageCtrl($scope, $log) {
+		$log.log('product page ctrl');
+
+		$scope.catalogItems = [1, 2, 3, 4];
+
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('questionCtrl', ['questionService'])
+		.controller('QuestionCtrl', [
+			'$scope',
+			'$log',
+			'QuestionService',
+			questionCtrl
+		]);
+
+	function questionCtrl($scope, $log, QuestionService) {
+		$log.log('question ctrl');
+
+		$scope.init = function () {
+			$scope.getQuestion();
+		};
+
+		$scope.getQuestion = function () {
+			QuestionService.getQuestion()
+				.then(function (data) {
+					// Success
+					$scope.question = data;
+				}, function (err) {
+					// Error
+					$log.error(err);
+				});
+		};
+
+		$scope.init();
+	}
+
+})();
 
 (function () {
 	'use strict';
@@ -141,103 +259,6 @@ app.constant('API_PATH', 'data/');
 			}
 		});
 	}
-})();
-
-(function () {
-	'use strict';
-	angular.module('catalogCtrl', [])
-		.controller('CatalogCtrl', [
-			'$scope',
-			'$log',
-			catalogCtrl
-		]);
-
-	function catalogCtrl($scope, $log) {
-		$log.log('catalog ctrl');
-
-		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
-
-		$scope.priceSlider = {
-			min: 100,
-			max: 180,
-			options: {
-				floor: 0,
-				ceil: 450
-			}
-		};
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('mainCtrl', [])
-		.controller('MainCtrl', [
-			'$scope',
-			'$log',
-			mainCtrl
-		]);
-
-	function mainCtrl($scope, $log) {
-		$log.log('main ctrl');
-
-		$scope.bigSliderItems = [
-			'img/slide-1.jpg'
-		];
-
-		$scope.benefitsItems = [{
-			bgImg: 'img/slide-1.jpg',
-			title: 'Экологичность материалов1',
-			img: 'img/tree.svg',
-			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
-		}, {
-			bgImg: 'img/slide-2.jpg',
-			title: 'Экологичность материалов2',
-			img: 'img/tree.svg',
-			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
-		}, {
-			bgImg: 'img/slide-3.jpg',
-			title: 'Экологичность материалов3',
-			img: 'img/tree.svg',
-			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
-		}];
-
-		$scope.catalogData = {};
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('questionCtrl', ['questionService'])
-		.controller('QuestionCtrl', [
-			'$scope',
-			'$log',
-			'QuestionService',
-			questionCtrl
-		]);
-
-	function questionCtrl($scope, $log, QuestionService) {
-		$log.log('question ctrl');
-
-		$scope.init = function () {
-			$scope.getQuestion();
-		};
-
-		$scope.getQuestion = function () {
-			QuestionService.getQuestion()
-				.then(function (data) {
-					// Success
-					$scope.question = data;
-				}, function (err) {
-					// Error
-					$log.error(err);
-				});
-		};
-
-		$scope.init();
-	}
-
 })();
 
 (function () {

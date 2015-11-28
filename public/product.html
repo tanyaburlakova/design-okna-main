@@ -13,7 +13,7 @@
     	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-controller="CatalogCtrl">
+<body ng-controller="ProductPageCtrl">
 	<!-- Header -->
 	<header class="site-header">
 	<div class="site-header__inner">
@@ -179,9 +179,119 @@
 </header>
 	<!-- Main content -->
 	<main class="main-content">
-		<!-- Product page -->
-		<div class="product-page">
-			<img src="img/slide-1.jpg" alt="" class="product-page__img">
+		<div class="slider">
+			<div
+				style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
+				class="slider__img">
+			</div>
+		</div>
+		<div class="container container_product-page">
+			<!-- Ribbon title -->
+			<div class="ribbon-title">
+				<div class="ribbon-title__text">
+					Римские шторы
+				</div>
+			</div>
+			<div class="column-2">
+				<!-- Gallery -->
+				<div class="gallery">
+					<!-- Main img -->
+					<div
+						style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
+						class="gallery__main-img">
+					</div>
+					<!-- List -->
+					<ul class="gallery__list">
+						<li class="gallery__item">
+							<div
+								style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
+								class="gallery__item-img">
+							</div>
+						</li>
+						<li class="gallery__item">
+							<div
+								style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
+								class="gallery__item-img">
+							</div>
+						</li>
+						<li class="gallery__item">
+							<div
+								style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
+								class="gallery__item-img">
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- Text block -->
+				<div class="text-block">
+					<!-- Title -->
+					<h2 class="text-block__title">
+						Что такое римские шторы
+					</h2>
+					<p class="text-block__text">
+						Римские шторы &mdash; это изделие, сочетающее в себе Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vero inventore officia possimus natus, quas, totam praesentium esse non cumque voluptatum reiciendis nesciunt ea perspiciatis explicabo nisi autem, eius itaque.
+					</p>
+				</div>
+			</div>
+			<div class="column-2">
+				<!-- Specifications -->
+				<div class="specifications">
+					<!-- Price -->
+					<div class="specifications__price-container">
+						<!-- Old price -->
+						<div class="specifications__price-old">
+							2300 р./м<sup>2</sup>
+						</div>
+						<!-- New price -->
+						<div class="specifications__price-new">
+							<strong>от 1200 р./м<sup>2</sup></strong>
+						</div>
+						<!-- Description -->
+						<p class="specifications__description">
+							Стоимость зависит от выбора материала и размеров
+						</p>
+					</div>
+					<h1>
+						Under Dima's construction :-p
+					</h1>
+				</div>
+				<!-- Text block -->
+				<div class="text-block">
+					<div class="text-block__column">
+						<!-- Title -->
+						<h2 class="text-block__title">
+							Конструкция римских штор
+						</h2>
+						<p class="text-block__text">
+							В закрытом состоянии римские шторы представляют lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vero inventore officia possimus natus, quas, totam praesentium esse non cumque voluptatum reiciendis nesciunt ea perspiciatis explicabo nisi autem, eius itaque.
+						</p>
+					</div>
+					<div class="text-block__column">
+						<!-- Title -->
+						<h2 class="text-block__title">
+							Схема
+						</h2>
+						<img src="#" alt="" class="text-block_img">
+						<a href="#" class="btn btn_blue btn-size-1">
+							Увеличить
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- Catalog -->
+			<div class="catalog">
+				<!-- Title -->
+				<h2 class="catalog__title">
+					Вам также может понравиться
+				</h2>
+				<ul class="catalog__list">
+					<li
+						ng-repeat="(key, value) in catalogItems"
+						class="catalog__item">
+						<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</main>
 	<!-- Footer -->
