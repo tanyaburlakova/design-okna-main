@@ -7,6 +7,8 @@
 		transform: rotate(-2deg);
 		position: absolute;
 		.lobster();
+		color: #353535;
+		font-size: 20px;
 	}
 	&__list {
 		list-style: none;
@@ -21,6 +23,15 @@
 		.main-menu__list {
 			position: absolute;
 			display: none;
+			.main-menu__link{
+				opacity: 0.8;
+				color: #373534;
+				font-size: 13px;
+				font-weight: 400;
+				&:hover{
+					opacity: 1;
+				}
+			}
 		}
 		&:last-of-type {
 			margin-right: 0;
@@ -58,7 +69,7 @@
 		.main-menu__title {
 			margin-left: 70px;
 			transform: rotate(-2deg);
-			top: 5px;
+			top: 12px;
 		}
 		.main-menu__list {
 			margin-top: 15px;
@@ -74,15 +85,6 @@
 				left: -3px;
 				top: 37px;
 				.img('submenu_green.png');
-				.main-menu__link{
-					opacity: 0.8;
-					color: #373534;
-					font-size: 13px;
-					font-weight: 400;
-					&:hover{
-						opacity: 1;
-					}
-				}
 			}
 		}
 	}
@@ -93,7 +95,7 @@
 			margin-top: 10px;
 			margin-left: 90px;
 			transform: rotate(-2.4deg);
-			top: 0;
+			top: 4px;
 		}
 		.main-menu__list {
 			margin-top: 15px;

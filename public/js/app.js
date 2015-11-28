@@ -58,8 +58,7 @@ app.constant('API_PATH', 'data/');
 		$log.log('main ctrl');
 
 		$scope.bigSliderItems = [
-			'img/slide-2.jpg',
-			'img/slide-3.jpg'
+			'img/slide-1.jpg'
 		];
 
 		$scope.benefitsItems = [{
