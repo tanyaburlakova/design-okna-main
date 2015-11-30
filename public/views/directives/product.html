@@ -2,7 +2,7 @@
 	<!-- Product view -->
 	<div class="product__wrapper">
 		<!-- Label -->
-		<div class="product__label">
+		<div ng-if="value!==3" class="product__label">
 			<div class="product__label-text">
 				-30%
 			</div>
@@ -10,7 +10,7 @@
 		<div class="product__inner">
 			<!-- Img -->
 			<div
-				style="background: url('img/slide-1.jpg'); background-size: cover"
+				style="background: url('img/product.jpg'); background-size: cover"
 				class="product__img">
 			</div>
 			<!-- Cart btn -->
@@ -100,7 +100,7 @@
 				<!-- Price container -->
 				<div class="product__price-container">
 					<!-- Old price -->
-					<div class="product__price-old">
+					<div ng-if="value!==3" class="product__price-old">
 						2300 р./м<sup>2</sup>
 					</div>
 					<!-- New price -->

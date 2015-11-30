@@ -1,5 +1,4 @@
 .benefit {
-	.purple-blue-gradient();
 	width: 100%;
 	height: 380px;
 	position: relative;
@@ -24,19 +23,26 @@
 	}
 	&__title {
 		font-size: 20px;
-		font-weight: 300;
+		font-weight: 100;
 		line-height: 26px;
 		margin: 13px 0 14px;
 	}
 	&__text {
 		font-size: 13px;
-		font-weight: 400;
+		font-weight: 300;
 		line-height: 20px;
+		letter-spacing: 0.3px;
+		opacity: 0.9;
 	}
 	&__shevron {
 		position: absolute;
 		bottom: 27px;
 		z-index: 10;
+		opacity: .3;
+		transition: opacity @animation-time;
+		&:hover{
+			opacity: .4;
+		}
 		&_left {
 			left: 37px;
 		}
