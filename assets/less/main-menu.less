@@ -2,6 +2,13 @@
 	position: absolute;
 	top: 0;
 	z-index: 1;
+	transition: transform @animation-time;
+	&.hidden{
+		transform: rotate(2deg) translateY(-33px);
+		&:hover{
+			transform: rotate(0) translateY(0);
+		}
+	}
 	&__title {
 		margin: 0;
 		transform: rotate(-2deg);

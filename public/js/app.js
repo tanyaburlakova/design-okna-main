@@ -13,7 +13,11 @@ var app = angular.module('myApp', [
 
 		function ($routeProvider) {
 			'use strict';
-
+			var $menu = $('.main-menu'),
+				$w = $(window);
+			$w.on('scroll', function(){
+				$menu.toggleClass('hidden', $w.scrollTop() > 500);
+			});
 			/*$routeProvider
 				.when('/', {
 					redirectTo: '/main'

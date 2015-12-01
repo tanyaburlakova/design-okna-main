@@ -1042,6 +1042,18 @@ button:focus {
   position: absolute;
   top: 0;
   z-index: 1;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+.main-menu.hidden {
+  -webkit-transform: rotate(2deg) translateY(-33px);
+  -ms-transform: rotate(2deg) translateY(-33px);
+  transform: rotate(2deg) translateY(-33px);
+}
+.main-menu.hidden:hover {
+  -webkit-transform: rotate(0) translateY(0);
+  -ms-transform: rotate(0) translateY(0);
+  transform: rotate(0) translateY(0);
 }
 .main-menu__title {
   margin: 0;
