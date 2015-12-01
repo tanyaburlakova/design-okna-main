@@ -4,6 +4,7 @@ var app = angular.module('myApp', [
 		'catalogCtrl',
 		'productPageCtrl',
 		'checkboxDirective',
+		'hiderDirective',
 		'questionDirective',
 		'rangeDirective',
 		'angular-owl-carousel'
@@ -13,11 +14,6 @@ var app = angular.module('myApp', [
 
 		function ($routeProvider) {
 			'use strict';
-			var $menu = $('.main-menu'),
-				$w = $(window);
-			$w.on('scroll', function(){
-				$menu.toggleClass('hidden', $w.scrollTop() > 500);
-			});
 			/*$routeProvider
 				.when('/', {
 					redirectTo: '/main'
@@ -56,6 +52,24 @@ app.constant('API_PATH', 'data/');
 				ceil: 450
 			}
 		};
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('hiderCtrl', [])
+		.controller('HiderCtrl', [
+			'$scope',
+			'$log',
+			'$window',
+			hiderCtrl
+		]);
+
+	function hiderCtrl($scope, $log, $window) {
+		$log.log('hider ctrl');
+
+		$scope.$window = $window;
 	}
 
 })();
@@ -178,6 +192,35 @@ app.constant('API_PATH', 'data/');
 
 	function checkboxDirectiveLink(scope, el, attr) {
 
+	}
+})();
+
+(function () {
+	'use strict';
+
+	angular.module('hiderDirective', ['hiderCtrl'])
+		.directive('hider', [
+			menuHiderDirective
+		]);
+
+	function menuHiderDirective() {
+		return {
+			restrict: 'A',
+			scope: {},
+			replace: true,
+			controller: 'HiderCtrl',
+			link: hiderDirectiveLink
+		};
+	}
+
+	function hiderDirectiveLink(scope, el, attr) {
+		var $window = scope.$window,
+			hidePoint = attr.hiderPoint || 0,
+			className = attr.hiderClass || 'hidden';
+
+		angular.element($window).bind('scroll', function () {
+			el.toggleClass(className, $window.scrollY > hidePoint);
+		});
 	}
 })();
 
