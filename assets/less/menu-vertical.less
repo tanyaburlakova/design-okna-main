@@ -24,12 +24,13 @@
 
 	}
 	&__link {
-		color: #995b7f;
-		text-decoration: none;
+		color: lighten(#000, 30%);
 		opacity: .7;
-		transition: opacity @animation-time;
+		text-decoration: none;
+		transition: color @animation-time, opacty @animation-time;
 		&:hover{
 			opacity: 1;
+			color: #995b7f;
 		}
 	}
 }

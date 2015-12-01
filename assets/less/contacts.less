@@ -13,14 +13,15 @@
 		line-height: 20px;
 	}
 	&__link {
-		color: #995b7f;
+		color: lighten(#000, 30%);
 		font-size: 12px;
 		font-weight: 400;
 		text-decoration: none;
 		opacity: .7;
-		transition: opacity @animation-time;
+		transition: opacity @animation-time, color @animation-time;
 		&:hover{
-			color: opacity 1;
+			color: #995b7f;
+			opacity: 1;
 		}
 	}
 }
