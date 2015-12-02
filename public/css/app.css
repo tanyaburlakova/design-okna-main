@@ -2246,30 +2246,6 @@ button:focus {
   padding: 0 10px;
   margin-bottom: 40px;
 }
-.catalog__more {
-  padding-top: 0px;
-  padding-bottom: 50px;
-  text-align: center;
-}
-.catalog__more-link {
-  display: inline-block;
-  color: #888888;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  opacity: 0.75;
-  padding: 20px;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-}
-.catalog__more-link:hover {
-  opacity: 1;
-}
-.catalog__more-text {
-  margin-left: 10px;
-}
 .catalog_3 .catalog__item {
   width: 33.33333333%;
 }
@@ -2949,6 +2925,30 @@ rzslider .rz-ticks .tick .tick-value {
   font-weight: 500;
   padding: 5px 5px 5px 10px;
   margin: 0 5px;
+}
+.more-btn {
+  padding-top: 0px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.more-btn__link {
+  display: inline-block;
+  color: #888888;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+  padding: 20px;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.more-btn__link:hover {
+  opacity: 1;
+}
+.more-btn__text {
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=../css/app.css.map */

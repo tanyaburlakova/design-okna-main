@@ -71,6 +71,172 @@
 						Римские шторы &mdash; это изделие, сочетающее в себе Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vero inventore officia possimus natus, quas, totam praesentium esse non cumque voluptatum reiciendis nesciunt ea perspiciatis explicabo nisi autem, eius itaque.
 					</p>
 				</div>
+				<!-- Reviews -->
+				<div class="reviews">
+					<!-- Header -->
+					<header class="reviews__header">
+						<!-- Title -->
+						<h2 class="reviews__title">
+							Отзывы о римских шторах (230)
+						</h2>
+						<!-- Rating -->
+						<div class="reviews__rating">
+							<h3 class="reviews__subtitle">
+								Общий рейтинг:
+							</h3>
+							<div class="reviews__rating-container">
+								<!-- Rating -->
+								<input-stars
+									max="5"
+									icon-base="fa fa-fw"
+									icon-empty="fa-circle-o"
+									icon-hover="hover"
+									icon-full="fa-circle"
+									ng-model="YourCtrl.property">
+								 </input-stars>
+								 <div class="reviews__rating-text">
+								 	<strong>4.6</strong> (230 отзывов)
+								 </div>
+							</div>
+						</div>
+					</header>
+					<!-- Content -->
+					<ul class="reviews__list">
+						<li
+							ng-repeat="review in reviewsItems track by $index"
+							class="reviews__item">
+							<!-- Review -->
+							<div class="review">
+								<!-- Author -->
+								<div class="review__author">
+									Михаил Бердянский
+								</div>
+								<!-- Rating -->
+								<input-stars
+									max="5"
+									icon-base="fa fa-fw"
+									icon-empty="fa-circle-o"
+									icon-hover="hover"
+									icon-full="fa-circle"
+									ng-model="YourCtrl.property">
+								 </input-stars>
+								 <!-- Text -->
+								 <p class="review__text">
+								 	I love my new MM Traditional, just love it! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum est consequatur id cupiditate nemo quia ducimus, eos nobis. Ducimus, impedit!
+								 </p>
+								 <!-- Date -->
+								 <time datetime="2013-09-27" class="review__date">
+								 	27 сентября 2013 г
+								 </time>
+							</div>
+						</li>
+					</ul>
+					<!-- Footer -->
+					<footer class="reviews__footer">
+						<!-- More btn -->
+						<div class="more-btn">
+							<a href class="more-btn__link">
+								<i class="icon icon-more"></i>
+								<span class="more-btn__text">
+									Показать еще <span>5</span> отзывов
+								</span>
+							</a>
+						</div>
+						<!-- Add new review -->
+						<button class="btn btn_blue btn_size-2">
+							Написать отзыв
+						</button>
+					</footer>
+				</div>
+				<!-- New review -->
+				<div class="form form_review">
+					<form name="reviewForm" novalidate>
+						<h2 class="form__title">
+							Напишите свой отзыв
+						</h2>
+						<!-- Contacts row -->
+						<div class="form__row">
+							<div class="form__column">
+								<!-- Name -->
+								<div class="field">
+									<input
+										type="text"
+										class="input"
+										name="name"
+										required
+										placeholder="Ваше имя">
+									<!-- Error -->
+									<div
+										ng-if="false"
+										class="error">
+										Это обязательное поле
+									</div>
+								</div>
+							</div>
+							<div class="form__column">
+								<!-- Email -->
+								<div class="field">
+									<input
+										type="email"
+										class="input"
+										name="name"
+										required
+										placeholder="Ваш email (на сайте не публикуется)">
+									<!-- Error -->
+									<div
+										ng-if="false"
+										class="error">
+										Это обязательное поле
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Rating row -->
+						<div class="form__row">
+							<p class="form__text">
+								Ваш рейтинг товару:
+							</p>
+							<div class="field">
+								<input-stars
+									max="5"
+									icon-base="fa fa-fw"
+									icon-empty="fa-circle-o"
+									icon-hover="hover"
+									icon-full="fa-circle"
+									ng-model="YourCtrl.property">
+								 </input-stars>
+								 <!-- Error -->
+								<div
+									ng-if="false"
+									class="error">
+									Это обязательное поле
+								</div>
+							</div>
+						</div>
+						<!-- Text row -->
+						<div class="form__row">
+							<div class="field">
+								<textarea
+									required
+									name="review"
+									class="textarea"></textarea>
+								<!-- Error -->
+								<div
+									ng-if="false"
+									class="error">
+									Это обязательное поле
+								</div>
+							</div>
+						</div>
+						<!-- Text -->
+						<p class="form__text form__text_grey">
+							Внимание! Публикация отзыва производится только после предваритеьной модерации
+						</p>
+						<button class="btn btn_red btn_size-2">
+							Отправить отзыв
+						</button>
+					</form>
+				</div>
 			</div>
 			<div class="column-2">
 				<!-- Specifications -->
@@ -94,7 +260,7 @@
 						Under Dima's construction :-p
 					</h1>
 				</div>
-				<!-- Text block -->
+				<!-- Text block with img-->
 				<div class="text-block">
 					<div class="text-block__column">
 						<!-- Title -->
