@@ -446,20 +446,20 @@
 					</div>
 				</div>
 			</div>
-			<!-- Catalog -->
-			<div class="catalog">
-				<!-- Title -->
-				<h2 class="catalog__title">
-					Вам также может понравиться
-				</h2>
-				<ul class="catalog__list">
-					<li
-						ng-repeat="(key, value) in catalogItems"
-						class="catalog__item">
-						<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-					</li>
-				</ul>
-			</div>
+		</div>
+		<!-- Catalog -->
+		<div class="catalog">
+			<!-- Title -->
+			<h2 class="catalog__title">
+				Вам также может понравиться
+			</h2>
+			<ul class="catalog__list">
+				<li
+					ng-repeat="(key, value) in catalogItems"
+					class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+				</li>
+			</ul>
 		</div>
 	</main>
 	<!-- Footer -->

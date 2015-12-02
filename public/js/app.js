@@ -33,6 +33,41 @@ app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
+	angular.module('benefitsCtrl', ['benefitsService'])
+		.controller('BenefitsCtrl', [
+			'$scope',
+			'$log',
+			'BenefitsService',
+			benefitsCtrl
+		]);
+
+	function benefitsCtrl($scope, $log, BenefitsService) {
+		$log.log('benefits ctrl');
+
+		var url = $scope.url;
+
+		$scope.init = function () {
+			$scope.getBenefits(url);
+		};
+
+		$scope.getBenefits = function (url) {
+			BenefitsService.getBenefits(url)
+				.then(function (data) {
+					// Success
+					$scope.benefits = data;
+				}, function (err) {
+					// Error
+					$log.error(err);
+				});
+		};
+
+		$scope.init();
+	}
+
+})();
+
+(function () {
+	'use strict';
 	angular.module('catalogCtrl', [])
 		.controller('CatalogCtrl', [
 			'$scope',
@@ -77,7 +112,7 @@ app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
-	angular.module('mainCtrl', [])
+	angular.module('mainCtrl', ['benefitsDirective'])
 		.controller('MainCtrl', [
 			'$scope',
 			'$log',
@@ -92,23 +127,6 @@ app.constant('API_PATH', 'data/');
 		];
 
 		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
-
-		$scope.benefitsItems = [{
-			bgImg: 'img/slide-1.jpg',
-			title: 'Экологичность материалов1',
-			img: 'img/tree.svg',
-			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
-		}, {
-			bgImg: 'img/slide-2.jpg',
-			title: 'Экологичность материалов2',
-			img: 'img/tree.svg',
-			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
-		}, {
-			bgImg: 'img/slide-3.jpg',
-			title: 'Экологичность материалов3',
-			img: 'img/tree.svg',
-			text: 'У каждого из наших поставщиков имеются сертификаты безовасности, в которых подтверждено, что пластик не токсичен'
-		}];
 
 		$scope.catalogData = {};
 	}
@@ -187,37 +205,28 @@ app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
-	angular.module('questionService', []).
-	factory('QuestionService', [
-		'API_PATH',
-		'$http',
-		'$q',
-		questionService
-	]);
 
-	function questionService(API_PATH, $http, $q) {
-		var service = {
-			getQuestion: getQuestion
+	angular.module('benefitsDirective', ['benefitsCtrl'])
+		.directive('benefits', [
+			benefitsDirective
+		]);
+
+	function benefitsDirective() {
+		return {
+			restrict: 'E',
+			templateUrl: 'views/directives/benefits.html',
+			controller: 'BenefitsCtrl',
+			scope: {
+				title: '@',
+				url: '@'
+			},
+			replace: true,
+			link: benefitsDirectiveLink
 		};
-		return service;
+	}
 
-		function getQuestion() {
-			var url = API_PATH + 'questions.json',
-				defer = $q.defer();
-
-			$http.get(url)
-				.success(function (data) {
-					defer.resolve(data);
-				})
-				.error(function (res, errCode) {
-					defer.reject({
-						code: errCode,
-						text: 'api access [%s] error!'.replace('%s', url)
-					});
-				});
-
-			return defer.promise;
-		}
+	function benefitsDirectiveLink(scope, el, attr) {
+		attr.url = attr.url || '#';
 	}
 })();
 
@@ -392,6 +401,78 @@ app.constant('API_PATH', 'data/');
 				scope.max = scope.min;
 			}
 		});
+	}
+})();
+
+(function () {
+	'use strict';
+	angular.module('benefitsService', []).
+	factory('BenefitsService', [
+		'API_PATH',
+		'$http',
+		'$q',
+		benefitsService
+	]);
+
+	function benefitsService(API_PATH, $http, $q) {
+		var service = {
+			getBenefits: getBenefits
+		};
+		return service;
+
+		function getBenefits(apiUrl) {
+			var url = API_PATH + apiUrl,
+				defer = $q.defer();
+
+			$http.get(url)
+				.success(function (data) {
+					defer.resolve(data);
+				})
+				.error(function (res, errCode) {
+					defer.reject({
+						code: errCode,
+						text: 'api access [%s] error!'.replace('%s', url)
+					});
+				});
+
+			return defer.promise;
+		}
+	}
+})();
+
+(function () {
+	'use strict';
+	angular.module('questionService', []).
+	factory('QuestionService', [
+		'API_PATH',
+		'$http',
+		'$q',
+		questionService
+	]);
+
+	function questionService(API_PATH, $http, $q) {
+		var service = {
+			getQuestion: getQuestion
+		};
+		return service;
+
+		function getQuestion() {
+			var url = API_PATH + 'questions.json',
+				defer = $q.defer();
+
+			$http.get(url)
+				.success(function (data) {
+					defer.resolve(data);
+				})
+				.error(function (res, errCode) {
+					defer.reject({
+						code: errCode,
+						text: 'api access [%s] error!'.replace('%s', url)
+					});
+				});
+
+			return defer.promise;
+		}
 	}
 })();
 

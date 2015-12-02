@@ -282,51 +282,10 @@
 		<div class="container">
 			<div class="column-1">
 				<!-- Benefits -->
-				<div class="benefits">
-					<!-- Label -->
-					<div class="benefits__label">
-						Преимущества
-					</div>
-					<!-- Left -->
-					<a
-						href
-						ng-click="owlCarousel.benefitsCarousel.prev()"
-						class="benefit__shevron benefit__shevron_left">
-						<i class="icon icon-shevron-left"></i>
-					</a>
-					<!-- Right -->
-					<a
-						href
-						ng-click="owlCarousel.benefitsCarousel.next()"
-						class="benefit__shevron benefit__shevron_right">
-						<i class="icon icon-shevron-right"></i>
-					</a>
-					<!-- Slider -->
-					<div
-						id="benefitsCarousel"
-						items="1"
-						pagination="false"
-						mouse-drag="false"
-						owl-carousel="benefitsItems">
-						<div class="item">
-							<!-- Benefit -->
-							<div class="benefit">
-								<div class="benefit__inner">
-									<!-- Img -->
-									<img ng-src="{{item.img}}" alt="" class="benefit__img">
-									<!-- Title -->
-									<h2 class="benefit__title">
-										{{item.title}}
-									</h2>
-									<!-- Text -->
-									<p class="benefit__text">
-										{{item.text}}
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<benefits
+					title="Преимущества"
+					url="benefits.json">
+				</benefits>
 			</div>
 			<div class="column-1">
 				<!-- Product -->
