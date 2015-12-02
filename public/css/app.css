@@ -1125,9 +1125,9 @@ button:focus {
 }
 @media only screen and (min-width: 1280px) {
   .main-menu_green.hidden {
-    -webkit-transform: rotate(2deg) translateY(-31px);
-    -ms-transform: rotate(2deg) translateY(-31px);
-    transform: rotate(2deg) translateY(-31px);
+    -webkit-transform: rotate(2deg) translateY(-33px);
+    -ms-transform: rotate(2deg) translateY(-33px);
+    transform: rotate(2deg) translateY(-33px);
   }
 }
 .main-menu_green .main-menu__title {
@@ -1169,9 +1169,9 @@ button:focus {
 }
 @media only screen and (min-width: 1280px) {
   .main-menu_blue.hidden {
-    -webkit-transform: rotate(2.4deg) translateY(-36px);
-    -ms-transform: rotate(2.4deg) translateY(-36px);
-    transform: rotate(2.4deg) translateY(-36px);
+    -webkit-transform: rotate(2.4deg) translateY(-38px);
+    -ms-transform: rotate(2.4deg) translateY(-38px);
+    transform: rotate(2.4deg) translateY(-38px);
   }
 }
 .main-menu_blue .main-menu__title {
