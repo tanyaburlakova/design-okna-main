@@ -2917,15 +2917,7 @@ rzslider .rz-ticks .tick .tick-value {
   vertical-align: middle;
 }
 .range .input {
-  border: 1px solid #d4d7d6;
-  border-radius: 3px;
   width: 70px;
-  vertical-align: middle;
-  color: #373534;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 5px 5px 5px 10px;
-  margin: 0 5px;
 }
 .more-btn {
   padding-top: 0px;
@@ -2950,6 +2942,18 @@ rzslider .rz-ticks .tick .tick-value {
 }
 .more-btn__text {
   margin-left: 10px;
+}
+.input {
+  border: 1px solid #d4d7d6;
+  border-radius: 3px;
+  width: 70px;
+  vertical-align: middle;
+  color: #373534;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 5px 5px 10px;
+  margin: 0 5px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=../css/app.css.map */
