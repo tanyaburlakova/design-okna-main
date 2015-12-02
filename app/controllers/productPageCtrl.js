@@ -12,6 +12,8 @@
 
 		$scope.catalogItems = [1, 2, 3, 4];
 		$scope.reviewsItems = [1, 2];
+		$scope.gallery = {};
+		$scope.gallery.currentImage = 'img/slide-1.jpg';
 
 	}
 

@@ -199,28 +199,50 @@
 				<div class="gallery">
 					<!-- Main img -->
 					<div
-						style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
+						ng-style="{'background': 'url(' + gallery.currentImage + ') center no-repeat', 'background-size': 'cover'}"
 						class="gallery__main-img">
 					</div>
 					<!-- List -->
 					<ul class="gallery__list">
 						<li class="gallery__item">
-							<div
+							<input
+								ng-checked="true"
+								type="radio"
+								value="img/slide-1.jpg"
+								ng-model="gallery.currentImage"
+								class="gallery__input"
+								id="galleryItem-1">
+							<label
 								style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
-								class="gallery__item-img">
-							</div>
+								class="gallery__item-img"
+								for="galleryItem-1">
+							</label>
 						</li>
 						<li class="gallery__item">
-							<div
-								style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
-								class="gallery__item-img">
-							</div>
+							<input
+								type="radio"
+								value="img/slide-2.jpg"
+								ng-model="gallery.currentImage"
+								class="gallery__input"
+								id="galleryItem-2">
+							<label
+								style="background: url(img/slide-2.jpg) center no-repeat; background-size: cover;"
+								class="gallery__item-img"
+								for="galleryItem-2">
+							</label>
 						</li>
 						<li class="gallery__item">
-							<div
-								style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
-								class="gallery__item-img">
-							</div>
+							<input
+								type="radio"
+								value="img/slide-3.jpg"
+								ng-model="gallery.currentImage"
+								class="gallery__input"
+								id="galleryItem-3">
+							<label
+								style="background: url(img/slide-3.jpg) center no-repeat; background-size: cover;"
+								class="gallery__item-img"
+								for="galleryItem-3">
+							</label>
 						</li>
 					</ul>
 				</div>
