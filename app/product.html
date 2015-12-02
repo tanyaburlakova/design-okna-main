@@ -282,21 +282,53 @@
 						</a>
 					</div>
 				</div>
+				<!-- Text block with benefits-->
+				<div class="text-block">
+					<div class="text-block__column">
+						<div class="text-block__container">
+							<!-- Title -->
+							<h2 class="text-block__title">
+								Карниз для римских штор
+							</h2>
+							<p class="text-block__text">
+								Мы производим карниз для римских штор только с роторно-цепочным механизмом
+							</p>
+						</div>
+						<div class="text-block__container">
+							<!-- Title -->
+							<h2 class="text-block__title">
+								Сколько стоит карниз?
+							</h2>
+							<p class="text-block__text">
+								В комплект заказа входят: lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, neque!
+							</p>
+						</div>
+					</div>
+					<div class="text-block__column">
+						<!-- Benefits -->
+						<benefits
+							title="Преимущества"
+							url="benefits.json">
+						</benefits>
+					</div>
+				</div>
 			</div>
 		</div>
 		<!-- Catalog -->
-		<div class="catalog">
-			<!-- Title -->
-			<h2 class="catalog__title">
-				Вам также может понравиться
-			</h2>
-			<ul class="catalog__list">
-				<li
-					ng-repeat="(key, value) in catalogItems"
-					class="catalog__item">
-					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-				</li>
-			</ul>
+		<div class="container container_product-page">
+			<div class="catalog">
+				<!-- Title -->
+				<h2 class="catalog__title">
+					Вам также может понравиться
+				</h2>
+				<ul class="catalog__list">
+					<li
+						ng-repeat="(key, value) in catalogItems"
+						class="catalog__item">
+						<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</main>
 	<!-- Footer -->
