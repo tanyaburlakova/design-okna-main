@@ -4,7 +4,7 @@
 		margin: 0;
 		padding: 34px 30px 27px;
 		opacity: 0.8;
-		color: #000;
+		color: #353535;
 		font-size: 14px;
 		font-weight: 700;
 		letter-spacing: 0.1em;
@@ -27,16 +27,21 @@
 		text-decoration: none;
 		color: @text-color;
 		background: #fff;
-		border-top: solid 1px #ccc;
-		transition: background-color .3s ease;
+		border-top: solid 1px #eee;
+		transition: background-color @animation-time;
 		&:hover{
 			background-color: #f1e281;
+			.icon{
+				opacity: .6;
+			}
 		}
 		.icon {
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
 			right: 25px;
+			opacity: .3;
+			transition: opacity @animation-time;
 		}
 	}
 	&__link-text {

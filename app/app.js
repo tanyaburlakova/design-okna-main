@@ -5,6 +5,7 @@ var app = angular.module('myApp', [
 		'productPageCtrl',
 		'checkboxDirective',
 		'hiderDirective',
+		'parallaxDirective',
 		'questionDirective',
 		'rangeDirective',
 		'angular-owl-carousel'
