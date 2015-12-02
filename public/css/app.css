@@ -1045,15 +1045,12 @@ button:focus {
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-.main-menu.hidden {
-  -webkit-transform: rotate(2deg) translateY(-33px);
-  -ms-transform: rotate(2deg) translateY(-33px);
-  transform: rotate(2deg) translateY(-33px);
-}
-.main-menu.hidden:hover {
-  -webkit-transform: rotate(0) translateY(0);
-  -ms-transform: rotate(0) translateY(0);
-  transform: rotate(0) translateY(0);
+@media only screen and (min-width: 1280px) {
+  .main-menu.hidden:hover {
+    -webkit-transform: rotate(0) translateY(0);
+    -ms-transform: rotate(0) translateY(0);
+    transform: rotate(0) translateY(0);
+  }
 }
 .main-menu__title {
   margin: 0;
@@ -1126,6 +1123,13 @@ button:focus {
   height: 92px;
   top: 0;
 }
+@media only screen and (min-width: 1280px) {
+  .main-menu_green.hidden {
+    -webkit-transform: rotate(2deg) translateY(-31px);
+    -ms-transform: rotate(2deg) translateY(-31px);
+    transform: rotate(2deg) translateY(-31px);
+  }
+}
 .main-menu_green .main-menu__title {
   margin-left: 70px;
   -webkit-transform: rotate(-2deg);
@@ -1162,6 +1166,13 @@ button:focus {
   background: url('../img/menu_blue.png') no-repeat center;
   width: 463px;
   height: 97px;
+}
+@media only screen and (min-width: 1280px) {
+  .main-menu_blue.hidden {
+    -webkit-transform: rotate(2.4deg) translateY(-36px);
+    -ms-transform: rotate(2.4deg) translateY(-36px);
+    transform: rotate(2.4deg) translateY(-36px);
+  }
 }
 .main-menu_blue .main-menu__title {
   margin-top: 10px;

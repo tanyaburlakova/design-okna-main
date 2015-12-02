@@ -3,10 +3,11 @@
 	top: 0;
 	z-index: 1;
 	transition: transform @animation-time;
-	&.hidden{
-		transform: rotate(2deg) translateY(-33px);
-		&:hover{
-			transform: rotate(0) translateY(0);
+	@media only screen and (min-width:1280px){
+		&.hidden{
+			&:hover{
+				transform: rotate(0) translateY(0);
+			}
 		}
 	}
 	&__title {
@@ -72,6 +73,11 @@
 	&_green {
 		.img('menu_green.png');
 		top: 0;
+		@media only screen and (min-width:1280px){
+			&.hidden{
+				transform: rotate(2deg) translateY(-31px);
+			}
+		}
 		.main-menu__title {
 			margin-left: 70px;
 			transform: rotate(-2deg);
@@ -101,6 +107,11 @@
 	&_blue {
 		top: 2px;
 		.img('menu_blue.png');
+		@media only screen and (min-width:1280px){
+			&.hidden{
+				transform: rotate(2.4deg) translateY(-36px);
+			}
+		}
 		.main-menu__title {
 			margin-top: 10px;
 			margin-left: 90px;
