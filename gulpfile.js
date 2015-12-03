@@ -59,9 +59,9 @@ gulp.task('copyAssets', function () {
  ******************************/
 gulp.task('svgstore', function() {
 	'use strict';
-	gulp.src('assets/img/*.svg')
+	gulp.src('assets/icons/*.svg')
 		.pipe(svgstore())
-		.pipe(gulp.dest('public/img'))
+		.pipe(gulp.dest('public/icons'))
 });
 
 /******************************
@@ -78,6 +78,7 @@ gulp.task('copyViews', function () {
  * JS plugins
  ******************************/
 gulp.task('pluginsConcat', function () {
+	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.min.js');
 	gulp.src(bowerFiles)
 		.pipe(concat('plugins.min.js'))
 	// .pipe(uglify())
