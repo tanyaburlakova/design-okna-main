@@ -5,6 +5,7 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	minifyCSS = require('gulp-minify-css'),
 	fileinclude = require('gulp-file-include'),
+	svgstore = require('gulp-svgstore'),
 	mainBowerFiles = require('main-bower-files'),
 	bowerFiles = mainBowerFiles(),
 	uglify = require('gulp-uglify'),
@@ -51,6 +52,16 @@ gulp.task('copyAssets', function () {
 		'!assets/**/*.less'
 	])
 		.pipe(gulp.dest('public'));
+});
+
+/******************************
+ * SVG stuff
+ ******************************/
+gulp.task('svgstore', function() {
+	'use strict';
+	gulp.src('assets/img/*.svg')
+		.pipe(svgstore())
+		.pipe(gulp.dest('public/img'))
 });
 
 /******************************
