@@ -3046,5 +3046,10 @@ rzslider .rz-ticks .tick .tick-value {
   float: left;
   width: 50%;
 }
+@media (min-width: 1280px) {
+  .event__npc {
+    width: 50px;
+  }
+}
 
 /*# sourceMappingURL=../css/app.css.map */
