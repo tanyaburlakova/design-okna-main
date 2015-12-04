@@ -6,6 +6,7 @@ var gulp = require('gulp'),
 	minifyCSS = require('gulp-minify-css'),
 	fileinclude = require('gulp-file-include'),
 	svgstore = require('gulp-svgstore'),
+	svg2png = require('gulp-svg2png'),
 	mainBowerFiles = require('main-bower-files'),
 	bowerFiles = mainBowerFiles(),
 	uglify = require('gulp-uglify'),
@@ -63,6 +64,12 @@ gulp.task('svgstore', function() {
 		.pipe(svgstore())
 		.pipe(gulp.dest('public/icons'))
 });
+gulp.task('svg2png', function(){
+	'use strict';
+	gulp.src('assets/icons/*.svg')
+		.pipe(svg2png())
+		.pipe(gulp.dest('public/icons'));
+});
 
 /******************************
  * Copy views to public
@@ -78,7 +85,7 @@ gulp.task('copyViews', function () {
  * JS plugins
  ******************************/
 gulp.task('pluginsConcat', function () {
-	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.min.js');
+	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.legacy.min.js');
 	gulp.src(bowerFiles)
 		.pipe(concat('plugins.min.js'))
 	// .pipe(uglify())

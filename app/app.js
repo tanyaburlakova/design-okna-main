@@ -30,3 +30,11 @@ var app = angular.module('myApp', [
 	]);
 
 app.constant('API_PATH', 'data/');
+$(function() {
+	svg4everybody({
+		fallback: function(src, svg, use){
+			var className = $(svg).attr('class');
+			$(svg).replaceWith($('<span/>').addClass(className).css('background-image', 'url(' + src.replace('icons.svg#', '') + '.png)'));
+		}
+	});
+});
