@@ -30,7 +30,14 @@ var app = angular.module('myApp', [
 	]);
 
 app.constant('API_PATH', 'data/');
-
+$(function() {
+	svg4everybody({
+		fallback: function(src, svg, use){
+			var className = $(svg).attr('class');
+			$(svg).replaceWith($('<span/>').addClass(className).css('background-image', 'url(' + src.replace('icons.svg#', '') + '.png)'));
+		}
+	});
+});
 (function () {
 	'use strict';
 	angular.module('benefitsCtrl', ['benefitsService'])
@@ -207,78 +214,6 @@ app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
-	angular.module('benefitsService', []).
-	factory('BenefitsService', [
-		'API_PATH',
-		'$http',
-		'$q',
-		benefitsService
-	]);
-
-	function benefitsService(API_PATH, $http, $q) {
-		var service = {
-			getBenefits: getBenefits
-		};
-		return service;
-
-		function getBenefits(apiUrl) {
-			var url = API_PATH + apiUrl,
-				defer = $q.defer();
-
-			$http.get(url)
-				.success(function (data) {
-					defer.resolve(data);
-				})
-				.error(function (res, errCode) {
-					defer.reject({
-						code: errCode,
-						text: 'api access [%s] error!'.replace('%s', url)
-					});
-				});
-
-			return defer.promise;
-		}
-	}
-})();
-
-(function () {
-	'use strict';
-	angular.module('questionService', []).
-	factory('QuestionService', [
-		'API_PATH',
-		'$http',
-		'$q',
-		questionService
-	]);
-
-	function questionService(API_PATH, $http, $q) {
-		var service = {
-			getQuestion: getQuestion
-		};
-		return service;
-
-		function getQuestion() {
-			var url = API_PATH + 'questions.json',
-				defer = $q.defer();
-
-			$http.get(url)
-				.success(function (data) {
-					defer.resolve(data);
-				})
-				.error(function (res, errCode) {
-					defer.reject({
-						code: errCode,
-						text: 'api access [%s] error!'.replace('%s', url)
-					});
-				});
-
-			return defer.promise;
-		}
-	}
-})();
-
-(function () {
-	'use strict';
 
 	angular.module('benefitsDirective', ['benefitsCtrl'])
 		.directive('benefits', [
@@ -388,7 +323,7 @@ app.constant('API_PATH', 'data/');
 
 		angular.element($window).bind('scroll', function () {
 			if (($window.scrollY <= end) && ($window.scrollY > start)){
-				el.css('background-position-y', 50 + $window.scrollY/10 + '%');
+				el.css('transform', 'translateY(' + $window.scrollY/5 + 'px)');
 			}
 		});
 	}
@@ -475,6 +410,78 @@ app.constant('API_PATH', 'data/');
 				scope.max = scope.min;
 			}
 		});
+	}
+})();
+
+(function () {
+	'use strict';
+	angular.module('benefitsService', []).
+	factory('BenefitsService', [
+		'API_PATH',
+		'$http',
+		'$q',
+		benefitsService
+	]);
+
+	function benefitsService(API_PATH, $http, $q) {
+		var service = {
+			getBenefits: getBenefits
+		};
+		return service;
+
+		function getBenefits(apiUrl) {
+			var url = API_PATH + apiUrl,
+				defer = $q.defer();
+
+			$http.get(url)
+				.success(function (data) {
+					defer.resolve(data);
+				})
+				.error(function (res, errCode) {
+					defer.reject({
+						code: errCode,
+						text: 'api access [%s] error!'.replace('%s', url)
+					});
+				});
+
+			return defer.promise;
+		}
+	}
+})();
+
+(function () {
+	'use strict';
+	angular.module('questionService', []).
+	factory('QuestionService', [
+		'API_PATH',
+		'$http',
+		'$q',
+		questionService
+	]);
+
+	function questionService(API_PATH, $http, $q) {
+		var service = {
+			getQuestion: getQuestion
+		};
+		return service;
+
+		function getQuestion() {
+			var url = API_PATH + 'questions.json',
+				defer = $q.defer();
+
+			$http.get(url)
+				.success(function (data) {
+					defer.resolve(data);
+				})
+				.error(function (res, errCode) {
+					defer.reject({
+						code: errCode,
+						text: 'api access [%s] error!'.replace('%s', url)
+					});
+				});
+
+			return defer.promise;
+		}
 	}
 })();
 
