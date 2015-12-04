@@ -3,6 +3,43 @@
 	margin-bottom: 20px;
 	position: relative;
 	.clearfix();
+	&__column {
+		float: left;
+		width: 50%;
+		&:first-child {
+
+		}
+		&:last-child {
+
+		}
+		&_padding {
+			padding: 40px;
+		}
+	}
+	&__container {
+
+	}
+	&__title {
+		margin: 0;
+	}
+	&__text {
+
+	}
+	&__img {
+		width: 100%;
+	}
+	&_benefits {
+		.text-block__column {
+			height: 380px;
+		}
+	}
+	&_scheme {
+		.text-block__column {
+			&:last-child {
+				text-align: center;
+			}
+		}
+	}
 	&_line {
 		&:before {
 			content: '';
@@ -14,18 +51,5 @@
 			height: 100%;
 			background: #ccc;
 		}
-	}
-	&__column {
-		float: left;
-		width: 50%;
-	}
-	&__container {
-
-	}
-	&__title {
-
-	}
-	&__text {
-
 	}
 }

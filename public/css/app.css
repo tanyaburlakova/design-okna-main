@@ -1585,6 +1585,7 @@ button:focus {
   color: #fff;
   position: relative;
   background: url(../img/bg_benefits.jpg);
+  width: 100%;
   height: 380px;
 }
 .benefits__label {
@@ -2741,6 +2742,8 @@ button:focus {
   margin-left: 20px;
 }
 .form {
+  background: #fff;
+  padding: 40px;
   zoom: 1;
 }
 .form:before,
@@ -2750,6 +2753,16 @@ button:focus {
 }
 .form:after {
   clear: both;
+}
+.form__column {
+  float: left;
+  width: 50%;
+}
+.form__column:first-child {
+  padding-right: 10px;
+}
+.form__column:last-child {
+  padding-left: 10px;
 }
 .form__fieldset {
   border: 0;
@@ -2773,6 +2786,7 @@ button:focus {
   margin-bottom: 15px;
   display: inline-block;
   width: 100%;
+  position: relative;
 }
 /**
  * Angular JS slider directive
@@ -2914,6 +2928,7 @@ rzslider .rz-ticks .tick .tick-value {
 }
 .range .input {
   width: 70px;
+  margin: 0 5px;
 }
 .more-btn {
   padding-top: 0px;
@@ -2948,7 +2963,6 @@ rzslider .rz-ticks .tick .tick-value {
   font-size: 14px;
   font-weight: 500;
   padding: 5px 5px 5px 10px;
-  margin: 0 5px;
   width: 100%;
 }
 .ribbon-title {
@@ -3032,6 +3046,25 @@ rzslider .rz-ticks .tick .tick-value {
 .text-block:after {
   clear: both;
 }
+.text-block__column {
+  float: left;
+  width: 50%;
+}
+.text-block__column_padding {
+  padding: 40px;
+}
+.text-block__title {
+  margin: 0;
+}
+.text-block__img {
+  width: 100%;
+}
+.text-block_benefits .text-block__column {
+  height: 380px;
+}
+.text-block_scheme .text-block__column:last-child {
+  text-align: center;
+}
 .text-block_line:before {
   content: '';
   position: absolute;
@@ -3042,9 +3075,56 @@ rzslider .rz-ticks .tick .tick-value {
   height: 100%;
   background: #ccc;
 }
-.text-block__column {
+.reviews {
+  background: #fff;
+  padding: 40px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.reviews__title {
+  margin: 0;
+}
+.reviews__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.reviews__item {
+  padding: 20px 0;
+  border-bottom: solid 1px #ccc;
+}
+.reviews__footer {
+  padding: 20px 0;
+  zoom: 1;
+}
+.reviews__footer:before,
+.reviews__footer:after {
+  content: "";
+  display: table;
+}
+.reviews__footer:after {
+  clear: both;
+}
+.reviews__footer .more-btn {
   float: left;
-  width: 50%;
+  padding-bottom: 0;
+}
+.reviews__footer .btn {
+  float: right;
+  margin-top: 13px;
+}
+.textarea {
+  border: 1px solid #d4d7d6;
+  border-radius: 3px;
+  width: 70px;
+  vertical-align: middle;
+  color: #373534;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 5px 5px 10px;
+  width: 100%;
+  height: 160px;
+  resize: none;
 }
 @media (min-width: 1280px) {
   .event__npc {
