@@ -2976,6 +2976,7 @@ rzslider .rz-ticks .tick .tick-value {
 .gallery {
   background: #fff;
   padding: 20px;
+  margin-bottom: 20px;
 }
 .gallery__main-img {
   width: 100%;
@@ -3019,6 +3020,39 @@ rzslider .rz-ticks .tick .tick-value {
 }
 .gallery__input:checked + .gallery__item-img {
   outline: solid 3px blue;
+}
+.specifications {
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.text-block {
+  background: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  zoom: 1;
+}
+.text-block:before,
+.text-block:after {
+  content: "";
+  display: table;
+}
+.text-block:after {
+  clear: both;
+}
+.text-block_line:before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: #ccc;
+}
+.text-block__column {
+  float: left;
+  width: 50%;
 }
 
 /*# sourceMappingURL=../css/app.css.map */
