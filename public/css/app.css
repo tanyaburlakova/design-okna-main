@@ -3062,8 +3062,15 @@ rzslider .rz-ticks .tick .tick-value {
 .text-block_benefits .text-block__column {
   height: 380px;
 }
+.text-block_scheme .text-block__title {
+  text-align: left;
+}
 .text-block_scheme .text-block__column:last-child {
   text-align: center;
+}
+.text-block_scheme .text-block__column .btn {
+  float: none;
+  display: inline-block;
 }
 .text-block_line:before {
   content: '';
