@@ -382,7 +382,7 @@ button:focus {
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  position: relative;
+  position: static;
   zoom: 1;
 }
 .container:before,
@@ -2442,9 +2442,16 @@ button:focus {
 .image-gradient {
   height: 240px;
   position: relative;
+  overflow: hidden;
+}
+.image-gradient__image {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: transform;
+  height: 400px;
+  margin-top: -80px;
+  background-size: cover;
+  background-position: center;
 }
 .image-gradient:before {
   content: '';
@@ -2456,6 +2463,7 @@ button:focus {
   background: -webkit-linear-gradient(top, rgba(238, 238, 238, 0) 0%, #eeeeee 100%);
   background: linear-gradient(to bottom, rgba(238, 238, 238, 0) 0%, #eeeeee 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00eeeeee', endColorstr='#eeeeee', GradientType=0);
+  z-index: 10;
 }
 .article-set {
   background: #fff;
