@@ -316,7 +316,7 @@ app.constant('API_PATH', 'data/');
 
 		angular.element($window).bind('scroll', function () {
 			if (($window.scrollY <= end) && ($window.scrollY > start)){
-				el.css('background-position-y', 50 + $window.scrollY/10 + '%');
+				el.css('background-position-y', 50 - $window.scrollY/10 + '%');
 			}
 		});
 	}
