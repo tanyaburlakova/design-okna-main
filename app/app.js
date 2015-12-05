@@ -8,6 +8,7 @@ var app = angular.module('myApp', [
 		'parallaxDirective',
 		'questionDirective',
 		'rangeDirective',
+		'youtube-embed',
 		'angular-owl-carousel'
 	])
 	.config([
@@ -30,9 +31,9 @@ var app = angular.module('myApp', [
 	]);
 
 app.constant('API_PATH', 'data/');
-$(function() {
+$(function () {
 	svg4everybody({
-		fallback: function(src, svg, use){
+		fallback: function (src, svg, use) {
 			var className = $(svg).attr('class');
 			$(svg).replaceWith($('<span/>').addClass(className).css('background-image', 'url(' + src.replace('icons.svg#', '') + '.png)'));
 		}

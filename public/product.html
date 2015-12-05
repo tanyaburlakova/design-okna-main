@@ -424,26 +424,22 @@
 				</div>
 			</div>
 			<div class="column-2">
-				<!-- Specifications -->
-				<div class="specifications">
-					<!-- Price -->
-					<div class="specifications__price-container">
+				<!-- Price block -->
+				<div class="price-block">
+					<div class="price-block__container">
 						<!-- Old price -->
-						<div class="specifications__price-old">
+						<div class="price-block__old">
 							2300 р./м<sup>2</sup>
 						</div>
 						<!-- New price -->
-						<div class="specifications__price-new">
+						<div class="price-block__new">
 							<strong>от 1200 р./м<sup>2</sup></strong>
 						</div>
-						<!-- Description -->
-						<p class="specifications__description">
-							Стоимость зависит от выбора материала и размеров
-						</p>
 					</div>
-					<h1>
-						Under Dima's construction :-p
-					</h1>
+					<!-- Description -->
+					<p class="price-block__text">
+						Стоимость зависит от выбора материала и размеров
+					</p>
 				</div>
 				<!-- Text block with img-->
 				<div class="text-block text-block_line text-block_scheme">
@@ -487,6 +483,13 @@
 							<p class="text-block__text">
 								В комплект заказа входят: lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, neque!
 							</p>
+							<!-- Price block -->
+							<div class="price-block">
+								<!-- New price -->
+								<div class="price-block__new">
+									<strong>от 1200 р./м<sup>2</sup></strong>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="text-block__column">
@@ -502,6 +505,9 @@
 					<h2 class="video__title">
 						Видео о римских шторах
 					</h2>
+					<youtube-video
+						video-id="getYoutubeId('https://www.youtube.com/watch?v=VfWiuLsw3Ag')">
+					</youtube-video>
 				</div>
 			</div>
 		</div>
@@ -864,6 +870,7 @@
 	</div>
 </footer>
 
+	<script src="https://www.youtube.com/iframe_api"></script>
 	<script src="js/plugins.min.js"></script>
 	<script src="js/app.js"></script>
 </body>

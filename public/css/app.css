@@ -3133,6 +3133,13 @@ rzslider .rz-ticks .tick .tick-value {
   height: 160px;
   resize: none;
 }
+.video {
+  padding: 30px;
+  background: #fff;
+}
+.video iframe {
+  width: 100%;
+}
 @media (min-width: 1280px) {
   .event__npc {
     width: 50px;
