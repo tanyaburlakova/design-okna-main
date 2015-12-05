@@ -2743,7 +2743,6 @@ button:focus {
 }
 .form {
   background: #fff;
-  padding: 40px;
   zoom: 1;
 }
 .form:before,

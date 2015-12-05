@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('mainCtrl', ['benefitsDirective'])
+	angular.module('mainCtrl', [])
 		.controller('MainCtrl', [
 			'$scope',
 			'$log',
@@ -10,13 +10,15 @@
 	function mainCtrl($scope, $log) {
 		$log.log('main ctrl');
 
-		$scope.bigSliderItems = [
-			'img/slide-1.jpg'
-		];
+		$(function () {
+			svg4everybody({
+				fallback: function (src, svg, use) {
+					var className = $(svg).attr('class');
+					$(svg).replaceWith($('<span/>').addClass(className).css('background-image', 'url(' + src.replace('icons.svg#', '') + '.png)'));
+				}
+			});
+		});
 
-		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
-
-		$scope.catalogData = {};
 	}
 
 })();

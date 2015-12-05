@@ -14,6 +14,7 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	rename = require('gulp-rename'),
 	plumber = require('gulp-plumber'),
+	modRewrite = require('connect-modrewrite'),
 	notify = require('gulp-notify');
 
 console.info('********** Bower Files **********');
@@ -49,22 +50,22 @@ gulp.task('build', [
 gulp.task('copyAssets', function () {
 	'use strict';
 	gulp.src([
-		'assets/**/*.*',
-		'!assets/**/*.less'
-	])
+			'assets/**/*.*',
+			'!assets/**/*.less'
+		])
 		.pipe(gulp.dest('public'));
 });
 
 /******************************
  * SVG stuff
  ******************************/
-gulp.task('svgstore', function() {
+gulp.task('svgstore', function () {
 	'use strict';
 	gulp.src('assets/icons/*.svg')
 		.pipe(svgstore())
-		.pipe(gulp.dest('public/icons'))
+		.pipe(gulp.dest('public/icons'));
 });
-gulp.task('svg2png', function(){
+gulp.task('svg2png', function () {
 	'use strict';
 	gulp.src('assets/icons/*.svg')
 		.pipe(svg2png())
@@ -88,8 +89,8 @@ gulp.task('pluginsConcat', function () {
 	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.legacy.min.js');
 	gulp.src(bowerFiles)
 		.pipe(concat('plugins.min.js'))
-	// .pipe(uglify())
-	.pipe(gulp.dest('public/js'));
+		// .pipe(uglify())
+		.pipe(gulp.dest('public/js'));
 });
 
 /******************************
@@ -100,10 +101,10 @@ gulp.task('jsConcat', function () {
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(concat('app.js'))
-	// .pipe(uglify())
-	.on('error', notify.onError(function (error) {
-		return '\nAn error occurred while uglifying js.\nLook in the console for details.\n' + error;
-	}))
+		// .pipe(uglify())
+		.on('error', notify.onError(function (error) {
+			return '\nAn error occurred while uglifying js.\nLook in the console for details.\n' + error;
+		}))
 		.pipe(sourcemaps.write('../js'))
 		.pipe(gulp.dest('public/js'));
 });
@@ -120,7 +121,12 @@ gulp.task('browser-sync', function () {
 
 	browserSync.init(files, {
 		server: {
-			baseDir: './public'
+			baseDir: './public',
+			middleware: [
+				modRewrite([
+					'!\\.\\w+$ /index.html [L]'
+				])
+			]
 		},
 		open: false
 	});
