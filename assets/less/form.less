@@ -1,11 +1,14 @@
 .form {
-	background: #fff;
 	.clearfix();
 	&__title {
-
+		color: #000;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 20px;
+		margin: 16px 0 36px;
 	}
 	&__row {
-
+		.clearfix();
 	}
 	&__column {
 		float: left;
@@ -25,6 +28,20 @@
 		min-width: 0;
 		background: #fff;
 	}
+	&__field{
+		margin-bottom: 15px;
+		display: inline-block;
+		width: 100%;
+		position: relative;
+		.form__column &{
+			margin-bottom: 10px;
+		}
+		.form__text+&{
+			margin-bottom: 0;
+			width: auto;
+			height: 15px;
+		}
+	}
 	&__legend {
 		float: left;
 		width: 100%;
@@ -35,10 +52,27 @@
 		text-transform: uppercase;
 		margin: 0 0 20px;
 	}
+	&__text{
+		opacity: 0.8;
+		color: #000;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 20px;
+		margin: 15px 0 6px;
+		&_grey{
+			opacity: 0.6;
+			font-size: 12px;
+			margin: 0 0 25px;
+		}
+	}
+	&__rating{
+
+	}
 	&_filter {
 
 	}
 	&_review {
-		padding: 30px;
+		background: #fff;
+		padding: 30px 40px;
 	}
 }

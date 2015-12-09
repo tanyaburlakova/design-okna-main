@@ -1,7 +1,18 @@
 .gallery {
 	background: #fff;
-	padding: 20px;
+	padding: 30px 20px 20px;
 	margin-bottom: 20px;
+	&__title{
+		font-size: 18px;
+		font-weight: 500;
+		color: #000;
+		line-height: 1;
+		margin: 5px 18px 27px;
+		letter-spacing: 1px;
+	}
+	&__model-title{
+		color: #777;
+	}
 	&__main-img {
 		width: 100%;
 		height: 390px;
@@ -9,7 +20,7 @@
 	}
 	&__list {
 		list-style: none;
-		padding: 20px;
+		padding: 27px 20px 3px;
 		margin: 0;
 		text-align: center;
 	}
@@ -29,8 +40,8 @@
 		cursor: pointer;
 		border: solid 3px #fff;
 		box-sizing: content-box;
-		outline: solid 3px #fff;
-		transition: outline @animation-time;
+		opacity: 0.5;
+		transition: opacity @animation-time;
 	}
 	&__input {
 		position: absolute;
@@ -41,7 +52,8 @@
 		overflow: hidden;
 		opacity: 0;
 		&:checked + .gallery__item-img {
-			outline: solid 3px blue;
+			box-shadow: 0 0 0 2px #9ac6df;
+			opacity: 1;
 		}
 	}
 }

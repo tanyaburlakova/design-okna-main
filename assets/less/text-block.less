@@ -6,6 +6,10 @@
 	&__column {
 		float: left;
 		width: 50%;
+		&:only-child{
+			float: none;
+			width: auto;
+		}
 		&:first-child {
 
 		}
@@ -17,23 +21,37 @@
 		}
 	}
 	&__container {
-
+		&+&{
+			margin-top: 48px;
+		}
 	}
 	&__title {
-		margin: 0;
+		color: #363537;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 30px;
+		margin: 0 0 23px;
 	}
 	&__text {
-
+		opacity: 0.8;
+		color: #363537;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 20px;
+		margin: 0;
+		&+&{
+			margin-top: 20px;
+		}
 	}
 	&__img {
 		width: 100%;
+		margin-bottom: 16px;
 	}
 	&_padding {
 		padding: 30px;
 	}
 	&_benefits {
 		.text-block__column {
-			height: 380px;
 		}
 	}
 	&_scheme {
