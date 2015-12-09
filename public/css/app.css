@@ -2781,6 +2781,9 @@ button:focus {
   text-transform: uppercase;
   margin: 0 0 20px;
 }
+.form_review {
+  padding: 30px;
+}
 .field {
   margin-bottom: 15px;
   display: inline-block;
@@ -3058,6 +3061,9 @@ rzslider .rz-ticks .tick .tick-value {
 .text-block__img {
   width: 100%;
 }
+.text-block_padding {
+  padding: 30px;
+}
 .text-block_benefits .text-block__column {
   height: 380px;
 }
@@ -3138,6 +3144,15 @@ rzslider .rz-ticks .tick .tick-value {
 }
 .video iframe {
   width: 100%;
+}
+.color__bg {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: solid 3px #fff;
+}
+.color input:checked + .color__bg {
+  outline: solid 3px #9ac6df;
 }
 @media (min-width: 1280px) {
   .event__npc {

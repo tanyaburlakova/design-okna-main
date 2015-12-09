@@ -10,6 +10,7 @@ var app = angular.module('myApp', [
 		'hiderDirective',
 		'parallaxDirective',
 		'questionDirective',
+		'colorDirective',
 		'rangeDirective',
 		'youtube-embed',
 		'angular-owl-carousel'
@@ -356,6 +357,36 @@ app.constant('API_PATH', 'data/');
 	}
 
 	function checkboxDirectiveLink(scope, el, attr) {
+
+	}
+})();
+
+(function () {
+	'use strict';
+
+	angular.module('colorDirective', [])
+		.directive('color', [
+			colorDirective
+		]);
+
+	function colorDirective() {
+		return {
+			restrict: 'E',
+			templateUrl: 'views/directives/color.html',
+			scope: {
+				model: '=',
+				checked: '@',
+				disabled: '@',
+				fill: '@',
+				name: '@',
+				value: '@'
+			},
+			replace: true,
+			link: colorDirectiveLink
+		};
+	}
+
+	function colorDirectiveLink(scope, el, attr) {
 
 	}
 })();

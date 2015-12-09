@@ -124,7 +124,7 @@ gulp.task('browser-sync', function () {
 			baseDir: './public',
 			middleware: [
 				modRewrite([
-					'!\\.\\w+$ /index.html [L]'
+					'^[^\\.]*$ /index.html [L]'
 				])
 			]
 		},

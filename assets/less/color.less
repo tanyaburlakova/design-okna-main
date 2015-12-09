@@ -1,0 +1,11 @@
+.color {
+	&__bg {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		border: solid 3px #fff;
+	}
+	input:checked + .color__bg {
+		outline: solid 3px @blue;
+	}
+}

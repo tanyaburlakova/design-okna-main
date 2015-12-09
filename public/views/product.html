@@ -65,7 +65,7 @@
 			</ul>
 		</div>
 		<!-- Text block -->
-		<div class="text-block">
+		<div class="text-block text-block_padding">
 			<!-- Title -->
 			<h2 class="text-block__title">
 				Что такое римские шторы
@@ -258,6 +258,50 @@
 			<p class="price-block__text">
 				Стоимость зависит от выбора материала и размеров
 			</p>
+		</div>
+		<!-- Textures -->
+		<div class="textures">
+			<header class="textures__header">
+				<h2 class="textures__title">
+					Выберите цвет или текстуру
+				</h2>
+				<!-- Filters -->
+				<div class="textures__filters">
+					<h2 class="textures__filters-title">
+						фильтровать:
+					</h2>
+					<ul class="textures__filters-list">
+						<li class="textures__filters-item">
+							<a href="#" class="textures__filters-link">
+								Цена
+							</a>
+							<!-- Popup -->
+							<div class="popup">
+								<h2 class="popup__title">
+									Выберите цвет материала {{testColor}}
+								</h2>
+								<div class="popup__content">
+									<!-- Colors set -->
+									<ul class="colors-set">
+										<li class="colors-set__item">
+											<color
+												model="filterColor.red"
+												name="color"
+												fill="red">
+											</color>
+										</li>
+									</ul>
+								</div>
+								<footer class="popup__footer">
+									<a href="#" class="popup__link">
+										Снять выделение
+									</a>
+								</footer>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</header>
 		</div>
 		<!-- Text block with img-->
 		<div class="text-block text-block_line text-block_scheme">

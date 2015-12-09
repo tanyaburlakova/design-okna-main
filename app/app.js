@@ -10,6 +10,7 @@ var app = angular.module('myApp', [
 		'hiderDirective',
 		'parallaxDirective',
 		'questionDirective',
+		'colorDirective',
 		'rangeDirective',
 		'youtube-embed',
 		'angular-owl-carousel'
