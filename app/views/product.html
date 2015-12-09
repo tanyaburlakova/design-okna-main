@@ -15,6 +15,10 @@
 	<div class="column-2">
 		<!-- Gallery -->
 		<div class="gallery">
+			<!-- Title -->
+			<div class="gallery__title">
+				Римские шторы <span class="gallery__model-title">модель Лаура</span>
+			</div>
 			<!-- Main img -->
 			<div
 				ng-style="{'background': 'url(' + gallery.currentImage + ') center no-repeat', 'background-size': 'cover'}"
@@ -66,13 +70,21 @@
 		</div>
 		<!-- Text block -->
 		<div class="text-block">
-			<!-- Title -->
-			<h2 class="text-block__title">
-				Что такое римские шторы
-			</h2>
-			<p class="text-block__text">
-				Римские шторы &mdash; это изделие, сочетающее в себе Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vero inventore officia possimus natus, quas, totam praesentium esse non cumque voluptatum reiciendis nesciunt ea perspiciatis explicabo nisi autem, eius itaque.
-			</p>
+			<div class="text-block__column text-block__column_padding">
+				<!-- Title -->
+				<h2 class="text-block__title">
+					Что такое римские шторы
+				</h2>
+				<p class="text-block__text">
+					Римские шторы &mdash; это изделие, сочетающее в себе все преимущества обычных портьер и горизонтальных жалюзи.
+					Они сделаны из ткани, поэтому их можно по праву назвать шторами, но их механизм управления очень напоминает устройство,
+					приводящее в движение ламели жалюзи. Такой удивительный тандем и послужил основой для создания довольно необычного
+					оконного убранства – римских штор. Они применяются в самых разных помещениях и способны украсить гостиную, детскую и
+					спальню, в том числе в комбинации с обычными портьерами. Их часто вешают на окна в учреждениях и офисах, они могут
+					быть прекрасным дополнением интерьера гостиниц и столовых, а могут и стать интересной особенностью танцевальных и
+					концертных залов
+				</p>
+			</div>
 		</div>
 		<!-- Reviews -->
 		<div class="reviews">
@@ -139,7 +151,7 @@
 				<!-- More btn -->
 				<div class="more-btn">
 					<a href class="more-btn__link">
-						<svg class="icon icon-more"><use xlink:href="icons/icons.svg#more"></use></svg>
+						<span class="icon icon-more"></span>
 						<span class="more-btn__text">
 							Показать еще <span>5</span> отзывов
 						</span>
@@ -161,7 +173,7 @@
 				<div class="form__row">
 					<div class="form__column">
 						<!-- Name -->
-						<div class="field">
+						<div class="form__field">
 							<input
 								type="text"
 								class="input"
@@ -178,7 +190,7 @@
 					</div>
 					<div class="form__column">
 						<!-- Email -->
-						<div class="field">
+						<div class="form__field">
 							<input
 								type="email"
 								class="input"
@@ -199,7 +211,7 @@
 					<p class="form__text">
 						Ваш рейтинг товару:
 					</p>
-					<div class="field">
+					<div class="form__field">
 						<input-stars
 							max="5"
 							icon-base="fa fa-fw"
@@ -218,11 +230,12 @@
 				</div>
 				<!-- Text row -->
 				<div class="form__row">
-					<div class="field">
+					<div class="form__field">
 						<textarea
 							required
 							name="review"
-							class="textarea"></textarea>
+							placeholder="Ваш отзыв"
+							class="input"></textarea>
 						<!-- Error -->
 						<div
 							ng-if="false"
@@ -251,13 +264,16 @@
 				</div>
 				<!-- New price -->
 				<div class="price-block__new">
-					<strong>от 1200 р./м<sup>2</sup></strong>
+					<strong>1200 р.</strong>/м<sup>2</sup>
 				</div>
 			</div>
 			<!-- Description -->
 			<p class="price-block__text">
 				Стоимость зависит от выбора материала и размеров
 			</p>
+			<div class="price-block__label">
+				<div class="price-block__label-text">-30%</div>
+			</div>
 		</div>
 		<!-- Text block with img-->
 		<div class="text-block text-block_line text-block_scheme">
@@ -267,7 +283,12 @@
 					Конструкция римских штор
 				</h2>
 				<p class="text-block__text">
-					В закрытом состоянии римские шторы представляют lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore vero inventore officia possimus natus, quas, totam praesentium esse non cumque voluptatum reiciendis nesciunt ea perspiciatis explicabo nisi autem, eius itaque.
+					В закрытом состоянии римские шторы представляют собой ровное полотно без складок и сборок,
+					соответствующее по размеру площади оконного проёма. В нижний край полотна вшит утяжелитель,
+					кроме того, параллельно ему через равные расстояния также вшиты специальные планки, в которых
+					и заключена вся суть механизма этого солнцезащитного изделия. К планкам крепятся кольца,
+					а через них пропущены шнуры, идущие от утяжелителя к механизму управления. Карниз для римских
+					штор может быть выполнен по типу кордовой или роторно-цепочной системы.
 				</p>
 			</div>
 			<div class="text-block__column text-block__column_padding">
