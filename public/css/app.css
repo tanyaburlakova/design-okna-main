@@ -1587,8 +1587,12 @@ button:focus {
   color: #fff;
   position: relative;
   background: url(../img/bg_benefits.jpg);
+  background-size: cover;
   width: 100%;
   height: 380px;
+}
+.text-block_benefits .benefits {
+  height: 460px;
 }
 .benefits__label {
   position: absolute;
@@ -1655,6 +1659,15 @@ button:focus {
 }
 .benefit__shevron_right {
   right: 37px;
+}
+.text-block_benefits .benefit {
+  height: 460px;
+}
+.text-block_benefits .benefit__img {
+  margin-top: 60px;
+}
+.text-block_benefits .benefit__title {
+  margin: 25px 0;
 }
 .product {
   width: 100%;
@@ -2217,6 +2230,15 @@ button:focus {
   margin-bottom: 20px;
   width: 40%;
   letter-spacing: 0.02em;
+}
+.catalog__title {
+  opacity: 0.8;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  padding-left: 20px;
+  margin: 0 0 30px;
 }
 .catalog__list {
   list-style: none;
@@ -3286,8 +3308,26 @@ textarea.input {
   resize: none;
 }
 .video {
-  padding: 30px;
+  padding: 30px 40px 40px;
   background: #fff;
+}
+.video__title {
+  color: #363537;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 0 0 27px;
+}
+.video__frame-holder {
+  position: relative;
+  padding-bottom: 56.11111111%;
+}
+.video__frame-holder iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .video iframe {
   width: 100%;
@@ -3297,6 +3337,10 @@ textarea.input {
   padding: 36px 40px 30px;
   position: relative;
   margin-bottom: 20px;
+}
+.price-block_inline {
+  padding: 0;
+  margin: 18px 0 0;
 }
 .price-block__container {
   display: inline-block;
@@ -3329,6 +3373,11 @@ textarea.input {
   vertical-align: bottom;
   margin: 0 0 3px 20px;
   line-height: 1;
+}
+.price-block_inline .price-block__text {
+  display: block;
+  margin: 0 0 10px;
+  line-height: 20px;
 }
 .price-block__label {
   position: absolute;

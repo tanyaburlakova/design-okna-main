@@ -3,6 +3,10 @@
 	padding: 36px 40px 30px;
 	position: relative;
 	margin-bottom: 20px;
+	&_inline{
+		padding: 0;
+		margin: 18px 0 0;
+	}
 	&__container{
 		display: inline-block;
 	}
@@ -34,6 +38,11 @@
 		vertical-align: bottom;
 		margin: 0 0 3px 20px;
 		line-height: 1;
+	}
+	&_inline &__text{
+		display: block;
+		margin: 0 0 10px;
+		line-height: 20px;
 	}
 	&__label {
 		position: absolute;
