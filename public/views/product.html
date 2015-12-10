@@ -287,14 +287,46 @@
 						фильтровать:
 					</h2>
 					<ul class="textures__filters-list">
+						<!-- By price -->
 						<li class="textures__filters-item">
-							<a href="#" class="textures__filters-link">
-								Цена
-							</a>
+							<button
+								ng-click="togglePricePopup = !togglePricePopup; toggleColorsPopup = false; refreshRange()"
+								class="textures__filters-btn"
+								ng-class="{'active': togglePricePopup}">
+								цена
+							</button>
 							<!-- Popup -->
-							<div class="popup">
+							<div class="popup" ng-show="togglePricePopup">
 								<h2 class="popup__title">
-									Выберите цвет материала {{testColor}}
+									Стоимость материала за м<sup>2</sup>
+								</h2>
+								<div class="popup__content">
+									<!-- Price range -->
+									<range
+										min="priceSlider.min"
+										max="priceSlider.max"
+										options="{{priceSlider.options}}">
+									</range>
+								</div>
+								<footer class="popup__footer">
+									<a href="#" class="popup__link">
+										Снять выделение
+									</a>
+								</footer>
+							</div>
+						</li>
+						<!-- By color -->
+						<li class="textures__filters-item">
+							<button
+								ng-click="toggleColorsPopup = !toggleColorsPopup; togglePricePopup = false"
+								class="textures__filters-btn"
+								ng-class="{'active': toggleColorsPopup}">
+								цвет
+							</button>
+							<!-- Popup -->
+							<div class="popup" ng-show="toggleColorsPopup">
+								<h2 class="popup__title">
+									Выберите цвет материала
 								</h2>
 								<div class="popup__content">
 									<!-- Colors set -->
@@ -304,6 +336,20 @@
 												model="filterColor.red"
 												name="color"
 												fill="red">
+											</color>
+										</li>
+										<li class="colors-set__item">
+											<color
+												model="filterColor.green"
+												name="color"
+												fill="green">
+											</color>
+										</li>
+										<li class="colors-set__item">
+											<color
+												model="filterColor.blue"
+												name="color"
+												fill="blue">
 											</color>
 										</li>
 									</ul>

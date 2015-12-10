@@ -7,6 +7,7 @@ var app = angular.module('myApp', [
 		'constructorCtrl',
 		'productPageCtrl',
 		'checkboxDirective',
+		'textureDirective',
 		'hiderDirective',
 		'parallaxDirective',
 		'questionDirective',

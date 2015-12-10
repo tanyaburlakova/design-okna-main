@@ -1,11 +1,19 @@
 .color {
+	position: relative;
+	display: inline-block;
 	&__bg {
 		display: inline-block;
 		width: 30px;
 		height: 30px;
 		border: solid 3px #fff;
 	}
-	input:checked + .color__bg {
-		outline: solid 3px @blue;
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		&:checked + .color__bg {
+			outline: solid 3px @blue;
+		}
 	}
 }

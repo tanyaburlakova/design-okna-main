@@ -4,10 +4,11 @@
 		.controller('MainCtrl', [
 			'$scope',
 			'$log',
+			'$timeout',
 			mainCtrl
 		]);
 
-	function mainCtrl($scope, $log) {
+	function mainCtrl($scope, $log, $timeout) {
 		$log.log('main ctrl');
 
 		$(function () {
@@ -18,6 +19,12 @@
 				}
 			});
 		});
+
+		$scope.refreshRange = function () {
+			$timeout(function () {
+				$scope.$broadcast('rzSliderForceRender');
+			});
+		};
 
 	}
 

@@ -20,6 +20,15 @@
 			return youtubeEmbedUtils.getIdFromURL(url);
 		};
 
+		$scope.priceSlider = {
+			min: 100,
+			max: 180,
+			options: {
+				floor: 0,
+				ceil: 450
+			}
+		};
+
 	}
 
 })();

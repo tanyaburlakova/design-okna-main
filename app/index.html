@@ -16,39 +16,6 @@
     <![endif]-->
 </head>
 <body ng-controller="MainCtrl">
-	<script>
-		function extractDomain(url) {
-		var domain;
-		//find & remove protocol (http, ftp, etc.) and get domain
-		if (url.indexOf('://') > -1) {
-			domain = url.split('/')[2];
-		} else {
-			domain = url.split('/')[0];
-		}
-		//find & remove port number
-		domain = domain.split(':')[0];
-		return domain;
-	}
-
-	function loadScript(url) {
-		var fileref = document.createElement('script');
-		fileref.setAttribute("type", "text/javascript");
-		fileref.setAttribute("src", url);
-		document.body.appendChild(fileref);
-	}
-
-	var url = window.location.href;
-	if (extractDomain(url) === 'localhost') {
-
-		setTimeout(function () {
-			loadScript('js/plugins.min.js');
-			loadScript('js/app.js');
-		}, 1000);
-	} else {
-		loadScript('/public/js/plugins.min.js');
-		loadScript('/public/js/app.js');
-	}
-	</script>
 	<!-- Header -->
 	@@include('./includes/header.html')
 	<!-- Main content -->

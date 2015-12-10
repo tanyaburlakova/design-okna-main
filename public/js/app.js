@@ -7,6 +7,7 @@ var app = angular.module('myApp', [
 		'constructorCtrl',
 		'productPageCtrl',
 		'checkboxDirective',
+		'textureDirective',
 		'hiderDirective',
 		'parallaxDirective',
 		'questionDirective',
@@ -208,10 +209,11 @@ app.constant('API_PATH', 'data/');
 		.controller('MainCtrl', [
 			'$scope',
 			'$log',
+			'$timeout',
 			mainCtrl
 		]);
 
-	function mainCtrl($scope, $log) {
+	function mainCtrl($scope, $log, $timeout) {
 		$log.log('main ctrl');
 
 		$(function () {
@@ -222,6 +224,12 @@ app.constant('API_PATH', 'data/');
 				}
 			});
 		});
+
+		$scope.refreshRange = function () {
+			$timeout(function () {
+				$scope.$broadcast('rzSliderForceRender');
+			});
+		};
 
 	}
 
@@ -265,6 +273,15 @@ app.constant('API_PATH', 'data/');
 
 		$scope.getYoutubeId = function (url) {
 			return youtubeEmbedUtils.getIdFromURL(url);
+		};
+
+		$scope.priceSlider = {
+			min: 100,
+			max: 180,
+			options: {
+				floor: 0,
+				ceil: 450
+			}
 		};
 
 	}
@@ -532,6 +549,36 @@ app.constant('API_PATH', 'data/');
 				scope.max = scope.min;
 			}
 		});
+	}
+})();
+
+(function () {
+	'use strict';
+
+	angular.module('textureDirective', [])
+		.directive('texture', [
+			colorDirective
+		]);
+
+	function colorDirective() {
+		return {
+			restrict: 'E',
+			templateUrl: 'views/directives/texture.html',
+			scope: {
+				model: '=',
+				checked: '@',
+				disabled: '@',
+				fill: '@',
+				name: '@',
+				value: '@'
+			},
+			replace: true,
+			link: textureDirectiveLink
+		};
+	}
+
+	function textureDirectiveLink(scope, el, attr) {
+
 	}
 })();
 

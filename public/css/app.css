@@ -3340,11 +3340,21 @@ textarea.input {
 .video iframe {
   width: 100%;
 }
+.color {
+  position: relative;
+  display: inline-block;
+}
 .color__bg {
   display: inline-block;
   width: 30px;
   height: 30px;
   border: solid 3px #fff;
+}
+.color input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 .color input:checked + .color__bg {
   outline: solid 3px #9ac6df;
@@ -3418,6 +3428,64 @@ textarea.input {
   letter-spacing: 0.1em;
   color: #fff;
   padding-left: 8px;
+}
+.popup {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  background: #fff;
+  padding: 10px;
+  width: 280px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+.popup__title {
+  margin: 0;
+}
+.textures__filters-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  zoom: 1;
+}
+.textures__filters-list:before,
+.textures__filters-list:after {
+  content: "";
+  display: table;
+}
+.textures__filters-list:after {
+  clear: both;
+}
+.textures__filters-item {
+  float: left;
+  position: relative;
+}
+.textures__filters-btn.active {
+  background: orange;
+}
+.colors-set {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  zoom: 1;
+}
+.colors-set:before,
+.colors-set:after {
+  content: "";
+  display: table;
+}
+.colors-set:after {
+  clear: both;
+}
+.colors-set__item {
+  float: left;
+  margin-right: 10px;
+}
+.colors-set__item:last-child {
+  margin-right: 0;
 }
 @media (min-width: 1280px) {
   .event__npc {
