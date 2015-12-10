@@ -468,6 +468,10 @@ button:focus {
   width: 120px;
   height: 120px;
 }
+.icon-gt {
+  width: 8px;
+  height: 6px;
+}
 .icon-cart {
   width: 33px;
   height: 33px;

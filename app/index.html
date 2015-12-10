@@ -9,13 +9,46 @@
 	<base href="/" />
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 	<link href='https://fonts.googleapis.com/css?family=Lobster|Roboto:100,300,400,500,700,900,400italic,300italic&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="design-okna-main/public/css/app.css">
+	<link rel="stylesheet" href="css/app.css">
 	<!--[if lt IE 9]>
     	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body ng-controller="MainCtrl">
+	<script>
+		function extractDomain(url) {
+		var domain;
+		//find & remove protocol (http, ftp, etc.) and get domain
+		if (url.indexOf('://') > -1) {
+			domain = url.split('/')[2];
+		} else {
+			domain = url.split('/')[0];
+		}
+		//find & remove port number
+		domain = domain.split(':')[0];
+		return domain;
+	}
+
+	function loadScript(url) {
+		var fileref = document.createElement('script');
+		fileref.setAttribute("type", "text/javascript");
+		fileref.setAttribute("src", url);
+		document.body.appendChild(fileref);
+	}
+
+	var url = window.location.href;
+	if (extractDomain(url) === 'localhost') {
+
+		setTimeout(function () {
+			loadScript('js/plugins.min.js');
+			loadScript('js/app.js');
+		}, 1000);
+	} else {
+		loadScript('/public/js/plugins.min.js');
+		loadScript('/public/js/app.js');
+	}
+	</script>
 	<!-- Header -->
 	@@include('./includes/header.html')
 	<!-- Main content -->
@@ -25,7 +58,7 @@
 	<!-- Footer -->
 	@@include('./includes/footer.html')
 	<script src="https://www.youtube.com/iframe_api"></script>
-	<script src="design-okna-main/public/js/plugins.min.js"></script>
-	<script src="design-okna-main/public/js/app.js"></script>
+	<script src="js/plugins.min.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>
