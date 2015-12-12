@@ -1,0 +1,37 @@
+[{
+	"id": 1,
+	"url": "kristall",
+	"model": "Кристалл",
+	"img": "img/textures/kristall.png",
+	"translucent": "Не пропускает свет",
+	"vendor": "США",
+	"width": "150 см",
+	"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
+}, {
+	"id": 2,
+	"url": "listya",
+	"model": "Листья",
+	"img": "img/textures/listya.png",
+	"translucent": "Пропускает свет",
+	"vendor": "Германия",
+	"width": "250 см",
+	"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
+}, {
+	"id": 3,
+	"url": "luksor_uno",
+	"model": "Люксор Уно",
+	"img": "img/textures/luksor_uno.png",
+	"translucent": "Не пропускает свет",
+	"vendor": "Россия",
+	"width": "200 см",
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+}, {
+	"id": 4,
+	"url": "melanzh_red",
+	"model": "Красный Меланж",
+	"img": "img/textures/melanzh_red.png",
+	"translucent": "Не пропускает свет",
+	"vendor": "Россия",
+	"width": "200 см",
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+}]

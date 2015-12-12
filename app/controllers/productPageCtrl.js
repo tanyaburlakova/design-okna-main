@@ -1,23 +1,64 @@
 (function () {
 	'use strict';
-	angular.module('productPageCtrl', [])
+	angular.module('productPageCtrl', ['texturesService'])
 		.controller('ProductPageCtrl', [
 			'$scope',
 			'$log',
 			'youtubeEmbedUtils',
 			'$location',
 			'$routeParams',
+			'TexturesService',
 			productPageCtrl
 		]);
 
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams) {
+	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService) {
 		$log.log('product page ctrl');
 
 		$scope.catalogItems = [1, 2, 3, 4];
 		$scope.reviewsItems = [1, 2];
 		$scope.gallery = {};
 		$scope.gallery.currentImage = 'img/slide-1.jpg';
-		$scope.textureModel = 1;
+		$scope.textureModel = null;
+
+		$scope.init = function () {
+			$scope.getTextures();
+		};
+
+		$scope.getTextures = function () {
+			TexturesService.getTextures()
+				.then(function (data) {
+					// Success
+					var category = $routeParams.category,
+						subcategory = $routeParams.subcategory,
+						subsubcategory = $routeParams.subsubcategory,
+						texture = $routeParams.texture,
+						currentTexture = TexturesService.getTextureByUrl(texture) || {
+							id: 1
+						},
+						currentId = currentTexture.id;
+
+					$scope.textures = data;
+					TexturesService.getTextureByUrl(texture);
+					$scope.textureModel = currentId;
+					console.log(currentId);
+
+					// $scope.getTextureById(currentId);
+
+					$scope.$watch('textureModel', function (newVal, oldVal) {
+						if (newVal) {
+							$scope.getTextureById(newVal);
+							$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + $scope.currentTexture.url, false);
+						}
+					});
+				}, function (err) {
+					// Error
+					console.log(err);
+				});
+		};
+
+		$scope.getTextureById = function (id) {
+			$scope.currentTexture = TexturesService.getTextureById(id);
+		};
 
 		$scope.getYoutubeId = function (url) {
 			return youtubeEmbedUtils.getIdFromURL(url);
@@ -32,65 +73,9 @@
 			}
 		};
 
-		$scope.$watch('textureModel', function (newVal, oldVal) {
-			var category = $routeParams.category,
-				subcategory = $routeParams.subcategory,
-				subsubcategory = $routeParams.subsubcategory,
-				texture = $routeParams.texture;
-			if (newVal) {
-				$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + newVal, false);
-			}
-		});
 
-		$scope.textures = [{
-			id: 1,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 2,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 3,
-			fill: 'blue',
-			name: 'blue-rain'
-		}, {
-			id: 4,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 5,
-			fill: 'green',
-			name: 'blood-green'
-		}, {
-			id: 6,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 7,
-			fill: 'grey',
-			name: 'blood-grey'
-		}, {
-			id: 8,
-			fill: 'brown',
-			name: 'blood-brown'
-		}, {
-			id: 9,
-			fill: 'beige',
-			name: 'blood-beige'
-		}, {
-			id: 10,
-			fill: 'darkgrey',
-			name: 'blood-darkgrey'
-		}, {
-			id: 11,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 12,
-			fill: 'lightgreen',
-			name: 'blood-lightgreen'
-		}];
+
+		$scope.init();
 
 	}
 

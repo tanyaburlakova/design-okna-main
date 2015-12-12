@@ -268,24 +268,65 @@ app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
-	angular.module('productPageCtrl', [])
+	angular.module('productPageCtrl', ['texturesService'])
 		.controller('ProductPageCtrl', [
 			'$scope',
 			'$log',
 			'youtubeEmbedUtils',
 			'$location',
 			'$routeParams',
+			'TexturesService',
 			productPageCtrl
 		]);
 
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams) {
+	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService) {
 		$log.log('product page ctrl');
 
 		$scope.catalogItems = [1, 2, 3, 4];
 		$scope.reviewsItems = [1, 2];
 		$scope.gallery = {};
 		$scope.gallery.currentImage = 'img/slide-1.jpg';
-		$scope.textureModel = 1;
+		$scope.textureModel = null;
+
+		$scope.init = function () {
+			$scope.getTextures();
+		};
+
+		$scope.getTextures = function () {
+			TexturesService.getTextures()
+				.then(function (data) {
+					// Success
+					var category = $routeParams.category,
+						subcategory = $routeParams.subcategory,
+						subsubcategory = $routeParams.subsubcategory,
+						texture = $routeParams.texture,
+						currentTexture = TexturesService.getTextureByUrl(texture) || {
+							id: 1
+						},
+						currentId = currentTexture.id;
+
+					$scope.textures = data;
+					TexturesService.getTextureByUrl(texture);
+					$scope.textureModel = currentId;
+					console.log(currentId);
+
+					// $scope.getTextureById(currentId);
+
+					$scope.$watch('textureModel', function (newVal, oldVal) {
+						if (newVal) {
+							$scope.getTextureById(newVal);
+							$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + $scope.currentTexture.url, false);
+						}
+					});
+				}, function (err) {
+					// Error
+					console.log(err);
+				});
+		};
+
+		$scope.getTextureById = function (id) {
+			$scope.currentTexture = TexturesService.getTextureById(id);
+		};
 
 		$scope.getYoutubeId = function (url) {
 			return youtubeEmbedUtils.getIdFromURL(url);
@@ -300,65 +341,9 @@ app.constant('API_PATH', 'data/');
 			}
 		};
 
-		$scope.$watch('textureModel', function (newVal, oldVal) {
-			var category = $routeParams.category,
-				subcategory = $routeParams.subcategory,
-				subsubcategory = $routeParams.subsubcategory,
-				texture = $routeParams.texture;
-			if (newVal) {
-				$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + newVal, false);
-			}
-		});
 
-		$scope.textures = [{
-			id: 1,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 2,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 3,
-			fill: 'blue',
-			name: 'blue-rain'
-		}, {
-			id: 4,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 5,
-			fill: 'green',
-			name: 'blood-green'
-		}, {
-			id: 6,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 7,
-			fill: 'grey',
-			name: 'blood-grey'
-		}, {
-			id: 8,
-			fill: 'brown',
-			name: 'blood-brown'
-		}, {
-			id: 9,
-			fill: 'beige',
-			name: 'blood-beige'
-		}, {
-			id: 10,
-			fill: 'darkgrey',
-			name: 'blood-darkgrey'
-		}, {
-			id: 11,
-			fill: 'red',
-			name: 'blood-rain'
-		}, {
-			id: 12,
-			fill: 'lightgreen',
-			name: 'blood-lightgreen'
-		}];
+
+		$scope.init();
 
 	}
 
@@ -726,6 +711,57 @@ app.constant('API_PATH', 'data/');
 				});
 
 			return defer.promise;
+		}
+	}
+})();
+
+(function () {
+	'use strict';
+	angular.module('texturesService', []).
+	factory('TexturesService', [
+		'API_PATH',
+		'$http',
+		'$q',
+		texturesService
+	]);
+
+	function texturesService(API_PATH, $http, $q) {
+		var service = {
+			getTextures: getTextures,
+			getTextureById: getTextureById,
+			getTextureByUrl: getTextureByUrl
+		};
+		return service;
+
+		function getTextures(id) {
+			var url = API_PATH + 'textures.json',
+				defer = $q.defer();
+
+			$http.get(url)
+				.success(function (data) {
+					service.textures = data;
+					defer.resolve(data);
+				})
+				.error(function (res, errCode) {
+					defer.reject({
+						code: errCode,
+						text: 'api access [%s] error!'.replace('%s', url)
+					});
+				});
+
+			return defer.promise;
+		}
+
+		function getTextureById(id) {
+			return _.findWhere(service.textures, {
+				'id': parseInt(id, 10)
+			});
+		}
+
+		function getTextureByUrl(url) {
+			return _.findWhere(service.textures, {
+				'url': url
+			});
 		}
 	}
 })();

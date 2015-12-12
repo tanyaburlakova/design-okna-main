@@ -17,7 +17,7 @@
 		<div class="gallery">
 			<!-- Title -->
 			<div class="gallery__title">
-				Римские шторы <span class="gallery__model-title">модель Лаура</span>
+				Римские шторы <span class="gallery__model-title">модель {{currentTexture.model}}</span>
 			</div>
 			<!-- Main img -->
 			<div
@@ -279,7 +279,7 @@
 		<div class="textures">
 			<header class="textures__header">
 				<h2 class="textures__title">
-					Выберите цвет или текстуру | {{textureModel}}
+					Выберите цвет или текстуру
 				</h2>
 				<!-- Filters -->
 				<div class="textures__filters">
@@ -373,7 +373,7 @@
 						model="$parent.textureModel"
 						name="texture"
 						checked="{{$first}}"
-						fill="{{texture.fill}}"
+						fill="{{texture.img}}"
 						value="{{texture.id}}">
 					</texture>
 				</li>
