@@ -2,6 +2,10 @@
 	"id": 1,
 	"url": "kristall",
 	"model": "Кристалл",
+	"price": {
+		"old": "10000",
+		"new": "1"
+	},
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
@@ -11,6 +15,10 @@
 	"id": 2,
 	"url": "listya",
 	"model": "Листья",
+	"price": {
+		"old": "800",
+		"new": "500"
+	},
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
@@ -20,6 +28,10 @@
 	"id": 3,
 	"url": "luksor_uno",
 	"model": "Люксор Уно",
+	"price": {
+		"old": "2345",
+		"new": "2200"
+	},
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -29,6 +41,10 @@
 	"id": 4,
 	"url": "melanzh_red",
 	"model": "Красный Меланж",
+	"price": {
+		"old": "1500",
+		"new": "1000"
+	},
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
