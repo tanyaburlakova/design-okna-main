@@ -279,7 +279,7 @@
 		<div class="textures">
 			<header class="textures__header">
 				<h2 class="textures__title">
-					Выберите цвет или текстуру
+					Выберите цвет или текстуру | {{textureModel}}
 				</h2>
 				<!-- Filters -->
 				<div class="textures__filters">
@@ -364,6 +364,20 @@
 					</ul>
 				</div>
 			</header>
+			<!-- Content -->
+			<ul class="textures__list">
+				<li
+					ng-repeat="texture in textures"
+					class="textures__item">
+					<texture
+						model="$parent.textureModel"
+						name="texture"
+						checked="{{$first}}"
+						fill="{{texture.fill}}"
+						value="{{texture.id}}">
+					</texture>
+				</li>
+			</ul>
 		</div>
 		<!-- Text block with img-->
 		<div class="text-block text-block_line text-block_scheme">

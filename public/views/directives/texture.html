@@ -3,11 +3,11 @@
 		type="radio"
 		ng-model="model"
 		ng-disabled="disabled"
-		ng-checked="checked"
+		ng-checked="{{checked}}"
 		name="{{name}}"
-		value="{{value}}">
+		ng-value="{{value}}">
 	<span
-		ng-style="{'background': '{{texture}}'}"
-		class="color__bg">
+		ng-style="{'background': '{{fill}}'}"
+		class="texture__bg">
 	</span>
 </label>
