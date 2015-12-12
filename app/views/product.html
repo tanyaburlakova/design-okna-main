@@ -91,13 +91,15 @@
 					<div class="reviews__rating-container">
 						<!-- Rating -->
 						<input-stars
+							readonly
+							icon-base="icon"
+							icon-empty="icon-rating-inactive-star"
+							icon-hover="icon-rating-hover-star"
+							icon-full="icon-rating-full-star"
+							list-class="rating"
 							max="5"
-							icon-base="fa fa-fw"
-							icon-empty="fa-circle-o"
-							icon-hover="hover"
-							icon-full="fa-circle"
-							ng-model="YourCtrl.property">
-						 </input-stars>
+							ng-model="$parent.rating">
+						</input-stars>
 						 <div class="reviews__rating-text">
 						 	<strong>4.6</strong> (230 отзывов)
 						 </div>
@@ -117,13 +119,15 @@
 						</div>
 						<!-- Rating -->
 						<input-stars
+							readonly
+							icon-base="icon"
+							icon-empty="icon-rating-inactive-star"
+							icon-hover="icon-rating-hover-star"
+							icon-full="icon-rating-full-star"
+							list-class="rating"
 							max="5"
-							icon-base="fa fa-fw"
-							icon-empty="fa-circle-o"
-							icon-hover="hover"
-							icon-full="fa-circle"
-							ng-model="YourCtrl.property">
-						 </input-stars>
+							ng-model="$parent.rating">
+						</input-stars>
 						 <!-- Text -->
 						 <p class="review__text">
 						 	I love my new MM Traditional, just love it! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum est consequatur id cupiditate nemo quia ducimus, eos nobis. Ducimus, impedit!
@@ -201,14 +205,16 @@
 						Ваш рейтинг товару:
 					</p>
 					<div class="form__field">
+						<!-- Rating -->
 						<input-stars
+							icon-base="icon"
+							icon-empty="icon-rating-inactive-star"
+							icon-hover="icon-rating-hover-star"
+							icon-full="icon-rating-full-star"
+							list-class="rating"
 							max="5"
-							icon-base="fa fa-fw"
-							icon-empty="fa-circle-o"
-							icon-hover="hover"
-							icon-full="fa-circle"
-							ng-model="YourCtrl.property">
-						 </input-stars>
+							ng-model="$parent.rating">
+						</input-stars>
 						 <!-- Error -->
 						<div
 							ng-if="false"

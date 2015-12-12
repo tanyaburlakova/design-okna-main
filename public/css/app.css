@@ -540,6 +540,26 @@ button:focus {
   width: 15px;
   height: 15px;
 }
+.icon-rating-star {
+  background: url('../icons/rating-star.svg') no-repeat;
+  width: 15px;
+  height: 15px;
+}
+.icon-rating-inactive-star {
+  background: url('../icons/rating-inactive-star.svg') no-repeat;
+  width: 15px;
+  height: 15px;
+}
+.icon-rating-full-star {
+  background: url('../icons/rating-star.svg') no-repeat;
+  width: 15px;
+  height: 15px;
+}
+.icon-rating-hover-star {
+  background: url('../icons/rating-star.svg') no-repeat;
+  width: 15px;
+  height: 15px;
+}
 .icon-more {
   margin: 0 9px;
   width: 6px;
@@ -2880,6 +2900,9 @@ button:focus {
   background: #fff;
   padding: 30px 40px;
 }
+.form_review .rating {
+  margin-bottom: 20px;
+}
 .form_sizes {
   background: #fff;
   padding: 36px 40px 30px;
@@ -3322,12 +3345,6 @@ textarea.input {
   float: right;
   margin-top: 13px;
 }
-.review input-stars {
-  display: block;
-  width: 30%;
-  height: 15px;
-  background: green;
-}
 .review__stars {
   height: 13px;
   width: 50%;
@@ -3357,6 +3374,11 @@ textarea.input {
   font-weight: 500;
   line-height: 20px;
   margin-bottom: 4px;
+}
+.review .rating {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 100%;
 }
 .textarea {
   border: 1px solid #d4d7d6;
@@ -3712,6 +3734,28 @@ textarea.input {
   position: absolute;
   left: 0;
   top: 5px;
+}
+/* <input-star></input-star> directive */
+.rating {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  float: left;
+}
+.rating > li {
+  font-size: 17px;
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.rating > li .active {
+  color: #FDE35E;
+  text-shadow: black 0 0 1px, 0 0 1px ;
+}
+.rating > li.angular-input-stars-hover {
+  text-shadow: black 0 0 3px;
 }
 @media (min-width: 1280px) {
   .event__npc {

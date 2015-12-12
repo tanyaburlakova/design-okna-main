@@ -14,6 +14,7 @@ var app = angular.module('myApp', [
 		'colorDirective',
 		'rangeDirective',
 		'youtube-embed',
+		'angular-input-stars',
 		'angular-owl-carousel'
 	])
 	.config([
@@ -294,6 +295,7 @@ app.constant('API_PATH', 'data/');
 		$scope.gallery = {};
 		$scope.gallery.currentImage = 'img/slide-1.jpg';
 		$scope.textureModel = null;
+		$scope.rating = 4;
 
 		$scope.init = function () {
 			$scope.getTextures();

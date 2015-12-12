@@ -22,6 +22,7 @@
 		$scope.gallery = {};
 		$scope.gallery.currentImage = 'img/slide-1.jpg';
 		$scope.textureModel = null;
+		$scope.rating = 4;
 
 		$scope.init = function () {
 			$scope.getTextures();

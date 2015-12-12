@@ -14,6 +14,7 @@ var app = angular.module('myApp', [
 		'colorDirective',
 		'rangeDirective',
 		'youtube-embed',
+		'angular-input-stars',
 		'angular-owl-carousel'
 	])
 	.config([
