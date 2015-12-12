@@ -10,10 +10,11 @@
 			'TexturesService',
 			'ProductService',
 			'$sce',
+			'$timeout',
 			productPageCtrl
 		]);
 
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, $sce) {
+	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, $sce, $timeout) {
 		$log.log('product page ctrl');
 
 		$scope.catalogItems = [1, 2, 3, 4];
@@ -33,7 +34,6 @@
 					// Success
 					$scope.product = data;
 					$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
-					console.log(data);
 				}, function (err) {
 					// Error
 					console.log(err);
@@ -61,6 +61,7 @@
 						if (newVal) {
 							$scope.getTextureById(newVal);
 							$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + $scope.currentTexture.url, false);
+							$scope.gallery.currentImage = $scope.currentTexture.img;
 						}
 					});
 				}, function (err) {
