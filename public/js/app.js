@@ -64,7 +64,20 @@ var app = angular.module('myApp', [
 					redirectTo: '/home'
 				});
 		}
-	]);
+	])
+	.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
+		var original = $location.path;
+		$location.path = function (path, reload) {
+			if (reload === false) {
+				var lastRoute = $route.current;
+				var un = $rootScope.$on('$locationChangeSuccess', function () {
+					$route.current = lastRoute;
+					un();
+				});
+			}
+			return original.apply($location, [path]);
+		};
+	}]);
 
 app.constant('API_PATH', 'data/');
 
@@ -272,6 +285,7 @@ app.constant('API_PATH', 'data/');
 		$scope.reviewsItems = [1, 2];
 		$scope.gallery = {};
 		$scope.gallery.currentImage = 'img/slide-1.jpg';
+		$scope.textureModel = 1;
 
 		$scope.getYoutubeId = function (url) {
 			return youtubeEmbedUtils.getIdFromURL(url);
@@ -287,14 +301,12 @@ app.constant('API_PATH', 'data/');
 		};
 
 		$scope.$watch('textureModel', function (newVal, oldVal) {
-			// $scope.textureModel = 1;
 			var category = $routeParams.category,
 				subcategory = $routeParams.subcategory,
 				subsubcategory = $routeParams.subsubcategory,
 				texture = $routeParams.texture;
-			console.log(newVal, oldVal);
 			if (newVal) {
-				// $location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + newVal);
+				$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + newVal, false);
 			}
 		});
 
