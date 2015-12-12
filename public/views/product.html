@@ -12,6 +12,7 @@
 			{{product.category}}
 		</div>
 	</div>
+	<!-- Left -->
 	<div class="column-2">
 		<!-- Gallery -->
 		<div class="gallery">
@@ -242,6 +243,7 @@
 			</form>
 		</div>
 	</div>
+	<!-- Right -->
 	<div class="column-2">
 		<!-- Price block -->
 		<div class="price-block">
@@ -366,6 +368,98 @@
 					</texture>
 				</li>
 			</ul>
+		</div>
+		<!-- Sizes -->
+		<div class="form form_sizes">
+			<h2 class="form__title">
+				Укажите размеры конструкции для расчета стоимости
+			</h2>
+			<div class="form__row">
+				<div class="form__cell">
+					<label class="label">
+						<span class="label__text">
+							Ширина
+						</span>
+						<span class="field">
+							<input type="number" class="input">
+						</span>
+					</label>
+				</div>
+				<div class="form__cell">
+					<label class="label">
+						<span class="label__text">
+							Высота
+						</span>
+						<span class="field">
+							<input type="number" class="input">
+						</span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<!-- Carnice -->
+		<div class="form form_carnice">
+			<checkbox
+				model="carnice"
+				label="Добавить к заказу карниз"
+				name="type2">
+			</checkbox>
+		</div>
+		<!-- Features -->
+		<div class="features">
+			<!-- Title -->
+			<h2 class="features__title">
+				Свойства выбранного материала {{currentTexture.name}}
+			</h2>
+			<div class="features__column">
+				<!-- Translucent -->
+				<div
+					ng-if="currentTexture.translucent"
+					class="features__item">
+					<svg class="icon icon-sun"><use xlink:href="icons/icons.svg#sun"></use></svg>
+					<div class="features__item-text">
+						{{currentTexture.translucent}}
+					</div>
+				</div>
+				<!-- Country -->
+				<div
+					ng-if="currentTexture.country"
+					class="features__item">
+					<svg class="icon icon-country"><use xlink:href="icons/icons.svg#country"></use></svg>
+					<div class="features__item-text">
+						{{currentTexture.country}}
+					</div>
+				</div>
+				<!-- Width -->
+				<div
+					ng-if="currentTexture.width"
+					class="features__item">
+					<svg class="icon icon-width"><use xlink:href="icons/icons.svg#width"></use></svg>
+					<div class="features__item-text">
+						{{currentTexture.width}}
+					</div>
+				</div>
+			</div>
+			<div class="features__column">
+				<!-- Structure -->
+				<div
+					ng-if="currentTexture.structure"
+					class="features__item">
+					<svg class="icon icon-structure"><use xlink:href="icons/icons.svg#structure"></use></svg>
+					<div class="features__item-text">
+						{{currentTexture.structure}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Buttons set -->
+		<div class="btn-set btn-set_margin-bottom">
+			<button class="btn btn_red btn_big">
+				Купить в 1 клик
+			</button>
+			<button class="btn btn_blue btn_big">
+				Отложить в корзину
+			</button>
 		</div>
 		<!-- Text block with img-->
 		<div class="text-block text-block_line text-block_scheme">

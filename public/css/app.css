@@ -476,6 +476,22 @@ button:focus {
   width: 33px;
   height: 33px;
 }
+.icon-sun {
+  width: 17px;
+  height: 17px;
+}
+.icon-country {
+  width: 14px;
+  height: 14px;
+}
+.icon-width {
+  width: 17px;
+  height: 17px;
+}
+.icon-structure {
+  width: 33px;
+  height: 33px;
+}
 .icon-money {
   width: 35px;
   height: 35px;
@@ -1494,6 +1510,8 @@ button:focus {
 .btn_big {
   line-height: 38px;
   font-weight: 700;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .btn_size-1 {
   width: 100px;
@@ -2809,6 +2827,10 @@ button:focus {
 .form__column:last-child {
   padding-left: 10px;
 }
+.form__cell {
+  float: left;
+  display: inline-block;
+}
 .form__fieldset {
   border: 0;
   padding: 40px 20px;
@@ -2857,6 +2879,29 @@ button:focus {
 .form_review {
   background: #fff;
   padding: 30px 40px;
+}
+.form_sizes {
+  background: #fff;
+  padding: 36px 40px 30px;
+  position: relative;
+}
+.form_sizes .field {
+  width: 80px;
+}
+.form_sizes:before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background: #ccc;
+  bottom: 0;
+}
+.form_carnice {
+  background: #fff;
+  padding: 36px 40px 30px;
+  position: relative;
 }
 /**
  * Angular JS slider directive
@@ -3601,6 +3646,72 @@ textarea.input {
 }
 .texture input:checked + .texture__bg:before {
   border: solid 3px #9ac6df;
+}
+.label__text {
+  color: #535354;
+  float: left;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  text-align: left;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  margin-right: 10px;
+}
+.field {
+  position: relative;
+  display: inline-block;
+}
+.btn-set {
+  padding: 36px 40px 30px;
+  background: #fff;
+}
+.btn-set .btn {
+  margin-right: 20px;
+}
+.btn-set .btn:last-child {
+  margin-right: 0;
+}
+.btn-set_margin-bottom {
+  margin-bottom: 20px;
+}
+.features {
+  background: #fff;
+  padding: 36px 40px 30px;
+  zoom: 1;
+}
+.features:before,
+.features:after {
+  content: "";
+  display: table;
+}
+.features:after {
+  clear: both;
+}
+.features__column {
+  width: 50%;
+  float: left;
+}
+.features__item {
+  zoom: 1;
+  padding-left: 30px;
+  position: relative;
+}
+.features__item:before,
+.features__item:after {
+  content: "";
+  display: table;
+}
+.features__item:after {
+  clear: both;
+}
+.features__item-text {
+  float: left;
+}
+.features .icon {
+  position: absolute;
+  left: 0;
+  top: 5px;
 }
 @media (min-width: 1280px) {
   .event__npc {

@@ -4,7 +4,7 @@
 	"model": "Кристалл",
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
-	"vendor": "США",
+	"country": "США",
 	"width": "150 см",
 	"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
 }, {
@@ -13,7 +13,7 @@
 	"model": "Листья",
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
-	"vendor": "Германия",
+	"country": "Германия",
 	"width": "250 см",
 	"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
 }, {
@@ -22,7 +22,7 @@
 	"model": "Люксор Уно",
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
-	"vendor": "Россия",
+	"country": "Россия",
 	"width": "200 см",
 	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
 }, {
@@ -31,7 +31,7 @@
 	"model": "Красный Меланж",
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
-	"vendor": "Россия",
+	"country": "Россия",
 	"width": "200 см",
 	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
 }]

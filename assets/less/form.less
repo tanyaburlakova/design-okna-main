@@ -20,6 +20,10 @@
 			padding-left: 10px;
 		}
 	}
+	&__cell {
+		float: left;
+		display: inline-block;
+	}
 	&__fieldset {
 		border: 0;
 		padding: 40px 20px;
@@ -74,5 +78,28 @@
 	&_review {
 		background: #fff;
 		padding: 30px 40px;
+	}
+	&_sizes {
+		background: #fff;
+		padding: 36px 40px 30px;
+		position: relative;
+		.field {
+			width: 80px;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			display: inline-block;
+			left: 40px;
+			right: 40px;
+			height: 1px;
+			background: #ccc;
+			bottom: 0;
+		}
+	}
+	&_carnice {
+		background: #fff;
+		padding: 36px 40px 30px;
+		position: relative;
 	}
 }
