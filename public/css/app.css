@@ -3154,14 +3154,16 @@ textarea.input {
 .text-block__container + .text-block__container {
   margin-top: 48px;
 }
-.text-block__title {
+.text-block__title,
+.text-block h1 {
   color: #363537;
   font-size: 16px;
   font-weight: 500;
   line-height: 30px;
   margin: 0 0 23px;
 }
-.text-block__text {
+.text-block__text,
+.text-block p {
   opacity: 0.8;
   color: #363537;
   font-size: 13px;
@@ -3169,8 +3171,17 @@ textarea.input {
   line-height: 20px;
   margin: 0;
 }
-.text-block__text + .text-block__text {
+.text-block__text + .text-block__text,
+.text-block__text + .text-block p,
+.text-block p + .text-block__text,
+.text-block p + .text-block p {
   margin-top: 20px;
+}
+.text-block p {
+  margin-bottom: 48px !important;
+}
+.text-block p:last-of-type {
+  margin-bottom: 0 !important;
 }
 .text-block__img {
   width: 100%;

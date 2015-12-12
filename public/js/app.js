@@ -51,6 +51,10 @@ var app = angular.module('myApp', [
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
 				})
+				.when('/product/:category/:subcategory/:subsubcategory', {
+					controller: 'ProductPageCtrl',
+					templateUrl: 'views/product.html'
+				})
 				// localhost:3000/product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza
 				.when('/product/:category/:subcategory/:subsubcategory/:texture', {
 					controller: 'ProductPageCtrl',
@@ -268,7 +272,7 @@ app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
-	angular.module('productPageCtrl', ['texturesService'])
+	angular.module('productPageCtrl', ['texturesService', 'productService'])
 		.controller('ProductPageCtrl', [
 			'$scope',
 			'$log',
@@ -276,10 +280,12 @@ app.constant('API_PATH', 'data/');
 			'$location',
 			'$routeParams',
 			'TexturesService',
+			'ProductService',
+			'$sce',
 			productPageCtrl
 		]);
 
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService) {
+	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, $sce) {
 		$log.log('product page ctrl');
 
 		$scope.catalogItems = [1, 2, 3, 4];
@@ -290,6 +296,20 @@ app.constant('API_PATH', 'data/');
 
 		$scope.init = function () {
 			$scope.getTextures();
+			$scope.getProduct();
+		};
+
+		$scope.getProduct = function (path) {
+			ProductService.getProduct(path)
+				.then(function (data) {
+					// Success
+					$scope.product = data;
+					$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
+					console.log(data);
+				}, function (err) {
+					// Error
+					console.log(err);
+				});
 		};
 
 		$scope.getTextures = function () {
@@ -308,9 +328,6 @@ app.constant('API_PATH', 'data/');
 					$scope.textures = data;
 					TexturesService.getTextureByUrl(texture);
 					$scope.textureModel = currentId;
-					console.log(currentId);
-
-					// $scope.getTextureById(currentId);
 
 					$scope.$watch('textureModel', function (newVal, oldVal) {
 						if (newVal) {
@@ -665,6 +682,43 @@ app.constant('API_PATH', 'data/');
 
 			$http.get(url)
 				.success(function (data) {
+					defer.resolve(data);
+				})
+				.error(function (res, errCode) {
+					defer.reject({
+						code: errCode,
+						text: 'api access [%s] error!'.replace('%s', url)
+					});
+				});
+
+			return defer.promise;
+		}
+	}
+})();
+
+(function () {
+	'use strict';
+	angular.module('productService', []).
+	factory('ProductService', [
+		'API_PATH',
+		'$http',
+		'$q',
+		productService
+	]);
+
+	function productService(API_PATH, $http, $q) {
+		var service = {
+			getProduct: getProduct
+		};
+		return service;
+
+		function getProduct(path) {
+			var url = API_PATH + 'product.json',
+				defer = $q.defer();
+
+			$http.get(url)
+				.success(function (data) {
+					service.textures = data;
 					defer.resolve(data);
 				})
 				.error(function (res, errCode) {

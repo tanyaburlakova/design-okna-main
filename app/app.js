@@ -51,6 +51,10 @@ var app = angular.module('myApp', [
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
 				})
+				.when('/product/:category/:subcategory/:subsubcategory', {
+					controller: 'ProductPageCtrl',
+					templateUrl: 'views/product.html'
+				})
 				// localhost:3000/product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza
 				.when('/product/:category/:subcategory/:subsubcategory/:texture', {
 					controller: 'ProductPageCtrl',

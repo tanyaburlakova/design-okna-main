@@ -9,7 +9,7 @@
 	<!-- Ribbon title -->
 	<div class="ribbon-title">
 		<div class="ribbon-title__text">
-			Римские шторы
+			{{product.category}}
 		</div>
 	</div>
 	<div class="column-2">
@@ -17,7 +17,7 @@
 		<div class="gallery">
 			<!-- Title -->
 			<div class="gallery__title">
-				Римские шторы <span class="gallery__model-title">модель {{currentTexture.model}}</span>
+				{{product.name}} <span class="gallery__model-title">модель {{currentTexture.model}}</span>
 			</div>
 			<!-- Main img -->
 			<div
@@ -26,44 +26,20 @@
 			</div>
 			<!-- List -->
 			<ul class="gallery__list">
-				<li class="gallery__item">
+				<li
+					ng-repeat="(index, galleryItem) in product.gallery"
+					class="gallery__item">
 					<input
-						ng-checked="true"
+						ng-checked="$first"
 						type="radio"
-						value="img/slide-1.jpg"
+						value="{{galleryItem.src}}"
 						ng-model="gallery.currentImage"
 						class="gallery__input"
-						id="galleryItem-1">
+						id="galleryItem-{{index+1}}">
 					<label
-						style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
+						style="background: url({{galleryItem.src}}) center no-repeat; background-size: cover;"
 						class="gallery__item-img"
-						for="galleryItem-1">
-					</label>
-				</li>
-				<li class="gallery__item">
-					<input
-						type="radio"
-						value="img/slide-2.jpg"
-						ng-model="gallery.currentImage"
-						class="gallery__input"
-						id="galleryItem-2">
-					<label
-						style="background: url(img/slide-2.jpg) center no-repeat; background-size: cover;"
-						class="gallery__item-img"
-						for="galleryItem-2">
-					</label>
-				</li>
-				<li class="gallery__item">
-					<input
-						type="radio"
-						value="img/slide-3.jpg"
-						ng-model="gallery.currentImage"
-						class="gallery__input"
-						id="galleryItem-3">
-					<label
-						style="background: url(img/slide-3.jpg) center no-repeat; background-size: cover;"
-						class="gallery__item-img"
-						for="galleryItem-3">
+						for="galleryItem-{{index+1}}">
 					</label>
 				</li>
 			</ul>
@@ -73,16 +49,10 @@
 			<div class="text-block__column text-block__column_padding">
 				<!-- Title -->
 				<h2 class="text-block__title">
-					Что такое римские шторы
+					{{product.description.title}}
 				</h2>
 				<p class="text-block__text">
-					Римские шторы &mdash; это изделие, сочетающее в себе все преимущества обычных портьер и горизонтальных жалюзи.
-					Они сделаны из ткани, поэтому их можно по праву назвать шторами, но их механизм управления очень напоминает устройство,
-					приводящее в движение ламели жалюзи. Такой удивительный тандем и послужил основой для создания довольно необычного
-					оконного убранства – римских штор. Они применяются в самых разных помещениях и способны украсить гостиную, детскую и
-					спальню, в том числе в комбинации с обычными портьерами. Их часто вешают на окна в учреждениях и офисах, они могут
-					быть прекрасным дополнением интерьера гостиниц и столовых, а могут и стать интересной особенностью танцевальных и
-					концертных залов
+					{{product.description.text}}
 				</p>
 			</div>
 		</div>
@@ -260,11 +230,11 @@
 			<div class="price-block__container">
 				<!-- Old price -->
 				<div class="price-block__old">
-					2300 р./м<sup>2</sup>
+					{{product.price.old}} р./м<sup>2</sup>
 				</div>
 				<!-- New price -->
 				<div class="price-block__new">
-					<strong>1200 р.</strong>/м<sup>2</sup>
+					<strong>{{product.price.new}} р.</strong>/м<sup>2</sup>
 				</div>
 			</div>
 			<!-- Description -->
@@ -272,7 +242,7 @@
 				Стоимость зависит от выбора материала и размеров
 			</p>
 			<div class="price-block__label">
-				<div class="price-block__label-text">-30%</div>
+				<div class="price-block__label-text">-{{product.discount}}%</div>
 			</div>
 		</div>
 		<!-- Textures -->
@@ -384,15 +354,10 @@
 			<div class="text-block__column text-block__column_padding">
 				<!-- Title -->
 				<h2 class="text-block__title">
-					Конструкция римских штор
+					{{product.construction.title}}
 				</h2>
 				<p class="text-block__text">
-					В закрытом состоянии римские шторы представляют собой ровное полотно без складок и сборок,
-					соответствующее по размеру площади оконного проёма. В нижний край полотна вшит утяжелитель,
-					кроме того, параллельно ему через равные расстояния также вшиты специальные планки, в которых
-					и заключена вся суть механизма этого солнцезащитного изделия. К планкам крепятся кольца,
-					а через них пропущены шнуры, идущие от утяжелителя к механизму управления. Карниз для римских
-					штор может быть выполнен по типу кордовой или роторно-цепочной системы.
+					{{product.construction.text}}
 				</p>
 			</div>
 			<div class="text-block__column text-block__column_padding">
@@ -400,7 +365,10 @@
 				<h2 class="text-block__title">
 					Схема
 				</h2>
-				<img src="img/scheme.jpg" alt="" class="text-block__img">
+				<img
+					ng-src="{{product.construction.scheme}}"
+					alt=""
+					class="text-block__img">
 				<a href="#" class="btn btn_blue btn-size-1">
 					Увеличить
 				</a>
@@ -409,34 +377,15 @@
 		<!-- Text block with benefits-->
 		<div class="text-block text-block_benefits">
 			<div class="text-block__column text-block__column_padding">
-				<div class="text-block__container">
-					<!-- Title -->
-					<h2 class="text-block__title">
-						Карниз для римских штор
-					</h2>
-					<p class="text-block__text">
-						Мы производим карниз для римских штор только с роторно-цепочным механизмом
-					</p>
-				</div>
-				<div class="text-block__container">
-					<!-- Title -->
-					<h2 class="text-block__title">
-						Сколько стоит карниз?
-					</h2>
-					<p class="text-block__text">
-						В комплект заказа входят:
-						<br>
-						профиль, подъемный механизм,
-						<br>
-						блок управления (роторно-цепочный) и кронштейны;
-					</p>
-					<!-- Price block -->
-					<div class="price-block price-block_inline">
-						<div class="price-block__text">Цена на карниз для римских штор </div>
-						<!-- New price -->
-						<div class="price-block__new">
-							<strong>1370 р.</strong>/пог.м
-						</div>
+				<div ng-bind-html="product.cornice.text"></div>
+				<!-- Price block -->
+				<div class="price-block price-block_inline">
+					<div class="price-block__text">
+						{{product.cornice.description}}
+					</div>
+					<!-- New price -->
+					<div class="price-block__new">
+						<strong>{{product.cornice.price}} р.</strong>/пог.м
 					</div>
 				</div>
 			</div>

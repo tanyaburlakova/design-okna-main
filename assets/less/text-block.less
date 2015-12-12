@@ -25,14 +25,14 @@
 			margin-top: 48px;
 		}
 	}
-	&__title {
+	&__title, h1 {
 		color: #363537;
 		font-size: 16px;
 		font-weight: 500;
 		line-height: 30px;
 		margin: 0 0 23px;
 	}
-	&__text {
+	&__text, p {
 		opacity: 0.8;
 		color: #363537;
 		font-size: 13px;
@@ -41,6 +41,13 @@
 		margin: 0;
 		&+&{
 			margin-top: 20px;
+		}
+	}
+	p {
+		// margin-top: 48px !important;
+		margin-bottom: 48px !important;
+		&:last-of-type {
+			margin-bottom: 0 !important;
 		}
 	}
 	&__img {

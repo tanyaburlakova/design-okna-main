@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('productPageCtrl', ['texturesService'])
+	angular.module('productPageCtrl', ['texturesService', 'productService'])
 		.controller('ProductPageCtrl', [
 			'$scope',
 			'$log',
@@ -8,10 +8,12 @@
 			'$location',
 			'$routeParams',
 			'TexturesService',
+			'ProductService',
+			'$sce',
 			productPageCtrl
 		]);
 
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService) {
+	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, $sce) {
 		$log.log('product page ctrl');
 
 		$scope.catalogItems = [1, 2, 3, 4];
@@ -22,6 +24,20 @@
 
 		$scope.init = function () {
 			$scope.getTextures();
+			$scope.getProduct();
+		};
+
+		$scope.getProduct = function (path) {
+			ProductService.getProduct(path)
+				.then(function (data) {
+					// Success
+					$scope.product = data;
+					$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
+					console.log(data);
+				}, function (err) {
+					// Error
+					console.log(err);
+				});
 		};
 
 		$scope.getTextures = function () {
@@ -40,9 +56,6 @@
 					$scope.textures = data;
 					TexturesService.getTextureByUrl(texture);
 					$scope.textureModel = currentId;
-					console.log(currentId);
-
-					// $scope.getTextureById(currentId);
 
 					$scope.$watch('textureModel', function (newVal, oldVal) {
 						if (newVal) {
