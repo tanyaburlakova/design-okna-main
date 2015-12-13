@@ -1,6 +1,7 @@
 .links-set {
 	margin-top: 12px;
 	font-size: 13px;
+
 	&__list {
 		list-style: none;
 		padding: 0;
@@ -22,6 +23,11 @@
 			opacity: 0.6;
 			transition: opacity .2s;
 		}
+		.icon-gt {
+			margin-top: 15px;
+			margin-right: 10px;
+			transform: rotate(180deg);
+		}
 	}
 	&__text {
 		float: left;
@@ -29,12 +35,12 @@
 		transition: opacity .2s;
 		opacity: 0.8;
 	}
-	&__link:hover{
-		.icon{
+	&__link:hover {
+		.icon {
 			opacity: 1
 		}
 	}
-	&__link:hover &__text{
+	&__link:hover &__text {
 		opacity: 1;
 	}
 }

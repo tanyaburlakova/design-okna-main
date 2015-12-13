@@ -446,6 +446,9 @@ button:focus {
   margin-bottom: 100px;
   position: relative;
 }
+.container_relative {
+  position: relative;
+}
 .column-1 {
   width: 25%;
 }
@@ -1052,6 +1055,13 @@ button:focus {
   opacity: 0.6;
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
+}
+.links-set__link .icon-gt {
+  margin-top: 15px;
+  margin-right: 10px;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .links-set__text {
   float: left;
@@ -3756,6 +3766,33 @@ textarea.input {
 }
 .rating > li.angular-input-stars-hover {
   text-shadow: black 0 0 3px;
+}
+.constructor-title {
+  background: url('../img/constructor_ribbon_top.png') no-repeat center;
+  width: 449px;
+  height: 96px;
+  position: absolute;
+  top: 10px;
+  left: 76px;
+  text-align: center;
+}
+.constructor-title__text {
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 40px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.constructor-title-bg {
+  background: url('../img/constructor_ribbon_buttom.png') no-repeat center;
+  width: 142px;
+  height: 50px;
+  position: absolute;
+  bottom: -22px;
+  left: -11px;
 }
 @media (min-width: 1280px) {
   .event__npc {
