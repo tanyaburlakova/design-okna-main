@@ -41,6 +41,9 @@
 		},
 		"font-awesome": {
 			"ignore": "*"
+		},
+		"numericjs": {
+			"main": "src/numeric.js"
 		}
 	},
 	"dependencies": {
@@ -54,7 +57,8 @@
 		"angularjs-slider": "2.0.0",
 		"angular-youtube-mb": "~1.1.1",
 		"lodash": "~3.10.1",
-		"angular-input-stars-directive": "angular-input-stars#*"
+		"angular-input-stars-directive": "angular-input-stars#*",
+		"numericjs": "~1.2.6"
 	},
 	"devDependencies": {
 		"svg4everybody": "~2.0.0"

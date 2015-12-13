@@ -4,8 +4,9 @@ var app = angular.module('myApp', [
 		'homeCtrl',
 		'articleCtrl',
 		'catalogCtrl',
-		'constructorCtrl',
+		'constructorPageCtrl',
 		'productPageCtrl',
+		'constructorPreviewDirective',
 		'checkboxDirective',
 		'textureDirective',
 		'hiderDirective',
@@ -62,7 +63,7 @@ var app = angular.module('myApp', [
 					templateUrl: 'views/product.html'
 				})
 				.when('/constructor', {
-					controller: 'ConstructorCtrl',
+					controller: 'ConstructorPageCtrl',
 					templateUrl: 'views/constructor.html'
 				})
 				.otherwise({

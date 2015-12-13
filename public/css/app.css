@@ -3794,6 +3794,29 @@ textarea.input {
   bottom: -22px;
   left: -11px;
 }
+.constructor-preview {
+  height: 700px;
+}
+.constructor-preview__bg {
+  display: inline-block;
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.constructor-preview__box {
+  left: 50%;
+  top: 100px;
+  margin-left: -247.875px;
+  width: 495.75px;
+  height: 664.5px;
+  position: relative;
+  z-index: 10;
+}
 @media (min-width: 1280px) {
   .event__npc {
     width: 50px;
