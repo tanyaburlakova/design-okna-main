@@ -78,6 +78,7 @@ gulp.task('svg2png', function () {
 gulp.task('copyViews', function () {
 	'use strict';
 	gulp.src('app/**/*html')
+		.pipe(plumber())
 		.pipe(fileinclude())
 		.pipe(gulp.dest('public'));
 });
