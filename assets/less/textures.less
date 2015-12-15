@@ -8,7 +8,7 @@
 		left: 40px;
 		right: 40px;
 		height: 1px;
-		background: #ccc;
+		background: #f9f9f9;
 	}
 	&:before {
 		top: 0;
@@ -23,6 +23,10 @@
 		margin: 0;
 		font-weight: @normal;
 		float: left;
+		color: #363537;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 20px;
 	}
 	&__filters {
 		float: right;
@@ -30,33 +34,61 @@
 	}
 	&__filters-title {
 		float: left;
-		margin: 0;
+		margin: 0 5px 0 0;
+		color: fade(#363537, 60%);
 		font-size: 12px;
-		font-weight: @normal;
+		font-weight: 500;
+		line-height: 20px;
 	}
 	&__filters-list {
 		float: left;
 		list-style: none;
 		padding: 0;
-		margin: 0;
+		margin: 0 31px 0 0;
 	}
 	&__filters-item {
 		float: left;
+		&+&{
+			margin-left: 2px;
+		}
 	}
 	&__filters-btn {
+		border: none;
+		background: none;
+		color: #363537;
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 20px;
+		vertical-align: top;
+		padding: 0 10px;
+		.icon{
+			margin-left: 3px;
+		}
 		&.active {
-			background: orange;
+			color: fade(#3f3f3f,70%);
 		}
 	}
 	&__list {
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		margin: 20px 0;
+		margin: 25px 0;
 		.clearfix();
 	}
 	&__item {
 		float: left;
 		margin-right: 10px;
+	}
+	&__show-all{
+		border: none;
+		background: none;
+		color: #a1a1a1;
+		font-size: 11px;
+		font-weight: 500;
+		line-height: 44px;
+		text-transform: uppercase;
+		.icon{
+			margin-left: 3px;
+		}
 	}
 }

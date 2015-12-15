@@ -600,6 +600,11 @@ button:focus {
   width: 8px;
   height: 11px;
 }
+.icon-shevron-down {
+  width: 10px;
+  height: 6px;
+  fill: currentColor;
+}
 /*
  * 	Core Owl Carousel CSS File
  *	v1.3.2
@@ -2859,7 +2864,7 @@ button:focus {
 }
 .form__cell {
   float: left;
-  display: inline-block;
+  width: 33%;
 }
 .form__fieldset {
   border: 0;
@@ -3434,12 +3439,34 @@ textarea.input {
 }
 .color__bg {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border: solid 3px #fff;
-  -webkit-transition: outline 0.3s;
-  transition: outline 0.3s;
-  outline: solid 3px #fff;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  background-size: cover;
+}
+.color__bg:before {
+  content: '';
+  -webkit-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+  position: absolute;
+  box-sizing: content-box;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: solid 1px #e6e6e6;
+  width: 20px;
+  height: 20px;
+}
+.color__bg:hover {
+  -webkit-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
 .color input {
   position: absolute;
@@ -3447,8 +3474,8 @@ textarea.input {
   top: 0;
   opacity: 0;
 }
-.color input:checked + .color__bg {
-  outline: solid 3px #9ac6df;
+.color input:checked + .color__bg:before {
+  border: solid 2px #9ac6df;
 }
 .price-block {
   background: #fff;
@@ -3527,13 +3554,30 @@ textarea.input {
   -ms-transform: translateY(100%);
   transform: translateY(100%);
   background: #fff;
-  padding: 10px;
+  padding: 20px 25px;
   width: 280px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   z-index: 5;
 }
 .popup__title {
   margin: 0;
+  opacity: 0.89;
+  color: #363537;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.popup__footer {
+  margin-top: 20px;
+}
+.popup__link {
+  opacity: 0.7;
+  color: #363537;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
 }
 .textures {
   background: #fff;
@@ -3547,7 +3591,7 @@ textarea.input {
   left: 40px;
   right: 40px;
   height: 1px;
-  background: #ccc;
+  background: #f9f9f9;
 }
 .textures:before {
   top: 0;
@@ -3570,6 +3614,10 @@ textarea.input {
   margin: 0;
   font-weight: 400;
   float: left;
+  color: #363537;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
 }
 .textures__filters {
   float: right;
@@ -3577,27 +3625,45 @@ textarea.input {
 }
 .textures__filters-title {
   float: left;
-  margin: 0;
+  margin: 0 5px 0 0;
+  color: rgba(54, 53, 55, 0.6);
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 20px;
 }
 .textures__filters-list {
   float: left;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 31px 0 0;
 }
 .textures__filters-item {
   float: left;
 }
+.textures__filters-item + .textures__filters-item {
+  margin-left: 2px;
+}
+.textures__filters-btn {
+  border: none;
+  background: none;
+  color: #363537;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  vertical-align: top;
+  padding: 0 10px;
+}
+.textures__filters-btn .icon {
+  margin-left: 3px;
+}
 .textures__filters-btn.active {
-  background: orange;
+  color: rgba(63, 63, 63, 0.7);
 }
 .textures__list {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin: 20px 0;
+  margin: 25px 0;
   zoom: 1;
 }
 .textures__list:before,
@@ -3611,6 +3677,18 @@ textarea.input {
 .textures__item {
   float: left;
   margin-right: 10px;
+}
+.textures__show-all {
+  border: none;
+  background: none;
+  color: #a1a1a1;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+.textures__show-all .icon {
+  margin-left: 3px;
 }
 .colors-set {
   list-style: none;
@@ -3684,7 +3762,7 @@ textarea.input {
   float: left;
   font-size: 13px;
   font-weight: normal;
-  line-height: 20px;
+  line-height: 25px;
   text-align: left;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
@@ -3695,7 +3773,7 @@ textarea.input {
   display: inline-block;
 }
 .btn-set {
-  padding: 36px 40px 30px;
+  padding: 0 40px 30px;
   background: #fff;
 }
 .btn-set .btn {
@@ -3709,7 +3787,7 @@ textarea.input {
 }
 .features {
   background: #fff;
-  padding: 36px 40px 30px;
+  padding: 0 40px 30px;
   zoom: 1;
 }
 .features:before,
@@ -3720,6 +3798,12 @@ textarea.input {
 .features:after {
   clear: both;
 }
+.features__title {
+  color: #363537;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
 .features__column {
   width: 50%;
   float: left;
@@ -3728,6 +3812,7 @@ textarea.input {
   zoom: 1;
   padding-left: 30px;
   position: relative;
+  margin-bottom: 15px;
 }
 .features__item:before,
 .features__item:after {
@@ -3739,11 +3824,15 @@ textarea.input {
 }
 .features__item-text {
   float: left;
+  color: #363537;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
 }
 .features .icon {
   position: absolute;
   left: 0;
-  top: 5px;
+  top: 2px;
 }
 /* <input-star></input-star> directive */
 .rating {

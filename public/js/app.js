@@ -89,6 +89,338 @@ app.constant('API_PATH', 'data/');
 
 (function () {
 	'use strict';
+	angular.module('articleCtrl', [])
+		.controller('ArticleCtrl', [
+			'$scope',
+			'$log',
+			articleCtrl
+		]);
+
+	function articleCtrl($scope, $log) {
+		$log.log('article ctrl');
+
+
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('benefitsCtrl', ['benefitsService'])
+		.controller('BenefitsCtrl', [
+			'$scope',
+			'$log',
+			'BenefitsService',
+			benefitsCtrl
+		]);
+
+	function benefitsCtrl($scope, $log, BenefitsService) {
+		$log.log('benefits ctrl');
+
+		var url = $scope.url;
+
+		$scope.init = function () {
+			$scope.getBenefits(url);
+		};
+
+		$scope.getBenefits = function (url) {
+			BenefitsService.getBenefits(url)
+				.then(function (data) {
+					// Success
+					$scope.benefits = data;
+				}, function (err) {
+					// Error
+					$log.error(err);
+				});
+		};
+
+		$scope.init();
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('catalogCtrl', [])
+		.controller('CatalogCtrl', [
+			'$scope',
+			'$log',
+			catalogCtrl
+		]);
+
+	function catalogCtrl($scope, $log) {
+		$log.log('catalog ctrl');
+
+		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+
+		$scope.priceSlider = {
+			min: 100,
+			max: 180,
+			options: {
+				floor: 0,
+				ceil: 450
+			}
+		};
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('constructorPageCtrl', [])
+		.controller('ConstructorPageCtrl', [
+			'$scope',
+			'$log',
+			constructorPageCtrl
+		]);
+
+	function constructorPageCtrl($scope, $log) {
+		$log.log('Constructor page ctrl');
+
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('constructorPreviewCtrl', [])
+		.controller('ConstructorPreviewCtrl', [
+			'$scope',
+			'$log',
+			constructorPreviewCtrl
+		]);
+
+	function constructorPreviewCtrl($scope, $log) {
+		$log.log('Constructor preview ctrl');
+
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('hiderCtrl', [])
+		.controller('HiderCtrl', [
+			'$scope',
+			'$log',
+			'$window',
+			hiderCtrl
+		]);
+
+	function hiderCtrl($scope, $log, $window) {
+		$log.log('hider ctrl');
+
+		$scope.$window = $window;
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('homeCtrl', ['benefitsDirective'])
+		.controller('HomeCtrl', [
+			'$scope',
+			'$log',
+			homeCtrl
+		]);
+
+	function homeCtrl($scope, $log) {
+		$log.log('home ctrl');
+
+		$scope.bigSliderItems = [
+			'img/slide-1.jpg'
+		];
+
+		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+
+		$scope.catalogData = {};
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('mainCtrl', [])
+		.controller('MainCtrl', [
+			'$scope',
+			'$log',
+			'$timeout',
+			mainCtrl
+		]);
+
+	function mainCtrl($scope, $log, $timeout) {
+		$log.log('main ctrl');
+
+		$(function () {
+			svg4everybody({
+				fallback: function (src, svg, use) {
+					var className = $(svg).attr('class');
+					$(svg).replaceWith($('<span/>').addClass(className).css('background-image', 'url(' + src.replace('icons.svg#', '') + '.png)'));
+				}
+			});
+		});
+
+		$scope.refreshRange = function () {
+			$timeout(function () {
+				$scope.$broadcast('rzSliderForceRender');
+			});
+		};
+
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('parallaxCtrl', [])
+		.controller('ParallaxCtrl', [
+			'$scope',
+			'$log',
+			'$window',
+			parallaxCtrl
+		]);
+
+	function parallaxCtrl($scope, $log, $window) {
+		$log.log('parallax ctrl');
+
+		$scope.$window = $window;
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('productPageCtrl', ['texturesService', 'productService'])
+		.controller('ProductPageCtrl', [
+			'$scope',
+			'$log',
+			'youtubeEmbedUtils',
+			'$location',
+			'$routeParams',
+			'TexturesService',
+			'ProductService',
+			'$sce',
+			'$timeout',
+			productPageCtrl
+		]);
+
+	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, $sce, $timeout) {
+		$log.log('product page ctrl');
+
+		$scope.catalogItems = [1, 2, 3, 4];
+		$scope.reviewsItems = [1, 2];
+		$scope.gallery = {};
+		$scope.gallery.currentImage = 'img/slide-1.jpg';
+		$scope.textureModel = null;
+		$scope.rating = 4;
+
+		$scope.init = function () {
+			$scope.getTextures();
+			$scope.getProduct();
+		};
+
+		$scope.getProduct = function (path) {
+			ProductService.getProduct(path)
+				.then(function (data) {
+					// Success
+					$scope.product = data;
+					$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
+				}, function (err) {
+					// Error
+					console.log(err);
+				});
+		};
+
+		$scope.getTextures = function () {
+			TexturesService.getTextures()
+				.then(function (data) {
+					// Success
+					var category = $routeParams.category,
+						subcategory = $routeParams.subcategory,
+						subsubcategory = $routeParams.subsubcategory,
+						texture = $routeParams.texture,
+						currentTexture = TexturesService.getTextureByUrl(texture) || {
+							id: 1
+						},
+						currentId = currentTexture.id;
+
+					$scope.textures = data;
+					TexturesService.getTextureByUrl(texture);
+					$scope.textureModel = currentId;
+
+					$scope.$watch('textureModel', function (newVal, oldVal) {
+						if (newVal) {
+							$scope.getTextureById(newVal);
+							$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + $scope.currentTexture.url, false);
+							$scope.gallery.currentImage = $scope.currentTexture.img;
+						}
+					});
+				}, function (err) {
+					// Error
+					console.log(err);
+				});
+		};
+
+		$scope.getTextureById = function (id) {
+			$scope.currentTexture = TexturesService.getTextureById(id);
+		};
+
+		$scope.getYoutubeId = function (url) {
+			return youtubeEmbedUtils.getIdFromURL(url);
+		};
+
+		$scope.priceSlider = {
+			min: 100,
+			max: 180,
+			options: {
+				floor: 0,
+				ceil: 450
+			}
+		};
+
+
+
+		$scope.init();
+
+	}
+
+})();
+
+(function () {
+	'use strict';
+	angular.module('questionCtrl', ['questionService'])
+		.controller('QuestionCtrl', [
+			'$scope',
+			'$log',
+			'QuestionService',
+			questionCtrl
+		]);
+
+	function questionCtrl($scope, $log, QuestionService) {
+		$log.log('question ctrl');
+
+		$scope.init = function () {
+			$scope.getQuestion();
+		};
+
+		$scope.getQuestion = function () {
+			QuestionService.getQuestion()
+				.then(function (data) {
+					// Success
+					$scope.question = data;
+				}, function (err) {
+					// Error
+					$log.error(err);
+				});
+		};
+
+		$scope.init();
+	}
+
+})();
+
+(function () {
+	'use strict';
 
 	angular.module('benefitsDirective', ['benefitsCtrl'])
 		.directive('benefits', [
@@ -524,338 +856,6 @@ app.constant('API_PATH', 'data/');
 	function textureDirectiveLink(scope, el, attr) {
 
 	}
-})();
-
-(function () {
-	'use strict';
-	angular.module('articleCtrl', [])
-		.controller('ArticleCtrl', [
-			'$scope',
-			'$log',
-			articleCtrl
-		]);
-
-	function articleCtrl($scope, $log) {
-		$log.log('article ctrl');
-
-
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('benefitsCtrl', ['benefitsService'])
-		.controller('BenefitsCtrl', [
-			'$scope',
-			'$log',
-			'BenefitsService',
-			benefitsCtrl
-		]);
-
-	function benefitsCtrl($scope, $log, BenefitsService) {
-		$log.log('benefits ctrl');
-
-		var url = $scope.url;
-
-		$scope.init = function () {
-			$scope.getBenefits(url);
-		};
-
-		$scope.getBenefits = function (url) {
-			BenefitsService.getBenefits(url)
-				.then(function (data) {
-					// Success
-					$scope.benefits = data;
-				}, function (err) {
-					// Error
-					$log.error(err);
-				});
-		};
-
-		$scope.init();
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('catalogCtrl', [])
-		.controller('CatalogCtrl', [
-			'$scope',
-			'$log',
-			catalogCtrl
-		]);
-
-	function catalogCtrl($scope, $log) {
-		$log.log('catalog ctrl');
-
-		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
-
-		$scope.priceSlider = {
-			min: 100,
-			max: 180,
-			options: {
-				floor: 0,
-				ceil: 450
-			}
-		};
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('constructorPageCtrl', [])
-		.controller('ConstructorPageCtrl', [
-			'$scope',
-			'$log',
-			constructorPageCtrl
-		]);
-
-	function constructorPageCtrl($scope, $log) {
-		$log.log('Constructor page ctrl');
-
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('constructorPreviewCtrl', [])
-		.controller('ConstructorPreviewCtrl', [
-			'$scope',
-			'$log',
-			constructorPreviewCtrl
-		]);
-
-	function constructorPreviewCtrl($scope, $log) {
-		$log.log('Constructor preview ctrl');
-
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('hiderCtrl', [])
-		.controller('HiderCtrl', [
-			'$scope',
-			'$log',
-			'$window',
-			hiderCtrl
-		]);
-
-	function hiderCtrl($scope, $log, $window) {
-		$log.log('hider ctrl');
-
-		$scope.$window = $window;
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('homeCtrl', ['benefitsDirective'])
-		.controller('HomeCtrl', [
-			'$scope',
-			'$log',
-			homeCtrl
-		]);
-
-	function homeCtrl($scope, $log) {
-		$log.log('home ctrl');
-
-		$scope.bigSliderItems = [
-			'img/slide-1.jpg'
-		];
-
-		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
-
-		$scope.catalogData = {};
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('mainCtrl', [])
-		.controller('MainCtrl', [
-			'$scope',
-			'$log',
-			'$timeout',
-			mainCtrl
-		]);
-
-	function mainCtrl($scope, $log, $timeout) {
-		$log.log('main ctrl');
-
-		$(function () {
-			svg4everybody({
-				fallback: function (src, svg, use) {
-					var className = $(svg).attr('class');
-					$(svg).replaceWith($('<span/>').addClass(className).css('background-image', 'url(' + src.replace('icons.svg#', '') + '.png)'));
-				}
-			});
-		});
-
-		$scope.refreshRange = function () {
-			$timeout(function () {
-				$scope.$broadcast('rzSliderForceRender');
-			});
-		};
-
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('parallaxCtrl', [])
-		.controller('ParallaxCtrl', [
-			'$scope',
-			'$log',
-			'$window',
-			parallaxCtrl
-		]);
-
-	function parallaxCtrl($scope, $log, $window) {
-		$log.log('parallax ctrl');
-
-		$scope.$window = $window;
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('productPageCtrl', ['texturesService', 'productService'])
-		.controller('ProductPageCtrl', [
-			'$scope',
-			'$log',
-			'youtubeEmbedUtils',
-			'$location',
-			'$routeParams',
-			'TexturesService',
-			'ProductService',
-			'$sce',
-			'$timeout',
-			productPageCtrl
-		]);
-
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, $sce, $timeout) {
-		$log.log('product page ctrl');
-
-		$scope.catalogItems = [1, 2, 3, 4];
-		$scope.reviewsItems = [1, 2];
-		$scope.gallery = {};
-		$scope.gallery.currentImage = 'img/slide-1.jpg';
-		$scope.textureModel = null;
-		$scope.rating = 4;
-
-		$scope.init = function () {
-			$scope.getTextures();
-			$scope.getProduct();
-		};
-
-		$scope.getProduct = function (path) {
-			ProductService.getProduct(path)
-				.then(function (data) {
-					// Success
-					$scope.product = data;
-					$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
-				}, function (err) {
-					// Error
-					console.log(err);
-				});
-		};
-
-		$scope.getTextures = function () {
-			TexturesService.getTextures()
-				.then(function (data) {
-					// Success
-					var category = $routeParams.category,
-						subcategory = $routeParams.subcategory,
-						subsubcategory = $routeParams.subsubcategory,
-						texture = $routeParams.texture,
-						currentTexture = TexturesService.getTextureByUrl(texture) || {
-							id: 1
-						},
-						currentId = currentTexture.id;
-
-					$scope.textures = data;
-					TexturesService.getTextureByUrl(texture);
-					$scope.textureModel = currentId;
-
-					$scope.$watch('textureModel', function (newVal, oldVal) {
-						if (newVal) {
-							$scope.getTextureById(newVal);
-							$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + $scope.currentTexture.url, false);
-							$scope.gallery.currentImage = $scope.currentTexture.img;
-						}
-					});
-				}, function (err) {
-					// Error
-					console.log(err);
-				});
-		};
-
-		$scope.getTextureById = function (id) {
-			$scope.currentTexture = TexturesService.getTextureById(id);
-		};
-
-		$scope.getYoutubeId = function (url) {
-			return youtubeEmbedUtils.getIdFromURL(url);
-		};
-
-		$scope.priceSlider = {
-			min: 100,
-			max: 180,
-			options: {
-				floor: 0,
-				ceil: 450
-			}
-		};
-
-
-
-		$scope.init();
-
-	}
-
-})();
-
-(function () {
-	'use strict';
-	angular.module('questionCtrl', ['questionService'])
-		.controller('QuestionCtrl', [
-			'$scope',
-			'$log',
-			'QuestionService',
-			questionCtrl
-		]);
-
-	function questionCtrl($scope, $log, QuestionService) {
-		$log.log('question ctrl');
-
-		$scope.init = function () {
-			$scope.getQuestion();
-		};
-
-		$scope.getQuestion = function () {
-			QuestionService.getQuestion()
-				.then(function (data) {
-					// Success
-					$scope.question = data;
-				}, function (err) {
-					// Error
-					$log.error(err);
-				});
-		};
-
-		$scope.init();
-	}
-
 })();
 
 /*! jQuery UI - v1.11.4 - 2015-12-13

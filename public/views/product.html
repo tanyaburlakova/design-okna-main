@@ -456,6 +456,7 @@
 									class="textures__filters-btn"
 									ng-class="{'active': togglePricePopup}">
 									цена
+									<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 								</button>
 								<!-- Popup -->
 								<div class="popup" ng-show="togglePricePopup">
@@ -484,6 +485,7 @@
 									class="textures__filters-btn"
 									ng-class="{'active': toggleColorsPopup}">
 									цвет
+									<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 								</button>
 								<!-- Popup -->
 								<div class="popup" ng-show="toggleColorsPopup">
@@ -540,6 +542,10 @@
 						</texture>
 					</li>
 				</ul>
+				<button class="textures__show-all">
+					развернуть все 457 материалов
+					<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
+				</button>
 			</div>
 			<!-- Sizes -->
 			<div class="form form_sizes">
