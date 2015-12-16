@@ -90,7 +90,9 @@ gulp.task('pluginsConcat', function () {
 	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.legacy.min.js');
 	gulp.src(bowerFiles)
 		.pipe(concat('plugins.min.js'))
-		// .pipe(uglify())
+		.pipe(uglify({
+			mangle: false
+		}))
 		.pipe(gulp.dest('public/js'));
 });
 
@@ -102,7 +104,9 @@ gulp.task('jsConcat', function () {
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(concat('app.js'))
-		// .pipe(uglify())
+		.pipe(uglify({
+			mangle: false
+		}))
 		.on('error', notify.onError(function (error) {
 			return '\nAn error occurred while uglifying js.\nLook in the console for details.\n' + error;
 		}))
