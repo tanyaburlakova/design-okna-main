@@ -1558,6 +1558,11 @@ button:focus {
   padding-left: 10px;
   padding-right: 10px;
 }
+.btn_constructor {
+  position: absolute;
+  top: 100px;
+  right: 0;
+}
 .question {
   height: 380px;
   padding: 25px;
@@ -3690,6 +3695,21 @@ textarea.input {
 .textures__show-all .icon {
   margin-left: 3px;
 }
+.textures_dark {
+  background: none;
+}
+.textures_dark:after {
+  display: none;
+}
+.textures_dark .textures__title {
+  color: #afafaf;
+}
+.textures_dark .textures__filters-title {
+  color: #afafaf;
+}
+.textures_dark .textures__filters-btn {
+  color: #afafaf;
+}
 .colors-set {
   list-style: none;
   padding: 0;
@@ -3885,6 +3905,7 @@ textarea.input {
 }
 .constructor-preview {
   height: 700px;
+  background: #333333;
 }
 .constructor-preview__bg {
   display: inline-block;
@@ -3901,10 +3922,72 @@ textarea.input {
   left: 50%;
   top: 100px;
   margin-left: -247.875px;
-  width: 495.75px;
-  height: 664.5px;
+  width: 330.5px;
+  height: 443px;
   position: relative;
   z-index: 10;
+}
+.tabs {
+  background: #3d4a4e;
+  position: relative;
+}
+.tabs__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  zoom: 1;
+}
+.tabs__list:before,
+.tabs__list:after {
+  content: "";
+  display: table;
+}
+.tabs__list:after {
+  clear: both;
+}
+.tabs__item {
+  float: left;
+  padding: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  cursor: pointer;
+  background: #2a3032;
+  color: #fff;
+}
+.tabs__item.active {
+  background: #3d4a4e;
+}
+.tabs__content {
+  zoom: 1;
+  display: inline-block;
+  width: 100%;
+}
+.tabs__content:before,
+.tabs__content:after {
+  content: "";
+  display: table;
+}
+.tabs__content:after {
+  clear: both;
+}
+.tabs__column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+.tabs .label {
+  color: #fff;
 }
 @media (min-width: 1280px) {
   .event__npc {

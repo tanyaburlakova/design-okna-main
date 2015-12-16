@@ -1,0 +1,40 @@
+.tabs {
+	background: #3d4a4e;
+	position: relative;
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: inline-block;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateY(-100%);
+		.clearfix();
+	}
+	&__item {
+		float: left;
+		padding: 10px;
+		.no-select();
+		cursor: pointer;
+		background: #2a3032;
+		color: #fff;
+		&.active {
+			background: #3d4a4e;
+		}
+	}
+	&__content {
+		.clearfix();
+		display: inline-block;
+		width: 100%;
+	}
+	&__column {
+		float: left;
+		width: 50%;
+		padding: 20px;
+	}
+	.label {
+		color: #fff;
+	}
+}
