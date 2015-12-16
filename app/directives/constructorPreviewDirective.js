@@ -20,8 +20,7 @@
 	}
 
 	function constructorPreviewDirectiveLink(scope, el, attr) {
-		var applyTransform, getTransform, makeTransformable;
-
+		var applyTransform, getTransform, makeTransformable, controlPoints;
 
 		getTransform = function (from, to) {
 			var A, H, b, h, i, k, k_i, l, lhs, m, ref, rhs;
@@ -102,8 +101,11 @@
 
 		makeTransformable = function (selector, callback) {
 			return $(selector).each(function (i, element) {
-				var controlPoints, originalPos, p, position;
+				var originalPos, p, position;
+				controlPoints = controlPoints || [];
+
 				$(element).css('transform', '');
+
 				controlPoints = (function () {
 					var k, len, ref, results;
 					ref = ['left top', 'left bottom', 'right top', 'right bottom'];
@@ -171,7 +173,27 @@
 			});
 		};
 
-		makeTransformable('.js-box', function (element, H) {});
+		console.log(el);
+
+		el.find('.js-box').draggable((function () {
+			makeTransformable('.js-box', function (element, H) {});
+			return {
+				start: function () {
+					// Clear dots
+					if (controlPoints.length > 0) {
+						$(controlPoints).each(function (index, el) {
+							el.remove();
+						});
+					}
+				},
+				stop: function () {
+					console.log('stop');
+					makeTransformable('.js-box', function (element, H) {});
+				}
+			};
+		})());
+
+		// makeTransformable('.js-box', function (element, H) {});
 
 	}
 })();
