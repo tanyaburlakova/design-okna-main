@@ -64,8 +64,23 @@
 		.icon{
 			margin-left: 3px;
 		}
+		&:after{
+			content: '';
+			display: none;
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			transform: rotate(45deg);
+			box-shadow: 0 0 13px rgba(0, 0, 1, 0.2);
+			margin: 5px 0 0 3px;
+			z-index: 6;
+		}
 		&.active {
 			color: fade(#3f3f3f,70%);
+			&:after{
+				display: block;
+			}
 		}
 	}
 	&__list {
