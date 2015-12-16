@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('constructorPageCtrl', [])
+	angular.module('constructorPageCtrl', ['naif.base64'])
 		.controller('ConstructorPageCtrl', [
 			'$scope',
 			'$log',

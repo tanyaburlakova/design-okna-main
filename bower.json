@@ -69,7 +69,8 @@
     "lodash": "~3.10.1",
     "angular-input-stars-directive": "angular-input-stars#*",
     "numericjs": "~1.2.6",
-    "jqueryui-touch-punch": "*"
+    "jqueryui-touch-punch": "*",
+    "angular-base64-upload": "~0.1.13"
   },
   "devDependencies": {
     "svg4everybody": "~2.0.0"

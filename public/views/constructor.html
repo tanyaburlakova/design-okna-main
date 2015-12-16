@@ -67,13 +67,15 @@
 	<!-- Constructor -->
 	<div class="constructor">
 		<div class="container container_relative">
-			<a href="#" class="btn btn_red btn_big btn_constructor">
+			<label
+				class="btn btn_red btn_big btn_constructor">
+				<input type="file" ng-model="constructorBgImg" base-sixty-four-input>
 				Загрузить фото своего окна
-			</a>
+			</label>
 		</div>
 		<!-- Constructor preview -->
 		<constructor-preview
-			background="http://img-fotki.yandex.ru/get/9257/63480951.11/0_ba563_edef4124_L.jpg"
+			background="{{constructorBgImg.base64}}"
 			blind="../img/ex.png">
 		</constructor-preview>
 		<!-- Tabs -->

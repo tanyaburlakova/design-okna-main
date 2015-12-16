@@ -1,5 +1,20 @@
 <div class="constructor-preview">
+	<img
+		ng-src="data:image/jpg;base64,{{background}}"
+		alt=""
+		class="constructor-preview__bg">
 	<div
+		ng-style="{'background-size': 'cover'}"
+		style="background: url(data:image/jpg;base64,{{background}}) no-repeat"
+		class="constructor-preview__bg">
+	</div>
+	<!-- <div
+		ng-style="{'background-size': 'cover'}"
+		style="background: url(data:image/jpg;base64,{{background}}) no-repeat"
+		class="constructor-preview__bg">
+	</div> -->
+	<div
+		ng-if="false"
 		ng-style="{'background': 'url({{background}}) no-repeat', 'background-size': 'cover'}"
 		class="constructor-preview__bg">
 	</div>

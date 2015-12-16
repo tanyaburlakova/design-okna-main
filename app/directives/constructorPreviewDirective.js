@@ -113,11 +113,7 @@
 					for (k = 0, len = ref.length; k < len; k++) {
 						position = ref[k];
 						results.push($('<div>').css({
-							border: '10px solid black',
-							borderRadius: '10px',
-							cursor: 'move',
-							position: 'absolute',
-							zIndex: 100000
+							position: 'absolute'
 						}).appendTo(el).position({
 							at: position,
 							of: element,
@@ -126,6 +122,9 @@
 					}
 					return results;
 				})();
+				$(controlPoints).each(function (index, el) {
+					el.addClass('constructor-preview__dot');
+				});
 				originalPos = (function () {
 					var k, len, results;
 					results = [];
