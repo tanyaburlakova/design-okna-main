@@ -460,22 +460,25 @@
 								</button>
 								<!-- Popup -->
 								<div class="popup" ng-show="togglePricePopup">
-									<h2 class="popup__title">
-										Стоимость материала за м<sup>2</sup>
-									</h2>
-									<div class="popup__content">
-										<!-- Price range -->
-										<range
-											min="priceSlider.min"
-											max="priceSlider.max"
-											options="{{priceSlider.options}}">
-										</range>
+									<div class="popup__inside">
+										<h2 class="popup__title">
+											Стоимость материала за м<sup>2</sup>
+										</h2>
+										<div class="popup__content">
+											<!-- Price range -->
+											<range
+												min="priceSlider.min"
+												max="priceSlider.max"
+												options="{{priceSlider.options}}">
+											</range>
+										</div>
+										<footer class="popup__footer">
+											<a href="#" class="popup__link">
+												<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+												Снять выделение
+											</a>
+										</footer>
 									</div>
-									<footer class="popup__footer">
-										<a href="#" class="popup__link">
-											Снять выделение
-										</a>
-									</footer>
 								</div>
 							</li>
 							<!-- By color -->
@@ -489,40 +492,43 @@
 								</button>
 								<!-- Popup -->
 								<div class="popup" ng-show="toggleColorsPopup">
-									<h2 class="popup__title">
-										Выберите цвет материала
-									</h2>
-									<div class="popup__content">
-										<!-- Colors set -->
-										<ul class="colors-set">
-											<li class="colors-set__item">
-												<color
-													model="filterColor.red"
-													name="color"
-													fill="red">
-												</color>
-											</li>
-											<li class="colors-set__item">
-												<color
-													model="filterColor.green"
-													name="color"
-													fill="green">
-												</color>
-											</li>
-											<li class="colors-set__item">
-												<color
-													model="filterColor.blue"
-													name="color"
-													fill="blue">
-												</color>
-											</li>
-										</ul>
+									<div class="popup__inside">
+										<h2 class="popup__title">
+											Выберите цвет материала
+										</h2>
+										<div class="popup__content">
+											<!-- Colors set -->
+											<ul class="colors-set">
+												<li class="colors-set__item">
+													<color
+														model="filterColor.red"
+														name="color"
+														fill="red">
+													</color>
+												</li>
+												<li class="colors-set__item">
+													<color
+														model="filterColor.green"
+														name="color"
+														fill="green">
+													</color>
+												</li>
+												<li class="colors-set__item">
+													<color
+														model="filterColor.blue"
+														name="color"
+														fill="blue">
+													</color>
+												</li>
+											</ul>
+										</div>
+										<footer class="popup__footer">
+											<a href="#" class="popup__link">
+												<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+												Снять выделение
+											</a>
+										</footer>
 									</div>
-									<footer class="popup__footer">
-										<a href="#" class="popup__link">
-											Снять выделение
-										</a>
-									</footer>
 								</div>
 							</li>
 						</ul>
