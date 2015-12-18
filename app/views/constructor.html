@@ -19,7 +19,7 @@
 		</constructor-preview>
 		<div
 			ng-if="!constructorBgImg.base64"
-			style="background-image: #333; background-image: url({{texture.preview}})"
+			ng-style="{'background-color': '#333', 'background-image': 'url(' + texture.preview + ')'}"
 			class="constructor__preview-slide">
 		</div>
 		<div class="container container_relative">

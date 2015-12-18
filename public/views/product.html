@@ -203,7 +203,7 @@
 							class="gallery__input"
 							id="galleryItem-texture">
 						<label
-							style="background: url({{currentTexture.img}}) center no-repeat; background-size: cover;"
+							ng-style="{'background': 'url(' + currentTexture.img + ') center no-repeat; background-size: cover;'}"
 							class="gallery__item-img"
 							for="galleryItem-texture">
 						</label>

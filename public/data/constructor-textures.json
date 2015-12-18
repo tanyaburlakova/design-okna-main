@@ -1,6 +1,6 @@
 [{
 	"id": 1,
-	"url": "kristall",
+	"url": "/product/zhaluzi/horizontalnye/aluminievye/kristall",
 	"model": "Кристалл",
 	"price": {
 		"old": "10000",
@@ -13,7 +13,7 @@
 	"preview": "img/cons_bg1.jpg"
 }, {
 	"id": 2,
-	"url": "listya",
+	"url": "/product/zhaluzi/horizontalnye/aluminievye/listya",
 	"model": "Моис",
 	"price": {
 		"old": "10000",
@@ -26,7 +26,7 @@
 	"preview": "img/cons_bg2.jpg"
 }, {
 	"id": 3,
-	"url": "luksor_uno",
+	"url": "/product/zhaluzi/horizontalnye/aluminievye/luksor_uno",
 	"model": "Мегре",
 	"price": {
 		"old": "10000",
@@ -39,7 +39,7 @@
 	"preview": "img/cons_bg3.jpg"
 }, {
 	"id": 4,
-	"url": "melanzh_red",
+	"url": "/product/zhaluzi/horizontalnye/aluminievye/melanzh_red",
 	"model": "Венге",
 	"price": {
 		"old": "10000",
