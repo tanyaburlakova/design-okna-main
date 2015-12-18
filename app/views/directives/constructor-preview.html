@@ -3,13 +3,8 @@
 		ng-src="data:image/jpg;base64,{{background}}"
 		alt=""
 		class="constructor-preview__bg">
-	<!-- <div
-		ng-if="false"
-		ng-style="{'background': 'url({{background}}) no-repeat', 'background-size': 'cover'}"
-		class="constructor-preview__bg">
-	</div> -->
 	<div
-		style="background-image: url(../{{blind}}); background-size: 100% 100%"
+		ng-style="{'background-image': 'url(../' + blind + ')', 'background-size': '100% 100%'}"
 		class="constructor-preview__box js-box">
 	</div>
 </div>
