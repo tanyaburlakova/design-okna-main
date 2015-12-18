@@ -35,7 +35,6 @@
 					$scope.textures = data;
 					$scope.$watch('textureId', function (newVal) {
 						$scope.texture = TexturesService.getTextureById(newVal);
-						console.log(TexturesService.getTextureById(newVal));
 					});
 				}, function (err) {
 					// Error

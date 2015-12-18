@@ -172,8 +172,10 @@
 			});
 		};
 
+		makeTransformable('.js-box', function (element, H) {});
+
 		// Make draggable blinds box
-		el.find('.js-box').draggable((function () {
+		/*el.find('.js-box').draggable((function () {
 			makeTransformable('.js-box', function (element, H) {});
 			return {
 				start: function () {
@@ -189,7 +191,7 @@
 					makeTransformable('.js-box', function (element, H) {});
 				}
 			};
-		})());
+		})());*/
 
 	}
 })();

@@ -3753,7 +3753,8 @@ textarea.input {
 .textures_dark {
   background: none;
 }
-.textures_dark:after {
+.textures_dark:after,
+.textures_dark:before {
   display: none;
 }
 .textures_dark .textures__title {
