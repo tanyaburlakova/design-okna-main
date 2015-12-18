@@ -1,0 +1,53 @@
+[{
+	"id": 1,
+	"url": "kristall",
+	"model": "Кристалл",
+	"price": {
+		"old": "10000",
+		"new": "5000"
+	},
+	"category": "горизонтальные",
+	"subcategory": "деревянные",
+	"img": "img/textures/kristall.png",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg1.jpg"
+}, {
+	"id": 2,
+	"url": "listya",
+	"model": "Моис",
+	"price": {
+		"old": "10000",
+		"new": "3000"
+	},
+	"category": "горизонтальные",
+	"subcategory": "деревянные",
+	"img": "img/textures/listya.png",
+	"texture": "img/ex2.png",
+	"preview": "img/cons_bg2.jpg"
+}, {
+	"id": 3,
+	"url": "luksor_uno",
+	"model": "Мегре",
+	"price": {
+		"old": "10000",
+		"new": "2000"
+	},
+	"category": "горизонтальные",
+	"subcategory": "деревянные",
+	"img": "img/textures/luksor_uno.png",
+	"texture": "img/ex3.png",
+	"preview": "img/cons_bg3.jpg"
+}, {
+	"id": 4,
+	"url": "melanzh_red",
+	"model": "Венге",
+	"price": {
+		"old": "10000",
+		"new": "300"
+	},
+	"category": "горизонтальные",
+	"subcategory": "деревянные",
+	"img": "img/textures/melanzh_red.png",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg4.jpg"
+}]

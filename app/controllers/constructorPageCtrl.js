@@ -4,14 +4,16 @@
 		.controller('ConstructorPageCtrl', [
 			'$scope',
 			'$log',
+			'$timeout',
 			'TexturesService',
 			constructorPageCtrl
 		]);
 
-	function constructorPageCtrl($scope, $log, TexturesService) {
+	function constructorPageCtrl($scope, $log, $timeout, TexturesService) {
 		$log.log('Constructor page ctrl');
 
 		$scope.textureModel = null;
+		$scope.textureId = 1;
 
 		$scope.priceSlider = {
 			min: 100,
@@ -23,13 +25,18 @@
 		};
 
 		$scope.init = function () {
-			$scope.getTextures();
+			$scope.getConstructorTextures();
 		};
 
-		$scope.getTextures = function () {
-			TexturesService.getTextures()
+		$scope.getConstructorTextures = function () {
+			TexturesService.getConstructorTextures()
 				.then(function (data) {
+					// Success
 					$scope.textures = data;
+					$scope.$watch('textureId', function (newVal) {
+						$scope.texture = TexturesService.getTextureById(newVal);
+						console.log(TexturesService.getTextureById(newVal));
+					});
 				}, function (err) {
 					// Error
 					console.log(err);

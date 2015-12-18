@@ -8,14 +8,47 @@
 			<label
 				class="btn btn_red btn_big btn_constructor">
 				<input type="file" ng-model="constructorBgImg" base-sixty-four-input>
-				Загрузить фото своего окна
+				Загрузить фото своего окна {{texture.texture}}
 			</label>
 		</div>
 		<!-- Constructor preview -->
 		<constructor-preview
+			ng-if="constructorBgImg.base64"
 			background="{{constructorBgImg.base64}}"
-			blind="../img/ex.png">
+			blind="{{texture.texture}}">
 		</constructor-preview>
+		<div
+			ng-if="!constructorBgImg.base64"
+			style="background-image: #333; background-image: url({{texture.preview}})"
+			class="constructor__preview-slide">
+		</div>
+		<div class="container container_relative">
+			<!-- Info -->
+			<div class="constructor-info">
+				<div class="constructor-info__column">
+					<!-- Product name -->
+					<div class="constructor-info__name">
+						Жалюзи {{texture.category}} {{texture.subcategory}} <span class="grey">{{texture.model}}</span>
+					</div>
+					<!-- Link -->
+					<a
+						ng-href="{{texture.url}}"
+						class="constructor-info__link">
+						Подробнее о товаре
+					</a>
+				</div>
+				<div class="constructor-info__column">
+					<!-- Price -->
+					<div class="constructor-info__price">
+						{{texture.price.new}} р<span class="grey">/м<sup>2</sup></span>
+					</div>
+					<!-- Add to cart -->
+					<button class="btn btn_blue btn_wide">
+						Отложить в корзину
+					</button>
+				</div>
+			</div>
+		</div>
 		<!-- Tabs -->
 		<div class="tabs">
 			<div class="container container_relative">
@@ -158,7 +191,7 @@
 									ng-repeat="texture in textures"
 									class="textures__item">
 									<texture
-										model="$parent.textureModel"
+										model="$parent.$parent.textureId"
 										name="texture"
 										checked="{{$first}}"
 										fill="{{texture.img}}"

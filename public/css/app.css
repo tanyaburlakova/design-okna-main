@@ -4019,6 +4019,38 @@ textarea.input {
 .tabs .label {
   color: #fff;
 }
+.constructor__preview-slide {
+  background: #333333;
+  display: inline-block;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+}
+.constructor-info {
+  position: absolute;
+  background: #fff;
+  right: 0;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  width: 440px;
+  padding: 20px;
+  z-index: 10;
+  zoom: 1;
+}
+.constructor-info:before,
+.constructor-info:after {
+  content: "";
+  display: table;
+}
+.constructor-info:after {
+  clear: both;
+}
+.constructor-info__column {
+  width: 50%;
+  float: left;
+}
 @media (min-width: 1280px) {
   .event__npc {
     width: 50px;
