@@ -24,6 +24,31 @@
 			}
 		};
 
+		$scope.types = [{
+			id: '1',
+			label: 'Горизонтальные'
+		}, {
+			id: '2',
+			label: 'Вертикальные'
+		}, {
+			id: '3',
+			label: 'Рулонные'
+		}];
+
+		$scope.models = [{
+			id: '1',
+			label: 'Лаура'
+		}, {
+			id: '2',
+			label: 'Эльвира'
+		}, {
+			id: '3',
+			label: 'Моисей'
+		}];
+
+		$scope.typesModel = $scope.types[0];
+		$scope.modelsModel = $scope.models[0];
+
 		$scope.init = function () {
 			$scope.getConstructorTextures();
 		};
