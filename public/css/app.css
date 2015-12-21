@@ -449,6 +449,9 @@ button:focus {
 .container_relative {
   position: relative;
 }
+.container_padding {
+  padding: 0 20px;
+}
 .column-1 {
   width: 25%;
 }
@@ -2374,8 +2377,26 @@ button:focus {
   width: 100%;
   margin-bottom: 0;
 }
+.catalog_3 {
+  width: 920px;
+  float: left;
+}
+.catalog_3 .catalog__list {
+  padding: 0;
+}
 .catalog_3 .catalog__item {
-  width: 33.33333333%;
+  width: 280px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+.catalog_3 .catalog__item:nth-child(3n+3) {
+  margin-right: 0;
+}
+.catalog_3 .catalog__item:nth-last-child(-n+2) {
+  margin-bottom: 0;
+}
+.catalog_3 .catalog__item .product {
+  margin-right: 0;
 }
 .catalog .more-btn {
   padding-bottom: 65px;
@@ -4379,6 +4400,14 @@ textarea.input {
 }
 .wrap-dd-menu .dropdown.active {
   visibility: visible;
+}
+.aside {
+  width: 280px;
+  float: left;
+  margin-right: 40px;
+}
+.aside .question {
+  width: 100%;
 }
 @media (min-width: 1310px) {
   .hide-in-desktop {

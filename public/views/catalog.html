@@ -170,7 +170,7 @@
 		class="image-gradient"
 		style="background: url(img/slide-1.jpg) center no-repeat; -webkit-background-size: cover; background-size: cover;">
 	</div>
-	<div class="container">
+	<div class="container container_padding">
 		<!-- Search info -->
 		<div class="search-info">
 			По запросу <strong>Горизонтальные жалюзи</strong> найдено 35 предложений
@@ -200,8 +200,8 @@
 			</ul>
 		</div>
 	</div>
-	<div class="container">
-		<div class="column-1">
+	<div class="container container_padding">
+ 		<div class="aside">
 			<!-- Filter -->
 			<div class="form form_filter">
 				<form action="#">
@@ -252,27 +252,23 @@
 			<!-- Question -->
 			<question></question>
 		</div>
-		<div class="column-3">
-			<!-- Catalog -->
-			<div class="container container_catalog">
-				<div class="catalog catalog_3">
-					<ul class="catalog__list">
-						<li
-							ng-repeat="(key, value) in catalogItems"
-							class="catalog__item">
-							<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-						</li>
-					</ul>
-					<!-- More btn -->
-					<div class="more-btn">
-						<a href class="more-btn__link">
-							<span class="icon icon-more"></span>
-							<span class="more-btn__text">
-								Показать больше новинок
-							</span>
-						</a>
-					</div>
-				</div>
+		<!-- Catalog -->
+		<div class="catalog catalog_3">
+			<ul class="catalog__list">
+				<li
+					ng-repeat="(key, value) in catalogItems"
+					class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+				</li>
+			</ul>
+			<!-- More btn -->
+			<div class="more-btn">
+				<a href class="more-btn__link">
+					<span class="icon icon-more"></span>
+					<span class="more-btn__text">
+						Показать больше новинок
+					</span>
+				</a>
 			</div>
 		</div>
 	</div>

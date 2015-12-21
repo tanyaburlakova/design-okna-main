@@ -32,8 +32,24 @@
 		}
 	}
 	&_3 {
+		width: 920px;
+		float: left;
+		.catalog__list {
+			padding: 0;
+		}
 		.catalog__item {
-			width: 100%/3;
+			width: 280px;
+			margin-right: 40px;
+			margin-bottom: 40px;
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+			&:nth-last-child(-n+2) {
+				margin-bottom: 0;
+			}
+			.product {
+				margin-right: 0;
+			}
 		}
 	}
 	.more-btn {
