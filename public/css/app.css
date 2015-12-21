@@ -4352,11 +4352,25 @@ textarea.input {
     width: 456px;
     height: 92px;
   }
-  .column-1 {
-    width: 33.33333333%;
+  .steps__item {
+    padding-left: 80px;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
   }
-  .column-3 {
-    width: 100%;
+  .steps .icon {
+    left: 30px;
+    top: 45px;
+    width: 30px;
+  }
+  .steps .icon-search-big {
+    width: 30px;
+  }
+  .steps .icon-phone {
+    width: 25px;
+  }
+  .steps .icon-worker {
+    width: 25px;
   }
 }
 
