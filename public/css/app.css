@@ -380,8 +380,7 @@ button:focus {
   outline: none;
 }
 .container {
-  max-width: 1280px;
-  min-width: 1000px;
+  width: 1280px;
   margin: 0 auto;
   position: static;
   zoom: 1;
@@ -1438,8 +1437,8 @@ button:focus {
 .news {
   margin-right: -10px;
   float: left;
-  width: 75%;
-  margin-right: 2%;
+  width: 960px;
+  margin-right: 20px;
   margin-bottom: 20px;
 }
 .news__inner {
@@ -1600,7 +1599,7 @@ button:focus {
   text-align: center;
   color: #fff;
   float: left;
-  width: 23%;
+  width: 300px;
   margin-bottom: 20px;
   background: #1ebbef;
   background: -webkit-linear-gradient(top, #1ebbef 0%, #c6d557 100%);
@@ -1682,9 +1681,9 @@ button:focus {
   background: url(../img/bg_benefits.jpg);
   background-size: cover;
   float: left;
-  width: 23%;
+  width: 320px;
   height: 380px;
-  margin-right: 2%;
+  margin-right: 20px;
 }
 .text-block_benefits .benefits {
   height: 460px;
@@ -1765,7 +1764,8 @@ button:focus {
   margin: 25px 0;
 }
 .product {
-  width: 23%;
+  width: 280px;
+  margin-right: 20px;
   float: left;
   position: relative;
 }
@@ -1910,7 +1910,7 @@ button:focus {
 .product__label {
   position: absolute;
   top: 0;
-  right: -2px;
+  right: -10px;
   width: 80px;
   height: 50px;
   background: url('../img/ribbon-red.svg') no-repeat;
@@ -2224,8 +2224,7 @@ button:focus {
 .article-preview {
   background: #fff;
   float: left;
-  width: 50%;
-  margin-left: 2%;
+  width: 640px;
   height: 380px;
   zoom: 1;
 }
@@ -2295,7 +2294,7 @@ button:focus {
 .jumbotron {
   height: 480px;
   margin: 40px 0;
-  margin-top: 0;
+  margin-top: 20px;
   color: #fff;
 }
 .jumbotron .container {
@@ -2324,6 +2323,7 @@ button:focus {
   line-height: 20px;
   text-transform: uppercase;
   margin-bottom: 30px;
+  margin-top: 40px;
   letter-spacing: 0.1em;
 }
 .jumbotron__text {
@@ -2331,7 +2331,7 @@ button:focus {
   font-weight: 300;
   line-height: 26px;
   margin-bottom: 20px;
-  width: 40%;
+  width: 56%;
   letter-spacing: 0.02em;
 }
 .catalog__title {
@@ -2346,6 +2346,7 @@ button:focus {
 .catalog__list {
   list-style: none;
   padding: 0;
+  padding: 0 20px;
   margin: 0;
   zoom: 1;
 }
@@ -2359,9 +2360,15 @@ button:focus {
 }
 .catalog__item {
   float: left;
-  width: 25%;
-  padding: 0 10px;
+  width: 280px;
   margin-bottom: 40px;
+  margin-right: 40px;
+}
+.catalog__item:nth-child(4n+4) {
+  margin-right: 0;
+}
+.catalog__item .product {
+  width: 100%;
 }
 .catalog_3 .catalog__item {
   width: 33.33333333%;
@@ -4336,9 +4343,10 @@ textarea.input {
 .wrap-dd-menu .dropdown.active {
   visibility: visible;
 }
-@media (max-width: 1060px) {
+@media (max-width: 1280px) {
   .container {
     padding: 0 44px;
+    max-width: 1100px;
   }
   .call-me {
     margin-right: 0;
@@ -4402,16 +4410,22 @@ textarea.input {
   .news {
     width: 100%;
   }
+  .news__container {
+    width: 33%;
+  }
+  .news__img {
+    width: 67%;
+  }
   .benefits {
-    width: 31.33333333%;
+    width: 32%;
     margin-bottom: 20px;
   }
   .question {
-    width: 31.33333333%;
+    width: 32%;
     margin-right: 2%;
   }
   .product {
-    width: 33.33333333%;
+    width: 32%;
     margin-bottom: 20px;
   }
   .article-preview {
@@ -4419,6 +4433,15 @@ textarea.input {
   }
   .jumbotron {
     height: 400px;
+  }
+  .catalog__item {
+    width: 32%;
+  }
+  .catalog__item:nth-child(4n+4) {
+    margin-right: 2%;
+  }
+  .catalog__item:nth-child(3n+3) {
+    margin-right: 0;
   }
 }
 

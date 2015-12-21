@@ -11,14 +11,21 @@
 	&__list {
 		list-style: none;
 		padding: 0;
+		padding: 0 20px;
 		margin: 0;
 		.clearfix();
 	}
 	&__item {
 		float: left;
-		width: 100%/4;
-		padding: 0 10px;
+		width: 280px;
 		margin-bottom: 40px;
+		margin-right: 40px;
+		&:nth-child(4n+4) {
+			margin-right: 0;
+		}
+		.product {
+			width: 100%;
+		}
 	}
 	&_3 {
 		.catalog__item {
