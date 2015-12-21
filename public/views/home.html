@@ -269,7 +269,12 @@
 			<!-- Product -->
 			<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
 			<!-- Article preview -->
-			<article class="article-preview">
+			<article class="article-preview hide-in-tablet show-in-mobile">
+				<!-- Img -->
+				<div
+					style="background: url('img/trends.jpg') left center no-repeat; background-size: cover;"
+					class="article-preview__img">
+				</div>
 				<div class="article-preview__container">
 					<!-- Title -->
 					<h2 class="article-preview__title">
@@ -286,11 +291,6 @@
 							Вероника Маркина
 						</div>
 					</div>
-				</div>
-				<!-- Img -->
-				<div
-					style="background: url('img/trends.jpg') left center no-repeat; background-size: cover;"
-					class="article-preview__img">
 				</div>
 			</article>
 		</div>

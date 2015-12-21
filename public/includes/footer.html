@@ -3,7 +3,7 @@
 	<div class="seo">
 		<div class="container">
 			<!-- Logo -->
-			<img src="img/logo_footer.png" alt="Дизайн Окна" class="seo__logo">
+			<img src="img/logo_footer.png" alt="Дизайн Окна" class="seo__logo hide-in-mobile">
 			<div class="seo__container">
 				<p class="seo__text">
 					Дизайн Окна &mdash; это производственная мастерская по современному оформлению окон. У нас за плечами: 8 лет опыта; 620 постоянных клиентов; 5000 выполненных заказов и десяток набитых шишек. Мы шьем шторы, производим жалюзи и карнизы, организовываем доставку и установку. Советуя, что лучше и практичнее, создавая простые вещи, мы делаем дом, квартиру или офис уютнее и еще более красивым, при этом вопрос прибыли уходит на второй план. Всегда. Нам нравится оказывать качественные услуги узкому кругу клиентов. Без суеты.
@@ -19,7 +19,7 @@
 			<!-- Top -->
 			<div class="site-footer__row">
 				<!-- Left -->
-				<div class="site-footer__column site-footer__column_left hide-in-tablet">
+				<div class="site-footer__column site-footer__column_left hide-in-tablet show-in-mobile">
 					<!-- Contacts -->
 					<div class="contacts">
 						<!-- Title -->
@@ -334,7 +334,7 @@
 						Напишите нам
 					</a>
 				</div>
-				<div class="site-footer__column site-footer__column_middle">
+				<div class="site-footer__column site-footer__column_middle hide-in-mobile">
 					<!-- Contacts -->
 					<div class="contacts">
 						<!-- Title -->
@@ -359,7 +359,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="site-footer__column site-footer__column_right">
+				<div class="site-footer__column site-footer__column_right hide-in-mobile">
 					<!-- Vendor -->
 					<div class="vendor vendor_tablet">
 						<p class="vendor__text">
@@ -401,13 +401,18 @@
 		<div class="container">
 			<!-- Logo -->
 			<img src="img/vendor_logo.png" alt="" class="vendor__logo">
-			<p class="vendor__text">
+			<p
+				style="display: none;"
+				class="vendor__text show-in-mobile">
+				Разработано в <a href="http://brainmaze.net" class="vendor__link">brainmaze.net</a>
+			</p>
+			<p class="vendor__text hide-in-mobile">
 				Все придумано и разработано командой <a href="http://brainmaze.net" class="vendor__link">brainmaze.net</a><span class="hide-in-portreit">, а дизайн помещения сделан друзьями из <a href="#" class="vendor__link">brainmaze.net</a></span>
 			</p>
-			<p class="vendor__text vendor__text_grey hide-in-portreit">
+			<p class="vendor__text vendor__text_grey hide-in-portreit hide-in-mobile">
 				Авторство фотографий
 			</p>
-			<p class="vendor__text hide-in-tablet">
+			<p class="vendor__text hide-in-tablet hide-in-mobile">
 				<svg class="icon icon-lock"><use xlink:href="icons/icons.svg#lock"></use></svg>
 				Передача данных зашифрована и безопасна
 			</p>
