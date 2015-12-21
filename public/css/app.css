@@ -1437,9 +1437,14 @@ button:focus {
 }
 .news {
   margin-right: -10px;
+  float: left;
+  width: 75%;
+  margin-right: 2%;
+  margin-bottom: 20px;
 }
 .news__inner {
   background: #fff;
+  position: relative;
   zoom: 1;
 }
 .news__inner:before,
@@ -1452,8 +1457,13 @@ button:focus {
 }
 .news__img {
   width: 66.66666667%;
-  height: 380px;
-  float: left;
+  min-height: 380px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
 }
 .news__img-inside {
   position: absolute;
@@ -1466,6 +1476,7 @@ button:focus {
   width: 33.33333333%;
   padding: 40px;
   position: relative;
+  min-height: 380px;
 }
 .news__label {
   background: url('../img/ribbon.svg');
@@ -1502,7 +1513,13 @@ button:focus {
   font-size: 13px;
   font-weight: 400;
   line-height: 20px;
-  margin-bottom: 45px;
+  max-height: 130px;
+  overflow: hidden;
+}
+.news .btn {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
 }
 .btn {
   border: none;
@@ -1582,13 +1599,13 @@ button:focus {
   position: relative;
   text-align: center;
   color: #fff;
+  float: left;
+  width: 23%;
+  margin-bottom: 20px;
   background: #1ebbef;
   background: -webkit-linear-gradient(top, #1ebbef 0%, #c6d557 100%);
   background: linear-gradient(to bottom, #1ebbef 0%, #c6d557 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1ebbef', endColorstr='#c6d557', GradientType=0);
-}
-.container__holder .question {
-  margin-left: 10px;
 }
 .question .btn {
   position: relative;
@@ -1664,8 +1681,10 @@ button:focus {
   position: relative;
   background: url(../img/bg_benefits.jpg);
   background-size: cover;
-  width: 100%;
+  float: left;
+  width: 23%;
   height: 380px;
+  margin-right: 2%;
 }
 .text-block_benefits .benefits {
   height: 460px;
@@ -1746,7 +1765,8 @@ button:focus {
   margin: 25px 0;
 }
 .product {
-  width: 100%;
+  width: 23%;
+  float: left;
   position: relative;
 }
 .product:hover .product__container {
@@ -1754,9 +1774,6 @@ button:focus {
   -ms-transform: translateY(0);
   transform: translateY(0);
   bottom: 65px;
-}
-.product__wrapper {
-  padding: 0 10px;
 }
 .product__inner {
   position: relative;
@@ -2206,9 +2223,11 @@ button:focus {
 }
 .article-preview {
   background: #fff;
+  float: left;
+  width: 50%;
+  margin-left: 2%;
   height: 380px;
   zoom: 1;
-  margin-left: -10px;
 }
 .article-preview:before,
 .article-preview:after {
@@ -4371,6 +4390,9 @@ textarea.input {
   }
   .steps .icon-worker {
     width: 25px;
+  }
+  .news {
+    width: 100%;
   }
 }
 

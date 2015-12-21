@@ -1,13 +1,23 @@
 .news {
 	margin-right: -10px;
+	float: left;
+	width: (100%/4*3);
+	margin-right: 2%;
+	margin-bottom: 20px;
 	&__inner {
 		background: #fff;
+		position: relative;
 		.clearfix();
 	}
 	&__img {
 		width: (100%/3*2);
-		height: 380px;
-		float: left;
+		min-height: 380px;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-size: cover;
+		background-position: center;
 	}
 	&__img-inside{
 		position: absolute;
@@ -20,6 +30,7 @@
 		width: (100%/3);
 		padding: 40px;
 		position: relative;
+		min-height: 380px;
 	}
 	&__label {
 		background: url('../img/ribbon.svg');
@@ -56,6 +67,13 @@
 		font-size: 13px;
 		font-weight: 400;
 		line-height: 20px;
-		margin-bottom: 45px;
+		max-height: 130px;
+		overflow: hidden;
+		// margin-bottom: 45px;
+	}
+	.btn {
+		position: absolute;
+		left: 40px;
+		bottom: 40px;
 	}
 }
