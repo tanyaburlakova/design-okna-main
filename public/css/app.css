@@ -3217,6 +3217,19 @@ rzslider .rz-ticks .tick .tick-value {
 .more-btn__text {
   margin-left: 10px;
 }
+.more-btn_red .more-btn__link {
+  opacity: 1;
+  padding: 10px 20px;
+  background: #c35545;
+  border-radius: 5px;
+}
+.more-btn_red .more-btn__text {
+  color: #fff;
+}
+.more-btn_red .icon {
+  background: #fff;
+  box-shadow: 9px 0 0 0 #fff, -9px 0 0 0 #fff;
+}
 .input {
   border: 1px solid #d4d7d6;
   border-radius: 3px;
@@ -4526,6 +4539,19 @@ textarea.input {
   }
   .catalog__item:nth-last-child(-n+3) {
     margin-bottom: 0;
+  }
+  .catalog_3 {
+    width: 600px;
+  }
+  .catalog_3 .catalog__item {
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+  .catalog_3 .catalog__item:nth-child(3n+3) {
+    margin-right: 40px;
+  }
+  .catalog_3 .catalog__item:nth-child(2n+2) {
+    margin-right: 0;
   }
   .catalog .more-btn {
     padding-bottom: 20px;
