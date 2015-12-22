@@ -1556,10 +1556,10 @@ button:focus {
   background: #73b0d3;
 }
 .btn_red {
-  background: #c35545;
+  background: #df5442;
 }
 .btn_red:hover {
-  background: #a14234;
+  background: #cc3622;
 }
 .btn_green {
   background: #c6d557;
@@ -2278,7 +2278,7 @@ button:focus {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: solid 2px #c35545;
+  border: solid 2px #df5442;
   float: left;
   margin-right: 20px;
 }
@@ -3220,7 +3220,7 @@ rzslider .rz-ticks .tick .tick-value {
 .more-btn_red .more-btn__link {
   opacity: 1;
   padding: 10px 20px;
-  background: #c35545;
+  background: #df5442;
   border-radius: 5px;
 }
 .more-btn_red .more-btn__text {
@@ -4431,6 +4431,11 @@ textarea.input {
   .container {
     width: 960px;
   }
+  .sort {
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   .call-me {
     margin-right: 10px;
   }
@@ -4654,6 +4659,17 @@ textarea.input {
   }
   .catalog .more-btn {
     padding-bottom: 20px;
+  }
+  .catalog_3 {
+    width: 280px;
+  }
+  .catalog_3 .catalog__list {
+    padding: 0;
+  }
+  .catalog_3 .catalog__item {
+    width: 100%;
+    padding: 0 !important;
+    margin-bottom: 20px;
   }
   .menu-vertical__column {
     width: 50%;
