@@ -1,6 +1,6 @@
 {
 	"scripts": {
-	  "postinstall": "gulp build"
+	  "postinstall": "./node_modules/.bin/gulp build"
 	},
   "dependencies": {
     "browser-sync": "2.7.6",
