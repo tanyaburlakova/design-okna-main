@@ -15,11 +15,7 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	plumber = require('gulp-plumber'),
 	modRewrite = require('connect-modrewrite'),
-	notify = require('gulp-notify');
-
-var connect = require('connect'),
-	http = require('http'),
-	serveStatic = require('serve-static'),
+	notify = require('gulp-notify'),
 	bower = require('gulp-bower');
 
 console.info('********** Bower Files **********');
@@ -148,15 +144,6 @@ gulp.task('browser-sync', function () {
 		},
 		open: false
 	});
-});
-
-gulp.task('server', ['build'], function(){
-	var app = connect();
-	app.use(modRewrite([
-		'^[^\\.]*$ /index.html [L]'
-	]));
-	app.use(serveStatic(__dirname + '/public'));
-	http.createServer(app).listen(process.env.PORT || 5000);
 });
 
 /******************************

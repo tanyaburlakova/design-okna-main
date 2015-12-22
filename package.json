@@ -1,4 +1,7 @@
 {
+	"scripts": {
+	  "postinstall": "gulp build"
+	},
   "dependencies": {
     "browser-sync": "2.7.6",
     "connect": "^3.4.0",
