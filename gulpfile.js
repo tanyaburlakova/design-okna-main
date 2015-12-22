@@ -15,8 +15,7 @@ var gulp = require('gulp'),
 	rename = require('gulp-rename'),
 	plumber = require('gulp-plumber'),
 	modRewrite = require('connect-modrewrite'),
-	notify = require('gulp-notify'),
-	bower = require('gulp-bower');
+	notify = require('gulp-notify');
 
 console.info('********** Bower Files **********');
 console.info(bowerFiles);
@@ -38,7 +37,6 @@ gulp.task('default', [
  * Build task
  ******************************/
 gulp.task('build', [
-	'bower',
 	'copyAssets',
 	'copyViews',
 	'pluginsConcat',
@@ -46,11 +44,6 @@ gulp.task('build', [
 	'less-min',
 	'svg'
 ]);
-
-gulp.task('bower', function(){
-	return bower()
-		.pipe(gulp.dest('./public'));
-})
 
 /******************************
  * Copy assets to public
