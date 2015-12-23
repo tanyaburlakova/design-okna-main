@@ -20,6 +20,11 @@
 			});
 		});
 
+		$scope.dialogShowed = false;
+		$scope.toggleDialog = function(){
+			$scope.dialogShowed = !$scope.dialogShowed;
+		};
+
 		$scope.refreshRange = function () {
 			$timeout(function () {
 				$scope.$broadcast('rzSliderForceRender');
