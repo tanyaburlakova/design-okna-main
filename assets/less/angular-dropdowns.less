@@ -4,16 +4,18 @@
 	width: 100%;
 	display: inline-block;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 6px 20px;
 	.no-select();
-	background: #fff;
-	border-radius: 7px;
-	border: 1px solid rgba(0, 0, 0, 0.15);
+	background-color: #cacccd;
+	border-radius: 3px;
 	box-shadow: 0 1px 1px rgba(50, 50, 50, 0.1);
 	cursor: pointer;
 	outline: none;
-	font-weight: bold;
-	color: #8AA8BD;
+	color: #323536;
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 20px;
+	text-transform: uppercase;
 }
 .wrap-dd-select.disabled {
 	cursor: default;
@@ -27,9 +29,10 @@
 	right: 15px;
 	top: 50%;
 	margin-top: -3px;
-	border-width: 6px 6px 0 6px;
-	border-style: solid;
-	border-color: #8aa8bd transparent;
+	background: url(../icons/shevron-down.svg) 100%;
+	width: 8px;
+	height: 6px;
+	opacity: .5;
 }
 .wrap-dd-select.disabled:after {
 	border: none;
@@ -40,10 +43,10 @@
 	left: 0;
 	right: 0;
 	z-index: 10;
-	background: white;
+	background-color: #cacccd;
 	padding: 0;
+	margin: 10px 0;
 	border-radius: inherit;
-	border: 1px solid rgba(0, 0, 0, 0.17);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	font-weight: normal;
 	list-style: none;
@@ -63,11 +66,10 @@
 }
 .wrap-dd-select .dropdown li a {
 	display: block;
-	padding: 10px;
+	padding: 10px 20px;
 	text-decoration: none;
-	color: #8aa8bd;
-	border-bottom: 1px solid #e6e8ea;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1);
+	color: #323536;
+	border-bottom: 1px solid rgba(230, 232, 234, 0.39);
 	cursor: pointer;
 }
 .wrap-dd-select .dropdown li i {

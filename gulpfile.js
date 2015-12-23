@@ -29,6 +29,7 @@ gulp.task('default', [
 	'pluginsConcat',
 	'jsConcat',
 	'less',
+	'svg',
 	'browser-sync',
 	'watch'
 ]);

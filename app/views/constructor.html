@@ -8,7 +8,8 @@
 			<label
 				class="btn btn_red btn_big btn_constructor">
 				<input type="file" ng-model="constructorBgImg" base-sixty-four-input>
-				Загрузить фото своего окна
+				<span class="icon icon-camera"></span>
+				<span class="text">Загрузить фото своего окна</span>
 			</label>
 		</div>
 		<!-- Constructor preview -->
@@ -61,8 +62,8 @@
 						class="tabs__item"
 						ng-class="{'active': toggleTab1}">
 						Жалюзи
-					</li>
-					<li
+					</li><!--
+					--><li
 						ng-click="toggleTab2 = !toggleTab2; toggleTab1 = false"
 						class="tabs__item"
 						ng-class="{'active': toggleTab2}">
