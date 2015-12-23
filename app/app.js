@@ -6,6 +6,7 @@ var app = angular.module('myApp', [
 		'catalogCtrl',
 		'constructorPageCtrl',
 		'productPageCtrl',
+		'cartDirective',
 		'constructorPreviewDirective',
 		'checkboxDirective',
 		'textureDirective',

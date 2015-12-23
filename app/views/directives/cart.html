@@ -1,0 +1,34 @@
+<div class="cart" data-pluralize-products="отложенный товар, отложенных товара, отложенных товаров">
+	<div class="cart__container">
+		<svg class="icon icon-cart"><use xlink:href="icons/icons.svg#cart"></use></svg>
+		<div class="cart__counter">{{items.length}}</div>
+	</div>
+	<div class="cart__text" ng-click="addProduct()">
+		Корзина
+	</div>
+	<div class="cart__dropdown" ng-class="{expanded : (items.length>0 && showDropdown)}">
+		<div class="cart__title" ng-if="items.length > 0">В корзине {{items.length}} {{pluralize(items.length)}}:</div>
+		<ul class="cart__list" ng-if="items.length > 0">
+			<li
+				ng-repeat="(key, product) in items"
+				class="cart__item cart-product">
+					<img src="{{product.image}}" class="cart-product__img">
+					<div class="cart-product__title">{{product.title}}</div>
+					<div class="cart-product__price"><strong>от {{product.price}} р.</strong>/м<sup>2</sup></div>
+					<button class="cart-product__dismiss" ng-click="removeProduct(key)">
+						<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+					</button>
+			</li>
+		</ul>
+		<footer class="cart__footer">
+			<p class="cart__description">
+				Оставьте свой телефон и наш менеджер 
+				перезвонит Вам для подтверждения заказа.
+			</p>
+			<div class="cart__phone-holder">
+				<input type="tel" class="cart__phone-input">
+			</div>
+			<button class="cart__phone-button btn btn_green">Жду звонка</button>
+		</footer>
+	</div>
+</div>

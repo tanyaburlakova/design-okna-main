@@ -10,13 +10,24 @@
 		content: '';
 		background: url(../img/logo_shadow.png);
 		position: absolute;
-		z-index: -1;
 		display: block;
 		width: 156px;
 		height: 156px;
 		top: -18px;
 		left: 50%;
 		margin-left: -67px;
+		z-index: 4;
+	}
+	&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 25px;
+		height: 54px;
+		left: 0;
+		right: 0;
+		box-shadow: 2.5px 4.3px 18px rgba(0, 0, 1, 0.21);
+		z-index: 5;
 	}
 	.container {
 		max-width: 1092px;

@@ -1,0 +1,39 @@
+.cart-product{
+	overflow: hidden;
+	position: relative;
+	padding: 18px 0 19px;
+	border-bottom: 1px solid fade(#bebebe, 20%);
+	&__img{
+		width: 42px;
+		height: 42px;
+		float: left;
+		margin-right: 18px;
+	}
+	&__title{
+		color: #363537;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 20px;
+	}
+	&__price{
+		font-size: 13px;
+		font-weight: 900;
+		line-height: 20px;
+		color: #b5b5b5;
+		strong {
+			font-weight: @black;
+			color: #363537;
+		}
+	}
+	&__dismiss{
+		position: absolute;
+		right: -15px;
+		top: 50%;
+		margin-top: -20px;
+		padding: 15px;
+		line-height: 0;
+		background: none;
+		border: none;
+		color: #bebebe;
+	}
+}
