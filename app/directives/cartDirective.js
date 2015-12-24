@@ -19,7 +19,7 @@
 
 	function cartLink(scope, el, attr) {
 		var $dropdown = el.find('.cart__dropdown');
-		$dropdown.appendTo(angular.element('header'));
+		$dropdown.appendTo(angular.element('header.site-header'));
 		scope.pluralizeArray = attr.pluralizeProducts.split(',');
 	}
 })();

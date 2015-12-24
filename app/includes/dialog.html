@@ -2,6 +2,11 @@
 	<div class="dialog__bg" ng-click="toggleDialog()">
 	</div>
 	<div class="dialog__content">
-		@@include('../views/directives/search.html')
+		<div class="dialog__window" ng-class="{picture: pictureWindow}">
+			<button class="dialog__close" ng-click="toggleDialog()">
+				<svg class="icon icon-close_popup"><use xlink:href="icons/icons.svg#close_popup"></use></svg>
+			</button>
+			@@include('../views/directives/feedback.html')
+		</div>
 	</div>
 </div>

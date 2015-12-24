@@ -1,4 +1,10 @@
 .dialog{
+	&.fixed{
+		position: fixed;
+		.dialog__bg{
+			position: absolute;
+		}
+	}
 	&__bg{
 		position: fixed;
 		top: 0;
@@ -16,5 +22,26 @@
 		right: 0;
 		will-change: transform;
 		z-index: 101;
+	}
+	&__window{
+		width: 480px;
+		background: #fff;
+		border-radius: 3px;
+		padding: 35px 30px 30px;
+		margin: 0 auto;
+		position: relative;
+	}
+	&__close{
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		line-height: 0;
+		border: none;
+		background: none;
+		padding: 10px;
+		.icon{
+			width: 18px;
+			height: 18px;
+		}
 	}
 }
