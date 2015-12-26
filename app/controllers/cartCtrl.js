@@ -7,7 +7,7 @@
 			cartCtrl
 		]);
 
-	function cartCtrl($scope, $log) {
+	function cartCtrl($scope, $log, CartService) {
 		$log.log('cart ctrl');
 
 		$scope.init = function() {
