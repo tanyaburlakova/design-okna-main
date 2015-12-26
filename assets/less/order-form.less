@@ -5,11 +5,33 @@
 		font-weight: 900;
 		line-height: 20px;
 		text-transform: uppercase;
-		.letter-spacing(80);
+		.letter-spacing(100);
 		margin: 0 0 45px;
+		& svg{
+			float: left;
+			margin: -12px 15px 0 0;
+		}
 	}
-	&__list{}
-	&__item{}
+	&__list{
+		list-style: none;
+		padding: 0;
+		margin: -10px 0 28px;
+
+		opacity: 0.8;
+		color: #000;
+		font-size: 14px;
+		line-height: 30px;
+		font-weight: 400;
+		.letter-spacing(50);
+		strong{
+			font-weight: 500;
+		}
+	}
+	&__item{
+		&+&{
+			margin-top: 10px;
+		}
+	}
 	&__input{
 		color: fade(#4a4a4a, 70%);
 		font-size: 16px;
@@ -29,7 +51,14 @@
 	&__footer{
 		margin-top: -3px;
 	}
-	&__text{}
+	&__text{
+		opacity: 0.8;
+		color: #4a4a4a;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 20px;
+		margin: 8px 0 34px;
+	}
 	&__time{}
 	&__submit{
 		padding-left: 40px;
