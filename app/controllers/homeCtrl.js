@@ -1,22 +1,50 @@
 (function () {
 	'use strict';
-	angular.module('homeCtrl', ['benefitsDirective'])
+	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl'])
 		.controller('HomeCtrl', [
 			'$scope',
 			'$log',
+			'ProductService',
 			homeCtrl
 		]);
 
-	function homeCtrl($scope, $log) {
+	function homeCtrl($scope, $log, ProductService) {
 		$log.log('home ctrl');
 
-		$scope.bigSliderItems = [
-			'img/slide-1.jpg'
-		];
+		$scope.init = function() {
+			$scope.showLoadMoreBtn = true;
+			$scope.catalogItems = [];
+			$scope.featuredProduct = {};
 
-		$scope.catalogItems = [1, 2, 3, 4, 5, 6, 7, 8];
+			$scope.getFeaturedProduct();
+			$scope.getProductList({order: 'date', skip: 0});
+		};
+		
+		$scope.getProductList = function () {
+			ProductService.getList({order: 'date', skip: $scope.catalogItems.length})
+				.then(function (data) {
+					// Success
+					if (data.length === 0){
+						$scope.showLoadMoreBtn = false;
+					} else {
+						Array.prototype.push.apply($scope.catalogItems, data);
+					}
+				}, function (err) {
+					// Error
+					console.log(err);
+				});
+		};
 
-		$scope.catalogData = {};
+		$scope.getFeaturedProduct = function() {
+			ProductService.getFeatured()
+				.then(function(data) {
+					$scope.featuredProduct = data;
+				}, function(err) {
+					console.log(err)
+				});
+		};
+
+		$scope.init();
 	}
 
 })();

@@ -2,20 +2,34 @@
 	'use strict';
 	angular.module('cartService', []).
 	factory('CartService', [
-		'API_PATH',
-		'$http',
-		'$q',
+		'$rootScope',
 		cartService
 	]);
 
-	function cartService(API_PATH, $http, $q) {
+	function cartService($rootScope) {
+		var products = [];
 		var service = {
-			addProduct: addProduct
+			addProduct: addProduct,
+			removeProduct: removeProduct,
+			getProducts: getProducts
 		};
 		return service;
 
 		function addProduct(product) {
-			
+			var prod = product || {
+				image: 'img/product.jpg',
+				title: 'Жалюзи Рулонные Facette',
+				price: 1700
+			};
+			products.push(prod);
+		}
+
+		function removeProduct(idx) {
+			products.splice(idx, 1);
+		}
+
+		function getProducts(){
+			return products;
 		}
 	}
 })();

@@ -12,7 +12,7 @@
 			transition-style="'fade'"
 			mouse-drag="false"
 			auto-play="true"
-			owl-carousel="bigSliderItems">
+			owl-carousel="['img/slide-1.jpg']">
 			<div class="item">
 				<div
 					ng-style="{'background': 'url({{item}}) center no-repeat', 'background-size': 'cover'}"
@@ -104,7 +104,9 @@
 				url="benefits.json">
 			</benefits>
 			<!-- Product -->
-			<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+			<div ng-repeat="product in [featuredProduct]">
+				<div ng-include="'views/directives/product.html'"></div>
+			</div>
 			<!-- Article preview -->
 			<article class="article-preview hide-in-tablet show-in-mobile">
 				<!-- Img -->
@@ -158,14 +160,14 @@
 		<div class="catalog">
 			<ul class="catalog__list">
 				<li
-					ng-repeat="(key, value) in catalogItems"
+					ng-repeat="product in catalogItems"
 					class="catalog__item">
 					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
 				</li>
 			</ul>
 			<!-- More btn -->
 			<div class="more-btn">
-				<a href class="more-btn__link">
+				<a href class="more-btn__link" ng-click="getProductList()" ng-if="showLoadMoreBtn">
 					<span class="icon icon-more"></span>
 					<span class="more-btn__text">
 						Показать больше новинок

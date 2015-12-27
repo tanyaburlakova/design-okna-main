@@ -4,6 +4,7 @@
 		.controller('CartCtrl', [
 			'$scope',
 			'$log',
+			'CartService',
 			cartCtrl
 		]);
 
@@ -11,8 +12,8 @@
 		$log.log('cart ctrl');
 
 		$scope.init = function() {
-			$scope.items = [];
-			$scope.addProduct();
+			$scope.items = CartService.getProducts();
+			$scope.showDropdown = false;
 		};
 		
 		$scope.pluralize = function(number){
@@ -22,18 +23,16 @@
 					cases[(number%10<5)?number%10:5] ];
 		};
 
-		$scope.addProduct = function(product){
-			var prod = product || {
-				image: 'img/product.jpg',
-				title: 'Жалюзи Рулонные Facette',
-				price: 1700
-			};
-			$scope.showDropdown = true;
-			$scope.items.push(prod)
+		$scope.toggleDropdown = function(){
+			$scope.showDropdown = !$scope.showDropdown;
 		};
 
+
 		$scope.removeProduct = function(key){
-			$scope.items.splice(key, 1);
+			CartService.removeProduct(key);
+			if ($scope.items.length === 0){
+				$scope.showDropdown = false;
+			}
 		};
 
 		$scope.init();

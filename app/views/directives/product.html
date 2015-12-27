@@ -1,20 +1,20 @@
-<div class="product">
+<div class="product" ng-controller="ProductCtrl">
 	<!-- Product view -->
 	<div class="product__wrapper">
 		<!-- Label -->
-		<div ng-if="value!==3" class="product__label">
+		<div ng-if="product.sale!==''" class="product__label">
 			<div class="product__label-text">
-				-30%
+				{{product.sale}}
 			</div>
 		</div>
 		<div class="product__inner">
 			<!-- Img -->
 			<div
-				style="background: url('img/product.jpg'); background-size: cover"
+				style="background: url('{{product.image}}'); background-size: cover"
 				class="product__img">
 			</div>
 			<!-- Cart btn -->
-			<a href="#" class="product__cart-btn">
+			<a href="#" class="product__cart-btn" ng-click="addProductToCart(product)">
 				<svg class="icon icon-cart"><use xlink:href="icons/icons.svg#cart"></use></svg>
 				<span class="product__cart-label">
 					В корзину
@@ -49,7 +49,7 @@
 				<header class="product__header">
 					<!-- Title -->
 					<h2 class="product__title">
-						Жалюзи Гофре
+						{{product.title}}
 					</h2>
 					<!-- Subtitle -->
 					<h3 class="product__subtitle">

@@ -1,0 +1,95 @@
+[{
+    "sale": "",
+    "image": "img/product.jpg",
+    "rating": "3.4",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "",
+    "price": "1000",
+    "colors": [{
+        "title": "",
+        "image": "",
+        "color": "",
+        "price": 1000
+    }]
+}, {
+    "sale": "-20%",
+    "image": "img/product.jpg",
+    "rating": "3.4",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "1000",
+    "price": "800"
+}, {
+    "sale": "",
+    "image": "img/product.jpg",
+    "rating": ".4",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "1200",
+    "price": "1000"
+}, {
+    "sale": "-30%",
+    "image": "img/product.jpg",
+    "rating": "3.4",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "2000",
+    "price": "1600"
+}, {
+    "sale": "",
+    "image": "img/product.jpg",
+    "rating": "3.4",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "1200",
+    "price": "1000"
+}, {
+    "sale": "",
+    "image": "img/product.jpg",
+    "rating": "3.4",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "1200",
+    "price": "1000"
+}, {
+    "sale": "-5%",
+    "image": "img/product.jpg",
+    "rating": "3.4",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "1200",
+    "price": "1000"
+}, {
+    "sale": "",
+    "image": "img/product.jpg",
+    "rating": "4.7",
+    "reviews_count": "100",
+    "link": "product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza",
+    "title": "Жалюзи Мираж",
+    "category_link": "catalog",
+    "category_title": "Рулонные тканевые",
+    "old_price": "1200",
+    "price": "1000"
+}]
