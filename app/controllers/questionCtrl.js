@@ -15,8 +15,8 @@
 			$scope.getQuestion();
 		};
 
-		$scope.getQuestion = function () {
-			QuestionService.getQuestion()
+		$scope.getQuestion = function (number) {
+			QuestionService.getQuestion({number:number})
 				.then(function (data) {
 					// Success
 					$scope.question = data;

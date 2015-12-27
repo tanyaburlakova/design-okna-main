@@ -10,7 +10,8 @@
 			homeSlider: 'sliderItems.json',
 			featuredProductPath: 'featuredProduct.json',
 			productListPath: 'productList.json',
-			productPagePath: 'product.json'
+			productPagePath: 'product.json',
+			questionPath: 'questions.json'
 		};
 		var configProd = {
 			featuredProductPath: 'yourPath',

@@ -1,24 +1,25 @@
 (function () {
 	'use strict';
-	angular.module('questionService', []).
+	angular.module('questionService', ['configService']).
 	factory('QuestionService', [
 		'API_PATH',
 		'$http',
 		'$q',
+		'ConfigService',
 		questionService
 	]);
 
-	function questionService(API_PATH, $http, $q) {
+	function questionService(API_PATH, $http, $q, ConfigService) {
 		var service = {
 			getQuestion: getQuestion
 		};
 		return service;
 
-		function getQuestion() {
-			var url = API_PATH + 'questions.json',
+		function getQuestion(params) {
+			var url = API_PATH + ConfigService.questionPath,
 				defer = $q.defer();
 
-			$http.get(url)
+			$http.get(url, {params: params})
 				.success(function (data) {
 					defer.resolve(data);
 				})
