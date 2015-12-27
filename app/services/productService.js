@@ -47,6 +47,14 @@
 			}
 		);
 
+		var getHomeList = FetchPrototype(
+			ConfigService.productHomeListPath,
+			function(defer, data){
+				service.products = data;
+				defer.resolve(data);
+			}
+		);
+
 		var getFeatured = FetchPrototype(
 			ConfigService.featuredProductPath,
 			function(defer, data){
@@ -58,6 +66,7 @@
 		var service = {
 			getProduct: getProduct,
 			getList: getList,
+			getHomeList: getHomeList,
 			getFeatured: getFeatured
 		};
 		return service;

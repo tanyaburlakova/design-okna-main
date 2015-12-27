@@ -23,6 +23,10 @@
 	function rangeDirectiveLink(scope, el, attr) {
 		scope.options = angular.fromJson(attr.options);
 
+		scope.options.onEnd = function(){
+			scope.$parent.$broadcast('updateRangeSlider');
+		}
+
 		var min = scope.options.floor,
 			max = scope.options.ceil;
 

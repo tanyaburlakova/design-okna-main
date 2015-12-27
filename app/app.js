@@ -55,6 +55,10 @@ var app = angular.module('myApp', [
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
 				})
+				.when('/search/:term', {
+					controller: 'CatalogCtrl',
+					templateUrl: 'views/catalog.html'
+				})
 				.when('/product/:category/:subcategory/:subsubcategory', {
 					controller: 'ProductPageCtrl',
 					templateUrl: 'views/product.html'

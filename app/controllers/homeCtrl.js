@@ -21,7 +21,7 @@
 		};
 		
 		$scope.getProductList = function () {
-			ProductService.getList({order: 'date', skip: $scope.catalogItems.length, count: 8})
+			ProductService.getHomeList({skip: $scope.catalogItems.length, count: 8})
 				.then(function (data) {
 					// Success
 					if (data.length === 0){

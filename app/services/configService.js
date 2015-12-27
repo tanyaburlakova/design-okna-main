@@ -6,18 +6,17 @@
 	]);
 
 	function configService() {
-		var config = {
+		var config = angular.extend({}, {
 			homeSlider: 'sliderItems.json',
 			featuredProductPath: 'featuredProduct.json',
 			productListPath: 'productList.json',
+			productHomeListPath: 'productList.json',
 			productPagePath: 'product.json',
 			questionPath: 'questions.json',
-			articlePath: 'article.json'
-		};
-		var configProd = {
-			featuredProductPath: 'yourPath',
-			productListPath: 'productList.json'
-		};
+			articlePath: 'article.json',
+			minPrice: 0,
+			maxPrice: 2000
+		}, window.appLicationConfig);
 		return config;
 	}
 })();

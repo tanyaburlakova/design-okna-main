@@ -19,7 +19,7 @@
 			</div>
 			<ul class="sort__list">
 				<li class="sort__item">
-					<button class="btn">
+					<button class="btn" ng-click="toggleSort('price')" ng-class="{btn_red: (searchOptions.sort == 'price')}">
 						<svg class="icon icon-rouble"><use xlink:href="icons/icons.svg#rouble"></use></svg>
 						<span class="btn__text">
 							Стоимости
@@ -27,7 +27,7 @@
 					</button>
 				</li>
 				<li class="sort__item active">
-					<button class="btn btn_red">
+					<button class="btn" ng-click="toggleSort('rating')" ng-class="{btn_red: (searchOptions.sort == 'rating')}">
 						<svg class="icon icon-star"><use xlink:href="icons/icons.svg#star"></use></svg>
 						<span class="btn__text">
 							Рейтингу
@@ -60,7 +60,7 @@
 					<!-- Blinds type -->
 					<fieldset class="form__fieldset">
 						<legend class="form__legend">
-							Тип горизонтальны жалюзи
+							Тип горизонтальных жалюзи
 						</legend>
 						<div class="form__field">
 							<checkbox
@@ -100,10 +100,10 @@
 			</ul>
 			<!-- More btn -->
 			<div class="more-btn more-btn_red">
-				<a href class="more-btn__link" ng-click="getProductList()" ng-if="showLoadMoreBtn">
+				<a href class="more-btn__link" ng-click="addProductList()" ng-if="showLoadMoreBtn">
 					<span class="icon icon-more"></span>
 					<span class="more-btn__text">
-						Показать больше новинок
+						Показать еще результаты
 					</span>
 				</a>
 			</div>
