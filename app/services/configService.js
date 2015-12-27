@@ -11,7 +11,8 @@
 			featuredProductPath: 'featuredProduct.json',
 			productListPath: 'productList.json',
 			productPagePath: 'product.json',
-			questionPath: 'questions.json'
+			questionPath: 'questions.json',
+			articlePath: 'article.json'
 		};
 		var configProd = {
 			featuredProductPath: 'yourPath',

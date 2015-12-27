@@ -18,22 +18,22 @@
 				<header class="article__header">
 					<!-- Rubric -->
 					<div class="article__rubric">
-						Дизайн
+						{{article.rubric}}
 					</div>
 					<!-- Title -->
 					<h1 class="article__title">
-						Тренды в оформлении окон 2015
+						{{article.title}}
 					</h1>
 					<!-- Label -->
-					<div class="article__label">
+					<div class="article__label" ng-if="article.label">
 						<div class="article__label-text">
-							Акция
+							{{article.label}}
 						</div>
 					</div>
 					<!-- Image -->
 					<div
 						class="article__img"
-						style="background-image: url(img/slide-1.jpg);">
+						style="background-image: url({{article.main_img}});">
 					</div>
 					<!-- Socials -->
 					<div class="article__socials">
@@ -66,26 +66,10 @@
 					</div>
 					<!-- Date -->
 					<div class="article__date">
-						29 апреля 2015 г.
+						{{article.date}}
 					</div>
 				</header>
-				<div class="article__content">
-					<p>Однако почти все консультанты просто ждут, чтобы рекомендации падали с неба. В конце концов, разве не должны счастливые клиенты всем рассказывать о вас? И большинство клиентов так и будет делать, но иногда они слишком заняты, и тогда они не будут особенно усердствовать. </p>
-					<p>Вместо того, чтобы просто сидеть и ждать, откройте электронную почту, найдите двоих уже осчастливленных вами клиентов, еще не приславших вам свое рекомендательное письмо. Напишите им и попросите прислать рекомендацию. </p>
-					<p>Ниже я привожу шаблон письма, которое сослужило мне хорошую службу в свое время. Сначала я узнавал, что представляет собой тот или иной клиент, и затем просто просил о прямой рекомендации. Не ходите вокруг да около и не оставляйте вопрос открытым, и будьте по-возможности кратки<br>
-						Установление партнерских связей с агентствами — это еще один хороший способ привлечь новых клиентов. Я пользовался этой стратегией и в результате наладил партнерские взаимоотношения с компанией, которая присылает мне по крайней мере одного нового клиента в месяц. Здесь важно убедиться, что агентство-партнер больше, чем моя консультационная компания, так что я им не конкурент.</p>
-					<img src="img/article_img.jpg" alt="">
-					<h2>
-						Главный тренд
-					</h2>
-					<p>Однако почти все консультанты просто ждут, чтобы рекомендации падали с неба. В конце концов, разве не должны счастливые клиенты всем рассказывать о вас? И большинство клиентов так и будет делать, но иногда они слишком заняты, и тогда они не будут особенно усердствовать. </p>
-					<p>Вместо того, чтобы просто сидеть и ждать, откройте электронную почту, найдите двоих уже осчастливленных вами клиентов, еще не приславших вам свое рекомендательное письмо. Напишите им и попросите прислать рекомендацию.</p>
-					<p>Ниже я привожу шаблон письма, которое сослужило мне хорошую службу в свое время. Сначала я узнавал, что представляет собой тот или иной клиент, и затем просто просил о прямой рекомендации. Не ходите вокруг да около и не оставляйте вопрос открытым, и будьте по-возможности кратки<br>
-						Установление партнерских связей с агентствами — это еще один хороший способ привлечь новых клиентов. Я пользовался этой стратегией и в результате наладил партнерские взаимоотношения с компанией, которая присылает мне по крайней мере одного нового клиента в месяц. Здесь важно убедиться, что агентство-партнер больше, чем моя консультационная компания, так что я им не конкурент.</p>
-					<p>Вместо того, чтобы просто сидеть и ждать, откройте электронную почту, найдите двоих уже осчастливленных вами клиентов, еще не приславших вам свое рекомендательное письмо. Напишите им и попросите прислать рекомендацию. </p>
-					<p>Ниже я привожу шаблон письма, которое сослужило мне хорошую службу в свое время. Сначала я узнавал, что представляет собой тот или иной клиент, и затем просто просил о прямой рекомендации. Не ходите вокруг да около и не оставляйте вопрос открытым, и будьте по-возможности кратки<br>
-						Установление партнерских связей с агентствами — это еще один хороший способ привлечь новых клиентов. Я пользовался этой стратегией и в результате наладил партнерские взаимоотношения с компанией, которая присылает мне по крайней мере одного нового клиента в месяц. Здесь важно убедиться, что агентство-партнер больше, чем моя консультационная компания, так что я им не конкурент.</p>
-				</div>
+				<div class="article__content" ng-bind-html="article.content"></div>
 			</article>
 		</div>
 		<div class="column-1">
@@ -94,45 +78,13 @@
 				<header class="article-set__header">
 					<!-- Title -->
 					<h2 class="article-set__title">
-						Интересное о дизайне
+						{{article.aside_title}}
 					</h2>
 					<ul class="article-set__list">
-						<li class="article-set_item">
-							<a href="#" class="article-set__link">
+						<li class="article-set_item" ng-repeat="aside_item in article.aside_links">
+							<a href="{{aside_item.url}}" class="article-set__link">
 								<span class="article-set__link-text">
-									Психотерапевт &mdash; о том, как перестать бояться и паниковать
-								</span>
-								<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
-							</a>
-						</li>
-						<li class="article-set_item">
-							<a href="#" class="article-set__link">
-								<span class="article-set__link-text">
-									Психотерапевт &mdash; о том, как перестать бояться и паниковать
-								</span>
-								<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
-							</a>
-						</li>
-						<li class="article-set_item">
-							<a href="#" class="article-set__link">
-								<span class="article-set__link-text">
-									Психотерапевт &mdash; о том, как перестать бояться и паниковать
-								</span>
-								<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
-							</a>
-						</li>
-						<li class="article-set_item">
-							<a href="#" class="article-set__link">
-								<span class="article-set__link-text">
-									Психотерапевт &mdash; о том, как перестать бояться и паниковать
-								</span>
-								<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
-							</a>
-						</li>
-						<li class="article-set_item">
-							<a href="#" class="article-set__link">
-								<span class="article-set__link-text">
-									Психотерапевт &mdash; о том, как перестать бояться и паниковать
+									{{aside_item.title}}
 								</span>
 								<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
 							</a>
@@ -146,10 +98,7 @@
 					Товары по теме
 				</h2>
 				<ul class="products-set__list">
-					<li class="products-set__item">
-						<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
-					</li>
-					<li class="products-set__item">
+					<li class="products-set__item" ng-repeat="product in article.related_products">
 						<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
 					</li>
 				</ul>

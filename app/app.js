@@ -35,7 +35,7 @@ var app = angular.module('myApp', [
 					controller: 'HomeCtrl',
 					templateUrl: 'views/home.html'
 				})
-				.when('/article/:id', {
+				.when('/article/:slug', {
 					controller: 'ArticleCtrl',
 					templateUrl: 'views/article.html'
 				})

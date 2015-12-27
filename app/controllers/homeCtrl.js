@@ -17,11 +17,11 @@
 			$scope.featuredProduct = {};
 
 			$scope.getFeaturedProduct();
-			$scope.getProductList({order: 'date', skip: 0});
+			$scope.getProductList();
 		};
 		
 		$scope.getProductList = function () {
-			ProductService.getList({order: 'date', skip: $scope.catalogItems.length})
+			ProductService.getList({order: 'date', skip: $scope.catalogItems.length, count: 8})
 				.then(function (data) {
 					// Success
 					if (data.length === 0){
