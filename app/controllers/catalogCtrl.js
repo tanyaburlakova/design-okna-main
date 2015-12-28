@@ -62,7 +62,6 @@
 				}
 			});
 			$scope.getCatalog();
-			$scope.addProductList();
 		};
 
 		$scope.getCatalog = function(){
