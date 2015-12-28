@@ -44,21 +44,24 @@
 				$scope.searchOptions.max_price = $scope.priceSlider.max;
 			});
 			$scope.$watchCollection('categoryChecks', function(oldVal, newVal){
-				var arr = [];
-				angular.forEach($scope.categoryChecks, function(item, key){
-					if (item){
-						arr.push(key);
+				if (!_.isEqual(oldVal, newVal)){
+					var arr = [];
+					angular.forEach($scope.categoryChecks, function(item, key){
+						if (item){
+							arr.push(key);
+						}
+					});
+					$scope.searchOptions['subcategory[]'] = arr;
+					if ($scope.searchOptions['subcategory[]'].length === 1){
+						$location.path('catalog/' + $scope.searchOptions.category + '/' +
+							$scope.searchOptions['subcategory[]'], false);
+					} else {
+						$location.path('catalog/' + $scope.searchOptions.category, false);
 					}
-				});
-				$scope.searchOptions['subcategory[]'] = arr;
-				if ($scope.searchOptions['subcategory[]'].length === 1){
-					$location.path('catalog/' + $scope.searchOptions.category + '/' +
-						$scope.searchOptions['subcategory[]'], false);
-				} else {
-					$location.path('catalog/' + $scope.searchOptions.category, false);
 				}
 			});
 			$scope.getCatalog();
+			$scope.getProductList();
 		};
 
 		$scope.getCatalog = function(){
