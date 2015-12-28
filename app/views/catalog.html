@@ -10,7 +10,8 @@
 	<div class="container container_padding">
 		<!-- Search info -->
 		<div class="search-info">
-			<span class="hide-in-tablet">По запросу </span><strong>Горизонтальные жалюзи</strong> найдено 35 предложений
+			<strong>{{pageOptions.title}}</strong>
+			<!-- <span class="hide-in-tablet">По запросу </span><strong>{{pageOptions.title}}</strong> найдено 35 предложений -->
 		</div>
 		<!-- Sort -->
 		<div class="sort">
@@ -60,27 +61,14 @@
 					<!-- Blinds type -->
 					<fieldset class="form__fieldset">
 						<legend class="form__legend">
-							Тип горизонтальных жалюзи
+							{{pageOptions.filter_title}}
 						</legend>
-						<div class="form__field">
+						<div class="form__field" ng-repeat="categoryFilter in pageOptions.subsubcategories">
 							<checkbox
-								model="catalogData.type1"
-								label="Броколли"
-								name="type1">
-							</checkbox>
-						</div>
-						<div class="form__field">
-							<checkbox
-								model="catalogData.type2"
-								label="Сабрина"
-								name="type2">
-							</checkbox>
-						</div>
-						<div class="form__field">
-							<checkbox
-								model="catalogData.type3"
-								label="Канопус"
-								name="type3">
+								model="categoryChecks[categoryFilter.slug]"
+								label="{{categoryFilter.name}}"
+								checked="{{categoryFilter.checked}}"
+								name="{{categoryFilter.slug}}">
 							</checkbox>
 						</div>
 					</fieldset>

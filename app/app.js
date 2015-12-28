@@ -39,11 +39,7 @@ var app = angular.module('myApp', [
 					controller: 'ArticleCtrl',
 					templateUrl: 'views/article.html'
 				})
-				.when('/catalog', {
-					controller: 'CatalogCtrl',
-					templateUrl: 'views/catalog.html'
-				})
-				.when('/catalog/:category', {
+				.when('/search/:term', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
 				})
@@ -55,16 +51,12 @@ var app = angular.module('myApp', [
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
 				})
-				.when('/search/:term', {
-					controller: 'CatalogCtrl',
-					templateUrl: 'views/catalog.html'
-				})
-				.when('/product/:category/:subcategory/:subsubcategory', {
+				.when('/product/:category/:subcategory/:subsubcategory/:product', {
 					controller: 'ProductPageCtrl',
 					templateUrl: 'views/product.html'
 				})
 				// localhost:3000/product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza
-				.when('/product/:category/:subcategory/:subsubcategory/:texture', {
+				.when('/product/:category/:subcategory/:subsubcategory/:product/:texture', {
 					controller: 'ProductPageCtrl',
 					templateUrl: 'views/product.html'
 				})

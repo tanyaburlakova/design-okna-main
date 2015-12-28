@@ -14,6 +14,7 @@
 			productPagePath: 'product.json',
 			questionPath: 'questions.json',
 			articlePath: 'article.json',
+			catalogPath: 'catalog.json',
 			minPrice: 0,
 			maxPrice: 2000
 		}, window.appLicationConfig);

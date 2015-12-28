@@ -1,27 +1,25 @@
 (function () {
 	'use strict';
-	angular.module('catalogCtrl', ['productCtrl', 'productService', 'configService'])
+	angular.module('catalogCtrl', ['productCtrl', 'productService', 'catalogService', 'configService'])
 		.controller('CatalogCtrl', [
 			'$scope',
 			'$log',
 			'$routeParams',
+			'$location',
 			'ProductService',
+			'CatalogService',
 			'ConfigService',
 			catalogCtrl
 		]);
 
-	function catalogCtrl($scope, $log, $routeParams, ProductService, ConfigService) {
+	function catalogCtrl($scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService) {
 		$log.log('catalog ctrl');
 		$scope.init = function(){
 			$scope.catalogItems = [];
-			$scope.searchOptions = {
-				order: 'date',
-				count: 9,
-				min_price: ConfigService.minPrice,
-				max_price: ConfigService.maxPrice,
-				category: $routeParams.category,
-				subcategory: $routeParams.subcategory
-			};
+			$scope.categoryChecks = {};
+			if ($routeParams.subsubcategory){
+				$scope.categoryChecks[$routeParams.subsubcategory] = true;
+			}
 			$scope.priceSlider = {
 				min: ConfigService.minPrice,
 				max: ConfigService.maxPrice,
@@ -30,6 +28,15 @@
 					ceil: ConfigService.maxPrice
 				}
 			};
+			$scope.searchOptions = {
+				sort: 'date',
+				count: 9,
+				min_price: ConfigService.minPrice,
+				max_price: ConfigService.maxPrice,
+				category: $routeParams.category,
+				subcategory: $routeParams.subcategory,
+				'subsubcategory[]': $routeParams.subsubcategory ? [$routeParams.subsubcategory] : []
+			};
 			$scope.$watchCollection('searchOptions', function(oldVal, newVal){
 				$scope.getProductList();
 			});
@@ -37,8 +44,39 @@
 				$scope.searchOptions.min_price = $scope.priceSlider.min;
 				$scope.searchOptions.max_price = $scope.priceSlider.max;
 			});
-
+			$scope.$watchCollection('categoryChecks', function(oldVal, newVal){
+				var arr = [];
+				angular.forEach($scope.categoryChecks, function(item, key){
+					if (item){
+						arr.push(key);
+					}
+				});
+				$scope.searchOptions['subsubcategory[]'] = arr;
+				if ($scope.searchOptions['subsubcategory[]'].length === 1){
+					$location.path('catalog/' + $scope.searchOptions.category + '/' +
+						$scope.searchOptions.subcategory + '/' + 
+						$scope.searchOptions['subsubcategory[]'], false);
+				} else {
+					$location.path('catalog/' + $scope.searchOptions.category + '/' +
+						$scope.searchOptions.subcategory, false);
+				}
+			});
+			$scope.getCatalog();
 			$scope.addProductList();
+		};
+
+		$scope.getCatalog = function(){
+			CatalogService.getCatalog({
+				category: $routeParams.category,
+				subcategory: $routeParams.subcategory
+			}).then(function(data){
+				$scope.pageOptions = data;
+				angular.forEach($scope.pageOptions.subsubcategories, function(item){
+					item.checked = (item.slug === $routeParams.subsubcategory)?true:null;
+				});
+			}, function(err){
+				console.log(err);
+			});
 		};
 
 		$scope.addProductList = function () {
