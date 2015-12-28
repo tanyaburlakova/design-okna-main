@@ -18,7 +18,8 @@ var app = angular.module('myApp', [
 		'youtube-embed',
 		'ngDropdowns',
 		'angular-input-stars',
-		'angular-owl-carousel'
+		'angular-owl-carousel',
+		'LocalStorageModule'
 	])
 	.config([
 		'$routeProvider',
@@ -43,20 +44,20 @@ var app = angular.module('myApp', [
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
 				})
+				.when('/catalog/:category', {
+					controller: 'CatalogCtrl',
+					templateUrl: 'views/catalog.html'
+				})
 				.when('/catalog/:category/:subcategory', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
 				})
-				.when('/catalog/:category/:subcategory/:subsubcategory', {
-					controller: 'CatalogCtrl',
-					templateUrl: 'views/catalog.html'
-				})
-				.when('/product/:category/:subcategory/:subsubcategory/:product', {
+				.when('/product/:category/:subcategory/:product', {
 					controller: 'ProductPageCtrl',
 					templateUrl: 'views/product.html'
 				})
 				// localhost:3000/product/zhaluzi/horizontalnye/aluminievye/roza-kolhoza
-				.when('/product/:category/:subcategory/:subsubcategory/:product/:texture', {
+				.when('/product/:category/:subcategory/:product/:texture', {
 					controller: 'ProductPageCtrl',
 					templateUrl: 'views/product.html'
 				})

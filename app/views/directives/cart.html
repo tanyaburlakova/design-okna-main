@@ -12,7 +12,7 @@
 		<div class="cart__title" ng-if="items.length > 0">В корзине {{items.length}} {{pluralize(items.length)}}:</div>
 		<ul class="cart__list" ng-if="items.length > 0">
 			<li
-				ng-repeat="(key, product) in items"
+				ng-repeat="(key, product) in items track by $index"
 				class="cart__item cart-product">
 					<img src="{{product.image}}" class="cart-product__img">
 					<div class="cart-product__title">{{product.title}}</div>

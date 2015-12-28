@@ -3,10 +3,11 @@
 	angular.module('cartService', []).
 	factory('CartService', [
 		'$rootScope',
+		'localStorageService',
 		cartService
 	]);
 
-	function cartService($rootScope) {
+	function cartService($rootScope, localStorageService) {
 		var products = [];
 		var service = {
 			addProduct: addProduct,
@@ -16,11 +17,6 @@
 		return service;
 
 		function addProduct(product) {
-			var prod = product || {
-				image: 'img/product.jpg',
-				title: 'Жалюзи Рулонные Facette',
-				price: 1700
-			};
 			products.push(prod);
 		}
 

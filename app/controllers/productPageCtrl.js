@@ -29,8 +29,8 @@
 			$scope.getProduct();
 		};
 
-		$scope.getProduct = function (path) {
-			ProductService.getProduct(path)
+		$scope.getProduct = function (params) {
+			ProductService.getProduct(params)
 				.then(function (data) {
 					// Success
 					$scope.product = data;
@@ -47,7 +47,6 @@
 					// Success
 					var category = $routeParams.category,
 						subcategory = $routeParams.subcategory,
-						subsubcategory = $routeParams.subsubcategory,
 						texture = $routeParams.texture,
 						currentTexture = TexturesService.getTextureByUrl(texture) || {
 							id: 1
@@ -61,7 +60,7 @@
 					$scope.$watch('textureModel', function (newVal, oldVal) {
 						if (newVal) {
 							$scope.getTextureById(newVal);
-							$location.path('product/' + category + '/' + subcategory + '/' + subsubcategory + '/' + $scope.currentTexture.url, false);
+							$location.path('product/' + category + '/' + subcategory + '/' + $scope.currentTexture.url, false);
 							$scope.gallery.currentImage = $scope.currentTexture.img;
 						}
 					});

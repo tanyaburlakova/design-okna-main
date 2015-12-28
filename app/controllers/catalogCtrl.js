@@ -17,8 +17,8 @@
 		$scope.init = function(){
 			$scope.catalogItems = [];
 			$scope.categoryChecks = {};
-			if ($routeParams.subsubcategory){
-				$scope.categoryChecks[$routeParams.subsubcategory] = true;
+			if ($routeParams.subcategory){
+				$scope.categoryChecks[$routeParams.subcategory] = true;
 			}
 			$scope.priceSlider = {
 				min: ConfigService.minPrice,
@@ -34,8 +34,7 @@
 				min_price: ConfigService.minPrice,
 				max_price: ConfigService.maxPrice,
 				category: $routeParams.category,
-				subcategory: $routeParams.subcategory,
-				'subsubcategory[]': $routeParams.subsubcategory ? [$routeParams.subsubcategory] : []
+				'subcategory[]': $routeParams.subcategory ? [$routeParams.subcategory] : []
 			};
 			$scope.$watchCollection('searchOptions', function(oldVal, newVal){
 				$scope.getProductList();
@@ -51,14 +50,12 @@
 						arr.push(key);
 					}
 				});
-				$scope.searchOptions['subsubcategory[]'] = arr;
-				if ($scope.searchOptions['subsubcategory[]'].length === 1){
+				$scope.searchOptions['subcategory[]'] = arr;
+				if ($scope.searchOptions['subcategory[]'].length === 1){
 					$location.path('catalog/' + $scope.searchOptions.category + '/' +
-						$scope.searchOptions.subcategory + '/' + 
-						$scope.searchOptions['subsubcategory[]'], false);
+						$scope.searchOptions['subcategory[]'], false);
 				} else {
-					$location.path('catalog/' + $scope.searchOptions.category + '/' +
-						$scope.searchOptions.subcategory, false);
+					$location.path('catalog/' + $scope.searchOptions.category, false);
 				}
 			});
 			$scope.getCatalog();
@@ -70,8 +67,8 @@
 				subcategory: $routeParams.subcategory
 			}).then(function(data){
 				$scope.pageOptions = data;
-				angular.forEach($scope.pageOptions.subsubcategories, function(item){
-					item.checked = (item.slug === $routeParams.subsubcategory)?true:null;
+				angular.forEach($scope.pageOptions.subcategories, function(item){
+					item.checked = (item.slug === $routeParams.subcategory)?true:null;
 				});
 			}, function(err){
 				console.log(err);

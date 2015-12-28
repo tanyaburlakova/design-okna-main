@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('texturesService', []).
+	angular.module('texturesService', ['configService']).
 	factory('TexturesService', [
 		'API_PATH',
 		'$http',
