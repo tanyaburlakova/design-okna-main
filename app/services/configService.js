@@ -11,10 +11,13 @@
 			featuredProductPath: 'featuredProduct.json',
 			productListPath: 'productList.json',
 			productHomeListPath: 'productList.json',
+			productSeeAlsoListPath: 'productList.json',
 			productPagePath: 'product.json',
 			questionPath: 'questions.json',
 			articlePath: 'article.json',
 			catalogPath: 'catalog.json',
+			constructorTexturesPath: 'constructor-textures.json',
+			texturesPath: 'textures.json',
 			minPrice: 0,
 			maxPrice: 2000
 		}, window.appLicationConfig);

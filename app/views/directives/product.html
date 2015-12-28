@@ -2,7 +2,7 @@
 	<!-- Product view -->
 	<div class="product__wrapper">
 		<!-- Label -->
-		<div ng-if="product.sale!==''" class="product__label">
+		<div ng-if="!!product.sale" class="product__label">
 			<div class="product__label-text">
 				{{product.sale}}
 			</div>
@@ -10,7 +10,8 @@
 		<div class="product__inner">
 			<!-- Img -->
 			<div
-				style="background: url('{{product.image}}'); background-size: cover"
+				style="background-size: cover"
+				ng-style="{'background-image':'url(' + product.image + ')'}"
 				class="product__img">
 			</div>
 			<!-- Cart btn -->
@@ -109,7 +110,7 @@
 					</div>
 				</div>
 				<!-- Btn -->
-				<a href="/product/derevyannyye_zhalyuzi/Alyuminiyevyye/product_name" class="btn btn_blue btn_size-1">
+				<a href="/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory" class="btn btn_blue btn_size-1">
 					Детали
 				</a>
 			</footer>

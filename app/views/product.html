@@ -4,7 +4,7 @@
 <main class="main-content">
 	<div class="slider">
 		<div
-			style="background: url(img/slide-1.jpg) center no-repeat; background-size: cover;"
+			style="background-image: url(img/slide-1.jpg);"
 			class="slider__img">
 		</div>
 	</div>
@@ -12,7 +12,7 @@
 		<!-- Ribbon title -->
 		<div class="ribbon-title">
 			<div class="ribbon-title__text">
-				{{product.category}}
+				{{product.title}}
 			</div>
 		</div>
 		<!-- Left -->
@@ -21,7 +21,7 @@
 			<div class="gallery">
 				<!-- Title -->
 				<div class="gallery__title">
-					{{product.name}} <span class="gallery__model-title">модель {{currentTexture.model}}</span>
+					{{product.title}} <span class="gallery__model-title">модель {{currentTexture.model}}</span>
 				</div>
 				<!-- Main img -->
 				<div
@@ -266,8 +266,8 @@
 				<p class="price-block__text">
 					Стоимость зависит от выбора материала и размеров
 				</p>
-				<div class="price-block__label">
-					<div class="price-block__label-text">-{{product.discount}}%</div>
+				<div class="price-block__label" ng-if="!!product.sale">
+					<div class="price-block__label-text">{{product.sale}}</div>
 				</div>
 			</div>
 			<!-- Textures -->
@@ -474,7 +474,7 @@
 				<button class="btn btn_red btn_big">
 					Купить в 1 клик
 				</button>
-				<button class="btn btn_blue btn_big">
+				<button class="btn btn_blue btn_big" ng-click="addToCart()">
 					Отложить в корзину
 				</button>
 			</div>
@@ -540,7 +540,7 @@
 		</div>
 	</div>
 	<!-- Catalog -->
-	<div class="container container_product-page">
+	<div class="container container_product-page" ng-if="catalogItems.length > 0">
 		<div class="catalog">
 			<!-- Title -->
 			<h2 class="catalog__title">
@@ -548,7 +548,7 @@
 			</h2>
 			<ul class="catalog__list">
 				<li
-					ng-repeat="(key, value) in catalogItems"
+					ng-repeat="product in catalogItems"
 					class="catalog__item">
 					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
 				</li>

@@ -55,6 +55,14 @@
 			}
 		);
 
+		var getSeeAlsoList = FetchPrototype(
+			ConfigService.productSeeAlsoListPath,
+			function(defer, data){
+				service.products = data;
+				defer.resolve(data);
+			}
+		);
+
 		var getFeatured = FetchPrototype(
 			ConfigService.featuredProductPath,
 			function(defer, data){
@@ -67,6 +75,7 @@
 			getProduct: getProduct,
 			getList: getList,
 			getHomeList: getHomeList,
+			getSeeAlsoList: getSeeAlsoList,
 			getFeatured: getFeatured
 		};
 		return service;

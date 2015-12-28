@@ -5,10 +5,11 @@
 		'API_PATH',
 		'$http',
 		'$q',
+		'ConfigService',
 		texturesService
 	]);
 
-	function texturesService(API_PATH, $http, $q) {
+	function texturesService(API_PATH, $http, $q, ConfigService) {
 		var service = {
 			getTextures: getTextures,
 			getConstructorTextures: getConstructorTextures,
@@ -17,11 +18,11 @@
 		};
 		return service;
 
-		function getConstructorTextures() {
-			var url = API_PATH + 'constructor-textures.json',
+		function getConstructorTextures(params) {
+			var url = API_PATH + ConfigService.constructorTexturesPath,
 				defer = $q.defer();
 
-			$http.get(url)
+			$http.get(url, {params: params})
 				.success(function (data) {
 					service.textures = data;
 					defer.resolve(data);
@@ -36,11 +37,11 @@
 			return defer.promise;
 		}
 
-		function getTextures() {
-			var url = API_PATH + 'textures.json',
+		function getTextures(params) {
+			var url = API_PATH + ConfigService.texturesPath,
 				defer = $q.defer();
 
-			$http.get(url)
+			$http.get(url, {params: params})
 				.success(function (data) {
 					service.textures = data;
 					defer.resolve(data);

@@ -42,24 +42,9 @@
 							Поделиться статьей в соцсетях
 						</div>
 						<ul class="article__socials-list">
-							<li class="article__socials-item">
-								<a href="#" class="article__socials-link">
-									<svg class="icon icon-fb"><use xlink:href="icons/icons.svg#fb"></use></svg>
-								</a>
-							</li>
-							<li class="article__socials-item">
-								<a href="#" class="article__socials-link">
-									<svg class="icon icon-ok"><use xlink:href="icons/icons.svg#ok"></use></svg>
-								</a>
-							</li>
-							<li class="article__socials-item">
-								<a href="#" class="article__socials-link">
-									<svg class="icon icon-vk"><use xlink:href="icons/icons.svg#vk"></use></svg>
-								</a>
-							</li>
-							<li class="article__socials-item">
-								<a href="#" class="article__socials-link">
-									<svg class="icon icon-insta"><use xlink:href="icons/icons.svg#insta"></use></svg>
+							<li class="article__socials-item" ng-repeat="share in socials">
+								<a href="{{share.url}}" target="_blank" class="article__socials-link">
+									<svg class="icon icon-{{share.name}}"><use xlink:href="{{share.icon}}"></use></svg>
 								</a>
 							</li>
 						</ul>
