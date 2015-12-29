@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('productPageCtrl', ['texturesService', 'productService', 'cartService'])
+	angular.module('productPageCtrl', ['texturesService', 'productService', 'cartService', 'configService', 'reviewsDirective'])
 		.controller('ProductPageCtrl', [
 			'$scope',
 			'$log',
@@ -10,22 +10,28 @@
 			'TexturesService',
 			'ProductService',
 			'CartService',
+			'ConfigService',
 			'$sce',
 			'$timeout',
 			productPageCtrl
 		]);
 
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, CartService, $sce, $timeout) {
+	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, CartService, ConfigService, $sce, $timeout) {
 		$log.log('product page ctrl');
 
-		$scope.catalogItems = [];
-		$scope.reviewsItems = [1, 2];
-		$scope.gallery = {};
-		$scope.gallery.currentImage = 'img/slide-1.jpg';
-		$scope.textureModel = null;
-		$scope.rating = 4;
-
 		$scope.init = function () {
+			$scope.catalogItems = [];
+			$scope.gallery = {};
+			$scope.gallery.currentImage = '';
+			$scope.textureModel = null;
+			$scope.priceSlider = {
+				min: ConfigService.minPrice,
+				max: ConfigService.maxPrice,
+				options: {
+					floor: ConfigService.minPrice,
+					ceil: ConfigService.maxPrice
+				}
+			};
 			$scope.getProduct();
 			$scope.getTextures();
 			$scope.getProducts();
@@ -101,15 +107,6 @@
 
 		$scope.getYoutubeId = function (url) {
 			return youtubeEmbedUtils.getIdFromURL(url);
-		};
-
-		$scope.priceSlider = {
-			min: 100,
-			max: 180,
-			options: {
-				floor: 0,
-				ceil: 450
-			}
 		};
 
 		$scope.init();

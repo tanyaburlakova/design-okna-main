@@ -11,8 +11,9 @@
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	&__img {
+	&__bg {
 		height: 480px;
+		background-image: url(../img/jumbotron_bg.jpg);
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -20,6 +21,15 @@
 		left: 0;
 		right: 0;
 		z-index: -1;
+		will-change: transform;
+	}
+	&__hand{
+		height: 480px;
+		position: absolute;
+		right: 0;
+		background: url(../img/hand.png);
+		width: 50%;
+		left: 49%;
 	}
 	&__title {
 		font-size: 24px;

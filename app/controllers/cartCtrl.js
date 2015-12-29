@@ -1,14 +1,15 @@
 (function () {
 	'use strict';
-	angular.module('cartCtrl', ['cartService'])
+	angular.module('cartCtrl', ['cartService', 'pluralizeService'])
 		.controller('CartCtrl', [
 			'$scope',
 			'$log',
 			'CartService',
+			'PluralizeService',
 			cartCtrl
 		]);
 
-	function cartCtrl($scope, $log, CartService) {
+	function cartCtrl($scope, $log, CartService, PluralizeService) {
 		$log.log('cart ctrl');
 
 		$scope.init = function() {
@@ -17,10 +18,7 @@
 		};
 		
 		$scope.pluralize = function(number){
-			var cases = [2, 0, 1, 1, 1, 2];
-			return $scope.pluralizeArray[ (number%100>4 && number%100<20)?
-					2 :
-					cases[(number%10<5)?number%10:5] ];
+			return PluralizeService.word(number, 'отложенный товар');
 		};
 
 		$scope.toggleDropdown = function(){

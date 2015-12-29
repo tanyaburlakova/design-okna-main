@@ -16,7 +16,6 @@
 	"url": "listya",
 	"model": "Листья",
 	"price": {
-		"old": "800",
 		"new": "500"
 	},
 	"img": "img/textures/listya.png",

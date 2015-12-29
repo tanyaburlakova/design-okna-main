@@ -18,6 +18,7 @@
 			catalogPath: 'catalog.json',
 			constructorTexturesPath: 'constructor-textures.json',
 			texturesPath: 'textures.json',
+			reviewsPath: 'reviews.json',
 			minPrice: 0,
 			maxPrice: 2000
 		}, window.appLicationConfig);

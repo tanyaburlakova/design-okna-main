@@ -30,9 +30,6 @@ var app = angular.module('myApp', [
 			$locationProvider.hashPrefix('!');
 			$routeProvider
 				.when('/', {
-					redirectTo: '/home'
-				})
-				.when('/home', {
 					controller: 'HomeCtrl',
 					templateUrl: 'views/home.html'
 				})
@@ -66,7 +63,7 @@ var app = angular.module('myApp', [
 					templateUrl: 'views/constructor.html'
 				})
 				.otherwise({
-					redirectTo: '/home'
+					redirectTo: '/'
 				});
 		}
 	])
