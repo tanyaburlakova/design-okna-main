@@ -11,7 +11,9 @@
 
 	function reviewsService(API_PATH, $http, $q, ConfigService) {
 		var service = {
-			getReviews: getReviews
+			getReviews: getReviews,
+			loadReviews: loadReviews,
+			submitReview: submitReview
 		};
 		return service;
 
@@ -25,6 +27,7 @@
 					.success(function (data) {
 						service.list = data.list;
 						service.data = data;
+						service.data.total = data.list.length;
 						service.data.list = null;
 						defer.resolve(angular.extend({}, service.data, {list: service.list.slice(0, limit)}));
 					})
@@ -42,6 +45,19 @@
 
 		function loadReviews(skip, limit) {
 			return service.list.slice(skip, limit);
+		};
+
+		function submitReview(params) {
+			var url = API_PATH + ConfigService.newReviewPath,
+				defer = $q.defer();
+			$http.post(url, params)
+				.success(function (data) {
+					defer.resolve(data);
+				}, function(err){
+					console.log(err);
+				});
+
+			return defer.promise;
 		};
 	}
 })();

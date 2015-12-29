@@ -66,7 +66,7 @@
 		<footer class="reviews__footer">
 			<!-- More btn -->
 			<div class="more-btn">
-				<a href class="more-btn__link" ng-click="loadMoreReviews">
+				<a href class="more-btn__link" ng-click="loadMoreReviews()" ng-show="showLoadMoreBtn">
 					<span class="icon icon-more"></span>
 					<span class="more-btn__text">
 						Показать еще <span>5</span> отзывов
@@ -81,7 +81,7 @@
 	</div>
 	<!-- New review -->
 	<div class="form form_review" ng-show="reviewFormVisible">
-		<form name="reviewForm" novalidate>
+		<form name="reviewForm" ng-submit="submitReview()" novalidate ng-if="!formSubmitted">
 			<h2 class="form__title">
 				Напишите свой отзыв
 			</h2>
@@ -94,11 +94,12 @@
 							type="text"
 							class="input"
 							name="name"
+							ng-model="formData.name"
 							required
 							placeholder="Ваше имя">
 						<!-- Error -->
 						<div
-							ng-if="false"
+							ng-show="form.name.$error.empty"
 							class="error">
 							Это обязательное поле
 						</div>
@@ -110,12 +111,13 @@
 						<input
 							type="email"
 							class="input"
-							name="name"
+							name="email"
+							ng-model="formData.email"
 							required
 							placeholder="Ваш email (на сайте не публикуется)">
 						<!-- Error -->
 						<div
-							ng-if="false"
+							ng-show="form.$submitted || form.email.$touched"
 							class="error">
 							Это обязательное поле
 						</div>
@@ -136,14 +138,8 @@
 						icon-full="icon-rating-full-star"
 						list-class="rating"
 						max="5"
-						ng-model="$parent.rating">
+						ng-model="formData.rating">
 					</input-stars>
-					 <!-- Error -->
-					<div
-						ng-if="false"
-						class="error">
-						Это обязательное поле
-					</div>
 				</div>
 			</div>
 			<!-- Text row -->
@@ -153,10 +149,11 @@
 						required
 						name="review"
 						placeholder="Ваш отзыв"
+						ng-model="formData.review"
 						class="input"></textarea>
 					<!-- Error -->
 					<div
-						ng-if="false"
+						ng-if="form.review.$touched"
 						class="error">
 						Это обязательное поле
 					</div>
@@ -170,5 +167,9 @@
 				Отправить отзыв
 			</button>
 		</form>
+		<div ng-if="formSubmitted">
+			<h2 class="form__title">Благодарим за отзыв!</h2>
+			<p class="form__text">Он скоро появится на сайте.</p>
+		</div>
 	</div>
 </section>

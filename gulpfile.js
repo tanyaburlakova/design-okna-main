@@ -131,6 +131,15 @@ gulp.task('browser-sync', function () {
 		server: {
 			baseDir: './public',
 			middleware: [
+				function(req, res, next){
+					if (req.method == 'POST') {
+						res.setHeader('Location', req.url);
+						res.statusCode = 303;
+						res.end('');
+					} else {
+						next();
+					}
+				},
 				modRewrite([
 					'^[^\\.]*$ /index.html [L]'
 				])

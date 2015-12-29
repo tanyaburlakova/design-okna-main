@@ -19,6 +19,7 @@
 			constructorTexturesPath: 'constructor-textures.json',
 			texturesPath: 'textures.json',
 			reviewsPath: 'reviews.json',
+			newReviewPath: 'review-post-response.json',
 			minPrice: 0,
 			maxPrice: 2000
 		}, window.appLicationConfig);
