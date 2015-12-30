@@ -1,4 +1,4 @@
-<div class="dialog" ng-controller="DialogCtrl" ng-show="!!state">
+<div class="dialog" ng-show="!!state">
 	<div class="dialog__bg" ng-click="CloseDialog()"></div>
 	<div class="dialog__content">
 		<div ng-include="'views/directives/search.html'" ng-if="state === 'search'"></div>

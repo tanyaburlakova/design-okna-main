@@ -14,6 +14,7 @@ var app = angular.module('myApp', [
 		'hiderDirective',
 		'parallaxDirective',
 		'questionDirective',
+		'dialogDirective',
 		'colorDirective',
 		'rangeDirective',
 		'youtube-embed',
