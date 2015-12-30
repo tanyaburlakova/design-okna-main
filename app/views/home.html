@@ -12,10 +12,12 @@
 			transition-style="'fade'"
 			mouse-drag="false"
 			auto-play="true"
+			single-item="true"
+			responsive-refresh-rate="200"
 			owl-carousel="['img/slider/1.jpg','img/slider/2.jpg','img/slider/3.jpg','img/slider/4.jpg','img/slider/5.jpg']">
 			<div class="item">
 				<div
-					ng-style="{'background': 'url({{item}}) center no-repeat', 'background-size': 'cover'}"
+					ng-style="{'background-image': 'url({{item}})'}"
 					class="slider__img">
 				</div>
 			</div>
