@@ -2,8 +2,24 @@
 	margin-right: -10px;
 	float: left;
 	width: 960px;
+	height: 380px;
 	margin-right: 20px;
 	margin-bottom: 20px;
+	transition: opacity @animation-time;
+	position: relative;
+	&__item{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0;
+		transition: opacity @animation-time;
+		&.active{
+			opacity: 1;
+			z-index: 1;
+		}
+	}
 	&__inner {
 		background: #fff;
 		position: relative;

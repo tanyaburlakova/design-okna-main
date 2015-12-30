@@ -20,6 +20,7 @@
 			texturesPath: 'textures.json',
 			reviewsPath: 'reviews.json',
 			newReviewPath: 'review-post-response.json',
+			newsPath: 'news.json',
 			minPrice: 0,
 			maxPrice: 2000
 		}, window.appLicationConfig);

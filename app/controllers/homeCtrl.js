@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl'])
+	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl', 'newsDirective'])
 		.controller('HomeCtrl', [
 			'$scope',
 			'$log',
