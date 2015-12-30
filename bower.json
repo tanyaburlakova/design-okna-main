@@ -75,7 +75,8 @@
     "jqueryui-touch-punch": "*",
     "angular-base64-upload": "0.1.13",
     "angular-dropdowns": "1.5.1",
-    "angular-local-storage": "~0.2.3"
+    "angular-local-storage": "~0.2.3",
+    "baron": "~2.0.1"
   },
   "devDependencies": {
     "svg4everybody": "~2.0.0"

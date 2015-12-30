@@ -10,27 +10,27 @@
 	</div>
 	<div class="cart__dropdown" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()" ng-class="{expanded : (items.length>0 && dropdownVisible)}">
 		<div class="cart__title">В корзине {{items.length}} {{pluralize(items.length)}}:</div>
-		<ul class="cart__list">
-			<li
-				ng-repeat="(key, product) in items track by $index"
-				class="cart__item cart-product">
-					<img src="{{product.image}}" class="cart-product__img">
-					<div class="cart-product__title">{{product.title}}</div>
-					<div class="cart-product__price"><strong>от {{product.price}} р.</strong>/м<sup>2</sup></div>
-					<button class="cart-product__dismiss" ng-click="removeProduct(key)">
-						<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
-					</button>
-			</li>
-		</ul>
-		<footer class="cart__footer">
-			<p class="cart__description">
-				Оставьте свой телефон и наш менеджер 
-				перезвонит Вам для подтверждения заказа.
-			</p>
-			<div class="cart__phone-holder">
-				<input type="tel" class="cart__phone-input" max-length="11" ng-model="order.phone">
+		<div class="cart__list-wrapper">
+			<div class="cart__list-holder baron__scroller baron _scrollbar">
+				<ul class="cart__list">
+					<li
+						ng-repeat="(key, product) in items track by $index"
+						class="cart__item cart-product">
+							<img src="{{product.image}}" class="cart-product__img">
+							<div class="cart-product__title">{{product.title}}</div>
+							<div class="cart-product__price"><strong>от {{product.price}} р.</strong>/м<sup>2</sup></div>
+							<button class="cart-product__dismiss" ng-click="removeProduct(key)">
+								<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+							</button>
+					</li>
+				</ul>
+				<div class="baron__track">
+					<div class="baron__bar"></div>
+				</div>
 			</div>
-			<button class="cart__phone-button btn btn_green">Жду звонка</button>
+		</div>
+		<footer class="cart__footer">
+			<button class="cart__phone-button btn btn_green" ng-click="openOrder()">Оформить заказ</button>
 		</footer>
 	</div>
 </div>

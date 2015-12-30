@@ -1,15 +1,16 @@
 (function () {
 	'use strict';
-	angular.module('cartCtrl', ['cartService', 'pluralizeService'])
+	angular.module('cartCtrl', ['cartService', 'pluralizeService', 'dialogService'])
 		.controller('CartCtrl', [
 			'$scope',
 			'$log',
 			'CartService',
 			'PluralizeService',
+			'DialogService',
 			cartCtrl
 		]);
 
-	function cartCtrl($scope, $log, CartService, PluralizeService) {
+	function cartCtrl($scope, $log, CartService, PluralizeService, DialogService) {
 		$log.log('cart ctrl');
 
 		$scope.init = function() {
@@ -37,6 +38,9 @@
 			}
 		});
 
+		$scope.openOrder = function(){
+			DialogService.setState('order');
+		};
 
 		$scope.removeProduct = function(key){
 			CartService.removeProduct(key);

@@ -2,6 +2,7 @@ var app = angular.module('myApp', [
 		'ngRoute',
 		'mainCtrl',
 		'homeCtrl',
+		'dialogCtrl',
 		'articleCtrl',
 		'catalogCtrl',
 		'constructorPageCtrl',

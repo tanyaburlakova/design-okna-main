@@ -22,7 +22,7 @@
 							</a>
 						</li>
 						<li class="links-set__item">
-							<a href="#" class="links-set__link" ng-click="toggleDialog()">
+							<a href="#" class="links-set__link" ng-click="openSearch()">
 								<svg class="icon icon-search"><use xlink:href="icons/icons.svg#search"></use></svg>
 								<span class="links-set__text">
 									Поиск
@@ -45,7 +45,7 @@
 				<!-- Call me -->
 				<div class="call-me">
 					<svg class="icon icon-operator"><use xlink:href="icons/icons.svg#operator"></use></svg>
-					<a href="tel:+74955426484" class="call-me__link">
+					<a href class="call-me__link" ng-click="openFeedback()">
 						+7 (495) 542-64-84
 					</a>
 					<div class="call-me__time">

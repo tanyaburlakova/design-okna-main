@@ -1,14 +1,15 @@
 (function () {
 	'use strict';
-	angular.module('mainCtrl', [])
+	angular.module('mainCtrl', ['dialogService'])
 		.controller('MainCtrl', [
 			'$scope',
 			'$log',
 			'$timeout',
+			'DialogService',
 			mainCtrl
 		]);
 
-	function mainCtrl($scope, $log, $timeout) {
+	function mainCtrl($scope, $log, $timeout, DialogService) {
 		$log.log('main ctrl');
 
 		$(function () {
@@ -20,9 +21,14 @@
 			});
 		});
 
-		$scope.dialogShowed = false;
-		$scope.toggleDialog = function(){
-			$scope.dialogShowed = !$scope.dialogShowed;
+		$scope.openSearch = function(){
+			DialogService.setState('search');
+		};
+		$scope.openFeedback = function(){
+			DialogService.setState('feedback');
+		};
+		$scope.openOrder = function(){
+			DialogService.setState('order');
 		};
 
 		$scope.refreshRange = function () {

@@ -70,12 +70,14 @@
 		margin-bottom: 7px;
 		.letter-spacing(50);
 	}
+	&__list-wrapper{
+		max-height: 240px;
+		overflow: auto;
+	}
 	&__list{
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		max-height: 240px;
-		overflow: auto;
 	}
 	&__footer{
 		padding: 20px 0 0;
@@ -102,10 +104,13 @@
 		padding: 3px 10px 4px;
 	}
 	&__phone-button{
-		float: left;
-		width: 110px;
+		width: 100%;
 		padding-left: 0;
 		padding-right: 0;
+	}
+	&__phone-holder + &__phone-button{
+		float: left;
+		width: 110px;
 		margin-left: 20px;
 	}
 }
