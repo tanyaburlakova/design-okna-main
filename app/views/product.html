@@ -75,9 +75,7 @@
 				</div>
 			</div>
 			<!-- Reviews -->
-			<div ng-if="!!product.id">
-				<reviews product-id="{{product.id}}"></reviews>
-			</div>
+			<reviews product-id="{{product.id}}" ng-if="!!product.id"></reviews>
 		</div>
 		<!-- Right -->
 		<div class="column-2">
@@ -85,7 +83,7 @@
 			<div class="price-block">
 				<div class="price-block__container">
 					<!-- Old price -->
-					<div class="price-block__old">
+					<div class="price-block__old" ng-style="{visibility: (!!currentTexture.price.old) ? 'visible' : 'hidden' }">
 						{{currentTexture.price.old}} р./м<sup>2</sup>
 					</div>
 					<!-- New price -->
@@ -212,7 +210,7 @@
 						</texture>
 					</li>
 				</ul>
-				<button class="textures__show-all">
+				<button class="textures__show-all" ng-if="false">
 					развернуть все 457 материалов
 					<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 				</button>
@@ -358,13 +356,13 @@
 				</div>
 			</div>
 			<!-- Video -->
-			<div class="video">
+			<div class="video" ng-if="!!product.video">
 				<h2 class="video__title">
 					Видео о римских шторах
 				</h2>
 				<div class="video__frame-holder">
 					<youtube-video
-						video-id="getYoutubeId('https://www.youtube.com/watch?v=_DXI6mCUX4Q')">
+						video-id="getYoutubeId(product.video)">
 					</youtube-video>
 				</div>
 			</div>

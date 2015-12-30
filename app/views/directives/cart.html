@@ -1,6 +1,6 @@
-<div class="cart">
-	<div ng-click="toggleDropdown()">
-		<div class="cart__container">
+<div class="cart" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()">
+	<div>
+		<div class="cart__container" ng-class="{'pulse': items.length>0}">
 			<svg class="icon icon-cart"><use xlink:href="icons/icons.svg#cart"></use></svg>
 			<div class="cart__counter">{{items.length}}</div>
 		</div>
@@ -8,9 +8,9 @@
 			Корзина
 		</div>
 	</div>
-	<div class="cart__dropdown" ng-class="{expanded : (items.length>0 && showDropdown)}">
-		<div class="cart__title" ng-if="items.length > 0">В корзине {{items.length}} {{pluralize(items.length)}}:</div>
-		<ul class="cart__list" ng-if="items.length > 0">
+	<div class="cart__dropdown" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()" ng-class="{expanded : (items.length>0 && dropdownVisible)}">
+		<div class="cart__title">В корзине {{items.length}} {{pluralize(items.length)}}:</div>
+		<ul class="cart__list">
 			<li
 				ng-repeat="(key, product) in items track by $index"
 				class="cart__item cart-product">
@@ -28,7 +28,7 @@
 				перезвонит Вам для подтверждения заказа.
 			</p>
 			<div class="cart__phone-holder">
-				<input type="tel" class="cart__phone-input">
+				<input type="tel" class="cart__phone-input" max-length="11" ng-model="order.phone">
 			</div>
 			<button class="cart__phone-button btn btn_green">Жду звонка</button>
 		</footer>

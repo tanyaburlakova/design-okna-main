@@ -14,7 +14,8 @@
 			getTextures: getTextures,
 			getConstructorTextures: getConstructorTextures,
 			getTextureById: getTextureById,
-			getTextureByUrl: getTextureByUrl
+			getTextureByUrl: getTextureByUrl,
+			filterTextures: filterTextures
 		};
 		return service;
 
@@ -55,6 +56,10 @@
 
 			return defer.promise;
 		}
+
+		function filterTextures(params) {
+			return _.findWhere(service.textures, params);
+		};
 
 		function getTextureById(id) {
 			return _.findWhere(service.textures, {
