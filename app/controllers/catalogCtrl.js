@@ -39,7 +39,7 @@
 			$scope.$watchCollection('searchOptions', function(oldVal, newVal){
 				$scope.getProductList();
 			});
-			$scope.$on('updateRangeSlider', function(e){
+			$scope.$on('rangeDirective.updateRangeSlider', function(e){
 				$scope.searchOptions.min_price = $scope.priceSlider.min;
 				$scope.searchOptions.max_price = $scope.priceSlider.max;
 			});

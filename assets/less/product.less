@@ -56,12 +56,12 @@
 		opacity: .4;
 		transition: opacity @animation-time;
 		.clearfix();
-	}
-	&__review-item {
-		float: left;
-		margin-right: 4px;
-		&:last-child {
-			margin-right: 0;
+		li{
+			float: left;
+			margin-right: 4px;
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 	}
 	&__review-label {
@@ -213,6 +213,7 @@
 	}
 	&__colors-label {
 		cursor: pointer;
+		display: block;
 	}
 	&__colors-dot {
 		background: orange;

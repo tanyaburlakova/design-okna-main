@@ -24,7 +24,7 @@
 		scope.options = angular.fromJson(attr.options);
 
 		scope.options.onEnd = function(){
-			scope.$parent.$broadcast('updateRangeSlider');
+			scope.$emit('rangeDirective.updateRangeSlider');
 		}
 
 		var min = scope.options.floor,

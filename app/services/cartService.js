@@ -9,15 +9,19 @@
 
 	function cartService($rootScope, localStorageService) {
 		var products = JSON.parse(localStorageService.get('cart_products')) || [];
+		var oneClickProduct = {};
 		var service = {
 			addProduct: addProduct,
 			removeProduct: removeProduct,
-			getProducts: getProducts
+			getProducts: getProducts,
+			addOneClick: addOneClick
 		};
 		return service;
 
 		function addProduct(product) {
-			products.push(product);
+			console.log(product);
+			var clone = _.cloneDeep(product);
+			products.push(clone);
 			localStorageService.set('cart_products', JSON.stringify(products));
 		}
 
@@ -28,6 +32,10 @@
 
 		function getProducts(){
 			return products;
+		}
+
+		function addOneClick(product){
+			oneClickProduct = product;
 		}
 	}
 })();

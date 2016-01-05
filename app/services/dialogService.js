@@ -11,7 +11,7 @@
 
 		var setState = function(newState){
 			opened = newState;
-			$rootScope.$broadcast('updateDialogState');
+			$rootScope.$broadcast('DialogService.updateState');
 		};
 
 		var getState = function(){

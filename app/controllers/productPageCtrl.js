@@ -21,6 +21,8 @@
 
 		$scope.init = function () {
 			$scope.catalogItems = [];
+			$scope.product = {};
+			$scope.product.withCornice = false;
 			$scope.gallery = {};
 			$scope.gallery.currentImage = '';
 			$scope.textureModel = null;
@@ -46,6 +48,8 @@
 				// Success
 				$scope.product = data;
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
+				$scope.product.dimensions = {};
+				$scope.product.withCornice = false;
 			}, function (err) {
 				// Error
 				console.log(err);
@@ -53,6 +57,7 @@
 		};
 
 		$scope.addToCart = function(){
+			$scope.product.texture = $scope.currentTexture.model;
 			CartService.addProduct($scope.product);
 		};
 
@@ -81,6 +86,7 @@
 						$scope.getTextureById(newVal);
 						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.url, false);
 						$scope.gallery.currentImage = $scope.currentTexture.img;
+						$scope.product.price = $scope.currentTexture.price.new;
 					}
 				});
 			}, function (err) {
@@ -95,7 +101,7 @@
 				subcategory: $routeParams.subcategory,
 				slug: $routeParams.product
 			}).then(function(data){
-				$scope.catalogItems = data.splice(4, data.length);
+				$scope.catalogItems = data.slice(0, 4);
 			}, function(err){
 				console.log(err);
 			});

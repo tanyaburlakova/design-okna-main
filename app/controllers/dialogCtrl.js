@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('dialogCtrl', ['dialogService'])
+	angular.module('dialogCtrl', ['dialogService', 'cartService'])
 		.controller('DialogCtrl', [
 			'$rootScope',
 			'$scope',
@@ -23,7 +23,7 @@
 			DialogService.setState(false);
 		};
 
-		$rootScope.$on('updateDialogState', function(e){
+		$rootScope.$on('DialogService.updateState', function(e){
 			$scope.state = DialogService.getState();
 			if (($scope.state === 'feedback') &&
 				($scope.state === 'order')){
