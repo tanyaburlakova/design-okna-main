@@ -137,6 +137,10 @@
 				$(controlPoints).draggable({
 					start: (function (_this) {
 						return function () {
+							$(element).css({
+								left: 100,
+							  top: 100
+							})
 							return $(element).css('pointer-events', 'none');
 						};
 					})(this),
@@ -175,23 +179,38 @@
 		makeTransformable('.js-box', function (element, H) {});
 
 		// Make draggable blinds box
-		/*el.find('.js-box').draggable((function () {
-			makeTransformable('.js-box', function (element, H) {});
+		var offset = {left:0,top:0};
+		var begin = {left:0, top:0};
+		var end = {left:0, top:0};
+		el.find('.js-box').draggable((function () {
+			// makeTransformable('.js-box', function (element, H) {});
 			return {
 				start: function () {
+					begin = el.find('.js-box').position();
 					// Clear dots
 					if (controlPoints.length > 0) {
 						$(controlPoints).each(function (index, el) {
-							el.remove();
+							el.hide();
 						});
 					}
 				},
 				stop: function () {
-					console.log('stop');
-					makeTransformable('.js-box', function (element, H) {});
+					end = el.find('.js-box').position();
+					offset = {
+						left: end.left - begin.left,
+						top: end.top - begin.top
+					};
+					if (controlPoints.length > 0) {
+						$(controlPoints).each(function (index, el) {
+							el.show().css({
+								left: el.position().left + offset.left,
+								top: el.position().top + offset.top
+							})
+						});
+					}
 				}
 			};
-		})());*/
+		})());
 
 	}
 })();

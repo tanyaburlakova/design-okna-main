@@ -60,7 +60,7 @@
 					// Success
 					$scope.textures = data;
 					$scope.$watch('textureId', function (newVal) {
-						$scope.texture = TexturesService.getTextureById(newVal);
+						$scope.texture = TexturesService.getTextureById(newVal.toString());
 					});
 				}, function (err) {
 					// Error
