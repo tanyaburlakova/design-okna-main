@@ -86,7 +86,7 @@
 						$scope.getTextureById(newVal);
 						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.url, false);
 						$scope.gallery.currentImage = $scope.currentTexture.img;
-						$scope.product.price = $scope.currentTexture.price.new;
+						$scope.product.price = $scope.currentTexture.price;
 					}
 				});
 			}, function (err) {

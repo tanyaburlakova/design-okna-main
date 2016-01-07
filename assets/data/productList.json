@@ -1,6 +1,5 @@
 [{
     "id": "1",
-    "sale": "",
     "image": "img/product1.jpg",
     "rating": "3.4",
     "reviews_count": "99",
@@ -8,16 +7,13 @@
     "title": "Жалюзи Мираж",
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
-    "old_price": "",
-    "price": "1000",
+    "price": 1000,
+    "sale": 0.2,
     "textures": [{
       "id": "1",
       "url": "kristall",
       "model": "Кристалл",
-      "price": {
-        "old": "10000",
-        "new": "1"
-      },
+      "price": 1,
       "img": "img/product/1.jpg",
       "translucent": "Не пропускает свет",
       "country": "США",
@@ -27,9 +23,7 @@
       "id": "2",
       "url": "listya",
       "model": "Листья",
-      "price": {
-        "new": "500"
-      },
+      "price": 500,
       "img": "img/textures/listya.png",
       "translucent": "Пропускает свет",
       "country": "Германия",
@@ -39,10 +33,7 @@
       "id": "3",
       "url": "luksor_uno",
       "model": "Люксор Уно",
-      "price": {
-        "old": "2345",
-        "new": "2200"
-      },
+      "price": 2200,
       "img": "img/textures/luksor_uno.png",
       "translucent": "Не пропускает свет",
       "country": "Россия",
@@ -52,10 +43,7 @@
       "id": "4",
       "url": "melanzh_red",
       "model": "Красный Меланж",
-      "price": {
-        "old": "1500",
-        "new": "1000"
-      },
+      "price": 1000,
       "img": "img/textures/melanzh_red.png",
       "translucent": "Не пропускает свет",
       "country": "Россия",
@@ -66,10 +54,7 @@
       "id": "5",
       "url": "kristall",
       "model": "Кристалл",
-      "price": {
-        "old": "10000",
-        "new": "1"
-      },
+      "price": 1,
       "img": "img/textures/kristall.png",
       "translucent": "Не пропускает свет",
       "country": "США",
@@ -79,9 +64,7 @@
       "id": "6",
       "url": "listya",
       "model": "Листья",
-      "price": {
-        "new": "500"
-      },
+      "price": 500,
       "img": "img/textures/listya.png",
       "translucent": "Пропускает свет",
       "country": "Германия",
@@ -90,7 +73,7 @@
     }]
 }, {
     "id": "2",
-    "sale": "-20%",
+    "sale": 0.20,
     "image": "img/product2.jpg",
     "rating": "3.4",
     "reviews_count": "100",
@@ -98,11 +81,9 @@
     "title": "Жалюзи Мираж",
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
-    "old_price": "1000",
-    "price": "800"
+    "price": 800
 }, {
     "id": "3",
-    "sale": "",
     "image": "img/product3.jpg",
     "rating": ".4",
     "reviews_count": "100",
@@ -110,11 +91,10 @@
     "title": "Жалюзи Мираж",
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
-    "old_price": "1200",
-    "price": "1000"
+    "price": 1000
 }, {
     "id": "4",
-    "sale": "-30%",
+    "sale": 0.30,
     "image": "img/product4.jpg",
     "rating": "3.4",
     "reviews_count": "100",
@@ -122,11 +102,9 @@
     "title": "Жалюзи Мираж",
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
-    "old_price": "2000",
-    "price": "1600"
+    "price": 1600
 }, {
     "id": "5",
-    "sale": "",
     "image": "img/product3.jpg",
     "rating": "3.4",
     "reviews_count": "100",
@@ -134,11 +112,9 @@
     "title": "Жалюзи Мираж",
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
-    "old_price": "1200",
-    "price": "1000"
+    "price": 1000
 }, {
     "id": "6",
-    "sale": "",
     "image": "img/product4.jpg",
     "rating": "3.4",
     "reviews_count": "100",
@@ -146,11 +122,10 @@
     "title": "Жалюзи Мираж",
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
-    "old_price": "1200",
-    "price": "1000"
+    "price": 1000
 }, {
     "id": "7",
-    "sale": "-5%",
+    "sale": 0.05,
     "image": "img/product1.jpg",
     "rating": "3.4",
     "reviews_count": "100",
@@ -158,11 +133,9 @@
     "title": "Жалюзи Мираж",
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
-    "old_price": "1200",
-    "price": "1000"
+    "price": 1000
 }, {
     "id": "8",
-    "sale": "",
     "image": "img/product2.jpg",
     "rating": "4.7",
     "reviews_count": "100",
@@ -170,6 +143,5 @@
     "title": "Жалюзи Мираж",
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
-    "old_price": "1200",
-    "price": "1000"
+    "price": 1000
 }]

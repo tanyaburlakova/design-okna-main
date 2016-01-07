@@ -83,12 +83,12 @@
 			<div class="price-block">
 				<div class="price-block__container">
 					<!-- Old price -->
-					<div class="price-block__old" ng-style="{visibility: (!!currentTexture.price.old) ? 'visible' : 'hidden' }">
-						{{currentTexture.price.old}} р./м<sup>2</sup>
+					<div class="price-block__old" ng-style="{visibility: (!!product.sale) ? 'visible' : 'hidden' }">
+						{{currentTexture.price * (1 + product.sale)}} р./м<sup>2</sup>
 					</div>
 					<!-- New price -->
 					<div class="price-block__new">
-						<strong>{{currentTexture.price.new}} р.</strong>/м<sup>2</sup>
+						<strong>{{currentTexture.price}} р.</strong>/м<sup>2</sup>
 					</div>
 				</div>
 				<!-- Description -->
@@ -96,7 +96,9 @@
 					Стоимость зависит от выбора материала и размеров
 				</p>
 				<div class="price-block__label" ng-if="!!product.sale">
-					<div class="price-block__label-text">{{product.sale}}</div>
+					<div class="price-block__label-text">
+						-{{product.sale * 100}}%
+					</div>
 				</div>
 			</div>
 			<!-- Textures -->

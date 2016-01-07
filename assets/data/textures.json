@@ -2,10 +2,7 @@
 	"id": 1,
 	"url": "kristall",
 	"model": "Кристалл",
-	"price": {
-		"old": "10000",
-		"new": "1"
-	},
+	"price": 1,
 	"img": "img/product/1.jpg",
 	"translucent": "Не пропускает свет",
 	"country": "США",
@@ -15,9 +12,7 @@
 	"id": 2,
 	"url": "listya",
 	"model": "Листья",
-	"price": {
-		"new": "500"
-	},
+	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
@@ -27,10 +22,7 @@
 	"id": 3,
 	"url": "luksor_uno",
 	"model": "Люксор Уно",
-	"price": {
-		"old": "2345",
-		"new": "2200"
-	},
+	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -40,10 +32,7 @@
 	"id": 4,
 	"url": "melanzh_red",
 	"model": "Красный Меланж",
-	"price": {
-		"old": "1500",
-		"new": "1000"
-	},
+	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -54,10 +43,7 @@
 	"id": 5,
 	"url": "kristall",
 	"model": "Кристалл",
-	"price": {
-		"old": "10000",
-		"new": "1"
-	},
+	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
@@ -67,9 +53,7 @@
 	"id": 6,
 	"url": "listya",
 	"model": "Листья",
-	"price": {
-		"new": "500"
-	},
+	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
@@ -79,10 +63,7 @@
 	"id": 7,
 	"url": "luksor_uno",
 	"model": "Люксор Уно",
-	"price": {
-		"old": "2345",
-		"new": "2200"
-	},
+	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -92,10 +73,7 @@
 	"id": 8,
 	"url": "melanzh_red",
 	"model": "Красный Меланж",
-	"price": {
-		"old": "1500",
-		"new": "1000"
-	},
+	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -106,10 +84,7 @@
 	"id": 9,
 	"url": "kristall",
 	"model": "Кристалл",
-	"price": {
-		"old": "10000",
-		"new": "1"
-	},
+	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
@@ -119,9 +94,7 @@
 	"id": 10,
 	"url": "listya",
 	"model": "Листья",
-	"price": {
-		"new": "500"
-	},
+	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
@@ -131,10 +104,7 @@
 	"id": 311,
 	"url": "luksor_uno",
 	"model": "Люксор Уно",
-	"price": {
-		"old": "2345",
-		"new": "2200"
-	},
+	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -144,10 +114,7 @@
 	"id": 412,
 	"url": "melanzh_red",
 	"model": "Красный Меланж",
-	"price": {
-		"old": "1500",
-		"new": "1000"
-	},
+	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -158,10 +125,7 @@
 	"id": 513,
 	"url": "kristall",
 	"model": "Кристалл",
-	"price": {
-		"old": "10000",
-		"new": "1"
-	},
+	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
@@ -171,9 +135,7 @@
 	"id": 614,
 	"url": "listya",
 	"model": "Листья",
-	"price": {
-		"new": "500"
-	},
+	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
@@ -183,10 +145,7 @@
 	"id": 715,
 	"url": "luksor_uno",
 	"model": "Люксор Уно",
-	"price": {
-		"old": "2345",
-		"new": "2200"
-	},
+	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -196,10 +155,7 @@
 	"id": 816,
 	"url": "melanzh_red",
 	"model": "Красный Меланж",
-	"price": {
-		"old": "1500",
-		"new": "1000"
-	},
+	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -210,10 +166,7 @@
 	"id": 117,
 	"url": "kristall",
 	"model": "Кристалл",
-	"price": {
-		"old": "10000",
-		"new": "1"
-	},
+	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
@@ -223,9 +176,7 @@
 	"id": 218,
 	"url": "listya",
 	"model": "Листья",
-	"price": {
-		"new": "500"
-	},
+	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
@@ -235,10 +186,7 @@
 	"id": 319,
 	"url": "luksor_uno",
 	"model": "Люксор Уно",
-	"price": {
-		"old": "2345",
-		"new": "2200"
-	},
+	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -248,10 +196,7 @@
 	"id": 420,
 	"url": "melanzh_red",
 	"model": "Красный Меланж",
-	"price": {
-		"old": "1500",
-		"new": "1000"
-	},
+	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -262,10 +207,7 @@
 	"id": 521,
 	"url": "kristall",
 	"model": "Кристалл",
-	"price": {
-		"old": "10000",
-		"new": "1"
-	},
+	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
@@ -275,9 +217,7 @@
 	"id": 622,
 	"url": "listya",
 	"model": "Листья",
-	"price": {
-		"new": "500"
-	},
+	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
@@ -287,10 +227,7 @@
 	"id": 723,
 	"url": "luksor_uno",
 	"model": "Люксор Уно",
-	"price": {
-		"old": "2345",
-		"new": "2200"
-	},
+	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
@@ -300,10 +237,7 @@
 	"id": 824,
 	"url": "melanzh_red",
 	"model": "Красный Меланж",
-	"price": {
-		"old": "1500",
-		"new": "1000"
-	},
+	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
