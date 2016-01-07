@@ -12,6 +12,7 @@
 		$log.log('home ctrl');
 
 		$scope.init = function() {
+			$scope.$parent.constructorHeader = false;
 			$scope.showLoadMoreBtn = true;
 			$scope.catalogItems = [];
 			$scope.featuredProduct = {};
@@ -19,7 +20,7 @@
 			$scope.getFeaturedProduct();
 			$scope.getProductList();
 		};
-		
+
 		$scope.getProductList = function () {
 			ProductService.getHomeList({skip: $scope.catalogItems.length, count: 8})
 				.then(function (data) {

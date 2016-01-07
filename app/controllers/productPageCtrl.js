@@ -20,6 +20,7 @@
 		$log.log('product page ctrl');
 
 		$scope.init = function () {
+			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
 			$scope.product = {};
 			$scope.product.withCornice = false;
@@ -72,19 +73,18 @@
 					subcategory = $routeParams.subcategory,
 					product = $routeParams.product,
 					texture = $routeParams.texture,
-					currentTexture = TexturesService.getTextureByUrl(texture) || {
-						id: 1
+					currentTexture = TexturesService.getTextureBySlug(texture) || {
+						id: "1"
 					},
 					currentId = currentTexture.id;
-
+				console.log(data);
 				$scope.textures = data;
-				TexturesService.getTextureByUrl(texture);
 				$scope.textureModel = currentId;
 
 				$scope.$watch('textureModel', function (newVal, oldVal) {
 					if (newVal) {
 						$scope.getTextureById(newVal);
-						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.url, false);
+						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.slug, false);
 						$scope.gallery.currentImage = $scope.currentTexture.img;
 						$scope.product.price = $scope.currentTexture.price;
 					}

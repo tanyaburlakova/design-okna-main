@@ -14,7 +14,7 @@
 			getTextures: getTextures,
 			getConstructorTextures: getConstructorTextures,
 			getTextureById: getTextureById,
-			getTextureByUrl: getTextureByUrl,
+			getTextureBySlug: getTextureBySlug,
 			filterTextures: filterTextures
 		};
 		return service;
@@ -63,13 +63,13 @@
 
 		function getTextureById(id) {
 			return _.findWhere(service.textures, {
-				'id': parseInt(id, 10)
+				'id': id
 			});
 		}
 
-		function getTextureByUrl(url) {
+		function getTextureBySlug(slug) {
 			return _.findWhere(service.textures, {
-				'url': url
+				'slug': slug
 			});
 		}
 	}

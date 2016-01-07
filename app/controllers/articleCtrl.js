@@ -15,6 +15,7 @@
 		$log.log('article ctrl');
 		var networks = ['vk', 'ok', 'fb'];
 		$scope.init = function(){
+			$scope.$parent.constructorHeader = false;
 			$scope.article = {};
 			$scope.socials = [];
 			$scope.getArticle();

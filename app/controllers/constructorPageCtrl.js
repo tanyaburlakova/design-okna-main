@@ -50,6 +50,7 @@
 		$scope.modelsModel = $scope.models[0];
 
 		$scope.init = function () {
+			$scope.$parent.constructorHeader = true;
 			$scope.getConstructorTextures();
 		};
 

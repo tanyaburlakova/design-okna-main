@@ -11,6 +11,7 @@
 
 	function mainCtrl($scope, $log, $timeout, DialogService) {
 		$log.log('main ctrl');
+		$scope.constructorHeader = false;
 
 		$(function () {
 			svg4everybody({

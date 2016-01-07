@@ -20,6 +20,13 @@
     <![endif]-->
 </head>
 <body ng-controller="MainCtrl">
+	<!-- constructorHeader -->
+	<div ng-show="!constructorHeader">
+		@@include('includes/header.html')
+	</div>
+	<div ng-if="!!constructorHeader">
+		<div ng-include="'includes/header-constructor.html'"></div>
+	</div>
 	<div ng-view></div>
 	<!-- Footer -->
 	@@include('./includes/footer.html')

@@ -1,6 +1,4 @@
 <!-- Constructor view -->
-@@include('../includes/header-constructor.html')
-<!-- Main content -->
 <main class="main-content">
 	<!-- Constructor -->
 	<div class="constructor">
@@ -41,7 +39,7 @@
 				<div class="constructor-info__column">
 					<!-- Price -->
 					<div class="constructor-info__price">
-						{{texture.price.new}} р<span class="grey">/м<sup>2</sup></span>
+						{{texture.price}} р<span class="grey">/м<sup>2</sup></span>
 					</div>
 					<!-- Add to cart -->
 					<button class="btn btn_blue btn_wide">
@@ -58,13 +56,13 @@
 					ng-init="toggleTab1=true"
 					class="tabs__list">
 					<li
-						ng-click="toggleTab1 = !toggleTab1; toggleTab2 = false"
+						ng-click="toggleTab1 = true; toggleTab2 = false"
 						class="tabs__item"
 						ng-class="{'active': toggleTab1}">
 						Жалюзи
 					</li><!--
 					--><li
-						ng-click="toggleTab2 = !toggleTab2; toggleTab1 = false"
+						ng-click="toggleTab2 = true; toggleTab1 = false"
 						class="tabs__item"
 						ng-class="{'active': toggleTab2}">
 						Шторы

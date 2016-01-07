@@ -1,246 +1,312 @@
 [{
-	"id": 1,
-	"url": "kristall",
+	"id": "1",
+	"slug": "kristall",
 	"model": "Кристалл",
 	"price": 1,
 	"img": "img/product/1.jpg",
 	"translucent": "Не пропускает свет",
 	"country": "США",
 	"width": "150 см",
-	"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
-}, {
-	"id": 2,
-	"url": "listya",
+	"structure": "50% шенилл, 20% вискоза, 30% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg1.jpg"
+},
+{
+	"id": "2",
+	"slug": "listya",
 	"model": "Листья",
 	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
 	"width": "250 см",
-	"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
-}, {
-	"id": 3,
-	"url": "luksor_uno",
+	"structure": "60% шенилл, 10% вискоза, 30% полиэстер",
+	"texture": "img/ex2.png",
+	"preview": "img/cons_bg2.jpg"
+},
+{
+	"id": "3",
+	"slug": "luksor_uno",
 	"model": "Люксор Уно",
 	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
-}, {
-	"id": 4,
-	"url": "melanzh_red",
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex3.png",
+	"preview": "img/cons_bg3.jpg"
+},
+{
+	"id": "4",
+	"slug": "melanzh_red",
 	"model": "Красный Меланж",
 	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg4.jpg"
 },
 {
-	"id": 5,
-	"url": "kristall",
+	"id": "5",
+	"slug": "kristall",
 	"model": "Кристалл",
 	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
 	"width": "150 см",
-	"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
-}, {
-	"id": 6,
-	"url": "listya",
+	"structure": "50% шенилл, 20% вискоза, 30% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg1.jpg"
+},
+{
+	"id": "6",
+	"slug": "listya",
 	"model": "Листья",
 	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
 	"width": "250 см",
-	"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
-}, {
-	"id": 7,
-	"url": "luksor_uno",
+	"structure": "60% шенилл, 10% вискоза, 30% полиэстер",
+	"texture": "img/ex2.png",
+	"preview": "img/cons_bg2.jpg"
+},
+{
+	"id": "7",
+	"slug": "luksor_uno",
 	"model": "Люксор Уно",
 	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
-}, {
-	"id": 8,
-	"url": "melanzh_red",
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex3.png",
+	"preview": "img/cons_bg3.jpg"
+},
+{
+	"id": "8",
+	"slug": "melanzh_red",
 	"model": "Красный Меланж",
 	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg4.jpg"
 },
 {
-	"id": 9,
-	"url": "kristall",
+	"id": "9",
+	"slug": "kristall",
 	"model": "Кристалл",
 	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
 	"width": "150 см",
-	"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
-}, {
-	"id": 10,
-	"url": "listya",
+	"structure": "50% шенилл, 20% вискоза, 30% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg1.jpg"
+},
+{
+	"id": "10",
+	"slug": "listya",
 	"model": "Листья",
 	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
 	"width": "250 см",
-	"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
-}, {
-	"id": 311,
-	"url": "luksor_uno",
+	"structure": "60% шенилл, 10% вискоза, 30% полиэстер",
+	"texture": "img/ex2.png",
+	"preview": "img/cons_bg2.jpg"
+},
+{
+	"id": "311",
+	"slug": "luksor_uno",
 	"model": "Люксор Уно",
 	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
-}, {
-	"id": 412,
-	"url": "melanzh_red",
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex3.png",
+	"preview": "img/cons_bg3.jpg"
+},
+{
+	"id": "412",
+	"slug": "melanzh_red",
 	"model": "Красный Меланж",
 	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg4.jpg"
 },
 {
-	"id": 513,
-	"url": "kristall",
+	"id": "513",
+	"slug": "kristall",
 	"model": "Кристалл",
 	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
 	"width": "150 см",
-	"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
-}, {
-	"id": 614,
-	"url": "listya",
+	"structure": "50% шенилл, 20% вискоза, 30% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg1.jpg"
+},
+{
+	"id": "614",
+	"slug": "listya",
 	"model": "Листья",
 	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
 	"width": "250 см",
-	"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
-}, {
-	"id": 715,
-	"url": "luksor_uno",
+	"structure": "60% шенилл, 10% вискоза, 30% полиэстер",
+	"texture": "img/ex2.png",
+	"preview": "img/cons_bg2.jpg"
+},
+{
+	"id": "715",
+	"slug": "luksor_uno",
 	"model": "Люксор Уно",
 	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
-}, {
-	"id": 816,
-	"url": "melanzh_red",
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex3.png",
+	"preview": "img/cons_bg3.jpg"
+},
+{
+	"id": "816",
+	"slug": "melanzh_red",
 	"model": "Красный Меланж",
 	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg4.jpg"
 },
 {
-	"id": 117,
-	"url": "kristall",
+	"id": "117",
+	"slug": "kristall",
 	"model": "Кристалл",
 	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
 	"width": "150 см",
-	"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
-}, {
-	"id": 218,
-	"url": "listya",
+	"structure": "50% шенилл, 20% вискоза, 30% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg1.jpg"
+},
+{
+	"id": "218",
+	"slug": "listya",
 	"model": "Листья",
 	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
 	"width": "250 см",
-	"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
-}, {
-	"id": 319,
-	"url": "luksor_uno",
+	"structure": "60% шенилл, 10% вискоза, 30% полиэстер",
+	"texture": "img/ex2.png",
+	"preview": "img/cons_bg2.jpg"
+},
+{
+	"id": "319",
+	"slug": "luksor_uno",
 	"model": "Люксор Уно",
 	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
-}, {
-	"id": 420,
-	"url": "melanzh_red",
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex3.png",
+	"preview": "img/cons_bg3.jpg"
+},
+{
+	"id": "420",
+	"slug": "melanzh_red",
 	"model": "Красный Меланж",
 	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg4.jpg"
 },
 {
-	"id": 521,
-	"url": "kristall",
+	"id": "521",
+	"slug": "kristall",
 	"model": "Кристалл",
 	"price": 1,
 	"img": "img/textures/kristall.png",
 	"translucent": "Не пропускает свет",
 	"country": "США",
 	"width": "150 см",
-	"structure": "50% шенилл, 20% вискоза, 30% полиэстер"
-}, {
-	"id": 622,
-	"url": "listya",
+	"structure": "50% шенилл, 20% вискоза, 30% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg1.jpg"
+},
+{
+	"id": "622",
+	"slug": "listya",
 	"model": "Листья",
 	"price": 500,
 	"img": "img/textures/listya.png",
 	"translucent": "Пропускает свет",
 	"country": "Германия",
 	"width": "250 см",
-	"structure": "60% шенилл, 10% вискоза, 30% полиэстер"
-}, {
-	"id": 723,
-	"url": "luksor_uno",
+	"structure": "60% шенилл, 10% вискоза, 30% полиэстер",
+	"texture": "img/ex2.png",
+	"preview": "img/cons_bg2.jpg"
+},
+{
+	"id": "723",
+	"slug": "luksor_uno",
 	"model": "Люксор Уно",
 	"price": 2200,
 	"img": "img/textures/luksor_uno.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
-}, {
-	"id": 824,
-	"url": "melanzh_red",
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex3.png",
+	"preview": "img/cons_bg3.jpg"
+},
+{
+	"id": "824",
+	"slug": "melanzh_red",
 	"model": "Красный Меланж",
 	"price": 1000,
 	"img": "img/textures/melanzh_red.png",
 	"translucent": "Не пропускает свет",
 	"country": "Россия",
 	"width": "200 см",
-	"structure": "30% шенилл, 30% вискоза, 40% полиэстер"
+	"structure": "30% шенилл, 30% вискоза, 40% полиэстер",
+	"texture": "img/ex.png",
+	"preview": "img/cons_bg4.jpg"
 }]

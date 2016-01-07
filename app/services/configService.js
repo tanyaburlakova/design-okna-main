@@ -16,7 +16,7 @@
 			questionPath: 'questions.json',
 			articlePath: 'article.json',
 			catalogPath: 'catalog.json',
-			constructorTexturesPath: 'constructor-textures.json',
+			constructorTexturesPath: 'textures.json',
 			texturesPath: 'textures.json',
 			reviewsPath: 'reviews.json',
 			newReviewPath: 'review-post-response.json',

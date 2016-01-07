@@ -15,6 +15,7 @@
 	function catalogCtrl($scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService) {
 		$log.log('catalog ctrl');
 		$scope.init = function(){
+			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
 			$scope.categoryChecks = {};
 			if ($routeParams.subcategory){
