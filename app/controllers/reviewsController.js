@@ -1,15 +1,14 @@
 (function () {
 	'use strict';
-	angular.module('reviewsCtrl', ['reviewsService', 'pluralizeService'])
+	angular.module('reviewsCtrl', ['reviewsService'])
 		.controller('ReviewsCtrl', [
 			'$scope',
 			'$log',
 			'ReviewsService',
-			'PluralizeService',
 			reviewsCtrl
 		]);
 
-	function reviewsCtrl($scope, $log, ReviewsService, PluralizeService) {
+	function reviewsCtrl($scope, $log, ReviewsService) {
 		$log.log('reviews ctrl');
 
 		$scope.init = function () {
@@ -20,10 +19,6 @@
 			$scope.formSubmitted = false;
 			$scope.showLoadMoreBtn = true;
 			$scope.getReviews($scope.productId);
-		};
-
-		$scope.pluralizeReview = function(number){
-			return PluralizeService.word(number, 'отзыв');
 		};
 
 		$scope.getReviews = function (product) {

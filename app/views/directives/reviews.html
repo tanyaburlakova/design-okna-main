@@ -24,7 +24,12 @@
 						ng-model="$parent.reviews.avg_rounded">
 					</input-stars>
 					 <div class="reviews__rating-text">
-					 	<strong>{{reviews.avg_rating}}</strong> ({{reviews.total}} {{pluralizeReview(reviews.total)}})
+					 	<strong>{{reviews.avg_rating}}</strong>
+						<ng-pluralize count="reviews.total"
+							when="{
+								'one': '({} отзыв)',
+								'few': '({} отзыва)',
+								'many': '({} отзывов)' }"></ng-pluralize>
 					 </div>
 				</div>
 			</div>

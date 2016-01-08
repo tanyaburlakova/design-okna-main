@@ -9,7 +9,13 @@
 		</div>
 	</div>
 	<div class="cart__dropdown" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()" ng-class="{expanded : (items.length>0 && dropdownVisible)}">
-		<div class="cart__title">В корзине {{items.length}} {{pluralize(items.length)}}:</div>
+		<div class="cart__title">В корзине 
+			<ng-pluralize count="items.length"
+				when="{
+				'one': '{} отложенный товар:',
+				'few': '{} отложенных товара:',
+				'many': '{} отложенных товаров:'}"></ng-pluralize>
+		</div>
 		<div class="cart__list-wrapper">
 			<div class="cart__list-holder baron__scroller baron _scrollbar">
 				<ul class="cart__list">
