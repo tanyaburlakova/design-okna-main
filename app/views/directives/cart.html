@@ -22,8 +22,8 @@
 								<span ng-if="product.withCornice"> с карнизом</span>
 							</div>
 							<div class="cart-product__price">
-								<strong>от {{product.price}} р.</strong>/м<sup>2</sup>
-								<span class="cart-product__dimensions" ng-if="!!product.dimensions.width">
+								<strong>{{product.price | number:0}} р.</strong>/м<sup>2</sup>
+								<span class="cart-product__dimensions" ng-if="!!product.dimensions.width && !!product.dimensions.height">
 									({{product.dimensions.width}} м x {{product.dimensions.height}} м)
 								</span>
 							</div>

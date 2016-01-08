@@ -183,7 +183,6 @@
 		var begin = {left:0, top:0};
 		var end = {left:0, top:0};
 		el.find('.js-box').draggable((function () {
-			// makeTransformable('.js-box', function (element, H) {});
 			return {
 				start: function () {
 					begin = el.find('.js-box').position();

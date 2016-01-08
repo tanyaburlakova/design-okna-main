@@ -82,11 +82,16 @@
 				<div class="price-block__container">
 					<!-- Old price -->
 					<div class="price-block__old" ng-style="{visibility: (!!product.sale) ? 'visible' : 'hidden' }">
-						{{currentTexture.price * (1 + product.sale)}} р./м<sup>2</sup>
+						<span ng-if="!product.priceExactly">от</span>
+						{{ product.price * (1 + product.sale) | number:0 }}
+						р.<span ng-if="!product.priceExactly">/м<sup>2</sup></span>
 					</div>
 					<!-- New price -->
 					<div class="price-block__new">
-						<strong>{{currentTexture.price}} р.</strong>/м<sup>2</sup>
+						<strong>
+							<span ng-if="!product.priceExactly">от</span>
+							{{product.price | number:0}} р.
+						</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
 					</div>
 				</div>
 				<!-- Description -->
@@ -228,7 +233,7 @@
 								Ширина
 							</span>
 							<span class="field" ng-if="!!product">
-								<input type="number" class="input" ng-model="product.dimensions.width" placeholder="0м">
+								<input type="number" class="input" ng-model="product.dimensions.width" ng-change="calcPrice()" placeholder="0м">
 							</span>
 						</label>
 					</div>
@@ -238,7 +243,7 @@
 								Высота
 							</span>
 							<span class="field" ng-if="!!product">
-								<input type="number" class="input" ng-model="product.dimensions.height" placeholder="0м">
+								<input type="number" class="input" ng-model="product.dimensions.height" ng-change="calcPrice()" placeholder="0м">
 							</span>
 						</label>
 					</div>

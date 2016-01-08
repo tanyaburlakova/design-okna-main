@@ -24,6 +24,7 @@
 			$scope.catalogItems = [];
 			$scope.product = {};
 			$scope.product.withCornice = false;
+			$scope.product.priceExactly = false;
 			$scope.gallery = {};
 			$scope.gallery.currentImage = '';
 			$scope.textureModel = null;
@@ -40,6 +41,22 @@
 			$scope.getProducts();
 		};
 
+		$scope.calcPrice = function(){
+			console.log('calcPrice');
+			var p = $scope.product;
+			if (!!p.dimensions.width && !!p.dimensions.height){
+				p.priceExactly = true;
+				if (p.withCornice){
+					p.price = ($scope.currentTexture.price * p.dimensions.width * p.dimensions.height + p.cornice.price * p.dimensions.width);
+				} else {
+					p.price = ($scope.currentTexture.price * p.dimensions.width * p.dimensions.height);
+				}
+			} else {
+				p.priceExactly = false;
+				p.price = $scope.currentTexture.price;
+			}
+		};
+
 		$scope.getProduct = function () {
 			ProductService.getProduct({
 				category: $routeParams.category,
@@ -51,6 +68,7 @@
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
 				$scope.product.dimensions = {};
 				$scope.product.withCornice = false;
+				$scope.product.priceExactly = false;
 			}, function (err) {
 				// Error
 				console.log(err);
@@ -86,9 +104,10 @@
 						$scope.getTextureById(newVal);
 						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.slug, false);
 						$scope.gallery.currentImage = $scope.currentTexture.img;
-						$scope.product.price = $scope.currentTexture.price;
+						$scope.calcPrice();
 					}
 				});
+				$scope.$watch('product.withCornice', $scope.calcPrice);
 			}, function (err) {
 				// Error
 				console.log(err);
