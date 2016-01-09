@@ -33,6 +33,7 @@
 			$scope.gallery = {};
 			$scope.gallery.currentImage = '';
 			$scope.textureModel = null;
+			$scope.textures = [];
 			$scope.resetSlider();
 			$scope.getProduct();
 			$scope.getTextures();
@@ -143,15 +144,17 @@
 		};
 
 		$scope.filterTextures = function(){
-			var colors = $scope.textureColors2;
-			var price_min = $scope.texturePrice.min
-			var price_max = $scope.texturePrice.max
-			var textures = TexturesService.filterTextures(function(item){
-				return (item.price <= price_max) &&
-					(item.price >= price_min) &&
-					((colors.length) ? _.include(colors, item.color) : true);
-			});
-			updateTextures(textures);
+			if ($scope.textures.length > 0){
+				var colors = $scope.textureColors2;
+				var price_min = $scope.texturePrice.min
+				var price_max = $scope.texturePrice.max
+				var textures = TexturesService.filterTextures(function(item){
+					return (item.price <= price_max) &&
+						(item.price >= price_min) &&
+						((colors.length) ? _.include(colors, item.color) : true);
+				});
+				updateTextures(textures);
+			}
 		};
 
 		$scope.resetSlider = function(){
