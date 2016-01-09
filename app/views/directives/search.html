@@ -1,23 +1,26 @@
-<div class="search">
+<div class="search" ng-controller="SearchCtrl">
 	<label for="search_input" class="search__label">Поиск на сайте</label>
-	<form action="#search" class="search__form">
-		<input id="search_input" type="text" class="search__input" placeholder="Введите запрос">
-		<button class="search__button">
-			<svg class="icon icon-search-big"><use xlink:href="icons/icons.svg#search-big"></use></svg>
+	<form class="search__form" ng-submit="search()">
+		<input id="search_input" type="text" class="search__input" placeholder="Введите запрос" ng-model="term">
+		<button class="search__button" type="submit">
+			<svg class="icon icon-search-big" ng-class="{'loading': !!loading}"><use xlink:href="icons/icons.svg#search-big"></use></svg>
 		</button>
 	</form>
-	<div class="search__links">
+	<div class="search__links" ng-if="!!results" ng-click="clickResult()">
 		<ul class="article-set__list">
 			<li
-			ng-repeat="(key, product) in [1,2,3,4,5]"
+			ng-repeat="(key, link) in results"
 			class="article-set_item">
-				<a href="#" class="article-set__link">
+				<a href="{{link.url}}" class="article-set__link">
 					<span class="article-set__link-text">
-						Психотерапевт &mdash; о том, как перестать бояться и паниковать
+						{{link.title}}
 					</span>
 					<svg class="icon icon-shevron-right"><use xlink:href="icons/icons.svg#shevron-right"></use></svg>
 				</a>
 			</li>
 		</ul>
+	</div>
+	<div class="search__nothing" ng-if="nothing">
+		Ничего не найдено
 	</div>
 </div>

@@ -21,6 +21,7 @@
 			reviewsPath: 'reviews.json',
 			newReviewPath: 'review-post-response.json',
 			newsPath: 'news.json',
+			searchPath: 'search.json',
 			minPrice: 0,
 			maxPrice: 2000
 		}, window.appLicationConfig);
