@@ -140,10 +140,10 @@
 											</range>
 										</div>
 										<footer class="popup__footer">
-											<a href="#" class="popup__link">
+											<button class="popup__link" ng-click="resetSlider()">
 												<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
 												Снять выделение
-											</a>
+											</button>
 										</footer>
 									</div>
 								</div>
@@ -166,34 +166,20 @@
 										<div class="popup__content">
 											<!-- Colors set -->
 											<ul class="colors-set">
-												<li class="colors-set__item">
+												<li class="colors-set__item" ng-repeat="color in product.colors">
 													<color
-														model="filterColor.red"
+														model="textureColors[color]"
 														name="color"
-														fill="red">
-													</color>
-												</li>
-												<li class="colors-set__item">
-													<color
-														model="filterColor.green"
-														name="color"
-														fill="green">
-													</color>
-												</li>
-												<li class="colors-set__item">
-													<color
-														model="filterColor.blue"
-														name="color"
-														fill="blue">
+														fill="{{color}}">
 													</color>
 												</li>
 											</ul>
 										</div>
 										<footer class="popup__footer">
-											<a href="#" class="popup__link">
+											<button class="popup__link" ng-click="textureColors = {}">
 												<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
 												Снять выделение
-											</a>
+											</button>
 										</footer>
 									</div>
 								</div>
@@ -204,7 +190,8 @@
 				<!-- Content -->
 				<ul class="textures__list">
 					<li
-						ng-repeat="texture in textures"
+						ng-repeat="(key,texture) in textures"
+						ng-show="(key<=12)||(showAllTextures)"
 						class="textures__item">
 						<texture
 							title="{{texture.model}}"
@@ -216,9 +203,11 @@
 						</texture>
 					</li>
 				</ul>
-				<button class="textures__show-all" ng-if="false">
-					развернуть все 457 материалов
-					<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
+				<button class="textures__show-all" ng-show="(textures.length > 12)" ng-click="showAllTextures=!showAllTextures;">
+					<span ng-if="!showAllTextures">развернуть</span>
+					<span ng-if="showAllTextures">свернуть</span>
+					 все материалы ({{textures.length}})
+					<svg class="icon icon-shevron-down" ng-class="{'rotated': showAllTextures}"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 				</button>
 			</div>
 			<!-- Sizes -->

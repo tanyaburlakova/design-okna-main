@@ -57,8 +57,8 @@
 			return defer.promise;
 		}
 
-		function filterTextures(params) {
-			return _.findWhere(service.textures, params);
+		function filterTextures(fn) {
+			return _.filter(service.textures, fn);
 		};
 
 		function getTextureById(id) {

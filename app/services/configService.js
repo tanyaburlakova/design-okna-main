@@ -23,7 +23,7 @@
 			newsPath: 'news.json',
 			searchPath: 'search.json',
 			minPrice: 0,
-			maxPrice: 2000
+			maxPrice: 4000
 		}, window.appLicationConfig);
 		return config;
 	}
