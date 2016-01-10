@@ -27,7 +27,7 @@
 						$scope.news[0].active = true;
 					}
 				}, function(err) {
-					console.log(err)
+					$log.log(err)
 				});
 		};
 

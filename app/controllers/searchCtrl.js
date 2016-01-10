@@ -34,9 +34,9 @@
 					$scope.results = data;
 					$scope.nothing = !(data.length > 0);
 					$scope.loading = false;
-					console.log(data);
+					$log.log(data);
 				}, function(err){
-					console.log(err);
+					$log.log(err);
 					$scope.nothing = true;
 					$scope.loading = false;
 				});

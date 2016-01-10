@@ -21,7 +21,8 @@
 			getProducts: getProducts,
 			getOneClick: getOneClick,
 			addOneClick: addOneClick,
-			submitOrder: submitOrder
+			submitOrder: submitOrder,
+			submitFeedback: submitFeedback
 		};
 		return service;
 
@@ -79,9 +80,21 @@
 				.success(function(response){
 					defer.resolve(response);
 				}, function(err){
-					console.log(err);
+					$log.log(err);
 				});
 			return defer.promise;
-		}
+		};
+
+		function submitFeedback(params){
+			var url = API_PATH + ConfigService.feedbackPath;
+			var defer = $q.defer();
+			$http.post(url, params)
+				.success(function(response){
+					defer.resolve(response);
+				}, function(err){
+					$log.log(err);
+				});
+			return defer.promise;
+		};
 	}
 })();

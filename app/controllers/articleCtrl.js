@@ -28,7 +28,7 @@
 					$scope.article.content = $sce.trustAsHtml(data.text);
 					$scope.prepareShareUrls();
 				}, function(err){
-					console.log(err);
+					$log.log(err);
 				});
 		};
 

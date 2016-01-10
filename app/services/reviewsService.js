@@ -54,7 +54,7 @@
 				.success(function (data) {
 					defer.resolve(data);
 				}, function(err){
-					console.log(err);
+					$log.log(err);
 				});
 
 			return defer.promise;

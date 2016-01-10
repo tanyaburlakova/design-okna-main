@@ -32,7 +32,7 @@
 					}
 				}, function (err) {
 					// Error
-					console.log(err);
+					$log.log(err);
 				});
 		};
 
@@ -41,7 +41,7 @@
 				.then(function(data) {
 					$scope.featuredProduct = data;
 				}, function(err) {
-					console.log(err)
+					$log.log(err)
 				});
 		};
 

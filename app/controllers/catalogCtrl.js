@@ -75,7 +75,7 @@
 					item.checked = (item.slug === $routeParams.subcategory)?true:null;
 				});
 			}, function(err){
-				console.log(err);
+				$log.log(err);
 			});
 		};
 
@@ -91,7 +91,7 @@
 					}
 				}, function (err) {
 					// Error
-					console.log(err);
+					$log.log(err);
 				});
 		};
 
@@ -107,7 +107,7 @@
 					}
 				}, function (err) {
 					// Error
-					console.log(err);
+					$log.log(err);
 				});
 		};
 

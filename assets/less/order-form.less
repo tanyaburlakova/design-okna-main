@@ -54,6 +54,7 @@
 	}
 	&__footer{
 		margin-top: -3px;
+		.clearfix();
 	}
 	&__text{
 		opacity: 0.8;
@@ -98,5 +99,8 @@
 		padding-left: 40px;
 		padding-right: 40px;
 		width: 50%;
+		&:only-child{
+			float: right;
+		}
 	}
 }

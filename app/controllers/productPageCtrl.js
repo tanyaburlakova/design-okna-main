@@ -76,7 +76,7 @@
 				$scope.showAllTextures = false;
 
 				$scope.$watch('textureModel', function (newVal) {
-					console.log(newVal);
+					$log.log(newVal);
 					if (newVal !== "-1") {
 						$scope.getTextureById(newVal);
 						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.slug, false);
@@ -102,7 +102,7 @@
 				$scope.product.priceExactly = false;
 			}, function (err) {
 				// Error
-				console.log(err);
+				$log.log(err);
 			});
 		};
 
@@ -126,7 +126,7 @@
 				updateTextures(data);
 			}, function (err) {
 				// Error
-				console.log(err);
+				$log.log(err);
 			});
 		};
 
@@ -138,7 +138,7 @@
 			}).then(function(data){
 				$scope.catalogItems = data.slice(0, 4);
 			}, function(err){
-				console.log(err);
+				$log.log(err);
 			});
 		};
 

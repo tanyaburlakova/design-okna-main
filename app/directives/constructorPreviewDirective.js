@@ -20,6 +20,7 @@
 	}
 
 	function constructorPreviewDirectiveLink(scope, el, attr) {
+		var $log = scope.$log;
 		var applyTransform, getTransform, makeTransformable, controlPoints;
 
 		getTransform = function (from, to) {

@@ -64,7 +64,7 @@
 					});
 				}, function (err) {
 					// Error
-					console.log(err);
+					$log.log(err);
 				});
 		};
 

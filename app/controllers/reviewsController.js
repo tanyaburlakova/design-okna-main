@@ -47,12 +47,12 @@
 		};
 
 		$scope.submitReview = function(){
-			console.log($scope.formData);
+			$log.log($scope.formData);
 			ReviewsService.submitReview($scope.formData)
 				.then(function(data){
 					$scope.formSubmitted = true;
 				}, function(err){
-					console.log(err);
+					$log.log(err);
 				});
 		};
 
