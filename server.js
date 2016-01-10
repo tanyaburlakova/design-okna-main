@@ -5,6 +5,15 @@ var connect = require('connect'),
 
 var app = connect();
 app.use(modRewrite([
+	function(req, res, next){
+		if (req.method == 'POST') {
+			res.setHeader('Location', req.url);
+			res.statusCode = 303;
+			res.end('');
+		} else {
+			next();
+		}
+	},
 	'^[^\\.]*$ /index.html [L]'
 ]));
 app.use(serveStatic(__dirname + '/public'));
