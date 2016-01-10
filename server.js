@@ -4,16 +4,16 @@ var connect = require('connect'),
 	serveStatic = require('serve-static');
 
 var app = connect();
+app.use(function(req, res, next){
+	if (req.method == 'POST') {
+		res.setHeader('Location', req.url);
+		res.statusCode = 303;
+		res.end('');
+	} else {
+		next();
+	}
+});
 app.use(modRewrite([
-	function(req, res, next){
-		if (req.method == 'POST') {
-			res.setHeader('Location', req.url);
-			res.statusCode = 303;
-			res.end('');
-		} else {
-			next();
-		}
-	},
 	'^[^\\.]*$ /index.html [L]'
 ]));
 app.use(serveStatic(__dirname + '/public'));
