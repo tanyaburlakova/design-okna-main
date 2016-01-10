@@ -146,6 +146,10 @@
 			return youtubeEmbedUtils.getIdFromURL(url);
 		};
 
+		$scope.showConstruction = function(e) {
+			DialogService.setImage($scope.product.construction.scheme);
+			DialogService.setState('picture');
+		};
 
 		// Textures
 		$scope.getTextureById = function (id) {

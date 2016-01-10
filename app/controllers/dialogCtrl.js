@@ -25,6 +25,11 @@
 
 		$rootScope.$on('DialogService.updateState', function(e){
 			$scope.state = DialogService.getState();
+			if ($scope.state === 'picture'){
+				$scope.picture = DialogService.getImage();
+			} else {
+				$scope.picture = '';
+			}
 			if (($scope.state === 'feedback') &&
 				($scope.state === 'order')){
 				$scope.content = true;

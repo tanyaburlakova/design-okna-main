@@ -1,11 +1,12 @@
 <div class="dialog" ng-show="!!state">
-	<div class="dialog__bg" ng-click="CloseDialog()"></div>
-	<div class="dialog__content">
+	<div class="dialog__closer" ng-click="CloseDialog();"></div>
+	<div class="dialog__content" ng-class="{picture: !!picture}">
 		<div ng-include="'views/directives/search.html'" ng-if="state === 'search'"></div>
-		<div class="dialog__window" ng-class="{picture: picture}" ng-show="state !== 'search'">
+		<div class="dialog__window" ng-show="state !== 'search'">
 			<button class="dialog__close" ng-click="CloseDialog()">
 				<svg class="icon icon-close_popup"><use xlink:href="icons/icons.svg#close_popup"></use></svg>
 			</button>
+			<img class="dialog__image" ng-src="{{picture}}" ng-if="(state=== 'picture')">
 			<div ng-include="'views/directives/order-form.html'" ng-if="(state === 'order') || (state === 'callme') || (state === 'oneclick')"></div>
 			<div ng-include="'views/directives/feedback.html'" ng-if="state === 'feedback'"></div>
 		</div>

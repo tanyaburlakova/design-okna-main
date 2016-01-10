@@ -23,9 +23,9 @@
 	function dialogDirectiveLink(scope, el, attr) {
 		scope.$watch('state', function(){
 			if (scope.state == false){
-				$('body').removeClass('fixed');
+				$('body').removeClass('modal-open');
 			} else {
-				$('body').addClass('fixed').scrollTop(0);
+				$('body').addClass('modal-open');
 			}
 		});
 	}
