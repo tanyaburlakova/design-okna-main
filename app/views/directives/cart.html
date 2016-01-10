@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="cart__dropdown" ng-mouseenter="showDropdown()" ng-mouseleave="hideDropdown()" ng-class="{expanded : (items.length>0 && dropdownVisible)}">
-		<div class="cart__title">В корзине 
+		<div class="cart__title">В корзине
 			<ng-pluralize count="items.length"
 				when="{
 				'one': '{} отложенный товар:',
@@ -28,7 +28,9 @@
 								<span ng-if="product.withCornice"> с карнизом</span>
 							</div>
 							<div class="cart-product__price">
-								<strong>{{product.price | number:0}} р.</strong>/м<sup>2</sup>
+								<strong>
+									{{product.price | number:0}} р.
+								</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
 								<span class="cart-product__dimensions" ng-if="!!product.dimensions.width && !!product.dimensions.height">
 									({{product.dimensions.width}} м x {{product.dimensions.height}} м)
 								</span>

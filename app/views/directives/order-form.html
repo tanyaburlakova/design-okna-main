@@ -1,21 +1,59 @@
-<form actin="#" class="order-form">
-	<h3 class="order-form__title">
-		<svg class="icon icon-cart"><use xlink:href="icons/icons.svg#cart"></use></svg>
-		<span>Оформить заказ</span>
-	</h3>
-	<ol class="order-form__list">
-		<li class="order-form__item"><strong>1.</strong> Римские шторы модель Лаура - 1700 р./м2</li>
-		<li class="order-form__item"><strong>2.</strong> Римские шторы - 1200 р./м2</li>
-		<li class="order-form__item"><strong>3.</strong> Горизонтальные жалюзи - 800 р./м2</li>
-	</ol>
-	<input type="text" class="order-form__input" placeholder="Ваше имя">
-	<input type="text" class="order-form__input" placeholder="Ваш email">
-	<footer class="order-form__footer">
-		<p class="order-form__text">
-			Сегодня мы уже не работаем, но завтра наш менеджер 
-			обязательно перезвонит Вам для подтверждения заказа.<br>
-			Выберите время звонка:
+<form class="order-form" ng-controller="OrderCtrl" ng-submit="submitForm()">
+	<header>
+		<h3 class="order-form__title">
+			<svg ng-if="context !== 'callme'" class="icon icon-cart"><use xlink:href="icons/icons.svg#cart"></use></svg>
+			<span ng-if="context === 'callme'">Перезвоните мне</span>
+			<span ng-if="context === 'order'">Оформить заказ</span>
+			<span ng-if="context === 'oneclick'">Купить в 1 клик</span>
+		</h3>
+	</header>
+	<section class="order-form__body" ng-if="!state.complete && !state.loading">
+		<ol class="order-form__list" ng-if="context !== 'callme'">
+			<li class="order-form__item" ng-repeat="(key,product) in products">
+				<strong ng-if="products.length > 1">{{key+1}}.</strong>
+				{{product.title}}
+				<!-- <span ng-if="product.withCornice"> с карнизом</span> -->
+				<span ng-if="!!product.texture">модель {{product.texture}}</span>
+				<span class="dimenstions" ng-if="!!product.dimensions.width && !!product.dimensions.height">
+					({{product.dimensions.width}} м x {{product.dimensions.height}} м)
+				</span>
+				- <strong>
+					{{product.price | number:0}} р.
+				</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
+			</li>
+		</ol>
+		<input type="text" class="order-form__input" placeholder="Ваше имя" ng-model="order.name">
+		<input type="tel" class="order-form__input" placeholder="Ваш телефон" ng-model="order.phone" ng-focus="phoneFocus();">
+	</section>
+	<section class="order-form__body" ng-if="state.complete">
+		<p>
+			<span ng-if="context !== 'callme'">Ваш заказ отправлен!</span>
+			<span ng-if="context === 'callme'">Готово!</span>
+			<br>
+			Ожидайте звонка в назначенное время.
 		</p>
+	</section>
+	<footer class="order-form__footer" ng-if="!state.complete && !state.loading">
+		<p class="order-form__text" ng-if="(context !== 'callme') && (workingTime)">
+			Наш менеджер перезвонит Вам для подтверждения заказа.
+		</p>
+		<p class="order-form__text" ng-if="(context !== 'callme') && (!workingTime)">
+			Сегодня мы уже не работаем, но завтра наш менеджер
+			обязательно перезвонит Вам для подтверждения заказа.
+		</p>
+		<div class="order-form__call-title">Время звонка</div>
+		<div class="order-form__time">
+			<div dropdown-select="hours"
+				dropdown-model="order.hour"
+				dropdown-item-label="label">
+			</div>
+		</div>
+		<div class="order-form__time">
+			<div dropdown-select="minutes"
+				dropdown-model="order.min"
+				dropdown-item-label="label">
+			</div>
+		</div>
 		<button class="btn btn_blue btn_big order-form__submit">Перезвоните мне</button>
 	</footer>
 </form>

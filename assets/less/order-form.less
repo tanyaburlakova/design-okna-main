@@ -28,6 +28,10 @@
 		}
 	}
 	&__item{
+		line-height: 20px;
+		span.dimenstions{
+			display: inline-block;
+		}
 		&+&{
 			margin-top: 10px;
 		}
@@ -59,9 +63,37 @@
 		line-height: 20px;
 		margin: 8px 0 34px;
 	}
-	&__time{}
+	&__call-title{
+		color: #4a4a4a;
+		font-size: 16px;
+		font-weight: 400;
+		margin: 8px 0 34px;
+	}
+	&__time{
+		float: left;
+		width: 25%;
+		padding-right: 20px;
+		.wrap-dd-select{
+			padding-top: 7px;
+			padding-bottom: 7px;
+			background: none;
+			border: 2px solid #e6e6e6;
+			box-shadow: none;
+			color: fade(#4a4a4a,70%);
+			font-size: 16px;
+			font-weight: 400;
+			text-transform: none;
+		}
+		.wrap-dd-select .dropdown{
+			background: #fff;
+		}
+		.wrap-dd-select .dropdown li a{
+			border-bottom-color: #eee;
+		}
+	}
 	&__submit{
 		padding-left: 40px;
 		padding-right: 40px;
+		width: 50%;
 	}
 }

@@ -17,11 +17,12 @@
 		var getState = function(){
 			return opened;
 		};
+
 		var service = {
 			getState: getState,
 			setState: setState
 		};
-		return service;
 
+		return service;
 	}
 })();

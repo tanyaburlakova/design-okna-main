@@ -6,7 +6,7 @@
 			<button class="dialog__close" ng-click="CloseDialog()">
 				<svg class="icon icon-close_popup"><use xlink:href="icons/icons.svg#close_popup"></use></svg>
 			</button>
-			<div ng-include="'views/directives/order-form.html'" ng-if="state === 'order'"></div>
+			<div ng-include="'views/directives/order-form.html'" ng-if="(state === 'order') || (state === 'callme') || (state === 'oneclick')"></div>
 			<div ng-include="'views/directives/feedback.html'" ng-if="state === 'feedback'"></div>
 		</div>
 	</div>

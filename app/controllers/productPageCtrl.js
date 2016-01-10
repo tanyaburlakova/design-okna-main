@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('productPageCtrl', ['texturesService', 'productService', 'cartService', 'configService', 'reviewsDirective'])
+	angular.module('productPageCtrl', ['texturesService', 'productService', 'cartService', 'dialogService', 'configService', 'reviewsDirective'])
 		.controller('ProductPageCtrl', [
 			'$scope',
 			'$log',
@@ -10,13 +10,16 @@
 			'TexturesService',
 			'ProductService',
 			'CartService',
+			'DialogService',
 			'ConfigService',
 			'$sce',
 			'$timeout',
 			productPageCtrl
 		]);
 
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams, TexturesService, ProductService, CartService, ConfigService, $sce, $timeout) {
+	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams,
+		TexturesService, ProductService, CartService, DialogService, ConfigService,
+		$sce, $timeout) {
 		$log.log('product page ctrl');
 
 		$scope.init = function () {
@@ -106,6 +109,12 @@
 		$scope.addToCart = function(){
 			$scope.product.texture = $scope.currentTexture.model;
 			CartService.addProduct($scope.product);
+		};
+
+		$scope.buyOneClick = function() {
+			$scope.product.texture = $scope.currentTexture.model;
+			CartService.addOneClick($scope.product);
+			DialogService.setState('oneclick');
 		};
 
 		$scope.getTextures = function () {
