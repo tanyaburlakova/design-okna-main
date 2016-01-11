@@ -28,7 +28,8 @@
 			openHour: 9,
 			closeHour: 21,
 			orderPath: 'order.json',
-			feedbackPath: 'order.json'
+			feedbackPath: 'order.json',
+			structurePath: 'structure.json'
 		}, window.appLicationConfig);
 		return config;
 	}

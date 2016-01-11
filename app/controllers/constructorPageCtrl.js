@@ -1,15 +1,16 @@
 (function () {
 	'use strict';
-	angular.module('constructorPageCtrl', ['naif.base64'])
+	angular.module('constructorPageCtrl', ['naif.base64', 'menuService', 'texturesService'])
 		.controller('ConstructorPageCtrl', [
 			'$scope',
 			'$log',
 			'$timeout',
 			'TexturesService',
+			'MenuService',
 			constructorPageCtrl
 		]);
 
-	function constructorPageCtrl($scope, $log, $timeout, TexturesService) {
+	function constructorPageCtrl($scope, $log, $timeout, TexturesService, MenuService) {
 		$log.log('Constructor page ctrl');
 
 		$scope.textureModel = null;
@@ -24,38 +25,69 @@
 			}
 		};
 
-		$scope.types = [{
-			id: '1',
-			label: 'Горизонтальные'
-		}, {
-			id: '2',
-			label: 'Вертикальные'
-		}, {
-			id: '3',
-			label: 'Рулонные'
-		}];
-
-		$scope.models = [{
-			id: '1',
-			label: 'Лаура'
-		}, {
-			id: '2',
-			label: 'Эльвира'
-		}, {
-			id: '3',
-			label: 'Моисей'
-		}];
-
-		$scope.typesModel = $scope.types[0];
-		$scope.modelsModel = $scope.models[0];
-
+		var menu = {};
 		$scope.init = function () {
+			$scope.currentTab = 'zhalyuzi';
+			$scope.typesModel = {};
+			MenuService.getMenu()
+			.then(function(data){
+				menu = data;
+				$scope.prepareTypes(true);
+			}, function(err){
+				console.log(err);
+			});
 			$scope.$parent.constructorHeader = true;
-			$scope.getConstructorTextures();
 		};
 
-		$scope.getConstructorTextures = function () {
-			TexturesService.getConstructorTextures()
+		$scope.prepareTypes = function(withModels) {
+			$log.info('ConstructorPageCtrl.prepareTypes');
+			$scope.types = _.map(menu[$scope.currentTab], function(item){
+				return {
+					url: item.url,
+					value: item.url.replace('/catalog/',''),
+					label: item.title
+				};
+			});
+			$scope.typesModel = $scope.types[0];
+			if (withModels) $scope.prepareModels($scope.typesModel);
+		};
+
+		$scope.prepareModels = function(selected) {
+			$log.info('ConstructorPageCtrl.prepareModels');
+			$scope.models = _.map(_.findLast(menu[$scope.currentTab], 'url', selected.url).children, function(item){
+				return {
+					url: item.url,
+					value: item.url.replace('/catalog/',''),
+					label: item.title
+				};
+			});
+			if ($scope.models.length){
+				$scope.modelsModel = $scope.models[0];
+				$scope.getConstructorTextures($scope.modelsModel);
+			} else {
+				$scope.modelsModel = {};
+				$scope.getConstructorTextures(false);
+			}
+		};
+
+		$scope.getConstructorTextures = function (model) {
+			console.log($scope.typesModel);
+			var route = [];
+			var category = '';
+			var subcategory = '';
+			if (model){
+				route = /([A-z]+)\/([A-z]+)\/([A-z]+)/g.exec(model.url);
+				category = route[2];
+				subcategory = route[3];
+			} else {
+				route = /([A-z]+)\/([A-z]+)/g.exec($scope.typesModel.url);
+				category = route[2];
+				subcategory = null;
+			}
+			TexturesService.getConstructorTextures({
+				category: category,
+				subcategory: subcategory
+			})
 				.then(function (data) {
 					// Success
 					$scope.textures = data;
@@ -66,6 +98,11 @@
 					// Error
 					$log.log(err);
 				});
+		};
+
+		$scope.addToCart = function(){
+			$scope.product.texture = $scope.texture.model;
+			CartService.addProduct($scope.product);
 		};
 
 		$scope.init();

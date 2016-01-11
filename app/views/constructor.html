@@ -42,7 +42,7 @@
 						{{texture.price}} р<span class="grey">/м<sup>2</sup></span>
 					</div>
 					<!-- Add to cart -->
-					<button class="btn btn_blue btn_wide">
+					<button class="btn btn_blue btn_wide" ng-click="addToCart()">
 						Отложить в корзину
 					</button>
 				</div>
@@ -53,46 +53,46 @@
 			<div class="container container_small container_relative">
 				<!-- Controlls -->
 				<ul
-					ng-init="toggleTab1=true"
 					class="tabs__list">
 					<li
-						ng-click="toggleTab1 = true; toggleTab2 = false"
+						ng-click="currentTab='zhalyuzi'; prepareTypes(true);"
 						class="tabs__item"
-						ng-class="{'active': toggleTab1}">
+						ng-class="{'active': (currentTab=='zhalyuzi')}">
 						Жалюзи
 					</li><!--
 					--><li
-						ng-click="toggleTab2 = true; toggleTab1 = false"
+						ng-click="currentTab='shtory'; prepareTypes(true);"
 						class="tabs__item"
-						ng-class="{'active': toggleTab2}">
+						ng-class="{'active': (currentTab=='shtory')}">
 						Шторы
 					</li>
 				</ul>
-				<!-- Blinds content -->
-				<div
-					ng-if="toggleTab1"
-					class="tabs__content">
+				<div class="tabs__content">
 					<div class="tabs__column">
 						<div class="form form_constructor">
-							<div class="form__column">
+							<div class="form__column" ng-if="!!types">
 								<label for="blindsType" class="label">
-									Тип жалюзи
+									Тип
+									<span ng-if="(currentTab=='zhalyuzi')">жалюзи</span>
+									<span ng-if="(currentTab=='shtory')">штор</span>
 								</label>
 								<div class="field">
 									<div dropdown-select="types"
 										dropdown-model="typesModel"
-										dropdown-item-label="label">
+										dropdown-item-label="label"
+										dropdown-onchange="prepareModels(selected)">
 									</div>
 								</div>
 							</div>
-							<div class="form__column">
+							<div class="form__column" ng-show="models.length > 0">
 								<label for="blindsType" class="label">
 									Категория
 								</label>
 								<div class="field">
 									<div dropdown-select="models"
 										dropdown-model="modelsModel"
-										dropdown-item-label="label">
+										dropdown-item-label="label"
+										dropdown-onchange="getConstructorTextures(selected)">
 									</div>
 								</div>
 							</div>
@@ -104,68 +104,6 @@
 							<header class="textures__header">
 								<h2 class="textures__title textures__title_small">
 									Цвета и текстуры
-								</h2>
-							</header>
-							<!-- Content -->
-							<ul class="textures__list">
-								<li
-									ng-repeat="(key,texture) in textures"
-									ng-show="(key<=11)||(showAllTextures)"
-									class="textures__item">
-									<texture
-										model="$parent.$parent.textureId"
-										name="texture"
-										checked="{{$first}}"
-										fill="{{texture.img}}"
-										value="{{texture.id}}">
-									</texture>
-								</li>
-							</ul>
-							<button class="textures__show-all" ng-show="(textures.length > 11)" ng-click="showAllTextures=!showAllTextures;">
-								<span ng-if="!showAllTextures">развернуть</span>
-								<span ng-if="showAllTextures">свернуть</span>
-								 все материалы ({{textures.length}})
-								<svg class="icon icon-shevron-down" ng-class="{'rotated': showAllTextures}"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
-							</button>
-						</div>
-					</div>
-				</div>
-				<!-- Curtains content -->
-				<div
-					ng-if="toggleTab2"
-					class="tabs__content">
-					<div class="tabs__column">
-						<div class="form form_constructor">
-							<div class="form__column">
-								<label for="blindsType" class="label">
-									Тип жалюзи
-								</label>
-								<div class="field">
-									<div dropdown-select="types"
-										dropdown-model="typesModel"
-										dropdown-item-label="label">
-									</div>
-								</div>
-							</div>
-							<div class="form__column">
-								<label for="blindsType" class="label">
-									Модель
-								</label>
-								<div class="field">
-									<div dropdown-select="models"
-										dropdown-model="modelsModel"
-										dropdown-item-label="label">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tabs__column">
-						<!-- Textures -->
-						<div class="textures textures_dark">
-							<header class="textures__header">
-								<h2 class="textures__title">
-									Выберите цвет или текстуру
 								</h2>
 							</header>
 							<!-- Content -->
