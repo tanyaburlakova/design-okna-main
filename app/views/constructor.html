@@ -27,7 +27,7 @@
 				<div class="constructor-info__column">
 					<!-- Product name -->
 					<div class="constructor-info__name">
-						Жалюзи {{texture.category}} {{texture.subcategory}} <span class="grey">{{texture.model}}</span>
+						{{typesModel.category}} {{typesModel.label}} {{modelsModel.label}} <span class="grey">{{texture.model}}</span>
 					</div>
 					<!-- Link -->
 					<a
@@ -70,7 +70,7 @@
 				<div class="tabs__content">
 					<div class="tabs__column">
 						<div class="form form_constructor">
-							<div class="form__column" ng-if="!!types">
+							<div class="form__column" ng-show="types.length > 0">
 								<label for="blindsType" class="label">
 									Тип
 									<span ng-if="(currentTab=='zhalyuzi')">жалюзи</span>
@@ -113,7 +113,7 @@
 									ng-show="(key<=11)||(showAllTextures)"
 									class="textures__item">
 									<texture
-										model="$parent.$parent.textureId"
+										model="$parent.textureId"
 										name="texture"
 										checked="{{$first}}"
 										fill="{{texture.img}}"

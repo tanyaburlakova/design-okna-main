@@ -30,11 +30,10 @@
 				return defer.promise;
 			};
 		};
-		
+
 		var getProduct = FetchPrototype(
 			ConfigService.productPagePath,
 			function(defer, data){
-				service.textures = data;
 				defer.resolve(data);
 			}
 		);

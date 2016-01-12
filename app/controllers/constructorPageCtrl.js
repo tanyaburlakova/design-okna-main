@@ -1,16 +1,17 @@
 (function () {
 	'use strict';
-	angular.module('constructorPageCtrl', ['naif.base64', 'menuService', 'texturesService'])
+	angular.module('constructorPageCtrl', ['naif.base64', 'menuService', 'texturesService', 'cartService'])
 		.controller('ConstructorPageCtrl', [
 			'$scope',
 			'$log',
 			'$timeout',
 			'TexturesService',
 			'MenuService',
+			'CartService',
 			constructorPageCtrl
 		]);
 
-	function constructorPageCtrl($scope, $log, $timeout, TexturesService, MenuService) {
+	function constructorPageCtrl($scope, $log, $timeout, TexturesService, MenuService, CartService) {
 		$log.log('Constructor page ctrl');
 
 		$scope.textureModel = null;
@@ -45,7 +46,8 @@
 				return {
 					url: item.url,
 					value: item.url.replace('/catalog/',''),
-					label: item.title
+					label: item.title,
+					category: ($scope.currentTab === 'zhalyuzi') ? 'Жалюзи' : 'Шторы'
 				};
 			});
 			$scope.typesModel = $scope.types[0];
@@ -93,6 +95,13 @@
 					$scope.textures = data;
 					$scope.$watch('textureId', function (newVal) {
 						$scope.texture = TexturesService.getTextureById(newVal.toString());
+						console.log($scope.texture.id);
+						$scope.product = {
+							image: $scope.texture.img,
+							title: $scope.texture.product_name,
+							price: $scope.texture.price,
+							texture: $scope.texture.model
+						};
 					});
 				}, function (err) {
 					// Error
@@ -101,7 +110,6 @@
 		};
 
 		$scope.addToCart = function(){
-			$scope.product.texture = $scope.texture.model;
 			CartService.addProduct($scope.product);
 		};
 
