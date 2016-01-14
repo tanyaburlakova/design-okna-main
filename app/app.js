@@ -15,6 +15,7 @@ var app = angular.module('myApp', [
 		'checkboxDirective',
 		'textureDirective',
 		'hiderDirective',
+		'responsiveDirective',
 		'parallaxDirective',
 		'questionDirective',
 		'dialogDirective',
