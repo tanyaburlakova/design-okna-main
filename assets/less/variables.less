@@ -25,6 +25,16 @@
 @desktop: 1280px;
 @desktop-small: 1092px;
 @tablet: 960px;
-@portreit: 640px;
+@tablet-portrait: 640px;
 @mobile: 320px;
 @scrollbar: 30px;
+
+// Media
+@desktop-with-scrollbar: (@desktop + @scrollbar);
+@tablet-with-scrollbar: (@tablet + @scrollbar);
+@tablet-portrait-with-scrollbar: (@tablet-portrait + @scrollbar);
+
+@desktop-mq: ~"(min-width: @{desktop-with-scrollbar})";
+@tablet-mq: ~"(max-width: @{desktop-with-scrollbar})";
+@tablet-portrait-mq: ~"(max-width: @{tablet-with-scrollbar})";
+@mobile-mq: ~"(max-width: @{tablet-portrait-with-scrollbar})";

@@ -1,6 +1,22 @@
 .article {
 	background: #fff;
 	margin-bottom: 100px;
+	&__main{
+		@media @tablet-mq{
+			width: 2*100/3%;
+		}
+		@media @tablet-portrait-mq {
+			width: 50%;
+		}
+	}
+	&__aside{
+		@media @tablet-mq{
+			width: 1*100/3%;
+		}
+		@media @tablet-portrait-mq {
+			width: 50%;
+		}
+	}
 	&__header {
 		position: relative;
 		padding: 38px 30px;
@@ -23,6 +39,9 @@
 		text-transform: uppercase;
 		margin: 0 0 36px;
 		letter-spacing: 0.1em;
+		@media (max-width: (@tablet + @scrollbar)) {
+			font-size: 18px;
+		}
 	}
 	&__label {
 		position: absolute;

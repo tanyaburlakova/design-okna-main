@@ -10,6 +10,10 @@ a, input, textarea, select, button {
 		outline: none;
 	}
 }
+textarea{
+	resize: vertical;
+}
+
 .container {
 	width: @desktop;
 	margin: 0 auto;
@@ -55,6 +59,9 @@ a, input, textarea, select, button {
 	}
 	&_tight{
 		padding: 0 20px;
+		@media @tablet-mq{
+			padding: 0;
+		}
 	}
 	&_product-page {
 		margin-top: -30px;

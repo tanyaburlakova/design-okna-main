@@ -76,7 +76,7 @@
 			</benefits>
 			<!-- Product -->
 			<div ng-repeat="product in [featuredProduct]">
-				<div ng-include="'views/directives/product.html'"></div>
+				<div ng-init="product.single = true;" ng-include="'views/directives/product.html'"></div>
 			</div>
 			<!-- Article preview -->
 			<article class="article-preview hide-in-tablet show-in-mobile">
