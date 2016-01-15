@@ -14,12 +14,13 @@
 			'ConfigService',
 			'$sce',
 			'$timeout',
+			'ResponsiveService',
 			productPageCtrl
 		]);
 
 	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams,
 		TexturesService, ProductService, CartService, DialogService, ConfigService,
-		$sce, $timeout) {
+		$sce, $timeout, ResponsiveService) {
 		$log.log('product page ctrl');
 
 		$scope.init = function () {
@@ -37,6 +38,7 @@
 			$scope.gallery.currentImage = '';
 			$scope.textureModel = null;
 			$scope.textures = [];
+			$scope.desktop = ResponsiveService.getState('desktop');
 			$scope.resetSlider();
 			$scope.getProduct();
 			$scope.getTextures();
@@ -188,6 +190,12 @@
 			$scope.texturePrice.min = $scope.priceSlider.min;
 			$scope.texturePrice.max = $scope.priceSlider.max;
 			$scope.filterTextures();
+		});
+
+		$scope.$on('ResponsiveService.updateState', function(){
+			$scope.$apply(function(){
+				$scope.desktop = ResponsiveService.getState('desktop');
+			});
 		});
 
 		$scope.$watchCollection('textureColors', function(){

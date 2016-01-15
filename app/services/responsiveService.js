@@ -9,28 +9,52 @@
 	function responsiveService($rootScope) {
 		var opened = false;
 		var image = '';
+		var scrollWidth = 30;
+		var responsiveStatus = {
+			desktop: false,
+			talbet: false,
+			tabletPortrait: false,
+			mobile: false
+		};
+		var rules = {
+			desktop: function(width) {
+				return (width >= (1280 + scrollWidth));
+			},
+			tablet: function(width) {
+				return (width < (1280 + scrollWidth));
+			},
+			tabletPortrait: function(width) {
+				return (width <= (960 + scrollWidth));
+			},
+			mobile: function(width) {
+				return (width <= (320 + scrollWidth));
+			}
+		};
 
-		var setState = function(newState){
-			opened = newState;
+		var setState = function(){
 			$rootScope.$broadcast('ResponsiveService.updateState');
 		};
 
-		var getState = function(){
-			return opened;
+		var getState = function(key) {
+			return responsiveStatus[key];
 		};
 
-		var setImage = function(picture) {
-			image = picture;
-		}
-		var getImage = function(){
-			return image;
+		var updateWidth = function(width){
+			var update = false
+			_.each(rules, function(fn, key){
+				if (fn(width)!== responsiveStatus[key]){
+					responsiveStatus[key] = fn(width);
+					update = true;
+				}
+			});
+			if (update){
+				setState();
+			};
 		};
 
 		var service = {
-			getState: getState,
-			setState: setState,
-			getImage: getImage,
-			setImage: setImage
+			updateWidth: updateWidth,
+			getState: getState
 		};
 
 		return service;
