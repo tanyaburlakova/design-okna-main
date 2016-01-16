@@ -17,9 +17,6 @@ var gulp = require('gulp'),
 	modRewrite = require('connect-modrewrite'),
 	notify = require('gulp-notify');
 
-console.info('********** Bower Files **********');
-console.info(bowerFiles);
-
 /******************************
  * Default task
  ******************************/
@@ -102,7 +99,13 @@ gulp.task('pluginsConcat', function () {
 /******************************
  * JS concat
  ******************************/
+ var firstTime = true;
 gulp.task('jsConcat', function () {
+	if (firstTime){
+		console.info('********** Bower Files **********');
+		console.info(bowerFiles);
+		firstTime = false;
+	}
 	return gulp.src(['app/**/*.js'])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())

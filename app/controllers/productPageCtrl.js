@@ -138,7 +138,7 @@
 				subcategory: $routeParams.subcategory,
 				slug: $routeParams.product
 			}).then(function(data){
-				$scope.catalogItems = data.slice(0, 4);
+				$scope.catalogItems = data.slice(0, $scope.desktop ? 4 : 3);
 			}, function(err){
 				$log.log(err);
 			});

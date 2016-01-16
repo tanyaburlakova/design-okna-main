@@ -2,6 +2,9 @@
 	background: #fff;
 	padding: 36px 40px 30px;
 	position: relative;
+	@media @tablet-mq{
+		padding: 26px 40px 0;
+	}
 	&:before, &:after {
 		content: '';
 		position: absolute;
@@ -31,10 +34,19 @@
 			color: fade(#b7b7b7, 0.89);
 			font-size: 12px;
 		}
+		@media @tablet-mq{
+			opacity: 0.89;
+			font-size: 12px;
+			text-transform: uppercase;
+			margin: 0 0 10px;
+		}
 	}
 	&__filters {
 		float: right;
 		position: relative;
+		@media @tablet-mq{
+			display: none;
+		}
 	}
 	&__filters-title {
 		float: left;
@@ -99,6 +111,9 @@
 		margin: 0;
 		margin: 25px 0;
 		.clearfix();
+		@media @tablet-mq{
+			margin: 15px 0 10px;
+		}
 	}
 	&__item {
 		float: left;
@@ -113,6 +128,7 @@
 		font-weight: 500;
 		line-height: 44px;
 		text-transform: uppercase;
+		padding: 0;
 		.icon {
 			margin-left: 3px;
 		}

@@ -6,6 +6,13 @@
 		font-weight: 500;
 		line-height: 20px;
 		margin: 16px 0 36px;
+		@media @tablet-mq{
+			color: fade(#363537, 89);
+			font-size: 12px;
+			font-weight: 500;
+			text-transform: uppercase;
+			margin: 10px 0 10px;
+		}
 	}
 	&__row {
 		.clearfix();
@@ -23,6 +30,16 @@
 	&__cell {
 		float: left;
 		width:33%;
+		@media @tablet-mq{
+			.form_sizes &{
+				float: none;
+				width: auto;
+				margin-bottom: 5px;
+				.label__text{
+					width: 30%;
+				}
+			}
+		}
 	}
 	&__fieldset {
 		border: 0;
@@ -85,6 +102,9 @@
 		background: #fff;
 		padding: 36px 40px 30px;
 		position: relative;
+		@media @tablet-mq{
+			padding: 1px 40px 20px;
+		}
 		.field {
 			width: 80px;
 		}

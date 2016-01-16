@@ -9,14 +9,12 @@
 }
 // Tablet
 @media @tablet-mq {
+	.desktop-only{
+		display: none !important;
+	}
 	.container {
 		width: @tablet;
 	}
-	// .sort {
-	// 	float: left;
-	// 	margin-top: 20px;
-	// 	margin-bottom: 20px;
-	// }
 	.call-me {
 		margin-right: 10px;
 	}
@@ -127,9 +125,6 @@
 			}
 			&:nth-last-child(4) {
 				margin-bottom: 40px;
-			}
-			&:nth-last-child(-n+3) {
-				margin-bottom: 0;
 			}
 		}
 		&_3 {
