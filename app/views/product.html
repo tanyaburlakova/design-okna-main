@@ -102,8 +102,7 @@
 					<div class="price-block__new">
 						<strong>
 							<span ng-if="!product.priceExactly">от</span>
-							{{product.price | number:0}} р.
-						</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
+							{{product.price | number:0}} р.</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
 					</div>
 				</div>
 				<!-- Description -->
@@ -152,7 +151,7 @@
 											</range>
 										</div>
 										<footer class="popup__footer">
-											<button class="popup__link" ng-click="resetSlider()">
+											<button class="popup__link" ng-click="resetSlider(); togglePricePopup = false;">
 												<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
 												Снять выделение
 											</button>
@@ -188,7 +187,7 @@
 											</ul>
 										</div>
 										<footer class="popup__footer">
-											<button class="popup__link" ng-click="textureColors = {}">
+											<button class="popup__link" ng-click="textureColors = {}; toggleColorsPopup = false;">
 												<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
 												Снять выделение
 											</button>
@@ -258,6 +257,15 @@
 					name="type2">
 				</checkbox>
 			</div>
+			<!-- Buttons set -->
+			<div class="btn-set">
+				<button class="btn btn_red btn_big" ng-click="buyOneClick()">
+					Купить в 1 клик
+				</button>
+				<button class="btn btn_blue btn_big" ng-click="addToCart()">
+					Отложить в корзину
+				</button>
+			</div>
 			<!-- Features -->
 			<div class="features">
 				<!-- Title -->
@@ -305,21 +313,12 @@
 					</div>
 				</div>
 			</div>
-			<!-- Buttons set -->
-			<div class="btn-set btn-set_margin-bottom">
-				<button class="btn btn_red btn_big" ng-click="buyOneClick()">
-					Купить в 1 клик
-				</button>
-				<button class="btn btn_blue btn_big" ng-click="addToCart()">
-					Отложить в корзину
-				</button>
-			</div>
 			<!-- Text block with img-->
 			<div ng-if="desktop" ng-include="'views/directives/construction.html'"></div>
 			<!-- Text block with benefits-->
 			<div class="text-block text-block_benefits">
 				<div class="text-block__column text-block__column_padding">
-					<div ng-bind-html="product.cornice.text"></div>
+					<div ng-bind-html="product.cornice.text" class="text-block__text-holder"></div>
 					<!-- Price block -->
 					<div class="price-block price-block_inline">
 						<div class="price-block__text">

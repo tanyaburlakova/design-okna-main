@@ -1,6 +1,6 @@
 <div class="dialog" ng-show="!!state">
 	<div class="dialog__closer" ng-click="CloseDialog();"></div>
-	<div class="dialog__content" ng-class="{picture: !!picture}">
+	<div class="dialog__content dialog__content_{{state}}" ng-class="{picture: !!picture}">
 		<div ng-include="'views/directives/search.html'" ng-if="state === 'search'"></div>
 		<div class="dialog__window" ng-show="state !== 'search'">
 			<button class="dialog__close" ng-click="CloseDialog()">
