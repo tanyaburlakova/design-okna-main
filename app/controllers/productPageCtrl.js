@@ -36,7 +36,9 @@
 			$scope.textureColors = {};
 			$scope.gallery = {};
 			$scope.gallery.currentImage = '';
+			$scope.gallery.previewImage = '';
 			$scope.textureModel = null;
+			$scope.previewTextureModel = null;
 			$scope.textures = [];
 			$scope.desktop = ResponsiveService.getState('desktop');
 			$scope.resetSlider();
@@ -82,8 +84,16 @@
 					if (newVal !== "-1") {
 						$scope.getTextureById(newVal);
 						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.slug, false);
-						$scope.gallery.currentImage = $scope.currentTexture.img;
+						$scope.gallery.previewImage = null;
+						// $scope.gallery.currentImage = $scope.currentTexture.img;
 						$scope.calcPrice();
+					}
+				});
+				$scope.$watch('previewTextureModel', function (newVal) {
+					if (newVal) {
+						$scope.gallery.previewImage = TexturesService.getTextureById(newVal).img;
+					} else {
+						$scope.gallery.previewImage = null;
 					}
 				});
 				$scope.$watch('product.withCornice', $scope.calcPrice);
@@ -102,6 +112,7 @@
 				$scope.product.dimensions = {};
 				$scope.product.withCornice = false;
 				$scope.product.priceExactly = false;
+				$scope.gallery.currentImage = $scope.product.gallery[0].src;
 			}, function (err) {
 				// Error
 				$log.log(err);

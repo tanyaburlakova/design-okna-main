@@ -23,26 +23,11 @@
 				</div>
 				<!-- Main img -->
 				<div
-					ng-style="{'background-image': 'url(' + gallery.currentImage + ')', opacity: (!!gallery.currentImage)?1:0 }"
+					ng-style="{'background-image': 'url(' + (gallery.previewImage || gallery.currentImage) + ')', opacity: (!!gallery.currentImage)?1:0 }"
 					class="gallery__main-img">
 				</div>
 				<!-- List -->
 				<ul class="gallery__list">
-					<!-- Texture preview -->
-					<li class="gallery__item">
-						<input
-							ng-checked="true"
-							type="radio"
-							value="{{currentTexture.img}}"
-							ng-model="gallery.currentImage"
-							class="gallery__input"
-							id="galleryItem-texture">
-						<label
-							ng-style="{'background': 'url(' + currentTexture.img + ') center no-repeat; background-size: cover;'}"
-							class="gallery__item-img"
-							for="galleryItem-texture">
-						</label>
-					</li>
 					<li
 						ng-repeat="(index, galleryItem) in product.gallery"
 						class="gallery__item">
@@ -50,6 +35,7 @@
 							type="radio"
 							value="{{galleryItem.src}}"
 							ng-model="gallery.currentImage"
+							ng-checked="{{$first}}"
 							class="gallery__input"
 							id="galleryItem-{{index+1}}">
 						<label
@@ -204,14 +190,16 @@
 						ng-repeat="(key,texture) in textures"
 						ng-show="(key<=12)||(showAllTextures)"
 						class="textures__item">
-						<texture
-							title="{{texture.model}}"
-							model="$parent.textureModel"
-							name="texture"
-							checked="{{$first}}"
-							fill="{{texture.img}}"
-							value="{{texture.id}}">
-						</texture>
+						<div ng-mouseenter="$parent.previewTextureModel = texture.id;" ng-mouseleave="$parent.previewTextureModel = null">
+							<texture
+								title="{{texture.model}}"
+								model="$parent.textureModel"
+								name="texture"
+								checked="{{$first}}"
+								fill="{{texture.img}}"
+								value="{{texture.id}}">
+							</texture>
+						</div>
 					</li>
 				</ul>
 				<button class="textures__show-all" ng-show="(textures.length > 12)" ng-click="showAllTextures=!showAllTextures;">
