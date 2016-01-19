@@ -1,4 +1,4 @@
-<header class="site-header hide-in-portreit">
+<header class="site-header">
 	<div class="site-header__inner">
 		<div class="container">
 			<div class="site-header__container site-header__container_left">
@@ -46,7 +46,7 @@
 				<div class="call-me">
 					<svg class="icon icon-operator"><use xlink:href="icons/icons.svg#operator"></use></svg>
 					<button class="call-me__link" ng-click="openCallme()">
-						+7 (495) 542-64-84
+						<span class="ya-phone">+7 (495) 542-64-84</span>
 					</button>
 					<div class="call-me__time">
 						{{workingHours}}
@@ -103,9 +103,9 @@
 					</ul>
 				</li>
 			</ul>
-		</nav>
-		<!-- Main menu blue -->
-		<nav hider hider-point="330" class="main-menu main-menu_blue main-menu_right">
+		</nav><!--
+		 Main menu blue
+		--><nav hider hider-point="330" class="main-menu main-menu_blue main-menu_right">
 			<h2 class="main-menu__title">
 				Шторы
 			</h2>

@@ -93,4 +93,23 @@
 		left: 40px;
 		bottom: 40px;
 	}
+	@media @tablet-mq{
+		width: 100%;
+		&__container {
+			width: 320px;
+		}
+		&__img {
+			width: 640px;
+		}
+	}
+	@media @tablet-portrait-mq{
+		width: 280px;
+		margin-left: 20px;
+		&__img {
+			display: none;
+		}
+		&__container{
+			width: 280px;
+		}
+	}
 }

@@ -35,11 +35,11 @@
 				<!-- Call me -->
 				<div class="call-me">
 					<svg class="icon icon-operator"><use xlink:href="icons/icons.svg#operator"></use></svg>
-					<a href="tel:+74955426484" class="call-me__link">
-						+7 (495) 542-64-84
-					</a>
+					<button class="call-me__link" ng-click="openCallme()">
+						<span class="ya-phone">+7 (495) 542-64-84</span>
+					</button>
 					<div class="call-me__time">
-						9-21ч
+						{{workingHours}}
 					</div>
 				</div>
 			</div>
