@@ -3,7 +3,7 @@
 * **slug** – (string)
 
 ### Response
-* **OK** – [article.json](blob/master/assets/data/article.json)
+* **OK** – [article.json](assets/data/article.json)
 * **Error** – 404
 
 ---
@@ -12,7 +12,7 @@
 * none
 
 ### Response
-* **OK** [benefits.json](blob/master/assets/data/benefits.json)
+* **OK** [benefits.json](assets/data/benefits.json)
 * **Error** – 404
 
 ---
@@ -21,7 +21,7 @@
 * none
 
 ### Response
-* **OK** [questions.json](blob/master/assets/data/questions.json)
+* **OK** [questions.json](assets/data/questions.json)
 * **Error** – 404
 
 ---
@@ -30,7 +30,7 @@
 * none
 
 ### Response
-* **OK** [featuredProduct.json](blob/master/assets/data/featuredProduct.json)
+* **OK** [featuredProduct.json](assets/data/featuredProduct.json)
 * **Error** – 404
 
 ---
@@ -40,7 +40,7 @@
 * **subcategory** – (string)
 
 ### Response
-* **OK** [catalog.json](blob/master/assets/data/catalog.json)
+* **OK** [catalog.json](assets/data/catalog.json)
 * **Error** – 404
 
 ---
@@ -49,7 +49,7 @@
 * none
 
 ### Response
-* **OK** [news.json](blob/master/assets/data/news.json)
+* **OK** [news.json](assets/data/news.json)
 * **Error** – 404
 
 ---
@@ -60,7 +60,7 @@
 * **slug** – (string)
 
 ### Response
-* **OK** [product.json](blob/master/assets/data/product.json)
+* **OK** [product.json](assets/data/product.json)
 * **Error** – 404
 
 ---
@@ -76,7 +76,7 @@
 * **slug** – For relative products (string)
 
 ### Response
-* **OK** [product.json](blob/master/assets/data/product.json)
+* **OK** [product.json](assets/data/product.json)
 * **Error** – 404
 
 ---
@@ -85,7 +85,7 @@
 * none
 
 ### Response
-* **OK** [structure.json](blob/master/assets/data/structure.json)
+* **OK** [structure.json](assets/data/structure.json)
 * **Error** – 404
 
 ---
@@ -96,7 +96,7 @@
 * **slug** – Product slug (missing in constructor) (string)
 
 ### Response
-* **OK** [textures.json](blob/master/assets/data/textures.json)
+* **OK** [textures.json](assets/data/textures.json)
 * **Error** – 404
 
 ---
@@ -106,7 +106,7 @@
 * **limit** – Count (number)
 
 ### Response
-* **OK** [reviews.json](blob/master/assets/data/reviews.json)
+* **OK** [reviews.json](assets/data/reviews.json)
 * **Error** – 404
 
 ---
@@ -119,7 +119,7 @@
 * **review** – Text (string)
 
 ### Response
-* **OK** [review-post-response.json](blob/master/assets/data/review-post-response.json)
+* **OK** [review-post-response.json](assets/data/review-post-response.json)
 * **Error** Not "ok" in review-post-response.json[status]
 
 
@@ -129,8 +129,8 @@
 * **term** – (string)
 
 ### Response
-* **OK** [search.json](blob/master/assets/data/search.json)
-* **No Results** Empty array in [search.json](blob/master/assets/data/search.json)
+* **OK** [search.json](assets/data/search.json)
+* **No Results** Empty array in [search.json](assets/data/search.json)
 * **Error** Not "ok" in review-post-response.json[status]
 
 ---
@@ -142,7 +142,7 @@
 * **name** – Customer (string)
 
 ### Response
-* **OK** [order.json](blob/master/assets/data/order.json)
+* **OK** [order.json](assets/data/order.json)
 * **Error** Not "ok" in order.json[status]
 
 ---
@@ -153,5 +153,5 @@
 * **text** – List of products or comment (string)
 
 ### Response
-* **OK** [order.json](blob/master/assets/data/order.json)
+* **OK** [order.json](assets/data/order.json)
 * **Error** Not "ok" in order.json[status]
