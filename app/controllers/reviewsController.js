@@ -15,6 +15,7 @@
 			$scope.reviews = {};
 			$scope.formData = {};
 			$scope.formData.rating = 5;
+			$scope.formData.product = $scope.productId;
 			$scope.reviewFormVisible = false;
 			$scope.formSubmitted = false;
 			$scope.showLoadMoreBtn = true;
