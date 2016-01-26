@@ -5,7 +5,7 @@
 				<!-- Links set -->
 				<div class="links-set">
 					<ul class="links-set__list">
-						<li class="links-set__item">
+						<li class="links-set__item hide-in-portrait">
 							<a href="/article/Payment" class="links-set__link">
 								<svg class="icon icon-money"><use xlink:href="icons/icons.svg#money"></use></svg>
 								<span class="links-set__text">
@@ -13,13 +13,21 @@
 								</span>
 							</a>
 						</li>
-						<li class="links-set__item">
+						<li class="links-set__item hide-in-portrait">
 							<a href="/article/Delivery_and_installation" class="links-set__link">
 								<svg class="icon icon-truck"><use xlink:href="icons/icons.svg#truck"></use></svg>
 								<span class="links-set__text">
 									Доставка <span class="tablet-hide">и установка</span>
 								</span>
 							</a>
+						</li>
+						<li class="links-set__item show-in-portrait">
+							<button class="links-set__link" ng-click="openCallme()">
+								<svg class="icon icon-callme"><use xlink:href="icons/icons.svg#callme"></use></svg>
+								<span class="links-set__text">
+									Звонок
+								</span>
+							</button>
 						</li>
 						<li class="links-set__item">
 							<button class="links-set__link" ng-click="openSearch()">
@@ -43,7 +51,7 @@
 				<!-- Cart -->
 				<cart></cart>
 				<!-- Call me -->
-				<div class="call-me">
+				<div class="call-me hide-in-portrait">
 					<svg class="icon icon-operator"><use xlink:href="icons/icons.svg#operator"></use></svg>
 					<button class="call-me__link" ng-click="openCallme()">
 						<span class="ya-phone">+7 (495) 542-64-84</span>

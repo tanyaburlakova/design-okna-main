@@ -131,7 +131,7 @@
 ### Response
 * **OK** [search.json](assets/data/search.json)
 * **No Results** Empty array in [search.json](assets/data/search.json)
-* **Error** Not "ok" in review-post-response.json[status]
+* **Error** 404
 
 ---
 ## Order Form (order, callme)

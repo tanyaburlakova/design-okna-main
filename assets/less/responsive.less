@@ -159,9 +159,15 @@
 	}
 }
 // Portreit
+.show-in-portrait {
+	display: none;
+}
 @media @tablet-portrait-mq {
-	.hide-in-portreit {
+	.hide-in-portrait {
 		display: none !important;
+	}
+	.show-in-portrait {
+		display: inherit;
 	}
 	.container {
 		width: @tablet-portrait;

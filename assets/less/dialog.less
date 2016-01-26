@@ -33,6 +33,16 @@ body.modal-open{
 		&.picture{
 			width: 600px;
 		}
+		@media @mobile-mq{
+			width: auto;
+			margin: 40px 20px;
+			&_search{
+				margin-top: 100px;
+			}
+			&.picture{
+				width: auto;
+			}
+		}
 	}
 	&__window{
 		background: #fff;

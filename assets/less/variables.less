@@ -18,6 +18,7 @@
 @animation-time: .3s;
 
 // Sizes
+@off-canvas-width: 260px;
 @desktop: 1280px;
 @desktop-small: 1092px;
 @tablet: 960px;
@@ -29,8 +30,10 @@
 @desktop-with-scrollbar: (@desktop + @scrollbar);
 @tablet-with-scrollbar: (@tablet + @scrollbar);
 @tablet-portrait-with-scrollbar: (@tablet-portrait + @scrollbar);
+@mobile-with-scrollbar: (@mobile + @scrollbar);
 
 @desktop-mq: ~"(min-width: @{desktop-with-scrollbar})";
 @tablet-mq: ~"(max-width: @{desktop-with-scrollbar})";
 @tablet-portrait-mq: ~"(max-width: @{tablet-with-scrollbar})";
 @mobile-mq: ~"(max-width: @{tablet-portrait-with-scrollbar})";
+@mobile-portrait-mq: ~"(max-width: @{mobile-with-scrollbar})";

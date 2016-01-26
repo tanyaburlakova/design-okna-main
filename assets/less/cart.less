@@ -61,6 +61,15 @@
 		&.expanded{
 			transform: translate(0);
 		}
+		@media @tablet-portrait-mq{
+			right: 0;
+			left: auto;
+			margin-left: 0;
+		}
+		@media @mobile-mq{
+			width: auto;
+			left: 0;
+		}
 	}
 	&__title{
 		color: fade(#363537, 90%);
