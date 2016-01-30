@@ -170,3 +170,45 @@
 	box-sizing: content-box;
 	padding: 8px;
 }
+@icon-menu-width: 22px;
+@icon-menu-offset: 6px;
+@icon-menu-offset-projection: @icon-menu-offset * cos(45deg);
+.icon-menu{
+	width: 22px;
+	height: 18px;
+	padding-top: 8px;
+	color: #353231;
+	opacity: .6;
+	display: inline-block;
+	&:hover{
+		opacity: 1;
+	}
+	span,
+	span:before,
+	span:after{
+		border-radius: 1px;
+		height: 2px;
+		width: 22px;
+		background: currentColor;
+		position: absolute;
+		display: block;
+		content: '';
+		transition: all 500ms ease-in-out;
+		transform-origin: center;
+	}
+	span:before {
+		top: -@icon-menu-offset;
+	}
+	span:after{
+		bottom: -@icon-menu-offset;
+	}
+	&.active span{
+		background-color: transparent;
+		&:before {
+			transform: rotate(45deg) translate(@icon-menu-offset-projection, @icon-menu-offset-projection);
+		}
+		&:after {
+			transform: rotate(-45deg) translate(@icon-menu-offset-projection, -@icon-menu-offset-projection);
+		}
+	}
+}

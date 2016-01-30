@@ -23,6 +23,9 @@
 		left: 50%;
 		margin-left: -67px;
 		z-index: 4;
+		@media @mobile-mq{
+			content: none;
+		}
 	}
 	&:after{
 		content: '';
@@ -44,6 +47,10 @@
 		height: 84px;
 		position: relative;
 		z-index: 20;
+		@media @mobile-mq{
+			height: 55px;
+			background: #fff;
+		}
 	}
 	&__container-wrapper {
 		background: @header-color;
@@ -82,6 +89,17 @@
 			&:before {
 				display: none;
 			}
+		}
+	}
+	&__menu-toggle{
+		margin: 12px 0 0 0px;
+		padding: 10px;
+		cursor: pointer;
+		border: none;
+		background: none;
+		display: none;
+		@media @mobile-mq{
+			display: inline-block;
 		}
 	}
 }

@@ -5,6 +5,9 @@
 	vertical-align: top;
 	margin-top: 14px;
 	padding-bottom: 35px;
+	@media @mobile-mq{
+		padding-bottom: 0;
+	}
 	&:after {
 		content: '';
 		width: 1px;
@@ -40,10 +43,14 @@
 		float: left;
 		line-height: 35px;
 		font-size: 13px;
+		@media @mobile-mq{
+			display: none;
+		}
 	}
 	&__dropdown{
 		position: absolute;
-		top: 50%;
+		top: 100%;
+		margin-top: -30px;
 		left: 50%;
 		margin-left: 100px;
 		background: #fff;

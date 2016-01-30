@@ -13,11 +13,15 @@
 	transition: transform @animation-time;
 	background-color: #c77c96;
 	box-shadow: inset 2.5px 4.3px 122px rgba(0, 0, 1, 0.75);
+	position: absolute;
+	height: 100%;
 	&.left{
+		left: 0;
 		transform: translate3d(0,0,0) translateX(-@off-canvas-width);
 	}
 	&.right{
-		transform: translate3d(0,0,0) translateX(-@off-canvas-width);
+		right: 0;
+		transform: translate3d(0,0,0) translateX(@off-canvas-width);
 	}
 }
 .off-canvas__wrapper{
@@ -25,6 +29,12 @@
 	width: 100%;
 	transition: transform @animation-time;
 	.clearfix();
+	.off-canvas.move-left &{
+		transform: translateX(@off-canvas-width);
+	}
+	.off-canvas.move-right &{
+		transform: translateX(-@off-canvas-width);
+	}
 }
 .off-canvas__content{
 }

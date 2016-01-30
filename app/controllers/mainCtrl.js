@@ -36,6 +36,15 @@
 			DialogService.setState('callme');
 		};
 
+		$scope.toggleOffCanvas = function(side){
+			side = side || 'left';
+			if ($scope.offCanvasSide !== side){
+				$scope.offCanvasSide = side;
+			} else {
+				$scope.offCanvasSide = null;
+			}
+		};
+
 		$scope.refreshRange = function () {
 			$timeout(function () {
 				$scope.$broadcast('rzSliderForceRender');
