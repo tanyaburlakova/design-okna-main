@@ -21,21 +21,20 @@
 </head>
 <body ng-controller="MainCtrl" class="off-canvas" off-canvas>
 	<div class="off-canvas__menu right">
-		@@include('includes/mobile-menu.html')
+		<div ng-include="'includes/mobile-menu.html'"></div>
 	</div>
 	<div class="off-canvas__wrapper">
 		<div class="off-canvas__content">
 			<responsive></responsive>
 			<!-- constructorHeader -->
 			<div ng-show="!constructorHeader">
-				@@include('includes/header.html')
+				<div ng-include="'includes/header.html'"></div>
 			</div>
 			<div ng-if="!!constructorHeader">
 				<div ng-include="'includes/header-constructor.html'"></div>
 			</div>
 			<div ng-view autoscroll></div>
-			<!-- Footer -->
-			@@include('./includes/footer.html')
+			<div ng-include="'includes/footer.html'"></div>
 			<script>
 			if (!Array.prototype.includes) {
 			  Array.prototype.includes = function(searchElement /*, fromIndex*/ ) {
