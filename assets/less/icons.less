@@ -193,7 +193,7 @@
 		position: absolute;
 		display: block;
 		content: '';
-		transition: all 500ms ease-in-out;
+		transition: all @animation-time;
 		transform-origin: center;
 	}
 	span:before {
@@ -210,5 +210,36 @@
 		&:after {
 			transform: rotate(-45deg) translate(@icon-menu-offset-projection, -@icon-menu-offset-projection);
 		}
+	}
+}
+.icon-plus,
+.icon-minus{
+	display: inline-block;
+	position: relative;
+	width: 12px;
+	height: 12px;
+	&:before,&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		background: currentColor;
+	}
+	&:before{
+		top: 5px;
+		left: 0;
+		right: 0;
+		height: 2px;
+	}
+	&:after{
+		left: 5px;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		transition: transform @animation-time;
+	}
+}
+.icon-minus{
+	&:after{
+		transform: rotate(90deg);
 	}
 }

@@ -12,16 +12,15 @@
 	width: @off-canvas-width;
 	transition: transform @animation-time;
 	background-color: #c77c96;
-	box-shadow: inset 2.5px 4.3px 122px rgba(0, 0, 1, 0.75);
 	position: absolute;
 	height: 100%;
+	transfrom: translate3d(0,0,0);
+	will-change: transform;
 	&.left{
 		left: 0;
-		transform: translate3d(0,0,0) translateX(-@off-canvas-width);
 	}
 	&.right{
 		right: 0;
-		transform: translate3d(0,0,0) translateX(@off-canvas-width);
 	}
 }
 .off-canvas__wrapper{
@@ -37,4 +36,5 @@
 	}
 }
 .off-canvas__content{
+	box-shadow: 0 0 62px rgba(0, 0, 1, 0.43);
 }

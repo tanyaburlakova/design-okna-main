@@ -6,9 +6,6 @@
 	top: 0;
 	backface-visibility: hidden;
 	z-index: 20;
-	@media @tablet-portrait-mq{
-		position: absolute;
-	}
 	&_constructor{
 		position: absolute;
 	}
@@ -23,9 +20,6 @@
 		left: 50%;
 		margin-left: -67px;
 		z-index: 4;
-		@media @mobile-mq{
-			content: none;
-		}
 	}
 	&:after{
 		content: '';
@@ -47,10 +41,6 @@
 		height: 84px;
 		position: relative;
 		z-index: 20;
-		@media @mobile-mq{
-			height: 55px;
-			background: #fff;
-		}
 	}
 	&__container-wrapper {
 		background: @header-color;
@@ -98,7 +88,17 @@
 		border: none;
 		background: none;
 		display: none;
-		@media @mobile-mq{
+	}
+	@media @tablet-portrait-mq{
+		position: absolute;
+		&:before{
+			content: none;
+		}
+		&__inner{
+			height: 56px;
+			background: #fff;
+		}
+		&__menu-toggle{
 			display: inline-block;
 		}
 	}
