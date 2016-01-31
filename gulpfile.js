@@ -86,8 +86,14 @@ gulp.task('copyViews', function () {
 /******************************
  * JS plugins
  ******************************/
+var firstTime = true;
 gulp.task('pluginsConcat', function () {
 	bowerFiles.push('./bower_components/svg4everybody/dist/svg4everybody.legacy.min.js');
+	if (firstTime){
+		console.info('********** Bower Files **********');
+		console.info(bowerFiles);
+		firstTime = false;
+	}
 	return gulp.src(bowerFiles)
 		.pipe(concat('plugins.min.js'))
 		.pipe(uglify({
@@ -99,13 +105,7 @@ gulp.task('pluginsConcat', function () {
 /******************************
  * JS concat
  ******************************/
- var firstTime = true;
 gulp.task('jsConcat', function () {
-	if (firstTime){
-		console.info('********** Bower Files **********');
-		console.info(bowerFiles);
-		firstTime = false;
-	}
 	return gulp.src(['app/**/*.js'])
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
