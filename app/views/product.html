@@ -2,7 +2,7 @@
 <main class="main-content">
 	<div class="slider">
 		<div
-			style="background-image: url(img/slide-1.jpg);"
+			ng-style="{'background-image': 'url(' + product.image + ')'}"
 			class="slider__img">
 		</div>
 	</div>
@@ -10,7 +10,7 @@
 		<!-- Ribbon title -->
 		<div class="ribbon-title">
 			<div class="ribbon-title__text">
-				{{product.title}}
+				{{product.category_title}}
 			</div>
 		</div>
 		<!-- Left -->
