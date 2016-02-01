@@ -8,7 +8,7 @@
     "category_link": "catalog",
     "category_title": "Рулонные тканевые",
     "price": 1000,
-    "sale": 0.2,
+    "sale": 2,
     "textures": [{
       "id": "1",
       "url": "kristall",
@@ -73,7 +73,7 @@
     }]
 }, {
     "id": "2",
-    "sale": 0.2,
+    "sale": 20,
     "image": "img/product2.jpg",
     "rating": "3.4",
     "reviews_count": "100",
@@ -94,7 +94,7 @@
     "price": 1000
 }, {
     "id": "4",
-    "sale": 0.30,
+    "sale": 30,
     "image": "img/product4.jpg",
     "rating": "3.4",
     "reviews_count": "100",
@@ -125,7 +125,7 @@
     "price": 1000
 }, {
     "id": "7",
-    "sale": 0.05,
+    "sale": 5,
     "image": "img/product1.jpg",
     "rating": "3.4",
     "reviews_count": "100",

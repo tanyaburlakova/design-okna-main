@@ -4,16 +4,17 @@
 		<!-- Label -->
 		<div ng-if="!!product.sale" class="product__label">
 			<div class="product__label-text">
-				-{{product.sale * 100}}%
+				-{{product.sale}}%
 			</div>
 		</div>
 		<div class="product__inner">
 			<!-- Img -->
-			<div
+			<a
+				href="{{product.link}}"
 				style="background-size: cover"
 				ng-style="{'background-image':'url(' + product.image + ')'}"
 				class="product__img">
-			</div>
+			</a>
 			<!-- Cart btn -->
 			<a href="#" class="product__cart-btn" ng-click="addProductToCart(product)">
 				<svg class="icon icon-cart"><use xlink:href="icons/icons.svg#cart"></use></svg>
@@ -43,11 +44,11 @@
 				<header class="product__header">
 					<!-- Title -->
 					<h2 class="product__title">
-						{{product.title}}
+						<a href="{{product.link}}">{{product.title}}</a>
 					</h2>
 					<!-- Subtitle -->
 					<h3 class="product__subtitle" ng-if="product.textures.length > 0">
-						{{product.texture}}
+						<a href="{{product.link}}/{{product.texture_link}}">{{product.texture}}</a>
 					</h3>
 				</header>
 				<!-- Colors -->
@@ -75,7 +76,7 @@
 				<div class="product__price-container">
 					<!-- Old price -->
 					<div ng-if="!!product.sale" class="product__price-old">
-						{{product.price * (1+product.sale) | number:0}} р./м<sup>2</sup>
+						{{product.price * (100+product.sale)/100 | number:0}} р./м<sup>2</sup>
 					</div>
 					<!-- New price -->
 					<div class="product__price-new">
@@ -83,7 +84,7 @@
 					</div>
 				</div>
 				<!-- Btn -->
-				<a href="/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory" class="btn btn_blue btn_size-1">
+				<a href="{{product.link}}" class="btn btn_blue btn_size-1">
 					Детали
 				</a>
 			</footer>
