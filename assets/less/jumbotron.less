@@ -31,6 +31,9 @@
 		background: url('../img/hand.png');
 		width: 50%;
 		left: 49%;
+		@media @mobile-mq{
+			display: none;
+		}
 	}
 	&__title {
 		font-size: 24px;
@@ -48,5 +51,24 @@
 		margin-bottom: 20px;
 		width: 56%;
 		letter-spacing: 0.02em;
+	}
+	@media @tablet-mq{
+		height: 400px;
+	}
+	@media @tablet-portrait-mq{
+
+	}
+	@media @mobile-mq{
+		height: auto;
+		&__container {
+			width: auto;
+			position: static;
+			transform: none;
+			top: 0;
+			padding: 1px 0 30px;
+		}
+		&__text {
+			width: 100%;
+		}
 	}
 }
