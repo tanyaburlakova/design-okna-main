@@ -1,9 +1,6 @@
 .article-set {
 	background: #fff;
 	margin-right: 20px;
-	@media @tablet-mq{
-		margin-left: 10px;
-	}
 	&__title {
 		margin: 0;
 		padding: 34px 30px 27px;
@@ -54,5 +51,11 @@
 		font-size: 13px;
 		font-weight: 400;
 		line-height: 20px;
+	}
+	@media @tablet-mq{
+		margin-left: 10px;
+	}
+	@media @mobile-mq{
+		margin: 0;
 	}
 }
