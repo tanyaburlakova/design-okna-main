@@ -22,7 +22,8 @@
 		};
 
 		$scope.getArticle = function(){
-			ArticleService.getArticle($routeParams.slug)
+			var slug = $routeParams.slug || $scope.slug;
+			ArticleService.getArticle(slug)
 				.then(function(data){
 					$scope.article = data;
 					$scope.article.content = $sce.trustAsHtml(data.text);

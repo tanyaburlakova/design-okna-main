@@ -1,0 +1,25 @@
+<article class="article-preview hide-in-tablet show-in-mobile">
+	<!-- Img -->
+	<a href="{{article.url}}"
+		style="background: left center no-repeat; background-size: cover;"
+		ng-style="{'background-image': 'url(' + article.slider_img + ')'}"
+		class="article-preview__img">
+	</a>
+	<div class="article-preview__container">
+		<!-- Title -->
+		<h2 class="article-preview__title">
+			<a href="{{article.url}}">{{article.title}}</a>
+		</h2>
+		<!-- Text -->
+		<p class="article-preview__text">
+			<a href="{{article.url}}">
+				{{article.description}}&nbsp;<svg class="icon icon-gt"><use xlink:href="icons/icons.svg#gt"></use></svg>
+			</a>
+		</p>
+		<!-- Author -->
+		<div class="article-preview__author" ng-if="!!article.author_name">
+			<img src="{{article.author_img}}" alt="{{article.author_name}}" class="article-preview__author-avatar" ng-if="!!article.author_img">
+			<div class="article-preview__author-name">{{article.author_name}}</div>
+		</div>
+	</div>
+</article>

@@ -1,14 +1,15 @@
 (function () {
 	'use strict';
-	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl', 'newsDirective'])
+	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl', 'newsDirective', 'configService'])
 		.controller('HomeCtrl', [
 			'$scope',
 			'$log',
 			'ProductService',
+			'ConfigService',
 			homeCtrl
 		]);
 
-	function homeCtrl($scope, $log, ProductService) {
+	function homeCtrl($scope, $log, ProductService, ConfigService) {
 		$log.log('home ctrl');
 
 		$scope.init = function() {
@@ -16,6 +17,7 @@
 			$scope.showLoadMoreBtn = true;
 			$scope.catalogItems = [];
 			$scope.featuredProduct = {};
+			$scope.featuredArticle = ConfigService.homeArticleSlug;
 
 			$scope.getFeaturedProduct();
 			$scope.getProductList();

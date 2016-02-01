@@ -79,30 +79,10 @@
 				<div ng-init="product.single = true;" ng-include="'views/directives/product.html'"></div>
 			</div>
 			<!-- Article preview -->
-			<article class="article-preview hide-in-tablet show-in-mobile">
-				<!-- Img -->
-				<div
-					style="background: url('img/trends.jpg') left center no-repeat; background-size: cover;"
-					class="article-preview__img">
-				</div>
-				<div class="article-preview__container">
-					<!-- Title -->
-					<h2 class="article-preview__title">
-						Тренды в оформлении окон 2015
-					</h2>
-					<!-- Text -->
-					<p class="article-preview__text">
-						О последних новинках в индустрии жалюзи и о том как будет модно оформлять окна в 2016 году расскажет жизайнер интерьеров &nbsp;<svg class="icon icon-gt"><use xlink:href="icons/icons.svg#gt"></use></svg>
-					</p>
-					<!-- Author -->
-					<div class="article-preview__author">
-						<img src="img/ava2.jpg" alt="" class="article-preview__author-avatar">
-						<div class="article-preview__author-name">
-							Вероника Маркина
-						</div>
-					</div>
-				</div>
-			</article>
+			<article-preview
+				ng-if="!!featuredArticle"
+				slug="{{featuredArticle}}">
+			</article-preview>
 		</div>
 	</section>
 	<!-- Jumbotron -->

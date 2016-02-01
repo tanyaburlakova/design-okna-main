@@ -19,6 +19,7 @@ var app = angular.module('myApp', [
 		'responsiveDirective',
 		'parallaxDirective',
 		'questionDirective',
+		'articlePreviewDirective',
 		'dialogDirective',
 		'colorDirective',
 		'rangeDirective',

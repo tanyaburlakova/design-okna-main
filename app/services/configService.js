@@ -7,7 +7,6 @@
 
 	function configService() {
 		var config = angular.extend({}, {
-			homeSlider: 'sliderItems.json',
 			featuredProductPath: 'featuredProduct.json',
 			productListPath: 'productList.json',
 			productHomeListPath: 'productList.json',
@@ -29,7 +28,8 @@
 			closeHour: 21,
 			orderPath: 'order.json',
 			feedbackPath: 'order.json',
-			structurePath: 'structure.json'
+			structurePath: 'structure.json',
+			homeArticleSlug: 'trends'
 		}, window.appLicationConfig);
 		return config;
 	}
