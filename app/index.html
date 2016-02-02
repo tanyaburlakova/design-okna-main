@@ -20,6 +20,17 @@
     <![endif]-->
 </head>
 <body ng-controller="MainCtrl" class="off-canvas" off-canvas>
+	<div class="off-canvas__menu left">
+		<div class="mobile-aside">
+			<header class="mobile-aside__header">
+				<button class="mobile-aside__close" ng-click="toggleOffCanvas('left');">
+					<span>свернуть фильтры</span>
+					<svg class="icon icon-shevron-right"><use xlink:href="/icons/icons.svg#shevron-right"></use></svg>
+				</button>
+			</header>
+			<div class="mobile-aside__content filters"></div>
+		</div>
+	</div>
 	<div class="off-canvas__menu right">
 		<div ng-include="'includes/mobile-menu.html'"></div>
 	</div>

@@ -9,6 +9,7 @@
 		<!-- Search info -->
 		<div class="search-info">
 			<strong>{{pageOptions.title}}</strong>
+			<button class="search-info__filters-toggle btn btn_green" ng-click="toggleOffCanvas('left')">Фильтровать</button>
 			<!-- <span class="hide-in-tablet">По запросу </span><strong>{{pageOptions.title}}</strong> найдено 35 предложений -->
 		</div>
 		<!-- Sort -->
@@ -37,9 +38,9 @@
 		</div>
 	</div>
 	<div class="container container_padding">
- 		<div class="aside">
+		<aside class="catalog__aside">
 			<!-- Filter -->
-			<div class="form form_filter">
+			<div class="form form_filter" catalog-responsive>
 				<form action="#">
 					<!-- Prices range -->
 					<fieldset class="form__fieldset">
@@ -73,9 +74,10 @@
 				</form>
 			</div>
 			<!-- Question -->
+			<div class="catalog__question">
 			<question></question>
-		</div>
-		<!-- Catalog -->
+			</div>
+		</aside><!-- Catalog -->
 		<div class="catalog catalog_3">
 			<ul class="catalog__list">
 				<li

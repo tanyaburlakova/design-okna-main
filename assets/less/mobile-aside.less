@@ -6,10 +6,35 @@
 		background: #fff;
 		height: 56px;
 	}
+	&__close{
+		color: fade(#333234, 89);
+		font-size: 12px;
+		font-weight: 500;
+		line-height: 20px;
+		text-transform: uppercase;
+		background: none;
+		width: 100%;
+		padding: 18px 20px;
+		border: none;
+		text-align: left;
+		.icon{
+			width: 6px;
+			fill: currentColor;
+			vertical-align: baseline;
+			height: 11px;
+			margin-left: 10px;
+		}
+	}
 	&__content{
 		background-color: #eee;
 		padding: 22px 20px;
 		position: relative;
+		.form__fieldset:last-child{
+			margin-bottom: 0;
+		}
+		&.filters{
+			padding: 22px 0 0;
+		}
 		&:after{
 			content: '';
 			position: absolute;

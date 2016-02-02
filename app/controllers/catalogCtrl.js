@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('catalogCtrl', ['productCtrl', 'productService', 'catalogService', 'configService'])
+	angular.module('catalogCtrl', ['productCtrl', 'productService', 'catalogService', 'configService', 'catalogResponsiveDirective'])
 		.controller('CatalogCtrl', [
 			'$scope',
 			'$log',
@@ -9,12 +9,14 @@
 			'ProductService',
 			'CatalogService',
 			'ConfigService',
+			'ResponsiveService',
 			catalogCtrl
 		]);
 
-	function catalogCtrl($scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService) {
+	function catalogCtrl($scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService, ResponsiveService) {
 		$log.log('catalog ctrl');
 		$scope.init = function(){
+			$scope.responsive = ResponsiveService;
 			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
 			$scope.categoryChecks = {};
