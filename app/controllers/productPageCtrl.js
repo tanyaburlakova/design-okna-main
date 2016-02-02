@@ -27,6 +27,7 @@
 			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
 			$scope.product = {};
+			$scope.product.dimensions = {};
 			$scope.product.withCornice = false;
 			$scope.product.priceExactly = false;
 			$scope.texturePrice = {

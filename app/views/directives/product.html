@@ -62,7 +62,7 @@
 								<input
 									type="radio"
 									name="product_texture_{{product.id}}"
-									value="{{texture.id}}"
+									ng-value="texture.id"
 									ng-model="product.texture_id">
 								<div class="product__colors-dot" ng-style="{'background-image': 'url(' + texture.img + ')'}"></div>
 							</label>
