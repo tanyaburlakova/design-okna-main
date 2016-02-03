@@ -7,5 +7,13 @@
 	font-weight: 400;
 	&__filters-toggle{
 		width: 100%;
+		display: none;
+	}
+	@media @tablet-portrait-mq{
+		float: none;
+		margin-bottom: 20px;
+		&__filters-toggle{
+			display: inline-block;
+		}
 	}
 }
