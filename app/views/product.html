@@ -23,8 +23,20 @@
 				</div>
 				<!-- Main img -->
 				<div
-					ng-style="{'background-image': 'url(' + (gallery.previewImage || gallery.currentImage) + ')', opacity: (!!gallery.currentImage)?1:0 }"
+					ng-style="{'background-image': 'url(' + (gallery.previewImage || product.gallery[gallery.currentImage].src) + ')', opacity: (gallery.currentImage !== -1)?1:0 }"
 					class="gallery__main-img">
+				</div>
+				<div class="gallery__controls">
+					<button class="gallery__button left" ng-click="moveGallery(-1)">
+						<svg class="icon icon-shevron-left">
+							<use xlink:href="icons/icons.svg#shevron-left"></use>
+						</svg>
+					</button>
+					<button class="gallery__button right" ng-click="moveGallery(1)">
+						<svg class="icon icon-shevron-right">
+							<use xlink:href="icons/icons.svg#shevron-right"></use>
+						</svg>
+					</button>
 				</div>
 				<!-- List -->
 				<ul class="gallery__list">
@@ -33,7 +45,7 @@
 						class="gallery__item">
 						<input
 							type="radio"
-							value="{{galleryItem.src}}"
+							ng-value="{{index}}"
 							ng-model="gallery.currentImage"
 							ng-checked="{{$first}}"
 							class="gallery__input"

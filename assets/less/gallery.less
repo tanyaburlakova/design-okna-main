@@ -2,6 +2,7 @@
 	background: #fff;
 	padding: 30px 20px 20px;
 	margin-bottom: 20px;
+	position: relative;
 	&__title{
 		font-size: 18px;
 		font-weight: 500;
@@ -19,6 +20,28 @@
 		background-color: #ccc;
 		border: 1px solid #eee;
 		transition: opacity @animation-time;
+	}
+	&__controls{
+		display: none;
+	}
+	&__button{
+		position: absolute;
+		top: 50%;
+		background: none;
+		border: none;
+		padding: 30px 10px;
+		line-height: 0;
+		opacity: .4;
+		transition: opacity @animation-time;
+		&:hover{
+			opacity: .8;
+		}
+		&.left{
+			left: 0;
+		}
+		&.right{
+			right: 0;
+		}
 	}
 	&__list {
 		list-style: none;
@@ -56,6 +79,15 @@
 		&:checked + .gallery__item-img {
 			box-shadow: 0 0 0 2px #9ac6df;
 			opacity: 1;
+		}
+	}
+	@media @tablet-portrait-mq{
+		padding: 20px 0 0;
+		&__controls{
+			display: block;
+		}
+		&__list{
+			display: none;
 		}
 	}
 }

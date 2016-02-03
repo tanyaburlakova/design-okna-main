@@ -36,7 +36,7 @@
 			};
 			$scope.textureColors = {};
 			$scope.gallery = {};
-			$scope.gallery.currentImage = '';
+			$scope.gallery.currentImage = -1;
 			$scope.gallery.previewImage = '';
 			$scope.textureModel = null;
 			$scope.previewTextureModel = null;
@@ -86,7 +86,6 @@
 						$scope.getTextureById(newVal);
 						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.slug, false);
 						$scope.gallery.previewImage = null;
-						// $scope.gallery.currentImage = $scope.currentTexture.img;
 						$scope.calcPrice();
 					}
 				});
@@ -113,7 +112,7 @@
 				$scope.product.dimensions = {};
 				$scope.product.withCornice = false;
 				$scope.product.priceExactly = false;
-				$scope.gallery.currentImage = $scope.product.gallery[0].src;
+				$scope.gallery.currentImage = 0;
 			}, function (err) {
 				// Error
 				$log.log(err);
@@ -217,6 +216,16 @@
 			}, []);
 			$scope.filterTextures();
 		});
+
+		$scope.moveGallery = function(direction){
+			var position = $scope.gallery.currentImage + direction;
+			if (position >= $scope.product.gallery.length){
+				position = 0;
+			} else if (position < 0){
+				position = $scope.product.gallery.length - 1;
+			}
+			$scope.gallery.currentImage = position;
+		};
 
 		$scope.init();
 	}
