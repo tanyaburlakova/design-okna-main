@@ -20,8 +20,36 @@
 	}
 	&__item {
 		float: left;
+		.icon{
+			background: none;
+		}
 		&+&{
 			margin-left: 20px;
+		}
+	}
+	@media @mobile-mq{
+		float: none;
+		&__text{
+			margin-bottom: 10px;
+		}
+		&__list{
+			display: block;
+			overflow: hidden;
+		}
+		&__item{
+			width: 50%;
+			.btn{
+				width: 100%;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			&:first-child{
+				padding-right: 10px;
+			}
+			&+&{
+				padding-left: 10px;
+				margin-left: 0;
+			}
 		}
 	}
 }
