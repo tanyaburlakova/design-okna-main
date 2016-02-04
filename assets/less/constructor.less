@@ -1,4 +1,50 @@
 .constructor {
+	&__top{
+		position: relative;;
+		max-width: 1092px;
+		height: 0;
+	}
+	&__title{
+		background-color: #b47b94;
+		color: #fffeff;
+		font-size: 12px;
+		font-weight: 900;
+		line-height: 30px;
+		text-transform: uppercase;
+		position: absolute;
+		width: 300px;
+		height: 40px;
+		padding: 7px 20px;
+		top: 30px;
+		border-radius: 5px;
+		box-shadow: 1.5px 2.6px 8px rgba(0, 0, 1, 0.33);
+	}
+	&__upload-btn{
+		cursor: pointer;
+		position: absolute;
+		top: 30px;
+		right: 0;
+		z-index: 15;
+		font-weight: 500;
+		line-height: 1;
+		padding-top: 11px;
+		padding-bottom: 12px;
+		box-shadow: 1.5px 2.6px 8px rgba(0, 0, 1, 0.33);
+		>span,
+		&>.icon{
+			display: inline-block;
+			vertical-align: top;
+		}
+		&>.text{
+			margin-top: 3px;
+		}
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+	}
 	&__preview-slide {
 		background: #333333;
 		width: 100%;

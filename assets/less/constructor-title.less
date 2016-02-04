@@ -10,10 +10,14 @@
 		line-height: 40px;
 		.no-select();
 	}
-}
-.constructor-title-bg {
-	.img('constructor_ribbon_buttom.png');
-	position: absolute;
-	bottom: -22px;
-	left: -11px;
+	&:before{
+		content: '';
+		position: absolute;
+		.img('constructor_ribbon_buttom.png');
+		background-position: right bottom;
+		height: 43px;
+		left: -86px;
+		bottom: 1px;
+		z-index: -1;
+	}
 }
