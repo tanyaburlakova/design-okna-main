@@ -14,9 +14,6 @@
 	function constructorPageCtrl($scope, $log, $timeout, TexturesService, MenuService, CartService) {
 		$log.log('Constructor page ctrl');
 
-		$scope.textureModel = null;
-		$scope.textureId = 1;
-
 		$scope.priceSlider = {
 			min: 100,
 			max: 180,
@@ -28,8 +25,10 @@
 
 		var menu = {};
 		$scope.init = function () {
-			$scope.currentTab = 'zhalyuzi';
+			$scope.currentTab = 'louvers';
 			$scope.typesModel = {};
+			$scope.textureModel = null;
+			$scope.textureId = null;
 			MenuService.getMenu()
 			.then(function(data){
 				menu = data;
@@ -47,7 +46,7 @@
 					url: item.url,
 					value: item.url.replace('/catalog/',''),
 					label: item.title,
-					category: ($scope.currentTab === 'zhalyuzi') ? 'Жалюзи' : 'Шторы'
+					category: ($scope.currentTab === 'louvers') ? 'Жалюзи' : 'Шторы'
 				};
 			});
 			$scope.typesModel = $scope.types[0];
@@ -94,15 +93,18 @@
 					// Success
 					$scope.textures = data;
 					$scope.$watch('textureId', function (newVal) {
-						$scope.texture = TexturesService.getTextureById(newVal.toString());
-						console.log($scope.texture.id);
-						$scope.product = {
-							image: $scope.texture.img,
-							title: $scope.texture.product_name,
-							price: $scope.texture.price,
-							texture: $scope.texture.model
-						};
+						if (!!newVal){
+							$scope.texture = TexturesService.getTextureById(newVal);
+							console.log($scope.texture.id);
+							$scope.product = {
+								image: $scope.texture.img,
+								title: $scope.texture.product_name,
+								price: $scope.texture.price,
+								texture: $scope.texture.model
+							};
+						}
 					});
+					$scope.textureId = $scope.textures[0].id;
 				}, function (err) {
 					// Error
 					$log.log(err);

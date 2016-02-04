@@ -55,9 +55,9 @@
 				<ul
 					class="tabs__list">
 					<li
-						ng-click="currentTab='zhalyuzi'; prepareTypes(true);"
+						ng-click="currentTab='louvers'; prepareTypes(true);"
 						class="tabs__item"
-						ng-class="{'active': (currentTab=='zhalyuzi')}">
+						ng-class="{'active': (currentTab=='louvers')}">
 						Жалюзи
 					</li><!--
 					--><li
@@ -73,7 +73,7 @@
 							<div class="form__column" ng-show="types.length > 0">
 								<label for="blindsType" class="label">
 									Тип
-									<span ng-if="(currentTab=='zhalyuzi')">жалюзи</span>
+									<span ng-if="(currentTab=='louvers')">жалюзи</span>
 									<span ng-if="(currentTab=='shtory')">штор</span>
 								</label>
 								<div class="field">
