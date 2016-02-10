@@ -7,10 +7,11 @@
 			'$timeout',
 			'DialogService',
 			'TimeService',
+			'ResponsiveService',
 			mainCtrl
 		]);
 
-	function mainCtrl($scope, $log, $timeout, DialogService, TimeService) {
+	function mainCtrl($scope, $log, $timeout, DialogService, TimeService, ResponsiveService) {
 		$log.log('main ctrl');
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
@@ -50,6 +51,16 @@
 				$scope.$broadcast('rzSliderForceRender');
 			});
 		};
+
+		$scope.$on('ResponsiveService.updateState', function(){
+			if ($scope.offCanvasSide){
+				if (ResponsiveService.getState('tablet') || ResponsiveService.getState('desktop')){
+					$scope.$apply(function(){
+						$scope.toggleOffCanvas($scope.offCanvasSide);
+					});
+				}
+			}
+		});
 
 		$scope.init();
 	}

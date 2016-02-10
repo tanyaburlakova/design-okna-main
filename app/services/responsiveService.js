@@ -21,10 +21,10 @@
 				return (width >= (1280 + scrollWidth));
 			},
 			tablet: function(width) {
-				return (width < (1280 + scrollWidth));
+				return (width < (1280 + scrollWidth) && width > (960 + scrollWidth));
 			},
 			tabletPortrait: function(width) {
-				return (width <= (960 + scrollWidth));
+				return (width <= (960 + scrollWidth) && width > (320 + scrollWidth));
 			},
 			mobile: function(width) {
 				return (width <= (320 + scrollWidth));

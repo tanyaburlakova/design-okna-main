@@ -18,7 +18,7 @@
 		</p>
 		<!-- Author -->
 		<div class="article-preview__author" ng-if="!!article.author_name">
-			<img src="{{article.author_img}}" alt="{{article.author_name}}" class="article-preview__author-avatar" ng-if="!!article.author_img">
+			<img ng-src="{{article.author_img}}" alt="{{article.author_name}}" class="article-preview__author-avatar" ng-if="!!article.author_img">
 			<div class="article-preview__author-name">{{article.author_name}}</div>
 		</div>
 	</div>

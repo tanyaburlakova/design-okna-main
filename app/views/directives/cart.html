@@ -22,7 +22,7 @@
 					<li
 						ng-repeat="(key, product) in items track by $index"
 						class="cart__item cart-product">
-							<img src="{{product.image}}" class="cart-product__img">
+							<img ng-src="{{product.image}}" class="cart-product__img" />
 							<div class="cart-product__title">
 								{{product.title}}
 								<span ng-if="product.withCornice"> с карнизом</span>

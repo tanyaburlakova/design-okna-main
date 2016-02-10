@@ -163,10 +163,12 @@
 		font-size: 14px;
 		font-weight: @medium;
 		color: #353535;
-		height: 1.3em;
+		max-height: 2.6em;
+		display: block;
+		.letter-spacing(50);
+		width: 100%;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		.letter-spacing(50);
 		a{
 			color: #353535;
 			text-decoration: none;
@@ -205,6 +207,8 @@
 		padding: 10px;
 		padding-bottom: 0;
 		margin: 0;
+		max-height: 64px;
+		overflow: hidden;
 		.clearfix();
 	}
 	&__colors-item {
