@@ -47,8 +47,9 @@
 						<a href="{{product.link}}">{{product.title}}</a>
 					</h2>
 					<!-- Subtitle -->
-					<h3 class="product__subtitle">
-						<a href="/{{product.category_link}}">{{product.category_title}}</a>
+					<h3 ng-if="!!product.texture" class="product__subtitle">
+						<span>{{product.texture}}</span>
+						<!-- <a href="/{{product.category_link}}">{{product.category_title}}</a> -->
 					</h3>
 				</header>
 				<!-- Colors -->
