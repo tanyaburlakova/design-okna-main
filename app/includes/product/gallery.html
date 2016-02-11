@@ -5,8 +5,11 @@
 	</div>
 	<!-- Main img -->
 	<div
-		ng-style="{'background-image': 'url(' + (gallery.previewImage || product.gallery[gallery.currentImage].src) + ')', opacity: (gallery.currentImage !== -1)?1:0 }"
+		ng-style="{'background-image': 'url(' + (product.gallery[gallery.currentImage].src) + ')', opacity: (gallery.currentImage !== -1)?1:0 }"
 		class="gallery__main-img">
+		<div class="gallery__texture-container" ng-class="!!gallery.previewImage?'gallery__texture-container_active':'' ">
+			<div class="gallery__texture-img" ng-style="{'background-image': 'url(' + (gallery.previewImage) + ')'}" alt="texture"> </div>
+		</div>
 	</div>
 	<div class="gallery__controls">
 		<button class="gallery__button left" ng-click="moveGallery(-1)">
