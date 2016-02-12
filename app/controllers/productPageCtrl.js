@@ -42,6 +42,7 @@
 			$scope.previewTextureModel = null;
 			$scope.textures = [];
 			$scope.desktop = ResponsiveService.getState('desktop');
+			$scope.mobile = ResponsiveService.getState('mobileLandscape');
 			$scope.resetSlider();
 			$scope.getProduct();
 			$scope.getTextures();
@@ -206,6 +207,8 @@
 		$scope.$on('ResponsiveService.updateState', function(){
 			$scope.$apply(function(){
 				$scope.desktop = ResponsiveService.getState('desktop');
+				$scope.mobile = ResponsiveService.getState('mobileLandscape');
+				console.log($scope.mobile);
 			});
 		});
 

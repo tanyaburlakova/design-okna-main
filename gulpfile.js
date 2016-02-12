@@ -70,7 +70,7 @@ gulp.task('svg2png', function () {
 		.pipe(svg2png())
 		.pipe(gulp.dest('public/icons'));
 });
-gulp.task('svg', ['svgstore', 'svg2png']);
+gulp.task('svg', ['svgstore'/*, 'svg2png'*/]);
 
 /******************************
  * Copy views to public
