@@ -8,6 +8,9 @@ body {
 	&.ng-scope{
 		background: none;
 	}
+	@media @mobile-mq{
+		min-height: 400px;
+	}
 }
 * {
 	box-sizing: border-box;
@@ -81,11 +84,22 @@ textarea{
 	&_padding {
 		padding: 0 20px;
 	}
+
 	@media @tablet-portrait-mq{
 		&_menu{
 			display: none;
 		}
+		&_tablet-width{
+			width: 100% !important;
+		}
 	}
+	
+	@media @mobile-mq{
+		&_mobile-width{
+			width: 100% !important;
+		}
+	}
+	
 }
 .column-1 {
 	width: 100%/4;

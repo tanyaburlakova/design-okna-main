@@ -22,6 +22,8 @@
 				ceil: 450
 			}
 		};
+		
+		$scope.infoExpand = false;
 
 		var menu = {};
 		$scope.init = function () {

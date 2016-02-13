@@ -3,11 +3,12 @@
 	background: #fff;
 	left: 50%;
 	margin-left: 20px;
-	bottom: 100%;
+	bottom: -68px;
 	width: 440px;
-	padding: 19px 29px 15px;
+	padding: 19px 29px 83px;
 	z-index: 10;
 	box-shadow: 0 -3px 10px rgba(0, 0, 1, 0.39);
+	
 	&:before{
 		content: '';
 		display: block;
@@ -36,6 +37,12 @@
 			color: #777;
 		}
 	}
+	&__icon{
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 	&__link{
 		opacity: 0.9;
 		color: #2e2e2e;
@@ -54,9 +61,74 @@
 			color: #ababab;
 		}
 	}
+	&__mobile-switcher{
+		display: none;
+		position: absolute;
+		left: 20px;
+		top: -50px;
+		background: #fff;
+		height: 50px;
+		z-index: 10;
+		border-radius: 5px 5px 0 0;
+		width: 60px;
+		cursor: pointer;
+		text-align: center;
+		&.active{
+			.constructor-info__mobile-switcher-icon{
+				transform: rotate(0deg);
+			}
+		}
+	}
+	&__mobile-switcher-icon{
+		position: relative;
+		display: inline-block;
+		margin-top: 10px;
+		transform: rotate(180deg);
+	}
 	.btn{
 		padding-left: 0;
 		padding-right: 0;
 		width: 100%;
+	}
+
+	@media @tablet-portrait-mq{
+		left: auto;
+		right: 20px;
+	}
+
+	@media @mobile-mq{
+		width: 100%;
+		left: 0;
+		margin-left: 0;
+		padding: 19px 0 15px;
+		transition: bottom @animation-time;
+		&.active{
+			bottom: 0;
+		}
+		&__column {
+			float: none;
+			width: auto;
+			max-width: 280px;
+			margin: 0 auto;
+			position: relative;
+		}
+		&__name{
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			width: 260px;
+		}
+		&__icon{
+			opacity: 1;
+		}
+		&__link{
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -10px;
+		}
 	}
 }

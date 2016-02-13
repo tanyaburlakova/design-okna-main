@@ -15,8 +15,8 @@
 	&__box {
 		left: 100px;
 		top: 100px;
-		width: 661px*0.5;
-		height: 886px*0.5;
+		width: 661px*0.33;
+		height: 886px*0.33;
 		position: relative;
 		z-index: 10;
 		cursor: move;
@@ -41,5 +41,13 @@
 			transform: translate(-50%, -50%);
 		}
 		z-index: 10;
+	}
+	@media @mobile-mq{
+		height: 0;
+		padding-bottom: 111%;
+		&__box {
+			left: 10px;
+			top: 60px;
+		}
 	}
 }

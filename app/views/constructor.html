@@ -1,8 +1,19 @@
+<div class="constructor__mobile-top show-in-mobile">
+	<div class="constructor__title">
+		Конструктор
+	</div>
+	<label
+		class="constructor__upload-btn btn btn_red btn_big">
+		<input type="file" ng-model="constructorBgImg" base-sixty-four-input>
+		<span class="icon icon-camera"></span>
+		<span class="text">Загрузить фото своего окна</span>
+	</label>
+</div>
 <!-- Constructor view -->
 <main class="main-content">
 	<!-- Constructor -->
 	<div class="constructor">
-		<div class="container constructor__top">
+		<div class="container constructor__top hide-in-mobile">
 			<div class="constructor__title show-in-portrait">
 				Конструктор
 			</div>
@@ -24,9 +35,14 @@
 			ng-style="{'background-color': '#333', 'background-image': 'url(' + texture.preview + ')'}"
 			class="constructor__preview-slide">
 		</div>
-		<div class="container container_small container_relative">
+		<div class="container container_small container_relative container_tablet-width">
 			<!-- Info -->
-			<div class="constructor-info">
+			<div class="constructor-info" ng-class="{'active': (infoExpand)}">
+				<div class="constructor-info__mobile-switcher show-in-mobile" ng-click="infoExpand = !infoExpand" ng-class="{'active': (infoExpand)}">
+					<svg class="icon icon-shevron-right constructor-info__mobile-switcher-icon">
+						<use xlink:href="icons/icons.svg#shevron-down"></use>
+					</svg>
+				</div>
 				<div class="constructor-info__column">
 					<!-- Product name -->
 					<div class="constructor-info__name">
@@ -36,10 +52,13 @@
 					<a
 						ng-href="{{texture.url}}"
 						class="constructor-info__link">
-						Подробнее о товаре
+						<span class="hide-in-mobile">Подробнее о товаре</span>
+						<svg class="icon icon-shevron-right constructor-info__icon">
+							<use xlink:href="icons/icons.svg#shevron-right"></use>
+						</svg>
 					</a>
 				</div>
-				<div class="constructor-info__column">
+				<div class="constructor-info__column hide-in-mobile">
 					<!-- Price -->
 					<div class="constructor-info__price">
 						{{texture.price}} р<span class="grey">/м<sup>2</sup></span>
@@ -53,10 +72,24 @@
 		</div>
 		<!-- Tabs -->
 		<div class="tabs">
+			<!-- Controlls -->
+			<ul	class="tabs__list tabs__mobile-list show-in-portrait">
+				<li
+					ng-click="currentTab='louvers'; prepareTypes(true);"
+					class="tabs__item"
+					ng-class="{'active': (currentTab=='louvers')}">
+					Жалюзи
+				</li><!--
+				--><li
+					ng-click="currentTab='shtory'; prepareTypes(true);"
+					class="tabs__item"
+					ng-class="{'active': (currentTab=='shtory')}">
+					Шторы
+				</li>
+			</ul>
 			<div class="container container_small container_relative">
 				<!-- Controlls -->
-				<ul
-					class="tabs__list">
+				<ul	class="tabs__list hide-in-portrait">
 					<li
 						ng-click="currentTab='louvers'; prepareTypes(true);"
 						class="tabs__item"
