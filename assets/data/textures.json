@@ -5,7 +5,7 @@
     "model": "Кристалл",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1,
     "img": "img/product/1.jpg",
     "translucent": "Не пропускает свет",
@@ -14,7 +14,8 @@
     "structure": "50% шенилл, 20% вискоза, 30% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
-    "color": "green"
+    "color": "green",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 2,
@@ -22,7 +23,7 @@
     "model": "Листья",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 500,
     "img": "img/textures/listya.png",
     "translucent": "Пропускает свет",
@@ -31,7 +32,8 @@
     "structure": "60% шенилл, 10% вискоза, 30% полиэстер",
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
-    "color": "red"
+    "color": "red",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 3,
@@ -39,7 +41,7 @@
     "model": "Люксор Уно",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 2200,
     "img": "img/textures/luksor_uno.png",
     "translucent": "Не пропускает свет",
@@ -48,7 +50,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
-    "color": "blue"
+    "color": "blue",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 4,
@@ -56,7 +59,7 @@
     "model": "Красный Меланж",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1000,
     "img": "img/textures/melanzh_red.png",
     "translucent": "Не пропускает свет",
@@ -65,7 +68,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
-    "color": "#fee"
+    "color": "#fee",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 5,
@@ -73,7 +77,7 @@
     "model": "Кристалл",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1,
     "img": "img/textures/kristall.png",
     "translucent": "Не пропускает свет",
@@ -82,7 +86,8 @@
     "structure": "50% шенилл, 20% вискоза, 30% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
-    "color": "#fca"
+    "color": "#fca",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 6,
@@ -90,7 +95,7 @@
     "model": "Листья",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 500,
     "img": "img/textures/listya.png",
     "translucent": "Пропускает свет",
@@ -99,7 +104,8 @@
     "structure": "60% шенилл, 10% вискоза, 30% полиэстер",
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
-    "color": "#cb3"
+    "color": "#cb3",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 7,
@@ -107,7 +113,7 @@
     "model": "Люксор Уно",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 2200,
     "img": "img/textures/luksor_uno.png",
     "translucent": "Не пропускает свет",
@@ -116,7 +122,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
-    "color": "#232fab"
+    "color": "#232fab",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 8,
@@ -124,7 +131,7 @@
     "model": "Красный Меланж",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1000,
     "img": "img/textures/melanzh_red.png",
     "translucent": "Не пропускает свет",
@@ -133,7 +140,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
-    "color": "#fdb1b2"
+    "color": "#fdb1b2",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 9,
@@ -141,7 +149,7 @@
     "model": "Кристалл",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1,
     "img": "img/textures/kristall.png",
     "translucent": "Не пропускает свет",
@@ -150,7 +158,8 @@
     "structure": "50% шенилл, 20% вискоза, 30% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
-    "color": "green"
+    "color": "green",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 10,
@@ -158,7 +167,7 @@
     "model": "Листья",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 500,
     "img": "img/textures/listya.png",
     "translucent": "Пропускает свет",
@@ -167,7 +176,8 @@
     "structure": "60% шенилл, 10% вискоза, 30% полиэстер",
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
-    "color": "red"
+    "color": "red",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 311,
@@ -175,7 +185,7 @@
     "model": "Люксор Уно",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 2200,
     "img": "img/textures/luksor_uno.png",
     "translucent": "Не пропускает свет",
@@ -184,7 +194,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
-    "color": "blue"
+    "color": "blue",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 412,
@@ -192,7 +203,7 @@
     "model": "Красный Меланж",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1000,
     "img": "img/textures/melanzh_red.png",
     "translucent": "Не пропускает свет",
@@ -201,7 +212,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
-    "color": "#fee"
+    "color": "#fee",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 513,
@@ -209,7 +221,7 @@
     "model": "Кристалл",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1,
     "img": "img/textures/kristall.png",
     "translucent": "Не пропускает свет",
@@ -218,7 +230,8 @@
     "structure": "50% шенилл, 20% вискоза, 30% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
-    "color": "#fca"
+    "color": "#fca",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 614,
@@ -226,7 +239,7 @@
     "model": "Листья",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 500,
     "img": "img/textures/listya.png",
     "translucent": "Пропускает свет",
@@ -235,7 +248,8 @@
     "structure": "60% шенилл, 10% вискоза, 30% полиэстер",
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
-    "color": "#cb3"
+    "color": "#cb3",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 715,
@@ -243,7 +257,7 @@
     "model": "Люксор Уно",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 2200,
     "img": "img/textures/luksor_uno.png",
     "translucent": "Не пропускает свет",
@@ -252,7 +266,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
-    "color": "#232fab"
+    "color": "#232fab",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 816,
@@ -260,7 +275,7 @@
     "model": "Красный Меланж",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1000,
     "img": "img/textures/melanzh_red.png",
     "translucent": "Не пропускает свет",
@@ -269,7 +284,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
-    "color": "#fdb1b2"
+    "color": "#fdb1b2",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 117,
@@ -277,7 +293,7 @@
     "model": "Кристалл",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1,
     "img": "img/textures/kristall.png",
     "translucent": "Не пропускает свет",
@@ -286,7 +302,8 @@
     "structure": "50% шенилл, 20% вискоза, 30% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
-    "color": "green"
+    "color": "green",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 218,
@@ -294,7 +311,7 @@
     "model": "Листья",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 500,
     "img": "img/textures/listya.png",
     "translucent": "Пропускает свет",
@@ -303,7 +320,8 @@
     "structure": "60% шенилл, 10% вискоза, 30% полиэстер",
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
-    "color": "red"
+    "color": "red",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 319,
@@ -311,7 +329,7 @@
     "model": "Люксор Уно",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 2200,
     "img": "img/textures/luksor_uno.png",
     "translucent": "Не пропускает свет",
@@ -320,7 +338,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
-    "color": "blue"
+    "color": "blue",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 420,
@@ -328,7 +347,7 @@
     "model": "Красный Меланж",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1000,
     "img": "img/textures/melanzh_red.png",
     "translucent": "Не пропускает свет",
@@ -337,7 +356,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
-    "color": "#fee"
+    "color": "#fee",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 521,
@@ -345,7 +365,7 @@
     "model": "Кристалл",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1,
     "img": "img/textures/kristall.png",
     "translucent": "Не пропускает свет",
@@ -354,7 +374,8 @@
     "structure": "50% шенилл, 20% вискоза, 30% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
-    "color": "#fca"
+    "color": "#fca",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 622,
@@ -362,7 +383,7 @@
     "model": "Листья",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 500,
     "img": "img/textures/listya.png",
     "translucent": "Пропускает свет",
@@ -371,7 +392,8 @@
     "structure": "60% шенилл, 10% вискоза, 30% полиэстер",
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
-    "color": "#cb3"
+    "color": "#cb3",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 723,
@@ -379,7 +401,7 @@
     "model": "Люксор Уно",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 2200,
     "img": "img/textures/luksor_uno.png",
     "translucent": "Не пропускает свет",
@@ -388,7 +410,8 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
-    "color": "#232fab"
+    "color": "#232fab",
+    "counstructorImage": "img/product/1.jpg"
   },
   {
     "id": 824,
@@ -396,7 +419,7 @@
     "model": "Красный Меланж",
     "product_id": "123",
     "product_name": "Римские шторы",
-    "url": "/product/derevyannyye_zhalyuzi/Alyuminiyevyye/rimskiye-shtory/kristall",
+    "url": "img/product/1.jpg",
     "price": 1000,
     "img": "img/textures/melanzh_red.png",
     "translucent": "Не пропускает свет",
@@ -405,6 +428,7 @@
     "structure": "30% шенилл, 30% вискоза, 40% полиэстер",
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
-    "color": "#fdb1b2"
+    "color": "#fdb1b2",
+    "counstructorImage": "img/product/1.jpg"
   }
 ]

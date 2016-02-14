@@ -28,11 +28,11 @@
 		<constructor-preview
 			ng-if="constructorBgImg.base64"
 			background="{{constructorBgImg.base64}}"
-			blind="{{texture.texture}}">
+			blind="{{texture.preview}}">
 		</constructor-preview>
 		<div
 			ng-if="!constructorBgImg.base64"
-			ng-style="{'background-color': '#333', 'background-image': 'url(' + texture.preview + ')'}"
+			ng-style="{'background-color': '#333', 'background-image': 'url(' + texture.counstructorImage + ')'}"
 			class="constructor__preview-slide">
 		</div>
 		<div class="container container_small container_relative container_tablet-width">
