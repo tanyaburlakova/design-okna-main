@@ -13,7 +13,7 @@
 		<!-- Text -->
 		<p class="article-preview__text">
 			<a href="{{article.url}}">
-				{{article.description}}&nbsp;<svg class="icon icon-gt"><use xlink:href="icons/icons.svg#gt"></use></svg>
+				<span ng-bind-html="article.description | unsafe"></span> &nbsp;<svg class="icon icon-gt"><use xlink:href="icons/icons.svg#gt"></use></svg>
 			</a>
 		</p>
 		<!-- Author -->

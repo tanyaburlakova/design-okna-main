@@ -4,7 +4,7 @@
 	angular.module('articlePreviewDirective', ['articleCtrl'])
 		.directive('articlePreview', [
 			articlePreviewDirective
-		]);
+		]).filter('unsafe', function($sce) { return $sce.trustAsHtml; });
 
 	function articlePreviewDirective() {
 		return {

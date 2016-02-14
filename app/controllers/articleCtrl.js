@@ -41,7 +41,7 @@
 					url: SocialShareService.getShareUrl(value, {
 						title: $scope.article.title,
 						url: $scope.article.url,
-						description: $scope.article.description,
+						description: $sce.trustAsHtml($scope.article.description),
 						image: $scope.article.main_img
 					})
 				});
