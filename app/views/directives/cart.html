@@ -17,7 +17,7 @@
 				'many': '{} отложенных товаров:'}"></ng-pluralize>
 		</div>
 		<div class="cart__list-wrapper">
-			<div class="cart__list-holder baron__scroller baron _scrollbar">
+			<div class="cart__list-holder">
 				<ul class="cart__list">
 					<li
 						ng-repeat="(key, product) in items track by $index"
@@ -29,8 +29,8 @@
 							</div>
 							<div class="cart-product__price">
 								<strong>
-									{{product.price | number:0}} р.
-								</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
+									{{product.price | number:0}}<!--  р. -->
+								</strong><!-- <span ng-if="!product.priceExactly">/м<sup>2</sup></span> -->
 								<span class="cart-product__dimensions" ng-if="!!product.dimensions.width && !!product.dimensions.height">
 									({{product.dimensions.width}} м x {{product.dimensions.height}} м)
 								</span>
@@ -41,9 +41,6 @@
 							</button>
 					</li>
 				</ul>
-				<div class="baron__track">
-					<div class="baron__bar"></div>
-				</div>
 			</div>
 		</div>
 		<footer class="cart__footer">

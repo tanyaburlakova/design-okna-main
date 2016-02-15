@@ -110,6 +110,8 @@
 				// Success
 				$scope.product = data;
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
+				$scope.product.cornice.description = $sce.trustAsHtml(data.cornice.description);
+				$scope.product.description.text = $sce.trustAsHtml(data.description.text);
 				$scope.product.dimensions = {};
 				$scope.product.withCornice = false;
 				$scope.product.priceExactly = false;

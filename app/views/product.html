@@ -123,9 +123,7 @@
 					<h2 class="text-block__title">
 						{{product.description.title}}
 					</h2>
-					<p class="text-block__text">
-						{{product.description.text}}
-					</p>
+					<p class="text-block__text" ng-bind-html="product.description.text"></p>
 				</div>
 			</div>
 			<div ng-if="!desktop" ng-include="'views/directives/construction.html'"></div>
@@ -249,15 +247,16 @@
 			<!-- Text block with benefits-->
 			<div class="text-block text-block_benefits">
 				<div class="text-block__column text-block__column_padding">
-					<div ng-bind-html="product.cornice.text" class="text-block__text-holder"></div>
+					<div class="text-block__text-holder">
+						<h2 class="text-block__title">{{product.cornice.text}}</h2>
+						<p class="text-block__text" ng-bind-html="product.cornice.description"></p>
+					</div>
 					<!-- Price block -->
 					<div class="price-block price-block_inline">
-						<div class="price-block__text">
-							{{product.cornice.description}}
-						</div>
+						<div class="price-block__text"></div>
 						<!-- New price -->
 						<div class="price-block__new">
-							<strong>{{product.cornice.price}} р.</strong>/пог.м
+							<strong>{{product.cornice.price}}<!--  р. --></strong><!-- /пог.м -->
 						</div>
 					</div>
 				</div>

@@ -77,11 +77,11 @@
 				<div class="product__price-container">
 					<!-- Old price -->
 					<div ng-if="!!product.sale" class="product__price-old">
-						{{product.price * (100+product.sale)/100 | number:0}} р./м<sup>2</sup>
+						{{product.price * (100+product.sale)/100 | number:0}}<!--  р./м<sup>2</sup> -->
 					</div>
 					<!-- New price -->
 					<div class="product__price-new">
-						<strong>от {{product.price | number:0}} р.</strong>/м<sup>2</sup>
+						<strong>от {{product.price | number:0}} <!-- р. --></strong><!-- /м<sup>2</sup> -->
 					</div>
 				</div>
 				<!-- Btn -->
