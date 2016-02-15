@@ -139,8 +139,8 @@
 					start: (function (_this) {
 						return function () {
 							$(element).css({
-								left: 100,
-							  top: 100
+								left: 10,
+							  top: 60
 							})
 							return $(element).css('pointer-events', 'none');
 						};
