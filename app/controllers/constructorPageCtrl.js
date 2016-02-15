@@ -99,7 +99,7 @@
 							$scope.texture = TexturesService.getTextureById(newVal);
 							console.log($scope.texture.id);
 							$scope.product = {
-								image: $scope.texture.img,
+								image: $scope.texture.product_image,
 								title: $scope.texture.product_name,
 								price: $scope.texture.price,
 								texture: $scope.texture.model

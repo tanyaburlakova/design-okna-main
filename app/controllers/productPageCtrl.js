@@ -122,6 +122,7 @@
 
 		$scope.addToCart = function(){
 			$scope.product.texture = $scope.currentTexture.model;
+			$scope.product.title = $scope.product.product_name;
 			CartService.addProduct($scope.product);
 		};
 
