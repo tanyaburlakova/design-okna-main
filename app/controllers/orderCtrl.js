@@ -64,13 +64,24 @@
 			var params = {};
 			$scope.state.loading = true;
 			angular.extend(params, {context: $scope.context}, $scope.order);
-			CartService.submitOrder(params)
-				.then(function(data){
-					$scope.state.loading = false;
-					$scope.state.complete = true;
-				}, function(err){
-					$scope.state.loading = false;
-				});
+			if(params.context === 'callme'){
+				CartService.submitCallMe(params)
+					.then(function(data){
+						$scope.state.loading = false;
+						$scope.state.complete = true;
+					}, function(err){
+						$scope.state.loading = false;
+					});
+			} else {
+				CartService.submitOrder(params)
+					.then(function(data){
+						$scope.state.loading = false;
+						$scope.state.complete = true;
+					}, function(err){
+						$scope.state.loading = false;
+					});
+			}
+			
 		};
 
 		$scope.init();

@@ -26,8 +26,9 @@
 			serverTime: '10 Jan 2016 20:10:00 GMT+0300',
 			openHour: 9,
 			closeHour: 21,
+			callMe: 'call-me.json',
 			orderPath: 'order.json',
-			feedbackPath: 'order.json',
+			feedbackPath: 'feedback.json',
 			structurePath: 'structure.json',
 			homeArticleSlug: 'trends'
 		}, window.appLicationConfig);

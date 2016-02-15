@@ -22,6 +22,7 @@
 			getOneClick: getOneClick,
 			addOneClick: addOneClick,
 			submitOrder: submitOrder,
+			submitCallMe: submitCallMe,
 			submitFeedback: submitFeedback
 		};
 		return service;
@@ -68,9 +69,26 @@
 					result += (key+1) + '. ' + formatProduct(product) + '\n';
 					return result;
 				}, '');
-			} else { // callme
-				data.text = 'Перезвоните мне';
 			}
+			data.time = params.hour.label + ' ' + params.min.label;
+			angular.extend(data, params);
+			delete data.context;
+			delete data.hour;
+			delete data.min;
+			$http.post(url, data)
+				.success(function(response){
+					defer.resolve(response);
+				}, function(err){
+					$log.log(err);
+				});
+			return defer.promise;
+		};
+
+		function submitCallMe(params){
+			var url = API_PATH + ConfigService.callMe;
+			var defer = $q.defer();
+			var data = {};
+			data.text = 'Перезвоните мне';
 			data.time = params.hour.label + ' ' + params.min.label;
 			angular.extend(data, params);
 			delete data.context;
