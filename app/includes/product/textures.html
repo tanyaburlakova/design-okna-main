@@ -86,10 +86,10 @@
 			ng-repeat="(key,texture) in textures"
 			ng-show="(key<=12)||(showAllTextures)"
 			class="textures__item">
-			<div ng-mouseenter="$parent.$parent.previewTextureModel = texture.id;" ng-mouseleave="$parent.$parent.previewTextureModel = null">
+			<div ng-mouseenter="$parent.$parent.$parent.previewTextureModel = texture.id;" ng-mouseleave="$parent.$parent.$parent.previewTextureModel = null">
 				<texture
 					title="{{texture.model}}"
-					model="$parent.$parent.textureModel"
+					model="$parent.$parent.$parent.textureModel"
 					name="texture"
 					checked="{{$first}}"
 					fill="{{texture.texture}}"
