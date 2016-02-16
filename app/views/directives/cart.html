@@ -30,8 +30,8 @@
 								</div>
 								<div class="cart-product__price">
 									<strong>
-										{{product.price | number:0}}<!--  р. -->
-									</strong><!-- <span ng-if="!product.priceExactly">/м<sup>2</sup></span> -->
+										{{product.price | number:0}} р.
+									</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
 									<span class="cart-product__dimensions" ng-if="!!product.dimensions.width && !!product.dimensions.height">
 										({{product.dimensions.width}} м x {{product.dimensions.height}} м)
 									</span>

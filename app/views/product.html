@@ -55,7 +55,7 @@
 				<div class="form form_carnice">
 					<checkbox
 						model="product.withCornice"
-						label="Добавить к заказу карниз"
+						label="Добавить к заказу {{ product.cornice.name }} + {{ product.cornice.price }} {{ product.cornice.currencySign}}"
 						name="type2">
 					</checkbox>
 				</div>
@@ -181,7 +181,7 @@
 				<div class="form form_carnice">
 					<checkbox
 						model="product.withCornice"
-						label="Добавить к заказу карниз"
+						label="Добавить к заказу {{ product.cornice.name }} + {{ product.cornice.price }} {{ product.cornice.currencySign}}"
 						name="type2">
 					</checkbox>
 				</div>
@@ -256,7 +256,7 @@
 						<div class="price-block__text"></div>
 						<!-- New price -->
 						<div class="price-block__new">
-							<strong>{{product.cornice.price}}<!--  р. --></strong><!-- /пог.м -->
+							<strong>{{product.cornice.price}}</strong> {{product.cornice.currencySign}}
 						</div>
 					</div>
 				</div>

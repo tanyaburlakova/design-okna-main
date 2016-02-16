@@ -18,8 +18,8 @@
 					({{product.dimensions.width}} м x {{product.dimensions.height}} м)
 				</span>
 				- <strong>
-					{{product.price | number:0}}<!--  р. -->
-				</strong><!-- <span ng-if="!product.priceExactly">/м<sup>2</sup></span> -->
+					{{product.price | number:0}} р.
+				</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
 			</li>
 		</ol>
 		<input type="text" class="order-form__input" placeholder="Ваше имя" ng-model="order.name">
