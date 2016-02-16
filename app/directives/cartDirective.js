@@ -20,6 +20,14 @@
 	function cartLink(scope, el, attr) {
 		var $dropdown = el.find('.cart__dropdown');
 		$dropdown.appendTo(angular.element('header.site-header'));
-		// $dropdown.find('.cart__list-holder').baron();
+		baron({
+			root: '.baron',
+			scroller: '.baron__scroller',
+			bar: '.baron__bar',
+			scrollingCls: '_scrolling',
+			draggingCls: '_dragging'
+		}).controls({
+			track: '.baron__track'
+		});
 	}
 })();

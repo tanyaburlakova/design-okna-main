@@ -17,30 +17,37 @@
 				'many': '{} отложенных товаров:'}"></ng-pluralize>
 		</div>
 		<div class="cart__list-wrapper">
-			<div class="cart__list-holder">
-				<ul class="cart__list">
-					<li
-						ng-repeat="(key, product) in items track by $index"
-						class="cart__item cart-product">
-							<img ng-src="{{product.image}}" class="cart-product__img" />
-							<div class="cart-product__title">
-								{{product.title}}
-								<span ng-if="product.withCornice"> с карнизом</span>
-							</div>
-							<div class="cart-product__price">
-								<strong>
-									{{product.price | number:0}}<!--  р. -->
-								</strong><!-- <span ng-if="!product.priceExactly">/м<sup>2</sup></span> -->
-								<span class="cart-product__dimensions" ng-if="!!product.dimensions.width && !!product.dimensions.height">
-									({{product.dimensions.width}} м x {{product.dimensions.height}} м)
-								</span>
-							</div>
-							<div class="cart-product__model" ng-if="!!product.texture">модель {{product.texture}}</div>
-							<button class="cart-product__dismiss" ng-click="removeProduct(key)">
-								<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
-							</button>
-					</li>
-				</ul>
+			<div class="cart__list-holder baron baron__root baron__clipper _simple">
+				<div class="baron__scroller">
+					<ul class="cart__list">
+						<li
+							ng-repeat="(key, product) in items track by $index"
+							class="cart__item cart-product">
+								<img ng-src="{{product.image}}" class="cart-product__img" />
+								<div class="cart-product__title">
+									{{product.title}}
+									<span ng-if="product.withCornice"> с карнизом</span>
+								</div>
+								<div class="cart-product__price">
+									<strong>
+										{{product.price | number:0}}<!--  р. -->
+									</strong><!-- <span ng-if="!product.priceExactly">/м<sup>2</sup></span> -->
+									<span class="cart-product__dimensions" ng-if="!!product.dimensions.width && !!product.dimensions.height">
+										({{product.dimensions.width}} м x {{product.dimensions.height}} м)
+									</span>
+								</div>
+								<div class="cart-product__model" ng-if="!!product.texture">модель {{product.texture}}</div>
+								<button class="cart-product__dismiss" ng-click="removeProduct(key)">
+									<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+								</button>
+						</li>
+					</ul>
+				</div>
+				<div class="baron__track">
+					<div class="baron__free">
+						<div class="baron__bar"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<footer class="cart__footer">
