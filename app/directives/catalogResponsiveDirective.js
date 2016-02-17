@@ -18,6 +18,7 @@
 		var $parent = el.parent();
 		function catalogResponsiveAction(){
 			if (scope.responsive.getState('tabletPortrait')){
+				angular.element('.mobile-aside__content.filters').html('');
 				el.appendTo(angular.element('.mobile-aside__content.filters'));
 			} else{
 				el.prependTo($parent);

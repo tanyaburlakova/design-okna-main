@@ -55,16 +55,16 @@
 				if (!!p.dimensions.width && !!p.dimensions.height){
 					p.priceExactly = true;
 					if (p.withCornice){
-						p.price = ($scope.currentTexture.price * p.dimensions.width * p.dimensions.height + p.cornice.price);
+						p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height + parseInt(p.cornice.price);
 					} else {
-						p.price = ($scope.currentTexture.price * p.dimensions.width * p.dimensions.height);
+						p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * parseInt(p.dimensions.height);
 					}
 				} else {
 					p.priceExactly = false;
 					if (p.withCornice){
-						p.price = $scope.currentTexture.price + p.cornice.price;
+						p.price = parseInt($scope.currentTexture.price) + parseInt(p.cornice.price);
 					} else {
-						p.price = $scope.currentTexture.price;
+						p.price = parseInt($scope.currentTexture.price);
 					}
 				}
 			}
