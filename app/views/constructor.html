@@ -142,17 +142,15 @@
 							<header class="textures__header">
 								<h2 class="textures__title textures__title_small">
 									Цвета и текстуры
-									<span class="textures__mobile-icon" ng-click="toggleMobilePopup = !toggleMobilePopup; refreshRange()" ng-class="{'active': toggleMobilePopup}">
+									<!-- <span class="textures__mobile-icon" ng-click="toggleMobilePopup = !toggleMobilePopup; refreshRange()" ng-class="{'active': toggleMobilePopup}">
 										<svg class="icon icon-filter-white"><use xlink:href="icons/icons.svg#filter-white"></use></svg>
 									</span>
-									<!-- Mobile Popup -->
 									<div class="popup" ng-show="toggleMobilePopup">
 										<div class="popup__inside">
 											<h2 class="popup__title">
 												Стоимость материала за м<sup>2</sup>
 											</h2>
 											<div class="popup__content">
-												<!-- Price range -->
 												<range
 													min="priceSlider.min"
 													max="priceSlider.max"
@@ -163,7 +161,6 @@
 												Выберите цвет материала
 											</h2>
 											<div class="popup__content">
-												<!-- Colors set -->
 												<ul class="colors-set">
 													<li class="colors-set__item" ng-repeat="color in product.colors">
 														<color
@@ -181,14 +178,14 @@
 												</button>
 											</footer>
 										</div>
-									</div>
+									</div> -->
 								</h2>
-								<div class="textures__filters">
+								<!-- <div class="textures__filters">
 									<h2 class="textures__filters-title">
 										фильтровать:
 									</h2>
 									<ul class="textures__filters-list">
-										<!-- By price -->
+										
 										<li class="textures__filters-item">
 											<button
 												ng-click="togglePricePopup = !togglePricePopup; toggleColorsPopup = false; refreshRange()"
@@ -197,14 +194,14 @@
 												цена
 												<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 											</button>
-											<!-- Popup -->
+											
 											<div class="popup" ng-show="togglePricePopup">
 												<div class="popup__inside">
 													<h2 class="popup__title">
 														Стоимость материала за м<sup>2</sup>
 													</h2>
 													<div class="popup__content">
-														<!-- Price range -->
+														
 														<range
 															min="priceSlider.min"
 															max="priceSlider.max"
@@ -220,7 +217,7 @@
 												</div>
 											</div>
 										</li>
-										<!-- By color -->
+										
 										<li class="textures__filters-item">
 											<button
 												ng-click="toggleColorsPopup = !toggleColorsPopup; togglePricePopup = false"
@@ -229,14 +226,13 @@
 												цвет
 												<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 											</button>
-											<!-- Popup -->
+											
 											<div class="popup" ng-show="toggleColorsPopup">
 												<div class="popup__inside">
 													<h2 class="popup__title">
 														Выберите цвет материала
 													</h2>
 													<div class="popup__content">
-														<!-- Colors set -->
 														<ul class="colors-set">
 															<li class="colors-set__item" ng-repeat="color in product.colors">
 																<color
@@ -257,7 +253,7 @@
 											</div>
 										</li>
 									</ul>
-								</div>
+								</div> -->
 							</header>
 							<!-- Content -->
 							<ul class="textures__list">

@@ -133,5 +133,6 @@
     "title": "Мираж",
     "children": []
   }
-]
+],
+"colors": ["green", "red", "blue", "#fee", "#fca", "#cb3", "#232fab", "#fdb1b2"]
 }
