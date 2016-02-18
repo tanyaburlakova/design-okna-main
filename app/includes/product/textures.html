@@ -2,7 +2,46 @@
 	<header class="textures__header">
 		<h2 class="textures__title">
 			Выберите цвет или текстуру
-			<svg class="icon icon-filter"><use xlink:href="icons/icons.svg#filter"></use></svg>
+			<span class="textures__mobile-icon" ng-click="toggleMobilePopup = !toggleMobilePopup; refreshRange()" ng-class="{'active': toggleMobilePopup}">
+				<svg class="icon icon-filter"><use xlink:href="icons/icons.svg#filter"></use></svg>
+			</span>
+			<!-- Mobile Popup -->
+			<div class="popup" ng-show="toggleMobilePopup">
+				<div class="popup__inside">
+					<h2 class="popup__title">
+						Стоимость материала за м<sup>2</sup>
+					</h2>
+					<div class="popup__content">
+						<!-- Price range -->
+						<range
+							min="priceSlider.min"
+							max="priceSlider.max"
+							options="{{priceSlider.options}}">
+						</range>
+					</div>
+					<h2 class="popup__title">
+						Выберите цвет материала
+					</h2>
+					<div class="popup__content">
+						<!-- Colors set -->
+						<ul class="colors-set">
+							<li class="colors-set__item" ng-repeat="color in product.colors">
+								<color
+									model="textureColors[color]"
+									name="color"
+									fill="{{color}}">
+								</color>
+							</li>
+						</ul>
+					</div>
+					<footer class="popup__footer">
+						<button class="popup__link" ng-click="resetSlider(); toggleMobilePopup = false; clearTextureColor(); toggleColorsPopup = false;">
+							<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
+							Снять выделение
+						</button>
+					</footer>
+				</div>
+			</div>
 		</h2>
 		<!-- Filters -->
 		<div class="textures__filters">
