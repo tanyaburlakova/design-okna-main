@@ -38,7 +38,7 @@
 		<div class="off-canvas__wrapper">
 			<div class="off-canvas__content">
 				<responsive></responsive>
-				<div ng-show="!constructorHeader">
+				<div ng-if="!constructorHeader">
 					<div ng-include="'includes/header.html'"></div>
 				</div>
 				<div ng-if="!!constructorHeader">

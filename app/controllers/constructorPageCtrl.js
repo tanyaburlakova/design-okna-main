@@ -74,7 +74,6 @@
 		};
 
 		$scope.getConstructorTextures = function (model) {
-			console.log($scope.typesModel);
 			var route = [];
 			var category = '';
 			var subcategory = '';
@@ -97,7 +96,6 @@
 					$scope.$watch('textureId', function (newVal) {
 						if (!!newVal){
 							$scope.texture = TexturesService.getTextureById(newVal);
-							console.log($scope.texture.id);
 							$scope.product = {
 								image: $scope.texture.product_image,
 								title: $scope.texture.product_name,
