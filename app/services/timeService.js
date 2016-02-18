@@ -32,7 +32,7 @@
 
 		var isWorkingTime = function(){
 			var time = getStoreTime();
-			if (time.getHours() < ConfigService.closeHour){
+			if (time.getHours() < ConfigService.closeHour && time.getHours() >= ConfigService.openHour){
 				return true;
 			} else {
 				return false;
