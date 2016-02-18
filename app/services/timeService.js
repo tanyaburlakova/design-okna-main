@@ -4,12 +4,21 @@
 	factory('TimeService', [
 		'$rootScope',
 		'ConfigService',
+		'API_PATH',
+		'$http',
+		'$q',
 		timeService
 	]);
 
-	function timeService($rootScope, ConfigService) {
-		var time,
-		    storeTime = new Date(ConfigService.serverTime);
+	function timeService($rootScope, ConfigService, API_PATH, $http, $q) {
+		var 
+			time,
+			storeTime = new Date()
+		;
+			
+		getServerTime().then(function(data) {
+			storeTime = new Date(data);
+		});
 
 		var logCurrentTime = function(){
 			time = new Date();
@@ -24,7 +33,7 @@
 		var isWorkingTime = function(){
 			var time = getStoreTime();
 			if (time.getHours() < ConfigService.closeHour){
-					return true;
+				return true;
 			} else {
 				return false;
 			}
@@ -40,6 +49,24 @@
 			isWorkingTime: isWorkingTime,
 			getWorkingHours: getWorkingHours
 		};
+
+		function getServerTime() {
+			var url = API_PATH + ConfigService.serverTime,
+				defer = $q.defer();
+
+			$http.get(url)
+				.success(function (data) {
+					defer.resolve(data);
+				})
+				.error(function (res, errCode) {
+					defer.reject({
+						code: errCode,
+						text: 'api access [%s] error!'.replace('%s', url)
+					});
+				});
+
+			return defer.promise;
+		}
 		return service;
 
 	}
