@@ -224,6 +224,7 @@
 				if (n === true) result.push(key);
 				return result;
 			}, []);
+			console.log($scope.textureColors2);
 			$scope.filterTextures();
 		});
 
@@ -235,6 +236,10 @@
 				position = $scope.product.gallery.length - 1;
 			}
 			$scope.gallery.currentImage = position;
+		};
+
+		$scope.clearTextureColor = function(){
+			$scope.textureColors = {};
 		};
 
 		$scope.init();

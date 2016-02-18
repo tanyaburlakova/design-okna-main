@@ -16,7 +16,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
     "color": "green",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 2,
@@ -35,7 +36,8 @@
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
     "color": "red",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 3,
@@ -54,7 +56,8 @@
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
     "color": "blue",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 4,
@@ -73,7 +76,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
     "color": "#fee",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 5,
@@ -92,7 +96,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
     "color": "#fca",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 6,
@@ -111,7 +116,8 @@
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
     "color": "#cb3",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 7,
@@ -130,7 +136,8 @@
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
     "color": "#232fab",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 8,
@@ -149,7 +156,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
     "color": "#fdb1b2",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 9,
@@ -168,7 +176,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
     "color": "green",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 10,
@@ -187,7 +196,8 @@
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
     "color": "red",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 311,
@@ -206,7 +216,8 @@
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
     "color": "blue",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 412,
@@ -225,7 +236,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
     "color": "#fee",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 513,
@@ -244,7 +256,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
     "color": "#fca",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 614,
@@ -263,7 +276,8 @@
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
     "color": "#cb3",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 715,
@@ -282,7 +296,8 @@
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
     "color": "#232fab",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 816,
@@ -301,7 +316,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
     "color": "#fdb1b2",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 117,
@@ -320,7 +336,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
     "color": "green",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 218,
@@ -339,7 +356,8 @@
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
     "color": "red",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 319,
@@ -358,7 +376,8 @@
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
     "color": "blue",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 420,
@@ -377,7 +396,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
     "color": "#fee",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 521,
@@ -396,7 +416,8 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg1.jpg",
     "color": "#fca",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 622,
@@ -415,7 +436,8 @@
     "texture": "img/ex2.png",
     "preview": "img/cons_bg2.jpg",
     "color": "#cb3",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 723,
@@ -434,7 +456,8 @@
     "texture": "img/ex3.png",
     "preview": "img/cons_bg3.jpg",
     "color": "#232fab",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   },
   {
     "id": 824,
@@ -453,6 +476,7 @@
     "texture": "img/ex.png",
     "preview": "img/cons_bg4.jpg",
     "color": "#fdb1b2",
-    "counstructorImage": "img/product/1.jpg"
+    "counstructorImage": "img/product/1.jpg",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
   }
 ]

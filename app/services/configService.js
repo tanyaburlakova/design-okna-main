@@ -23,7 +23,7 @@
 			searchPath: 'search.json',
 			minPrice: 0,
 			maxPrice: 4000,
-			serverTime: '10 Jan 2016 20:10:00 GMT+0300',
+			serverTime: 'serverTime.json',
 			openHour: 9,
 			closeHour: 21,
 			callMe: 'call-me.json',

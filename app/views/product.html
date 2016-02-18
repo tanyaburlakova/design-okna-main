@@ -113,6 +113,15 @@
 								{{currentTexture.structure}}
 							</div>
 						</div>
+						<!-- info -->
+						<div
+							ng-if="currentTexture.description"
+							class="features__item">
+							<svg class="icon icon-structure"><use xlink:href="icons/icons.svg#info"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.description}}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -237,6 +246,15 @@
 							<svg class="icon icon-structure"><use xlink:href="icons/icons.svg#structure"></use></svg>
 							<div class="features__item-text">
 								{{currentTexture.structure}}
+							</div>
+						</div>
+						<!-- info -->
+						<div
+							ng-if="currentTexture.description"
+							class="features__item">
+							<svg class="icon icon-structure"><use xlink:href="icons/icons.svg#info"></use></svg>
+							<div class="features__item-text">
+								{{currentTexture.description}}
 							</div>
 						</div>
 					</div>
