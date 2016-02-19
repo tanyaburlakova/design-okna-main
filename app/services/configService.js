@@ -22,7 +22,7 @@
 			newsPath: 'news.json',
 			searchPath: 'search.json',
 			minPrice: 0,
-			maxPrice: 4000,
+			maxPrice: 100000,
 			serverTime: 'serverTime.json',
 			openHour: 9,
 			closeHour: 21,
