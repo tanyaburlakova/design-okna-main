@@ -45,8 +45,6 @@
 			$scope.mobile = ResponsiveService.getState('mobileLandscape');
 			$scope.resetSlider();
 			$scope.getProduct();
-			$scope.getTextures();
-			$scope.getProducts();
 		};
 
 		$scope.calcPrice = function(){
@@ -120,6 +118,7 @@
 				$scope.product.withCornice = false;
 				$scope.product.priceExactly = false;
 				$scope.gallery.currentImage = 0;
+				$scope.getTextures();
 			}, function (err) {
 				// Error
 				$log.log(err);
@@ -145,6 +144,7 @@
 				slug: $routeParams.product
 			}).then(function (data) {
 				updateTextures(data);
+				$scope.getProducts();
 			}, function (err) {
 				// Error
 				$log.log(err);
