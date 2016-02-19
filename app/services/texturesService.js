@@ -55,7 +55,7 @@
 				});
 
 			return defer.promise;
-		}
+		};
 
 		function filterTextures(fn) {
 			return _.filter(service.textures, fn);

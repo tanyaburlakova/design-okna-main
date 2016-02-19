@@ -30,9 +30,11 @@
 			$scope.product.dimensions = {};
 			$scope.product.withCornice = false;
 			$scope.product.priceExactly = false;
+			$scope.minPrice = ConfigService.minPrice;
+			$scope.maxPrice = ConfigService.maxPrice;
 			$scope.texturePrice = {
-				min: ConfigService.minPrice,
-				max: ConfigService.maxPrice,
+				min: $scope.minPrice,
+				max: $scope.maxPrice,
 			};
 			$scope.textureColors = {};
 			$scope.gallery = {};
@@ -43,7 +45,6 @@
 			$scope.textures = [];
 			$scope.desktop = ResponsiveService.getState('desktop');
 			$scope.mobile = ResponsiveService.getState('mobileLandscape');
-			$scope.resetSlider();
 			$scope.getProduct();
 		};
 
@@ -68,17 +69,26 @@
 			}
 		};
 
+		var getTexturesPrices = function(list){
+			var priceArray = _.pluck(list, 'price');
+			$scope.minPrice = _.min(priceArray);
+			$scope.maxPrice = _.max(priceArray);
+			$scope.resetSlider();
+			updateTextures(list);
+		};
+
 		var updateTextures = function(list){
 			// Success
 			if (list.length > 0){
 				var category = $routeParams.category,
-						subcategory = $routeParams.subcategory,
-						product = $routeParams.product,
-						texture = $routeParams.texture,
-						currentTexture = TexturesService.getTextureBySlug(texture) || {
-							id: list[0].id
-						},
-						currentId = currentTexture.id;
+					subcategory = $routeParams.subcategory,
+					product = $routeParams.product,
+					texture = $routeParams.texture,
+					currentTexture = TexturesService.getTextureBySlug(texture) || {
+						id: list[0].id
+					},
+					currentId = currentTexture.id
+				;
 				$scope.textures = list;
 				$scope.textureModel = currentId;
 				$scope.showAllTextures = false;
@@ -143,7 +153,7 @@
 				subcategory: $routeParams.subcategory,
 				slug: $routeParams.product
 			}).then(function (data) {
-				updateTextures(data);
+				getTexturesPrices(data);
 				$scope.getProducts();
 			}, function (err) {
 				// Error
@@ -193,11 +203,11 @@
 
 		$scope.resetSlider = function(){
 			$scope.priceSlider = {
-				min: ConfigService.minPrice,
-				max: ConfigService.maxPrice,
+				min: $scope.minPrice,
+				max: $scope.maxPrice,
 				options: {
-					floor: ConfigService.minPrice,
-					ceil: ConfigService.maxPrice
+					floor: $scope.minPrice,
+					ceil: $scope.maxPrice
 				}
 			};
 			$scope.texturePrice.min = $scope.priceSlider.min;
@@ -224,7 +234,6 @@
 				if (n === true) result.push(key);
 				return result;
 			}, []);
-			console.log($scope.textureColors2);
 			$scope.filterTextures();
 		});
 
