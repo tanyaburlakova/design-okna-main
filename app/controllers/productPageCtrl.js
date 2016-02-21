@@ -24,6 +24,7 @@
 		$log.log('product page ctrl');
 
 		$scope.init = function () {
+			$scope.priceSlider = null;
 			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
 			$scope.product = {};
@@ -129,6 +130,7 @@
 				$scope.product.priceExactly = false;
 				$scope.gallery.currentImage = 0;
 				$scope.getTextures();
+
 			}, function (err) {
 				// Error
 				$log.log(err);

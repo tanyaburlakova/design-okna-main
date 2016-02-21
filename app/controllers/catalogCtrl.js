@@ -21,6 +21,7 @@
 			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
 			$scope.categoryChecks = {};
+			$scope.priceSlider = null;
 			$scope.maxPrice = ConfigService.maxPrice;
 			if ($routeParams.subcategory){
 				$scope.categoryChecks[$routeParams.subcategory] = true;
