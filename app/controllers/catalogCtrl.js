@@ -10,27 +10,22 @@
 			'CatalogService',
 			'ConfigService',
 			'ResponsiveService',
+			'$timeout',
 			catalogCtrl
 		]);
 
-	function catalogCtrl($scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService, ResponsiveService) {
+	function catalogCtrl($scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService, ResponsiveService, $timeout) {
 		$log.log('catalog ctrl');
 		$scope.init = function(){
 			$scope.responsive = ResponsiveService;
 			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
 			$scope.categoryChecks = {};
+			$scope.maxPrice = ConfigService.maxPrice;
+			$scope.firstLoad = true;
 			if ($routeParams.subcategory){
 				$scope.categoryChecks[$routeParams.subcategory] = true;
 			}
-			$scope.priceSlider = {
-				min: ConfigService.minPrice,
-				max: ConfigService.maxPrice,
-				options: {
-					floor: ConfigService.minPrice,
-					ceil: ConfigService.maxPrice
-				}
-			};
 			$scope.searchOptions = {
 				sort: 'date',
 				count: 9,
@@ -41,10 +36,6 @@
 			};
 			$scope.$watchCollection('searchOptions', function(oldVal, newVal){
 				$scope.getProductList();
-			});
-			$scope.$on('rangeDirective.updateRangeSlider', function(e){
-				$scope.searchOptions.min_price = $scope.priceSlider.min;
-				$scope.searchOptions.max_price = $scope.priceSlider.max;
 			});
 			$scope.$watchCollection('categoryChecks', function(oldVal, newVal){
 				if (!_.isEqual(oldVal, newVal)){
@@ -64,7 +55,6 @@
 				}
 			});
 			$scope.getCatalog();
-			$scope.getProductList();
 		};
 
 		$scope.getCatalog = function(){
@@ -84,12 +74,14 @@
 		$scope.addProductList = function () {
 			ProductService.getList(angular.extend({}, $scope.searchOptions, {skip: $scope.catalogItems.length}))
 				.then(function (data) {
+					var items = data[0].items;
+					
 					// Success
-					if (data.length === 0){
+					if (items.length === 0){
 						$scope.showLoadMoreBtn = false;
 					} else {
 						$scope.showLoadMoreBtn = true;
-						Array.prototype.push.apply($scope.catalogItems, data);
+						Array.prototype.push.apply($scope.catalogItems, items);
 					}
 				}, function (err) {
 					// Error
@@ -101,12 +93,18 @@
 			ProductService.getList($scope.searchOptions)
 				.then(function (data) {
 					// Success
-					if (data.length === 0){
+					if ($scope.firstLoad){
+						$scope.maxPrice = parseInt(data[0].maxPrice);
+						$scope.resetSlider();
+					}
+					var items = data[0].items;
+					if (items.length === 0){
 						$scope.showLoadMoreBtn = false;
 					} else {
 						$scope.showLoadMoreBtn = true;
-						$scope.catalogItems = data;
+						$scope.catalogItems = items;
 					}
+					
 				}, function (err) {
 					// Error
 					$log.log(err);
@@ -119,6 +117,22 @@
 			} else {
 				$scope.searchOptions.sort = sortTerm;
 			}
+		};
+
+		$scope.resetSlider = function($timeout){
+			$scope.priceSlider = {
+				min: ConfigService.minPrice,
+				max: $scope.maxPrice,
+				options: {
+					floor: ConfigService.minPrice,
+					ceil: $scope.maxPrice
+				}
+			};
+			$scope.$on('rangeDirective.updateRangeSlider', function(e){
+				$scope.searchOptions.min_price = $scope.priceSlider.min;
+				$scope.searchOptions.max_price = $scope.priceSlider.max;
+			});
+			$scope.firstLoad = false;
 		};
 
 		$scope.init();

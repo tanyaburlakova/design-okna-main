@@ -167,7 +167,7 @@
 				subcategory: $routeParams.subcategory,
 				slug: $routeParams.product
 			}).then(function(data){
-				$scope.catalogItems = data.slice(0, $scope.desktop ? 4 : 3);
+				$scope.catalogItems = data[0].items.slice(0, $scope.desktop ? 4 : 3);
 			}, function(err){
 				$log.log(err);
 			});
@@ -225,7 +225,6 @@
 			$scope.$apply(function(){
 				$scope.desktop = ResponsiveService.getState('desktop');
 				$scope.mobile = ResponsiveService.getState('mobileLandscape');
-				console.log($scope.mobile);
 			});
 		});
 

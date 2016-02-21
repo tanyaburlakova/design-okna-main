@@ -16,7 +16,9 @@
 				options: '@'
 			},
 			replace: true,
-			link: rangeDirectiveLink
+			link: {
+				pre: rangeDirectiveLink
+			}
 		};
 	}
 
@@ -25,10 +27,12 @@
 
 		scope.options.onEnd = function(){
 			scope.$emit('rangeDirective.updateRangeSlider');
-		}
+			console.log('refresh');
+		};
 
 		var min = scope.options.floor,
-			max = scope.options.ceil;
+			max = scope.options.ceil
+		;
 
 		scope.$watch('min', function (value) {
 			if (value > max) {

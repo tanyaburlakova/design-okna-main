@@ -24,13 +24,13 @@
 		};
 
 		$scope.getProductList = function () {
-			ProductService.getHomeList({skip: $scope.catalogItems.length, count: 8})
+			ProductService.getHomeList({skip: $scope.catalogItems.length, count: 8, mainPage: true})
 				.then(function (data) {
 					// Success
 					if (data.length === 0){
 						$scope.showLoadMoreBtn = false;
 					} else {
-						Array.prototype.push.apply($scope.catalogItems, data);
+						Array.prototype.push.apply($scope.catalogItems, data[0].items);
 					}
 				}, function (err) {
 					// Error

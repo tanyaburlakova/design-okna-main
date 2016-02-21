@@ -139,7 +139,7 @@
 			<!-- Tablet video -->
 			<div class="text-block video" ng-if="!!product.video && !desktop">
 				<h2 class="video__title">
-					Видео о римских шторах
+					{{product.video_title}}
 				</h2>
 				<div class="video__frame-holder">
 					<youtube-video
@@ -289,7 +289,7 @@
 			<!-- Video -->
 			<div class="video" ng-if="!!product.video && desktop">
 				<h2 class="video__title">
-					Видео о римских шторах
+					{{product.video_title}}
 				</h2>
 				<div class="video__frame-holder">
 					<youtube-video

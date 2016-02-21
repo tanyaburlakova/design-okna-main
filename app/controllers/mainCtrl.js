@@ -47,6 +47,7 @@
 		};
 
 		$scope.refreshRange = function () {
+			console.log('refresh slider');
 			$timeout(function () {
 				$scope.$broadcast('rzSliderForceRender');
 			});
