@@ -45,6 +45,7 @@
 
 		function loadReviews(skip, limit) {
 			return service.list.slice(skip, limit);
+			console.log('loadReviews');
 		};
 
 		function submitReview(params) {

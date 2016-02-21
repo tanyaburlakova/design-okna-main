@@ -74,7 +74,7 @@
 		$scope.addProductList = function () {
 			ProductService.getList(angular.extend({}, $scope.searchOptions, {skip: $scope.catalogItems.length}))
 				.then(function (data) {
-					var items = data[0].items;
+					var items = data.items;
 					
 					// Success
 					if (items.length === 0){
@@ -94,10 +94,10 @@
 				.then(function (data) {
 					// Success
 					if ($scope.firstLoad){
-						$scope.maxPrice = parseInt(data[0].maxPrice);
+						$scope.maxPrice = parseInt(data.maxPrice);
 						$scope.resetSlider();
 					}
-					var items = data[0].items;
+					var items = data.items;
 					if (items.length === 0){
 						$scope.showLoadMoreBtn = false;
 					} else {

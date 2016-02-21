@@ -30,7 +30,7 @@
 					if (data.length === 0){
 						$scope.showLoadMoreBtn = false;
 					} else {
-						Array.prototype.push.apply($scope.catalogItems, data[0].items);
+						Array.prototype.push.apply($scope.catalogItems, data.items);
 					}
 				}, function (err) {
 					// Error
