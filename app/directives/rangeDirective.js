@@ -27,7 +27,6 @@
 
 		scope.options.onEnd = function(){
 			scope.$emit('rangeDirective.updateRangeSlider');
-			console.log('refresh');
 		};
 
 		var min = scope.options.floor,
