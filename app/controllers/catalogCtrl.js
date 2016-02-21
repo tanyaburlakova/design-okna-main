@@ -22,7 +22,6 @@
 			$scope.catalogItems = [];
 			$scope.categoryChecks = {};
 			$scope.maxPrice = ConfigService.maxPrice;
-			$scope.firstLoad = true;
 			if ($routeParams.subcategory){
 				$scope.categoryChecks[$routeParams.subcategory] = true;
 			}
@@ -93,8 +92,10 @@
 			ProductService.getList($scope.searchOptions)
 				.then(function (data) {
 					// Success
-					if ($scope.firstLoad){
-						$scope.maxPrice = parseInt(data.maxPrice);
+					var maxPrice = parseInt(data.maxPrice);
+					if (maxPrice !== $scope.maxPrice){
+						$scope.priceSlider = null;
+						$scope.maxPrice = maxPrice;
 						$scope.resetSlider();
 					}
 					var items = data.items;
@@ -119,20 +120,23 @@
 			}
 		};
 
-		$scope.resetSlider = function($timeout){
-			$scope.priceSlider = {
-				min: ConfigService.minPrice,
-				max: $scope.maxPrice,
-				options: {
-					floor: ConfigService.minPrice,
-					ceil: $scope.maxPrice
-				}
-			};
+		$scope.resetSlider = function(){
+			$timeout(function () {
+				$scope.priceSlider = {
+					min: ConfigService.minPrice,
+					max: $scope.maxPrice,
+					options: {
+						floor: ConfigService.minPrice,
+						ceil: $scope.maxPrice
+					}
+				};
+				console.log($scope.priceSlider);
+			}, 10);
+			
 			$scope.$on('rangeDirective.updateRangeSlider', function(e){
 				$scope.searchOptions.min_price = $scope.priceSlider.min;
 				$scope.searchOptions.max_price = $scope.priceSlider.max;
 			});
-			$scope.firstLoad = false;
 		};
 
 		$scope.init();

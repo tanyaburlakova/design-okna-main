@@ -40,7 +40,7 @@
 	<div class="container container_padding">
 		<aside class="catalog__aside">
 			<!-- Filter -->
-			<div class="form form_filter" ng-if="priceSlider" catalog-responsive>
+			<div class="form form_filter" catalog-responsive>
 				<form action="#">
 					<!-- Prices range -->
 					<fieldset class="form__fieldset">
@@ -48,7 +48,7 @@
 							Диапазон цен
 						</legend>
 						<!-- Range -->
-						<div class="form__field">
+						<div class="form__field" ng-if="priceSlider">
 							<!-- Price range -->
 							<range
 								min="priceSlider.min"
