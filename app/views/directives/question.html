@@ -10,7 +10,7 @@
 			Вопрос&nbsp;№&nbsp;{{question.number}}
 		</div>
 		<!-- Avatar -->
-		<img src="img/ava1.jpg" alt="" class="question__avatar">
+		<img src="{{question.avatarImage}}" alt="" class="question__avatar" ng-if="!!question.avatarImage">
 		<!-- New question -->
 		<a
 			href
