@@ -12,6 +12,7 @@
 		$log.log('benefits ctrl');
 
 		var url = $scope.url;
+		console.log($scope);
 
 		$scope.init = function () {
 			$scope.getBenefits(url);

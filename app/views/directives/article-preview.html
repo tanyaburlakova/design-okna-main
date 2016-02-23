@@ -8,11 +8,11 @@
 	<div class="article-preview__container">
 		<!-- Title -->
 		<h2 class="article-preview__title">
-			<a href="{{article.url}}">{{article.name}}</a>
+			<a href="{{article.link}}">{{article.name}}</a>
 		</h2>
 		<!-- Text -->
 		<p class="article-preview__text">
-			<a href="{{article.url}}">
+			<a href="{{article.link}}">
 				<span ng-bind-html="article.description | unsafe"></span> &nbsp;<svg class="icon icon-gt"><use xlink:href="icons/icons.svg#gt"></use></svg>
 			</a>
 		</p>
