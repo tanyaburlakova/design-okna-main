@@ -54,10 +54,11 @@
 			if ($scope.currentTexture){
 				if (!!p.dimensions.width && !!p.dimensions.height){
 					p.priceExactly = true;
+					console.log(p.dimensions.width, p.dimensions.height);
 					if (p.withCornice){
 						p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height + parseInt(p.cornice.price);
 					} else {
-						p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * parseInt(p.dimensions.height);
+						p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height;
 					}
 				} else {
 					p.priceExactly = false;
