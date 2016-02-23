@@ -14,11 +14,11 @@
 		};
 		return service;
 
-		function getBenefits(apiUrl) {
+		function getBenefits(apiUrl, params) {
 			var url = API_PATH + apiUrl,
 				defer = $q.defer();
 
-			$http.get(url)
+			$http.get(url, {params: params})
 				.success(function (data) {
 					defer.resolve(data);
 				})

@@ -278,11 +278,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="text-block__column">
+				<div class="text-block__column" ng-if="product.id">
 					<!-- Benefits -->
 					<benefits
+						idproduct="{{product.id}}"
 						title="Преимущества"
-						url="benefits.json">
+						url="benefits.json"
+						>
 					</benefits>
 				</div>
 			</div>

@@ -12,6 +12,7 @@
 			templateUrl: 'views/directives/benefits.html',
 			controller: 'BenefitsCtrl',
 			scope: {
+				idproduct: '@',
 				title: '@',
 				url: '@'
 			},
