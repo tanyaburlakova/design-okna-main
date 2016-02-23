@@ -131,7 +131,6 @@
 						ceil: $scope.maxPrice
 					}
 				};
-				console.log($scope.priceSlider);
 			}, 10);
 			
 			$scope.$on('rangeDirective.updateRangeSlider', function(e){

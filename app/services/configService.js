@@ -10,7 +10,7 @@
 			featuredProductPath: 'featuredProduct.json',
 			productListPath: 'productList.json',
 			productHomeListPath: 'productList.json',
-			productSeeAlsoListPath: 'productList.json',
+			productSeeAlsoListPath: 'similarGoods.json',
 			productPagePath: 'product.json',
 			questionPath: 'questions.json',
 			articlePath: 'article.json',
@@ -31,7 +31,8 @@
 			feedbackPath: 'feedback.json',
 			structurePath: 'structure.json',
 			homeArticleSlug: 'trends',
-			homeArticlePath: 'mainPageAds.json'
+			homeArticlePath: 'mainPageAds.json',
+			
 		}, window.appLicationConfig);
 		return config;
 	}

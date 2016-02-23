@@ -165,9 +165,7 @@
 
 		$scope.getProducts = function(){
 			ProductService.getSeeAlsoList({
-				category: $routeParams.category,
-				subcategory: $routeParams.subcategory,
-				slug: $routeParams.product
+				productId: $scope.product.id
 			}).then(function(data){
 				$scope.catalogItems = data.items.slice(0, $scope.desktop ? 4 : 3);
 			}, function(err){

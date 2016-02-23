@@ -19,8 +19,6 @@
 		} else {
 			newParams['mainPage'] = true;
 		}
-		
-		console.log(newParams);
 
 		$scope.init = function () {
 			$scope.getBenefits(url);

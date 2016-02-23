@@ -44,7 +44,6 @@
 		};
 
 		$scope.loadMoreReviews = function(){
-			console.log('loadMoreReviews');
 			Array.prototype.push.apply(
 				$scope.reviews.list,
 				ReviewsService.loadReviews($scope.reviews.list.length, 5));
