@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	angular.module('articlePreviewDirective', ['articleCtrl'])
+	angular.module('articlePreviewDirective', ['trendCtrl'])
 		.directive('articlePreview', [
 			articlePreviewDirective
 		]).filter('unsafe', function($sce) { return $sce.trustAsHtml; });
@@ -10,7 +10,7 @@
 		return {
 			restrict: 'E',
 			templateUrl: 'views/directives/article-preview.html',
-			controller: 'ArticleCtrl',
+			controller: 'trendCtrl',
 			scope: {
 				slug: '@'
 			},

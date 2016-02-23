@@ -8,6 +8,7 @@ var app = angular.module('myApp', [
 		'searchCtrl',
 		'orderCtrl',
 		'feedbackCtrl',
+		'trendCtrl',
 		'constructorPageCtrl',
 		'productPageCtrl',
 		'cartDirective',

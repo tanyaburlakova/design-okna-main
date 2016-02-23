@@ -30,7 +30,8 @@
 			orderPath: 'order.json',
 			feedbackPath: 'feedback.json',
 			structurePath: 'structure.json',
-			homeArticleSlug: 'trends'
+			homeArticleSlug: 'trends',
+			homeArticlePath: 'mainPageAds.json'
 		}, window.appLicationConfig);
 		return config;
 	}
