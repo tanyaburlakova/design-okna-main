@@ -4,9 +4,7 @@
 		<h2 class="text-block__title">
 			{{product.construction.title}}
 		</h2>
-		<p class="text-block__text">
-			{{product.construction.text}}
-		</p>
+		<p class="text-block__text" ng-bind-html="product.construction.text"></p>
 	</div>
 	<div class="text-block__column text-block__column_padding">
 		<!-- Title -->
