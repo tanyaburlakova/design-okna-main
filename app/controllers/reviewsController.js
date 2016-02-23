@@ -20,6 +20,7 @@
 			$scope.formSubmitted = false;
 			$scope.showLoadMoreBtn = true;
 			$scope.getReviews($scope.productId);
+			$scope.allReviews = 0;
 		};
 
 		$scope.getReviews = function (product) {
@@ -28,7 +29,8 @@
 					// Success
 					$scope.reviews = data;
 					$scope.reviews.avg_rounded = Math.round(data.avg_rating);
-					if (data.total === $scope.reviews.list.length){
+					$scope.allReviews = data.total;
+					if ($scope.allReviews === $scope.reviews.list.length){
 						$scope.showLoadMoreBtn = false;
 					}
 				}, function (err) {
@@ -46,6 +48,9 @@
 			Array.prototype.push.apply(
 				$scope.reviews.list,
 				ReviewsService.loadReviews($scope.reviews.list.length, 5));
+			if ($scope.allReviews === $scope.reviews.list.length){
+				$scope.showLoadMoreBtn = false;
+			}
 		};
 
 		$scope.submitReview = function(){

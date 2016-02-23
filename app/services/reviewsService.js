@@ -44,7 +44,7 @@
 		};
 
 		function loadReviews(skip, limit) {
-			return service.list.slice(skip, limit);
+			return service.list.slice(skip, limit+skip);
 			console.log('loadReviews');
 		};
 
