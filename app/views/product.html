@@ -148,7 +148,7 @@
 				</div>
 			</div>
 			<!-- Reviews -->
-			<reviews product-id="{{product.id}}" ng-if="!!product.id"></reviews>
+			<reviews product-id="{{product.id}}" ng-if="!!product.id && !mobile"></reviews>
 		</div>
 		<!-- Right -->
 		<div class="column-2 product-page__aside">
@@ -299,6 +299,8 @@
 					</youtube-video>
 				</div>
 			</div>
+			<!-- Reviews -->
+			<reviews product-id="{{product.id}}" ng-if="!!product.id && !!mobile"></reviews>
 		</div>
 	</div>
 	<!-- Catalog -->

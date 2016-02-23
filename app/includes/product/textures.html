@@ -141,7 +141,7 @@
 	<button class="textures__show-all" ng-show="(textures.length > 12)" ng-click="showAllTextures=!showAllTextures;">
 		<span ng-if="!showAllTextures">развернуть</span>
 		<span ng-if="showAllTextures">свернуть</span>
-		 все материалы ({{textures.length}})
+		<span class="hide-in-tablet">все </span>материалы ({{textures.length}})
 		<svg class="icon icon-shevron-down" ng-class="{'rotated': showAllTextures}"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 	</button>
 </div>
