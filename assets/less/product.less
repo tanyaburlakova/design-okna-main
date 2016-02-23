@@ -5,10 +5,12 @@
 		margin-right: 20px;
 		float: left;
 	}
-	&:hover {
-		.product__container {
-			transform: translateY(0);
-			bottom: 65px;
+	@media @desktop-mq{
+		&:hover {
+			.product__container {
+				transform: translateY(0);
+				bottom: 65px;
+			}
 		}
 	}
 	&__wrapper {
