@@ -1,7 +1,7 @@
 <form class="order-form" ng-controller="OrderCtrl" ng-submit="submitForm()">
 	<header>
 		<h3 class="order-form__title">
-			<svg ng-if="context !== 'callme'" class="icon icon-cart"><use xlink:href="icons/icons.svg#cart"></use></svg>
+			<svg ng-if="context !== 'callme'" class="icon icon-cart hide-in-mobile"><use xlink:href="icons/icons.svg#cart"></use></svg>
 			<span ng-if="context === 'callme'">Перезвоните мне</span>
 			<span ng-if="context === 'order'">Оформить заказ</span>
 			<span ng-if="context === 'oneclick'">Купить в 1 клик</span>
@@ -9,7 +9,7 @@
 	</header>
 	<section class="order-form__body" ng-if="!state.complete && !state.loading">
 		<ol class="order-form__list" ng-if="context !== 'callme'">
-			<li class="order-form__item" ng-repeat="(key,product) in products">
+			<li class="order-form__item" ng-repeat="(key,product) in products track by $index">
 				<strong ng-if="products.length > 1">{{key+1}}.</strong>
 				{{product.title}}
 				<!-- <span ng-if="product.withCornice"> с карнизом</span> -->
