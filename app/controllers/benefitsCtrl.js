@@ -16,6 +16,8 @@
 		;
 		if ($scope.idproduct){
 			newParams['productId'] = $scope.idproduct;
+		} else {
+			newParams['mainPage'] = true;
 		}
 		
 		console.log(newParams);
