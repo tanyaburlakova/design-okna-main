@@ -293,7 +293,7 @@
 				<h2 class="video__title">
 					{{product.video_title}}
 				</h2>
-				<div class="video__frame-holder">
+				<div class="video__frame-holder" ng-if="product.video">
 					<youtube-video
 						video-id="getYoutubeId(product.video)">
 					</youtube-video>

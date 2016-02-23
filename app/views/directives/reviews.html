@@ -71,10 +71,16 @@
 		<footer class="reviews__footer">
 			<!-- More btn -->
 			<div class="more-btn">
+
 				<a href class="more-btn__link" ng-click="loadMoreReviews()" ng-show="showLoadMoreBtn">
 					<span class="icon icon-more"></span>
 					<span class="more-btn__text">
-						Показать еще <span>5</span> отзывов
+						Показать еще 
+						<span ng-if="allReviews - reviews.list.length >= 5">5 отзывов</span>
+						<span ng-if="allReviews - reviews.list.length === 4">4 отзыва</span>
+						<span ng-if="allReviews - reviews.list.length === 3">3 отзыва</span>
+						<span ng-if="allReviews - reviews.list.length === 2">2 отзыва</span>
+						<span ng-if="allReviews - reviews.list.length === 1">1 отзыв</span>
 					</span>
 				</a>
 			</div>
