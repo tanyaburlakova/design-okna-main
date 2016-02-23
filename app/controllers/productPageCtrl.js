@@ -167,7 +167,7 @@
 			ProductService.getSeeAlsoList({
 				productId: $scope.product.id
 			}).then(function(data){
-				$scope.catalogItems = data.items.slice(0, $scope.desktop ? 4 : 3);
+				$scope.catalogItems = data.slice(0, $scope.desktop ? 4 : 3);
 			}, function(err){
 				$log.log(err);
 			});
