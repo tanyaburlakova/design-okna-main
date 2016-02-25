@@ -4,6 +4,9 @@
 	&__header {
 		position: relative;
 		padding: 38px 30px;
+		@media @mobile-mq{
+			padding: 38px 24px;
+		}
 	}
 	&__rubric {
 		opacity: 0.8;
@@ -47,6 +50,9 @@
 		margin: 0 -30px 30px;
 		background: center no-repeat;
 		background-size: cover;
+		@media @mobile-mq{
+			margin: 0 -24px 30px;
+		}
 	}
 	&__socials {
 		float: left;
@@ -115,6 +121,9 @@
 		}
 		a {
 
+		}
+		@media @mobile-mq{
+			padding: 43px 24px;
 		}
 	}
 	@media @tablet-mq{
