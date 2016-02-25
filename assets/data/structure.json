@@ -1,139 +1,140 @@
 {
-"blockContent":"<p>Hello world<p>",
-"louvers":[
-  {
-    "url": "/catalog/Gorizontalnyye_zhalyuzi",
-    "title": "Горизонтальные",
-    "children": [
+  "blockContent":"<p>Hello world<p>",
+  "items": {
+    "louvers":[
       {
-        "url": "/catalog/Gorizontalnye_zhaluzi/Alyuminievye",
-        "title": "Алюминиевые"
+        "url": "/catalog/Gorizontalnyye_zhalyuzi",
+        "title": "Горизонтальные",
+        "children": [
+          {
+            "url": "/catalog/Gorizontalnye_zhaluzi/Alyuminievye",
+            "title": "Алюминиевые"
+          },
+          {
+            "url": "/catalog/Gorizontalnye_zhaluzi/Plastikovyye",
+            "title": "Пластиковыые"
+          },
+          {
+            "url": "/catalog/Gorizontalnye_zhaluzi/Bambukovye",
+            "title": "Бамбуковые"
+          },
+          {
+            "url": "/catalog/Gorizontalnye_zhaluzi/Volna",
+            "title": "Волна"
+          }
+        ]
       },
       {
-        "url": "/catalog/Gorizontalnye_zhaluzi/Plastikovyye",
-        "title": "Пластиковыые"
+        "url": "/catalog/Vertikalnyye_zhalyuzi",
+        "title": "Вертикальные",
+        "children": [
+          {
+            "url": "/catalog/Vertikalnyye_zhaluzi/Alyuminevye",
+            "title": "Алюминевые"
+          },
+          {
+            "url": "/catalog/Vertikalnyye_zhaluzi/Tkanevye",
+            "title": "Тканевые"
+          },
+          {
+            "url": "/catalog/Vertikalnyye_zhaluzi/Plastikovye",
+            "title": "Пластиковые"
+          },
+          {
+            "url": "/catalog/Vertikalnyye_zhaluzi/Briz",
+            "title": "Бриз"
+          }
+        ]
       },
       {
-        "url": "/catalog/Gorizontalnye_zhaluzi/Bambukovye",
-        "title": "Бамбуковые"
+        "url": "/catalog/derevyannyye_zhalyuzi",
+        "title": "Деревянные",
+        "children": []
       },
       {
-        "url": "/catalog/Gorizontalnye_zhaluzi/Volna",
-        "title": "Волна"
+        "url": "/catalog/Rulonnyye_zhalyuzi",
+        "title": "Рулонные",
+        "children": [
+          {
+            "url": "/catalog/Rulonnyye_zhaluzi/Tkanevye",
+            "title": "Тканевые"
+          },
+          {
+            "url": "/catalog/Rulonnyye_zhaluzi/Zebra",
+            "title": "Зебра"
+          },
+          {
+            "url": "/catalog/Rulonnyye_zhaluzi/Mini",
+            "title": "Мини"
+          },
+          {
+            "url": "/catalog/Rulonnyye_zhaluzi/Uni",
+            "title": "Уни"
+          },
+          {
+            "url": "/catalog/Rulonnyye_zhaluzi/S_fotopechatyu",
+            "title": "С фотопечатью"
+          }
+        ]
       }
-    ]
-  },
-  {
-    "url": "/catalog/Vertikalnyye_zhalyuzi",
-    "title": "Вертикальные",
-    "children": [
+    ],
+    "shtory":[
       {
-        "url": "/catalog/Vertikalnyye_zhaluzi/Alyuminevye",
-        "title": "Алюминевые"
+        "url": "/catalog/Klassicheskiye_shtory",
+        "title": "Классические",
+        "children": [
+          {
+            "url": "/catalog/Klassicheskiye_shtory/Tkani_dlya_shtor",
+            "title": "Ткани для штор"
+          },
+          {
+            "url": "/catalog/Klassicheskiye_shtory/Karnizy",
+            "title": "Карнизы"
+          }
+        ]
       },
       {
-        "url": "/catalog/Vertikalnyye_zhaluzi/Tkanevye",
-        "title": "Тканевые"
+        "url": "/catalog/Rimskiye_shtory",
+        "title": "Римские",
+        "children": [
+          {
+            "url": "/catalog/Rimskiye_shtory/Tkani_dlya_rimskix_shtor",
+            "title": "Ткани для римских штор"
+          },
+          {
+            "url": "/catalog/Rimskiye_shtory/Karnizy",
+            "title": "Карнизы"
+          }
+        ]
       },
       {
-        "url": "/catalog/Vertikalnyye_zhaluzi/Plastikovye",
-        "title": "Пластиковые"
+        "url": "/catalog/Plisse_shtory",
+        "title": "Плиссе",
+        "children": [
+          {
+            "url": "/catalog/Plisse_shtory/Gofre",
+            "title": "Гофре"
+          },
+          {
+            "url": "/catalog/Plisse_shtory/Den-noch`",
+            "title": "День-ночь"
+          },
+          {
+            "url": "/catalog/Plisse_shtory/Na_okna_PVX",
+            "title": "На окна ПВХ"
+          }
+        ]
       },
       {
-        "url": "/catalog/Vertikalnyye_zhaluzi/Briz",
-        "title": "Бриз"
-      }
-    ]
-  },
-  {
-    "url": "/catalog/derevyannyye_zhalyuzi",
-    "title": "Деревянные",
-    "children": []
-  },
-  {
-    "url": "/catalog/Rulonnyye_zhalyuzi",
-    "title": "Рулонные",
-    "children": [
-      {
-        "url": "/catalog/Rulonnyye_zhaluzi/Tkanevye",
-        "title": "Тканевые"
+        "url": "/catalog/Den_shtory-noch",
+        "title": "День-ночь",
+        "children": []
       },
       {
-        "url": "/catalog/Rulonnyye_zhaluzi/Zebra",
-        "title": "Зебра"
-      },
-      {
-        "url": "/catalog/Rulonnyye_zhaluzi/Mini",
-        "title": "Мини"
-      },
-      {
-        "url": "/catalog/Rulonnyye_zhaluzi/Uni",
-        "title": "Уни"
-      },
-      {
-        "url": "/catalog/Rulonnyye_zhaluzi/S_fotopechatyu",
-        "title": "С фотопечатью"
+        "url": "/catalog/Mirazh_shtory",
+        "title": "Мираж",
+        "children": []
       }
     ]
   }
-],
-"shtory":[
-  {
-    "url": "/catalog/Klassicheskiye_shtory",
-    "title": "Классические",
-    "children": [
-      {
-        "url": "/catalog/Klassicheskiye_shtory/Tkani_dlya_shtor",
-        "title": "Ткани для штор"
-      },
-      {
-        "url": "/catalog/Klassicheskiye_shtory/Karnizy",
-        "title": "Карнизы"
-      }
-    ]
-  },
-  {
-    "url": "/catalog/Rimskiye_shtory",
-    "title": "Римские",
-    "children": [
-      {
-        "url": "/catalog/Rimskiye_shtory/Tkani_dlya_rimskix_shtor",
-        "title": "Ткани для римских штор"
-      },
-      {
-        "url": "/catalog/Rimskiye_shtory/Karnizy",
-        "title": "Карнизы"
-      }
-    ]
-  },
-  {
-    "url": "/catalog/Plisse_shtory",
-    "title": "Плиссе",
-    "children": [
-      {
-        "url": "/catalog/Plisse_shtory/Gofre",
-        "title": "Гофре"
-      },
-      {
-        "url": "/catalog/Plisse_shtory/Den-noch`",
-        "title": "День-ночь"
-      },
-      {
-        "url": "/catalog/Plisse_shtory/Na_okna_PVX",
-        "title": "На окна ПВХ"
-      }
-    ]
-  },
-  {
-    "url": "/catalog/Den_shtory-noch",
-    "title": "День-ночь",
-    "children": []
-  },
-  {
-    "url": "/catalog/Mirazh_shtory",
-    "title": "Мираж",
-    "children": []
-  }
-],
-"colors": ["green", "red", "blue", "#fee", "#fca", "#cb3", "#232fab", "#fdb1b2"]
 }

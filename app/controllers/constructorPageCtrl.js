@@ -33,7 +33,7 @@
 			$scope.textureId = null;
 			MenuService.getMenu()
 			.then(function(data){
-				menu = data;
+				menu = data.items;
 				$scope.prepareTypes(true);
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 			}, function(err){
