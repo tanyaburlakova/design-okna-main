@@ -24,6 +24,7 @@ var app = angular.module('myApp', [
 		'dialogDirective',
 		'colorDirective',
 		'rangeDirective',
+		'seoDirective',
 		'youtube-embed',
 		'ngDropdowns',
 		'angular-input-stars',

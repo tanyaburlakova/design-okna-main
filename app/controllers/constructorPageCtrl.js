@@ -35,6 +35,7 @@
 			.then(function(data){
 				menu = data;
 				$scope.prepareTypes(true);
+				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 			}, function(err){
 				console.log(err);
 			});

@@ -25,6 +25,7 @@
 			var slug = $routeParams.slug || $scope.slug;
 			ArticleService.getArticle(slug)
 				.then(function(data){
+					$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 					$scope.article = data;
 					$scope.article.content = $sce.trustAsHtml(data.text);
 					$scope.prepareShareUrls();

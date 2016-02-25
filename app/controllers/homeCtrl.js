@@ -32,6 +32,7 @@
 					} else {
 						Array.prototype.push.apply($scope.catalogItems, data.items);
 					}
+					$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				}, function (err) {
 					// Error
 					$log.log(err);

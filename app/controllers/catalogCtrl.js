@@ -62,6 +62,7 @@
 				category: $routeParams.category,
 				subcategory: $routeParams.subcategory
 			}).then(function(data){
+				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.pageOptions = data;
 				angular.forEach($scope.pageOptions.subcategories, function(item){
 					item.checked = (item.slug === $routeParams.subcategory)?true:null;

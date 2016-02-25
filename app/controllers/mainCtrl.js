@@ -5,16 +5,18 @@
 			'$scope',
 			'$log',
 			'$timeout',
+			'$sce',
 			'DialogService',
 			'TimeService',
 			'ResponsiveService',
 			mainCtrl
 		]);
 
-	function mainCtrl($scope, $log, $timeout, DialogService, TimeService, ResponsiveService) {
+	function mainCtrl($scope, $log, $timeout, $sce, DialogService, TimeService, ResponsiveService) {
 		$log.log('main ctrl');
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
+		$scope.blockContent = '';
 		$scope.init = function(){
 			$(function () {
 				svg4everybody({
