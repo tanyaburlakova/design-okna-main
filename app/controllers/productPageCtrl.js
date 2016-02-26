@@ -24,6 +24,7 @@
 		$log.log('product page ctrl');
 
 		$scope.init = function () {
+			$scope.totalColors = 0;
 			$scope.priceSlider = null;
 			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
@@ -94,6 +95,7 @@
 				$scope.textureModel = currentId;
 				$scope.showAllTextures = false;
 
+
 				$scope.$watch('textureModel', function (newVal) {
 					$log.log(newVal);
 					if (newVal !== "-1") {
@@ -123,6 +125,7 @@
 				// Success
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.product = data;
+				$scope.totalColors = data.colors;
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
 				$scope.product.cornice.description = $sce.trustAsHtml(data.cornice.description);
 				$scope.product.description.text = $sce.trustAsHtml(data.description.text);
