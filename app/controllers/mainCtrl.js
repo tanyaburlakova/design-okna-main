@@ -17,6 +17,11 @@
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
 		$scope.blockContent = '';
+		$scope.blockContentHtml = '';
+		$scope.$watch('blockContent', function(){
+			$scope.blockContentHtml = $sce.trustAsHtml($scope.blockContent);
+		});
+
 		$scope.init = function(){
 			$(function () {
 				svg4everybody({
