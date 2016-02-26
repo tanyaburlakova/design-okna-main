@@ -8,14 +8,16 @@
 			'DialogService',
 			'TimeService',
 			'ConfigService',
+			'ResponsiveService',
 			orderCtrl
 		]);
 
-	function orderCtrl($scope, $log, CartService, DialogService, TimeService, ConfigService) {
+	function orderCtrl($scope, $log, CartService, DialogService, TimeService, ConfigService, ResponsiveService ) {
 		$log.log('order ctrl');
 
 		$scope.init = function() {
 			$scope.context = DialogService.getState();
+			$scope.mobile = ResponsiveService.getState('mobileLandscape');
 			if ($scope.context === 'oneclick'){
 				$scope.products = [CartService.getOneClick()];
 			} else {
@@ -83,6 +85,12 @@
 			}
 			
 		};
+
+		$scope.$on('ResponsiveService.updateState', function(){
+			$scope.$apply(function(){
+				$scope.mobile = ResponsiveService.getState('mobileLandscape');
+			});
+		});
 
 		$scope.init();
 	}

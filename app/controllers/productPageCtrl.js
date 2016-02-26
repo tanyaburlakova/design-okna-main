@@ -2,6 +2,7 @@
 	'use strict';
 	angular.module('productPageCtrl', ['texturesService', 'productService', 'cartService', 'dialogService', 'configService', 'reviewsDirective'])
 		.controller('ProductPageCtrl', [
+			'$rootScope',
 			'$scope',
 			'$log',
 			'youtubeEmbedUtils',
@@ -18,7 +19,7 @@
 			productPageCtrl
 		]);
 
-	function productPageCtrl($scope, $log, youtubeEmbedUtils, $location, $routeParams,
+	function productPageCtrl($rootScope, $scope, $log, youtubeEmbedUtils, $location, $routeParams,
 		TexturesService, ProductService, CartService, DialogService, ConfigService,
 		$sce, $timeout, ResponsiveService) {
 		$log.log('product page ctrl');
@@ -91,13 +92,14 @@
 					},
 					currentId = currentTexture.id
 				;
+				console.log(currentTexture);
 				$scope.textures = list;
 				$scope.textureModel = currentId;
 				$scope.showAllTextures = false;
 
 
 				$scope.$watch('textureModel', function (newVal) {
-					$log.log(newVal);
+					$log.log('newTexture' + newVal);
 					if (newVal !== "-1") {
 						$scope.getTextureById(newVal);
 						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.slug, false);

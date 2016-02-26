@@ -51,6 +51,10 @@ var app = angular.module('myApp', [
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
 				})
+				.when('/catalog', {
+					controller: 'CatalogCtrl',
+					templateUrl: 'views/catalog.html'
+				})
 				.when('/catalog/:category', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html'
@@ -78,8 +82,11 @@ var app = angular.module('myApp', [
 	])
 	.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
 		var original = $location.path;
+
 		$location.path = function (path, reload) {
+
 			if (reload === false) {
+				console.log($route);
 				var lastRoute = $route.current;
 				var un = $rootScope.$on('$locationChangeSuccess', function () {
 					$route.current = lastRoute;
