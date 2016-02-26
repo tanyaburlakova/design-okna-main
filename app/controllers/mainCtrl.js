@@ -2,6 +2,7 @@
 	'use strict';
 	angular.module('mainCtrl', ['dialogService', 'timeService'])
 		.controller('MainCtrl', [
+			'$rootScope',
 			'$scope',
 			'$log',
 			'$timeout',
@@ -12,7 +13,7 @@
 			mainCtrl
 		]);
 
-	function mainCtrl($scope, $log, $timeout, $sce, DialogService, TimeService, ResponsiveService) {
+	function mainCtrl($rootScope, $scope, $log, $timeout, $sce, DialogService, TimeService, ResponsiveService) {
 		$log.log('main ctrl');
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
@@ -66,6 +67,12 @@
 						$scope.toggleOffCanvas($scope.offCanvasSide);
 					});
 				}
+			}
+		});
+
+		$rootScope.$on('$locationChangeSuccess', function () {
+			if ($scope.offCanvasSide){
+				$scope.toggleOffCanvas($scope.offCanvasSide);
 			}
 		});
 
