@@ -71,6 +71,7 @@
 		});
 
 		$rootScope.$on('$locationChangeSuccess', function () {
+			console.log('change location...................................................');
 			if ($scope.offCanvasSide){
 				$scope.toggleOffCanvas($scope.offCanvasSide);
 			}
