@@ -5,10 +5,12 @@
 			'$scope',
 			'$log',
 			'CartService',
+			'$location',
+			'$route',
 			productCtrl
 		]);
 
-	function productCtrl($scope, $log, CartService) {
+	function productCtrl($scope, $log, CartService, $location, $route) {
 		$log.log('product ctrl');
 		$scope.init = function(){
 			$scope.product.texture_id = -1;
@@ -30,6 +32,13 @@
 		$scope.declOfNum = function(number, titles){
 			var cases = [2, 0, 1, 1, 1, 2];
 			return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];
+		};
+
+		$scope.actionUrl = function(e, url){
+			if ($route.current.controller === "ProductPageCtrl"){
+				e.stopPropagation();
+				$location.path(url, false);
+			}
 		};
 
 		$scope.init();
