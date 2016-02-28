@@ -48,7 +48,6 @@
 			$scope.textures = [];
 			$scope.desktop = ResponsiveService.getState('desktop');
 			$scope.mobile = ResponsiveService.getState('mobileLandscape');
-			$scope.hash = $location.hash();
 			$scope.getProduct();
 		};
 
@@ -103,7 +102,6 @@
 					$log.log('newTexture' + newVal);
 					if (newVal !== "-1") {
 						$scope.getTextureById(newVal);
-						$scope.hash = $scope.currentTexture.slug;
 						$location.hash($scope.currentTexture.slug);
 						$scope.gallery.previewImage = null;
 						$scope.calcPrice();
@@ -259,12 +257,6 @@
 		$scope.clearTextureColor = function(){
 			$scope.textureColors = {};
 		};
-
-		$rootScope.$on('$locationChangeSuccess', function () {
-			if ($scope.hash !== $location.hash()){
-				$scope.getProduct();
-			}
-		});
 
 		$scope.init();
 	}
