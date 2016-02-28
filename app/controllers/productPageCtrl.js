@@ -87,8 +87,9 @@
 				var category = $routeParams.category,
 					subcategory = $routeParams.subcategory,
 					product = $routeParams.product,
-					texture = $location.hash(),
-					currentTexture = TexturesService.getTextureBySlug(texture) || {
+					texture = $routeParams.texture,
+					hash = $location.hash(),
+					currentTexture = TexturesService.getTextureBySlug(hash) || {
 						id: list[0].id
 					},
 					currentId = currentTexture.id
@@ -123,7 +124,8 @@
 			ProductService.getProduct({
 				category: $routeParams.category,
 				subcategory: $routeParams.subcategory,
-				slug: $location.hash()
+				slug: $routeParams.texture,
+				hash: $location.hash(),
 			}).then(function (data) {
 				// Success
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';

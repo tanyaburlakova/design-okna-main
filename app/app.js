@@ -70,7 +70,8 @@ var app = angular.module('myApp', [
 				})
 				.when('/product/:category/:subcategory/:product/:texture', {
 					controller: 'ProductPageCtrl',
-					templateUrl: 'views/product.html'
+					templateUrl: 'views/product.html',
+					reloadOnSearch: false
 				})
 				.when('/constructor', {
 					controller: 'ConstructorPageCtrl',
