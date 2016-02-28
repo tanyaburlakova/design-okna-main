@@ -68,10 +68,10 @@ var app = angular.module('myApp', [
 					templateUrl: 'views/product.html',
 					reloadOnSearch: false
 				})
-				/*.when('/product/:category/:subcategory/:product/:texture', {
+				.when('/product/:category/:subcategory/:product/:texture', {
 					controller: 'ProductPageCtrl',
 					templateUrl: 'views/product.html'
-				})*/
+				})
 				.when('/constructor', {
 					controller: 'ConstructorPageCtrl',
 					templateUrl: 'views/constructor.html'
