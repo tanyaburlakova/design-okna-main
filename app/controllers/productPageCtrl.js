@@ -48,6 +48,7 @@
 			$scope.textures = [];
 			$scope.desktop = ResponsiveService.getState('desktop');
 			$scope.mobile = ResponsiveService.getState('mobileLandscape');
+			$scope.hash = $location.hash();
 			$scope.getProduct();
 		};
 
@@ -86,13 +87,12 @@
 				var category = $routeParams.category,
 					subcategory = $routeParams.subcategory,
 					product = $routeParams.product,
-					texture = $routeParams.texture,
+					texture = $location.hash(),
 					currentTexture = TexturesService.getTextureBySlug(texture) || {
 						id: list[0].id
 					},
 					currentId = currentTexture.id
 				;
-				console.log(currentTexture);
 				$scope.textures = list;
 				$scope.textureModel = currentId;
 				$scope.showAllTextures = false;
@@ -102,7 +102,8 @@
 					$log.log('newTexture' + newVal);
 					if (newVal !== "-1") {
 						$scope.getTextureById(newVal);
-						$location.path('product/' + category + '/' + subcategory + '/' + product + '/' + $scope.currentTexture.slug, false);
+						$scope.hash = $scope.currentTexture.slug;
+						$location.hash($scope.currentTexture.slug);
 						$scope.gallery.previewImage = null;
 						$scope.calcPrice();
 					}
@@ -122,7 +123,7 @@
 			ProductService.getProduct({
 				category: $routeParams.category,
 				subcategory: $routeParams.subcategory,
-				slug: $routeParams.product
+				slug: $location.hash()
 			}).then(function (data) {
 				// Success
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
@@ -256,6 +257,12 @@
 		$scope.clearTextureColor = function(){
 			$scope.textureColors = {};
 		};
+
+		$rootScope.$on('$locationChangeSuccess', function () {
+			if ($scope.hash !== $location.hash()){
+				$scope.getProduct();
+			}
+		});
 
 		$scope.init();
 	}

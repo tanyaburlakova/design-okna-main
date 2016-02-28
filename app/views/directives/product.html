@@ -14,7 +14,7 @@
 				style="background-size: cover"
 				ng-style="{'background-image':'url(' + product.image + ')'}"
 				class="product__img"
-				ng-click="actionUrl($event, product.link)">
+			>
 			</a>
 			<!-- Cart btn -->
 			<a href="#" class="product__cart-btn" ng-click="addProductToCart(product)">
@@ -86,7 +86,7 @@
 					</div>
 				</div>
 				<!-- Btn -->
-				<a href="{{product.link}}" class="btn btn_blue btn_size-1" ng-click="actionUrl($event, product.link)">
+				<a href="{{product.link}}" class="btn btn_blue btn_size-1">
 					Детали
 				</a>
 			</footer>

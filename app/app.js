@@ -65,12 +65,13 @@ var app = angular.module('myApp', [
 				})
 				.when('/product/:category/:subcategory/:product', {
 					controller: 'ProductPageCtrl',
-					templateUrl: 'views/product.html'
+					templateUrl: 'views/product.html',
+					reloadOnSearch: false
 				})
-				.when('/product/:category/:subcategory/:product/:texture', {
+				/*.when('/product/:category/:subcategory/:product/:texture', {
 					controller: 'ProductPageCtrl',
 					templateUrl: 'views/product.html'
-				})
+				})*/
 				.when('/constructor', {
 					controller: 'ConstructorPageCtrl',
 					templateUrl: 'views/constructor.html'
@@ -79,7 +80,7 @@ var app = angular.module('myApp', [
 					redirectTo: '/'
 				});
 		}
-	])
+	])/*
 	.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
 		var original = $location.path;
 
@@ -95,6 +96,6 @@ var app = angular.module('myApp', [
 			}
 			return original.apply($location, [path]);
 		};
-	}]);
+	}])*/;
 
 app.constant('API_PATH', 'data/');
