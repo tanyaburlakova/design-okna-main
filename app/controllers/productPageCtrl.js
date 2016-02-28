@@ -124,7 +124,7 @@
 			ProductService.getProduct({
 				category: $routeParams.category,
 				subcategory: $routeParams.subcategory,
-				slug: $routeParams.texture,
+				slug: $routeParams.product,
 				hash: $location.hash(),
 			}).then(function (data) {
 				// Success
