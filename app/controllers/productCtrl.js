@@ -25,6 +25,7 @@
 				var texture = _.findWhere($scope.product.textures, {id: $scope.product.texture_id});
 				$scope.product.price = texture.price;
 				$scope.product.texture = texture.model;
+				$scope.product.url = texture.url;
 				$scope.product.texture_link = texture.url;
 			}
 		});
