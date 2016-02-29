@@ -60,6 +60,17 @@
 			});
 		};
 
+		$scope.onClickRange = function(){
+			$scope.togglePricePopup = !$scope.togglePricePopup;
+			$scope.toggleColorsPopup = false;
+			$scope.refreshRange();
+		};
+
+		$scope.onClickColor = function(){
+			$scope.toggleColorsPopup = !$scope.toggleColorsPopup;
+			$scope.togglePricePopup = false;
+		}
+
 		$scope.$on('ResponsiveService.updateState', function(){
 			if ($scope.offCanvasSide){
 				if (ResponsiveService.getState('tablet') || ResponsiveService.getState('desktop')){

@@ -43,18 +43,18 @@
 				</div>
 			</div>
 			<!-- Filters -->
-			<div class="textures__filters" ng-show="minPrice !== maxPrice || totalColors.length > 1">
+			<div class="textures__filters">
 				<h2 class="textures__filters-title">
 					фильтровать:
 				</h2>
 
 				<ul class="textures__filters-list" >
 					<!-- By price -->
-					<li class="textures__filters-item" ng-show="minPrice !== maxPrice">
+					<li class="textures__filters-item">
 						<button
-							ng-click="togglePricePopup = !togglePricePopup; toggleColorsPopup = false; refreshRange()"
+							ng-click="minPrice !== maxPrice ? onClickRange() : ''"
 							class="textures__filters-btn"
-							ng-class="{'active': togglePricePopup}">
+							ng-class="{'active': togglePricePopup && minPrice !== maxPrice, 'disactive': minPrice === maxPrice}">
 							цена
 							<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 						</button>
@@ -83,11 +83,11 @@
 					</li>
 					<!-- By color -->
 					
-					<li class="textures__filters-item" ng-show="totalColors.length > 1">
+					<li class="textures__filters-item">
 						<button
-							ng-click="toggleColorsPopup = !toggleColorsPopup; togglePricePopup = false"
+							ng-click="totalColors.length > 0 ? onClickColor():''"
 							class="textures__filters-btn"
-							ng-class="{'active': toggleColorsPopup}">
+							ng-class="{'active': toggleColorsPopup && totalColors.length > 1, 'disactive': totalColors.length === 0}">
 							цвет
 							<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 						</button>

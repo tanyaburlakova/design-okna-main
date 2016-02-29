@@ -23,7 +23,7 @@
 						'&noparse=true';
 				break;
 				case 'ok':
-					url = 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1' +
+					url = 'http://www.ok.ru/dk?st.cmd=addShare&st.s=1' +
 						'&st.comments=' + encodeURIComponent(params.description) +
 						'&st._surl=' + encodeURIComponent(params.url)
 				break;
