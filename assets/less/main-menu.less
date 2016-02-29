@@ -96,12 +96,23 @@
 				transform: rotate(0deg);
 				left: -4px;
 				top: 37px;
-				.img('submenu_green.png');
 				width: 462px;
+				&:before{
+					transform: rotate(2deg);
+					left: 0;
+					top: -7px;
+					.img('submenu_green.png');
+					width: 100%;
+					position: absolute;
+				}
 				@media @tablet-mq{
-					.img('tablet_submenu_green.png');
 					left: -17px;
 					padding-left: 50px;
+					&:before{
+						left: 16px;
+						top: -5px;
+						.img('tablet_submenu_green.png');
+					}
 				}
 			}
 		}
@@ -136,12 +147,23 @@
 				transform: rotate(0deg);
 				left: -11px;
 				top: 38px;
-				.img('submenu_blue.png');
 				background-size: 100%;
 				width: 442px;
+				&:before{
+					transform: rotate(2.4deg);
+					left: 0;
+					top: -9px;
+					.img('submenu_blue.png');
+					width: 100%;
+					position: absolute;
+				}
 				@media @tablet-mq{
-					.img('tablet_submenu_blue.png');
 					left: -17px;
+					&:before{
+						left: 6px;
+						top: -7px;
+						.img('tablet_submenu_blue.png');
+					}
 				}
 			}
 		}
