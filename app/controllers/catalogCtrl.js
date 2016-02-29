@@ -58,6 +58,7 @@
 		};
 
 		$scope.getCatalog = function(){
+			$scope.$parent.showLoader = true;
 			CatalogService.getCatalog({
 				category: $routeParams.category,
 				subcategory: $routeParams.subcategory
@@ -67,6 +68,7 @@
 				angular.forEach($scope.pageOptions.subcategories, function(item){
 					item.checked = (item.slug === $routeParams.subcategory)?true:null;
 				});
+				$scope.$parent.showLoader = false;
 			}, function(err){
 				$log.log(err);
 			});

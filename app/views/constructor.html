@@ -4,7 +4,7 @@
 	</div>
 	<label
 		class="constructor__upload-btn btn btn_red btn_big">
-		<input type="file" ng-model="constructorBgImg" ng-click="constructorBgImg.base64 = null" base-sixty-four-input>
+		<input type="file" ng-model="constructorBgImg" ng-click="constructorBgImg.base64 = null" base-sixty-four-input on-loadstart="console.log('hello')" onloadend="onEndLoad">
 		<span class="icon icon-camera"></span>
 		<span class="text">Загрузить фото окна</span>
 	</label>

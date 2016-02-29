@@ -44,9 +44,8 @@
 				<div ng-if="!!constructorHeader">
 					<div ng-include="'includes/header-constructor.html'"></div>
 				</div>
-				<div ng-view autoscroll>
-					<div class="dis-loader"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-				</div>
+				<div ng-view autoscroll></div>
+				<div class="dis-loader" ng-class="{'active': showLoader}"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
 				<footer class="site-footer">
 					<!-- Seo -->
 					<div class="seo" ng-if="!!blockContent">

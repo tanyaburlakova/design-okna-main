@@ -15,6 +15,7 @@
 
 	function mainCtrl($rootScope, $scope, $log, $timeout, $sce, DialogService, TimeService, ResponsiveService) {
 		$log.log('main ctrl');
+		$scope.showLoader = true;
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
 		$scope.blockContent = '';
@@ -33,6 +34,7 @@
 				});
 			});
 			TimeService.logCurrentTime();
+			$scope.showLoader = false;
 		};
 
 		$scope.openSearch = function(){
@@ -81,11 +83,15 @@
 			}
 		});
 
+		$rootScope.$on('$locationChangeStart', function (){
+			$scope.showLoader = true;
+		});
+
 		$rootScope.$on('$locationChangeSuccess', function () {
-			console.log('change location...................................................');
 			if ($scope.offCanvasSide){
 				$scope.toggleOffCanvas($scope.offCanvasSide);
 			}
+			$scope.showLoader = false;
 		});
 
 		$scope.init();

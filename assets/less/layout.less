@@ -6,9 +6,16 @@ body {
 	min-height: 760px;
 	.dis-loader{
 		display: block;
+
 	}
 	&.ng-scope{
 		background: none;
+		& + .dis-loader{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
 	}
 	@media @mobile-mq{
 		min-height: 400px;
