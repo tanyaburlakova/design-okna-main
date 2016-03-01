@@ -31,6 +31,7 @@
 			$scope.catalogItems = [];
 			$scope.product = {};
 			$scope.product.dimensions = {};
+			$scope.product.allowHeight = true;
 			$scope.product.withCornice = false;
 			$scope.product.priceExactly = false;
 			$scope.minPrice = ConfigService.minPrice;
@@ -54,19 +55,37 @@
 		$scope.calcPrice = function(){
 			var p = $scope.product;
 			if ($scope.currentTexture){
-				if (!!p.dimensions.width && !!p.dimensions.height){
-					p.priceExactly = true;
-					if (p.withCornice){
-						p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height + parseInt(p.cornice.price);
+				if ($scope.product.allowHeight){
+					if (!!p.dimensions.width && !!p.dimensions.height){
+						p.priceExactly = true;
+						if (p.withCornice){
+							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height + parseInt(p.cornice.price);
+						} else {
+							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height;
+						}
 					} else {
-						p.price = parseInt($scope.currentTexture.price) * p.dimensions.width * p.dimensions.height;
+						p.priceExactly = false;
+						if (p.withCornice){
+							p.price = parseInt($scope.currentTexture.price) + parseInt(p.cornice.price);
+						} else {
+							p.price = parseInt($scope.currentTexture.price);
+						}
 					}
 				} else {
-					p.priceExactly = false;
-					if (p.withCornice){
-						p.price = parseInt($scope.currentTexture.price) + parseInt(p.cornice.price);
+					if (!!p.dimensions.width){
+						p.priceExactly = true;
+						if (p.withCornice){
+							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width + parseInt(p.cornice.price);
+						} else {
+							p.price = parseInt($scope.currentTexture.price) * p.dimensions.width;
+						}
 					} else {
-						p.price = parseInt($scope.currentTexture.price);
+						p.priceExactly = false;
+						if (p.withCornice){
+							p.price = parseInt($scope.currentTexture.price) + parseInt(p.cornice.price);
+						} else {
+							p.price = parseInt($scope.currentTexture.price);
+						}
 					}
 				}
 			}
@@ -128,6 +147,7 @@
 				// Success
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.product = data;
+				$scope.product.allowHeight = data.isHeightVisible;
 				$scope.totalColors = data.colors;
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
 				$scope.product.cornice.description = $sce.trustAsHtml(data.cornice.description);

@@ -51,11 +51,20 @@
 		}
 
 		function formatProduct(product){
-			return $interpolate('{{product.title}} {{(product.withCornice? "с карнизом": "")}}' +
-			       (product.texture ? " модель {{product.texture}}" : " ") +
-			       ((!!product.dimensions.width && !!product.dimensions.height) ?
-			          " ({{product.dimensions.width}} м x {{product.dimensions.height}} м)" : "")
-			)({product:product});
+			if (!!product.allowHeight){
+				return $interpolate('{{product.title}} {{(product.withCornice? "с карнизом": "")}}' +
+				       (product.texture ? " модель {{product.texture}}" : " ") +
+				       ((!!product.dimensions.width && !!product.dimensions.height) ?
+				          " ({{product.dimensions.width}} м x {{product.dimensions.height}} м)" : "")
+				)({product:product});
+			} else {
+				return $interpolate('{{product.title}} {{(product.withCornice? "с карнизом": "")}}' +
+				       (product.texture ? " модель {{product.texture}}" : " ") +
+				       ((!!product.dimensions.width) ?
+				          " ({{product.dimensions.width}} м)" : "")
+				)({product:product});
+			}
+			
 		};
 
 		function submitOrder(params){

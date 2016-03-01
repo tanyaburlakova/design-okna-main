@@ -68,7 +68,6 @@
 		}
 
 		function getTextureBySlug(slug) {
-			console.log(slug);
 			return _.findWhere(service.textures, {
 				'slug': slug
 			});

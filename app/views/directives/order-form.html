@@ -14,8 +14,11 @@
 				{{product.title}}
 				<!-- <span ng-if="product.withCornice"> с карнизом</span> -->
 				<span ng-if="!!product.texture">модель {{product.texture}}</span>
-				<span class="dimenstions" ng-if="!!product.dimensions.width && !!product.dimensions.height">
+				<span class="dimenstions" ng-if="!!product.allowHeight && !!product.dimensions.width && !!product.dimensions.height">
 					({{product.dimensions.width}} м x {{product.dimensions.height}} м)
+				</span>
+				<span class="dimenstions" ng-if="!product.allowHeight && !!product.dimensions.width">
+					({{product.dimensions.width}} м)
 				</span>
 				- <strong>
 					{{product.price | number:0}} р.

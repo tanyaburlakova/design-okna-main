@@ -36,9 +36,6 @@
 			});
 			TimeService.logCurrentTime();
 			$scope.showLoader = false;
-			$scope.$watch('touchElement', function(){
-				console.log($scope.touchElement);
-			});
 		};
 
 		$scope.openSearch = function(){
