@@ -2,6 +2,7 @@
 	'use strict';
 	angular.module('cartCtrl', ['cartService', 'dialogService'])
 		.controller('CartCtrl', [
+			'$rootScope',
 			'$scope',
 			'$log',
 			'CartService',
@@ -9,12 +10,12 @@
 			cartCtrl
 		]);
 
-	function cartCtrl($scope, $log, CartService, DialogService) {
+	function cartCtrl($rootScope, $scope, $log, CartService, DialogService) {
 		$log.log('cart ctrl');
+		$scope.dropdownVisible = false;
 
 		$scope.init = function() {
 			$scope.items = CartService.getProducts();
-			$scope.dropdownVisible = false;
 		};
 
 		$scope.showDropdown = function(){
@@ -35,6 +36,10 @@
 				$scope.dropdownVisible = false;
 			}
 		};
+
+		$scope.touchTogle = function(){
+			$scope.dropdownVisible = !$scope.dropdownVisible;
+		}
 
 		$scope.init();
 	}

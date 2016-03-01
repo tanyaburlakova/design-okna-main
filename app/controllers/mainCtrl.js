@@ -19,6 +19,7 @@
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
 		$scope.blockContent = '';
+		$scope.touchElement = ResponsiveService.getState('tabletPortrait');
 		$scope.blockContentHtml = '';
 		$scope.$watch('blockContent', function(){
 			$scope.blockContentHtml = $sce.trustAsHtml($scope.blockContent);
@@ -35,6 +36,9 @@
 			});
 			TimeService.logCurrentTime();
 			$scope.showLoader = false;
+			$scope.$watch('touchElement', function(){
+				console.log($scope.touchElement);
+			});
 		};
 
 		$scope.openSearch = function(){
@@ -80,6 +84,12 @@
 						$scope.toggleOffCanvas($scope.offCanvasSide);
 					});
 				}
+			}
+			if (ResponsiveService.getState('tabletPortrait'))
+			{
+				$scope.touchElement = true;
+			} else {
+				$scope.touchElement = false;
 			}
 		});
 
