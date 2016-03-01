@@ -23,9 +23,8 @@
 		TexturesService, ProductService, CartService, DialogService, ConfigService,
 		$sce, $timeout, ResponsiveService) {
 		$log.log('product page ctrl');
-
 		$scope.init = function () {
-			$scope.totalColors = 0;
+
 			$scope.priceSlider = null;
 			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
@@ -138,6 +137,7 @@
 		};
 
 		$scope.getProduct = function () {
+			$scope.totalColors = 0;
 			ProductService.getProduct({
 				category: $routeParams.category,
 				subcategory: $routeParams.subcategory,
@@ -276,6 +276,7 @@
 
 		$scope.clearTextureColor = function(){
 			$scope.textureColors = {};
+			$scope.$parent.toggleColorsPopup = false;
 		};
 
 		$scope.init();

@@ -35,7 +35,7 @@
 						</ul>
 					</div>
 					<footer class="popup__footer">
-						<button class="popup__link" ng-click="resetSlider(); toggleMobilePopup = false; clearTextureColor(); toggleColorsPopup = false;">
+						<button class="popup__link" ng-click="resetSlider(); toggleMobilePopup = false; clearTextureColor();">
 							<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
 							Снять выделение
 						</button>
@@ -87,12 +87,12 @@
 						<button
 							ng-click="totalColors.length > 0 ? onClickColor():''"
 							class="textures__filters-btn"
-							ng-class="{'active': toggleColorsPopup && totalColors.length > 1, 'disactive': totalColors.length === 0}">
+							ng-class="{'active': $parent.toggleColorsPopup && totalColors.length > 1, 'disactive': $parent.totalColors.length === 0}">
 							цвет
 							<svg class="icon icon-shevron-down"><use xlink:href="icons/icons.svg#shevron-down"></use></svg>
 						</button>
 						<!-- Popup -->
-						<div class="popup" ng-show="toggleColorsPopup">
+						<div class="popup" ng-show="$parent.toggleColorsPopup">
 							<div class="popup__inside">
 								<h2 class="popup__title">
 									Выберите цвет материала
@@ -110,7 +110,7 @@
 									</ul>
 								</div>
 								<footer class="popup__footer">
-									<button class="popup__link" ng-click="clearTextureColor(); toggleColorsPopup = false;">
+									<button class="popup__link" ng-click="clearTextureColor();">
 										<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
 										Снять выделение
 									</button>

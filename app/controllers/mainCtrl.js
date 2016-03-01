@@ -72,6 +72,7 @@
 		$scope.onClickColor = function(){
 			$scope.toggleColorsPopup = !$scope.toggleColorsPopup;
 			$scope.togglePricePopup = false;
+			console.log($scope.togglePricePopup, $scope.toggleColorsPopup);
 		}
 
 		$scope.$on('ResponsiveService.updateState', function(){
