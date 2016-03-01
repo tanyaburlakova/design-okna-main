@@ -13,7 +13,7 @@
 			</span>
 		</button>
 	</form>
-	<div class="search__links" ng-if="!results" ng-click="clickResult()">
+	<div class="search__links" ng-if="results" ng-click="clickResult()">
 		<ul class="article-set__list">
 			<li
 			ng-repeat="(key, link) in results"
