@@ -3,10 +3,17 @@
 	<form class="search__form" ng-submit="search()">
 		<input id="search_input" type="text" class="search__input" placeholder="Введите запрос" ng-model="term">
 		<button class="search__button" type="submit">
-			<svg class="icon icon-search-big" ng-class="{'loading': !!loading}"><use xlink:href="icons/icons.svg#search-big"></use></svg>
+			<span class="search__loading-icon" ng-show="!!loading">
+				<svg class="circular" viewBox="25 25 50 50">
+					<circle class="path" cx="50" cy="50" r="20" fill="none" stroke="#fff" stroke-width="4" stroke-miterlimit="10"/>
+				</svg>
+			</span>
+			<span class="search__icon" ng-show="!loading">
+				<svg class="icon icon-search-big"><use xlink:href="icons/icons.svg#search-big"></use></svg>
+			</span>
 		</button>
 	</form>
-	<div class="search__links" ng-if="!!results" ng-click="clickResult()">
+	<div class="search__links" ng-if="!results" ng-click="clickResult()">
 		<ul class="article-set__list">
 			<li
 			ng-repeat="(key, link) in results"
