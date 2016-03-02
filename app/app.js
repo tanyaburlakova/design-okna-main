@@ -36,7 +36,7 @@ var app = angular.module('myApp', [
 		'$locationProvider',
 		function ($routeProvider, $locationProvider) {
 			'use strict';
-			$locationProvider.html5Mode(true);
+			$locationProvider.html5Mode({enabled: true, requireBase: false});
 			$locationProvider.hashPrefix('!');
 			$routeProvider
 				.when('/', {
@@ -81,22 +81,6 @@ var app = angular.module('myApp', [
 					redirectTo: '/'
 				});
 		}
-	])/*
-	.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
-		var original = $location.path;
-
-		$location.path = function (path, reload) {
-
-			if (reload === false) {
-				console.log($route);
-				var lastRoute = $route.current;
-				var un = $rootScope.$on('$locationChangeSuccess', function () {
-					$route.current = lastRoute;
-					un();
-				});
-			}
-			return original.apply($location, [path]);
-		};
-	}])*/;
+	]);
 
 app.constant('API_PATH', 'data/');
