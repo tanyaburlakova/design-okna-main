@@ -4,7 +4,7 @@
 		<div ng-include="'views/directives/search.html'" ng-if="state === 'search'"></div>
 		<div class="dialog__window" ng-show="state !== 'search'">
 			<button class="dialog__close" ng-click="CloseDialog()">
-				<svg class="icon icon-close_popup"><use xlink:href="icons/icons.svg#close_popup"></use></svg>
+				<span class="icon icon-close-png"></span>
 			</button>
 			<img class="dialog__image" ng-src="{{picture}}" ng-if="(state=== 'picture')">
 			<div ng-include="'views/directives/order-form.html'" ng-if="(state === 'order') || (state === 'callme') || (state === 'oneclick')"></div>

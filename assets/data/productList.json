@@ -1,5 +1,5 @@
 {
-	"maxPrice":"2500",
+	"maxPrice":"12500",
 	"blockContent":"",
 	"items":[{
 		"id": "1",
@@ -10,7 +10,7 @@
 		"title": "ЖалюзиМиражЖалюзиМиражЖалюзиМиражЖалюзиМираж",
 		"category_link": "catalog",
 		"category_title": "Рулонные тканевые",
-		"price": 1000,
+		"price": 10000,
 		"sale": 2,
 		"textures": [{
 			"id": "1",
