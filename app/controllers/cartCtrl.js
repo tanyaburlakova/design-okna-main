@@ -38,6 +38,7 @@
 		};
 
 		$scope.touchTogle = function(){
+			console.log('touch');
 			$scope.dropdownVisible = !$scope.dropdownVisible;
 		}
 

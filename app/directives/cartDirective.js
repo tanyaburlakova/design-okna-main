@@ -21,7 +21,7 @@
 							theme: 'dark-3'
 						});
 
-						angular.element($document[0].body).on('click',function(e) {
+						angular.element($document[0].body).on('touchend',function(e) {
 							if (scope.dropdownVisible && !$(e.target).closest('.cart__dropdown')[0] && !$(e.target).closest('.cart')[0]) {
 								scope.$apply(function(){
 									scope.dropdownVisible = false;

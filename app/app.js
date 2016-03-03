@@ -1,5 +1,6 @@
 var app = angular.module('myApp', [
 		'ngRoute',
+		'ngTouch',
 		'mainCtrl',
 		'homeCtrl',
 		'dialogCtrl',
