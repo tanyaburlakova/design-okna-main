@@ -15,7 +15,7 @@
 		]);
 
 	function catalogCtrl($scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService, ResponsiveService, $timeout) {
-		$log.log('catalog ctrl');
+		/*$log.log('catalog ctrl');*/
 		$scope.init = function(){
 			$scope.responsive = ResponsiveService;
 			$scope.$parent.constructorHeader = false;

@@ -10,7 +10,7 @@
 		]);
 
 	function responsiveCtrl($scope, $log, $window, ResponsiveService) {
-		$log.log('responsive ctrl');
+		/*$log.log('responsive ctrl');*/
 		$scope.$window = $window;
 		$scope.checkWidth  = function(width){
 			ResponsiveService.updateWidth(width);

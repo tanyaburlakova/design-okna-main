@@ -8,7 +8,7 @@
 		]);
 
 	function constructorPreviewCtrl($scope, $log) {
-		$log.log('Constructor preview ctrl');
+		/*$log.log('Constructor preview ctrl');*/
 		$scope.$log = $log;
 	}
 

@@ -10,7 +10,7 @@
 		]);
 
 	function homeCtrl($scope, $log, ProductService, ConfigService) {
-		$log.log('home ctrl');
+		/*$log.log('home ctrl');*/
 
 		$scope.init = function() {
 			$scope.$parent.constructorHeader = false;

@@ -20,6 +20,6 @@
 	}
 
 	function seoLink(scope, el, attr) {
-		console.log('seoDirective');
+		// console.log('seoDirective');
 	}
 })();

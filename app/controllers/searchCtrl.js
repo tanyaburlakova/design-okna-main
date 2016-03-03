@@ -11,7 +11,7 @@
 		]);
 
 	function searchCtrl($rootScope, $scope, $log, SearchService, DialogService) {
-		$log.log('search ctrl');
+		/*$log.log('search ctrl');*/
 
 		$scope.init = function () {
 			$scope.term = '';

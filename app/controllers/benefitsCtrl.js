@@ -9,7 +9,7 @@
 		]);
 
 	function benefitsCtrl($scope, $log, BenefitsService) {
-		$log.log('benefits ctrl');
+		/*$log.log('benefits ctrl');*/
 
 		var url = $scope.url,
 			newParams = {};

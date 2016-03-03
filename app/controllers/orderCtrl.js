@@ -13,7 +13,7 @@
 		]);
 
 	function orderCtrl($scope, $log, CartService, DialogService, TimeService, ConfigService, ResponsiveService ) {
-		$log.log('order ctrl');
+		/*$log.log('order ctrl');*/
 
 		$scope.init = function() {
 			$scope.context = DialogService.getState();

@@ -14,7 +14,7 @@
 		]);
 
 	function mainCtrl($rootScope, $scope, $log, $timeout, $sce, DialogService, TimeService, ResponsiveService) {
-		$log.log('main ctrl');
+		/*$log.log('main ctrl');*/
 		$scope.showLoader = true;
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
@@ -72,7 +72,6 @@
 		$scope.onClickColor = function(){
 			$scope.toggleColorsPopup = !$scope.toggleColorsPopup;
 			$scope.togglePricePopup = false;
-			console.log($scope.togglePricePopup, $scope.toggleColorsPopup);
 		}
 
 		$scope.$on('ResponsiveService.updateState', function(){

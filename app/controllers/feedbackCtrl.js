@@ -9,7 +9,7 @@
 		]);
 
 	function feedbackCtrl($scope, $log, CartService) {
-		$log.log('feedback ctrl');
+		/*$log.log('feedback ctrl');*/
 
 		$scope.init = function() {
 			$scope.message = {

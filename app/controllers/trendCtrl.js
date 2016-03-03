@@ -12,7 +12,7 @@
 		]);
 
 	function articleCtrl($scope, $log, $sce, $routeParams, ArticleService, SocialShareService) {
-		$log.log('trend ctrl');
+		/*$log.log('trend ctrl');*/
 		var networks = ['vk', 'ok', 'fb'];
 		$scope.init = function(){
 			$scope.$parent.constructorHeader = false;

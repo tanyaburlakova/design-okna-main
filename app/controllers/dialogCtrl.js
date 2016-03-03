@@ -10,7 +10,7 @@
 		]);
 
 	function dialogCtrl($rootScope, $scope, $log, DialogService) {
-		$log.log('dialog ctrl');
+		/*$log.log('dialog ctrl');*/
 
 		var url = $scope.url;
 

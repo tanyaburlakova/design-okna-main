@@ -12,7 +12,7 @@
 		]);
 
 	function constructorPageCtrl($scope, $log, $timeout, TexturesService, MenuService, CartService) {
-		$log.log('Constructor page ctrl');
+		/*$log.log('Constructor page ctrl');*/
 
 		$scope.priceSlider = {
 			min: 100,
@@ -43,7 +43,7 @@
 		};
 
 		$scope.prepareTypes = function(withModels) {
-			$log.info('ConstructorPageCtrl.prepareTypes');
+			/*$log.info('ConstructorPageCtrl.prepareTypes');*/
 			$scope.types = _.map(menu[$scope.currentTab], function(item){
 				return {
 					url: item.url,
@@ -57,7 +57,7 @@
 		};
 
 		$scope.prepareModels = function(selected) {
-			$log.info('ConstructorPageCtrl.prepareModels');
+			/*$log.info('ConstructorPageCtrl.prepareModels');*/
 			$scope.models = _.map(_.findLast(menu[$scope.currentTab], 'url', selected.url).children, function(item){
 				return {
 					url: item.url,

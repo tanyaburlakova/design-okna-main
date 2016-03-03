@@ -11,7 +11,7 @@
 		]);
 
 	function cartCtrl($rootScope, $scope, $log, CartService, DialogService) {
-		$log.log('cart ctrl');
+		/*$log.log('cart ctrl');*/
 		$scope.dropdownVisible = false;
 
 		$scope.init = function() {
@@ -38,7 +38,6 @@
 		};
 
 		$scope.touchTogle = function(){
-			console.log('touch');
 			$scope.dropdownVisible = !$scope.dropdownVisible;
 		}
 

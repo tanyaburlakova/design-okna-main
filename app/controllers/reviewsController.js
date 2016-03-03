@@ -9,7 +9,7 @@
 		]);
 
 	function reviewsCtrl($scope, $log, ReviewsService) {
-		$log.log('reviews ctrl');
+		/*$log.log('reviews ctrl');*/
 
 		$scope.init = function () {
 			$scope.reviews = {};
@@ -53,7 +53,7 @@
 		};
 
 		$scope.submitReview = function(){
-			$log.log($scope.formData);
+			/*$log.log($scope.formData);*/
 			ReviewsService.submitReview($scope.formData)
 				.then(function(data){
 					$scope.formSubmitted = true;

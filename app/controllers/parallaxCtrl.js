@@ -9,7 +9,7 @@
 		]);
 
 	function parallaxCtrl($scope, $log, $window) {
-		$log.log('parallax ctrl');
+		/*$log.log('parallax ctrl');*/
 
 		$scope.$window = $window;
 	}

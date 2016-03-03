@@ -9,7 +9,7 @@
 		]);
 
 	function hiderCtrl($scope, $log, $window) {
-		$log.log('hider ctrl');
+		/*$log.log('hider ctrl');*/
 
 		$scope.$window = $window;
 	}

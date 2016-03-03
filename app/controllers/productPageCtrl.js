@@ -22,7 +22,7 @@
 	function productPageCtrl($rootScope, $scope, $log, youtubeEmbedUtils, $location, $routeParams,
 		TexturesService, ProductService, CartService, DialogService, ConfigService,
 		$sce, $timeout, ResponsiveService) {
-		$log.log('product page ctrl');
+		/*$log.log('product page ctrl');*/
 		$scope.init = function () {
 
 			$scope.priceSlider = null;
@@ -117,7 +117,6 @@
 
 
 				$scope.$watch('textureModel', function (newVal) {
-					$log.log('newTexture' + newVal);
 					if (newVal !== "-1") {
 						$scope.getTextureById(newVal);
 						$location.hash($scope.currentTexture.slug);

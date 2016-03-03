@@ -9,7 +9,7 @@
 		]);
 
 	function newsCtrl($scope, $log, NewsService) {
-		$log.log('news ctrl');
+		/*$log.log('news ctrl');*/
 
 		var url = $scope.url;
 

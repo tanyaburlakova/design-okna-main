@@ -11,7 +11,7 @@
 		]);
 
 	function productCtrl($scope, $log, CartService, $location, $route) {
-		$log.log('product ctrl');
+		/*$log.log('product ctrl');*/
 		$scope.init = function(){
 			$scope.product.texture_id = -1;
 		};

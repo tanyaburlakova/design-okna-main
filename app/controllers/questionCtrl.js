@@ -9,7 +9,7 @@
 		]);
 
 	function questionCtrl($scope, $log, QuestionService) {
-		$log.log('question ctrl');
+		/*$log.log('question ctrl');*/
 
 		$scope.init = function () {
 			$scope.getQuestion();
