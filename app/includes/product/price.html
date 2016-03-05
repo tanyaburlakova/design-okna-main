@@ -1,7 +1,7 @@
 <div class="price-block">
 	<div class="price-block__container">
 		<!-- Old price -->
-		<div class="price-block__old" ng-style="{visibility: (!!product.sale) ? 'visible' : 'hidden' }">
+		<div class="price-block__old" ng-show="!!product.sale">
 			<span ng-if="!product.priceExactly">от</span>
 			{{ product.price * (100 + product.sale)/100 | number:0 }}
 			р.<span ng-if="!product.priceExactly">/м<sup>2</sup></span>

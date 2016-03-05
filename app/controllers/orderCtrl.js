@@ -69,12 +69,14 @@
 			if(params.context === 'callme'){
 				CartService.submitCallMe(params)
 					.then(function(data){
+						console.log(params, data);
 						$scope.state.loading = false;
 						$scope.state.complete = true;
 					}, function(err){
 						$scope.state.loading = false;
 					});
 			} else {
+				console.log(params);
 				CartService.submitOrder(params)
 					.then(function(data){
 						$scope.state.loading = false;

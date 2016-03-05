@@ -25,6 +25,6 @@
 			angular.element('.news__item').eq(scope.currentNews).removeClass('active');
 			scope.currentNews = (scope.news.length == (scope.currentNews +1)) ? 0 : scope.currentNews +1;
 			angular.element('.news__item').eq(scope.currentNews).addClass('active');
-		}, 5000);
+		}, 10000);
 	}
 })();
