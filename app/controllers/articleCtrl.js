@@ -26,6 +26,7 @@
 			var slug = $routeParams.slug || $scope.slug;
 			ArticleService.getArticle(slug)
 				.then(function(data){
+					$rootScope.meta = {};
 					$rootScope.meta.description = data.description;
 					$rootScope.meta.title = data.title;
 					$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';

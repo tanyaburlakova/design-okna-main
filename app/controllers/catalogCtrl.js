@@ -97,6 +97,7 @@
 			ProductService.getList($scope.searchOptions)
 				.then(function (data) {
 					// Success
+					$rootScope.meta = {};
 					$rootScope.meta.description = data.description;
 					$rootScope.meta.title = data.title;
 					var maxPrice = parseInt(data.maxPrice);

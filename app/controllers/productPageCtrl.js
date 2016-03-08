@@ -146,6 +146,7 @@
 				// Success
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.product = data;
+				$rootScope.meta = {};
 				$rootScope.meta.description = data.description.text;
 				$rootScope.meta.title = data.title;
 				$scope.product.allowHeight = data.isHeightVisible;
