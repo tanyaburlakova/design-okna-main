@@ -146,6 +146,8 @@
 				// Success
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.product = data;
+				$rootScope.meta.description = data.description.text;
+				$rootScope.meta.title = data.title;
 				$scope.product.allowHeight = data.isHeightVisible;
 				$scope.totalColors = data.colors;
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);

@@ -76,7 +76,6 @@
 						$scope.state.loading = false;
 					});
 			} else {
-				console.log(params);
 				CartService.submitOrder(params)
 					.then(function(data){
 						$scope.state.loading = false;

@@ -2,6 +2,7 @@
 	'use strict';
 	angular.module('constructorPageCtrl', ['naif.base64', 'menuService', 'texturesService', 'cartService'])
 		.controller('ConstructorPageCtrl', [
+			'$rootScope',
 			'$scope',
 			'$log',
 			'$timeout',
@@ -11,8 +12,10 @@
 			constructorPageCtrl
 		]);
 
-	function constructorPageCtrl($scope, $log, $timeout, TexturesService, MenuService, CartService) {
+	function constructorPageCtrl($rootScope, $scope, $log, $timeout, TexturesService, MenuService, CartService) {
 		/*$log.log('Constructor page ctrl');*/
+		$rootScope.meta.description = 'При помощи нашего конструктора вы можете легко подобрать шторы или жалюзи не выходя из дома.';
+		$rootScope.meta.title = 'Конструктор жалюзи и штор онлайн.';
 
 		$scope.priceSlider = {
 			min: 100,

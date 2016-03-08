@@ -1,6 +1,8 @@
 {
 	"maxPrice":"12500",
 	"blockContent":"",
+	"title": "title",
+	"description": "desription",
 	"items":[{
 		"id": "1",
 		"image": "img/product1.jpg",

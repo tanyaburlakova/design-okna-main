@@ -15,6 +15,9 @@
 
 	function mainCtrl($rootScope, $scope, $log, $timeout, $sce, DialogService, TimeService, ResponsiveService) {
 		/*$log.log('main ctrl');*/
+		$rootScope.meta = {};
+		$rootScope.meta.description = 'Современное оформление окон: жалюзи, карнизы, шторы, текстиль, рольставни';
+		$rootScope.meta.title = 'Мастерская по изготовлению жалюзи и штор в Москве.';
 		$scope.showLoader = true;
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();

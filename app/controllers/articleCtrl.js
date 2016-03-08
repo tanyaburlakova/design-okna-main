@@ -2,6 +2,7 @@
 	'use strict';
 	angular.module('articleCtrl', ['articleService', 'socialShareService'])
 		.controller('ArticleCtrl', [
+			'$rootScope',
 			'$scope',
 			'$log',
 			'$sce',
@@ -11,7 +12,7 @@
 			articleCtrl
 		]);
 
-	function articleCtrl($scope, $log, $sce, $routeParams, ArticleService, SocialShareService) {
+	function articleCtrl($rootScope, $scope, $log, $sce, $routeParams, ArticleService, SocialShareService) {
 		/*$log.log('article ctrl');*/
 		var networks = ['vk', 'ok', 'fb'];
 		$scope.init = function(){
@@ -25,6 +26,8 @@
 			var slug = $routeParams.slug || $scope.slug;
 			ArticleService.getArticle(slug)
 				.then(function(data){
+					$rootScope.meta.description = data.description;
+					$rootScope.meta.title = data.title;
 					$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 					$scope.article = data;
 					$scope.article.content = $sce.trustAsHtml(data.text);
