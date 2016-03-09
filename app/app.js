@@ -1,4 +1,5 @@
 var app = angular.module('myApp', [
+		'ngMeta',
 		'ngRoute',
 		'ngTouch',
 		'mainCtrl',
@@ -35,14 +36,18 @@ var app = angular.module('myApp', [
 	.config([
 		'$routeProvider',
 		'$locationProvider',
-		function ($routeProvider, $locationProvider) {
+		function ($routeProvider, $locationProvider, ngMeta) {
 			'use strict';
 			$locationProvider.html5Mode({enabled: true, requireBase: false});
 			$locationProvider.hashPrefix('!');
 			$routeProvider
 				.when('/', {
 					controller: 'HomeCtrl',
-					templateUrl: 'views/home.html'
+					templateUrl: 'views/home.html',
+					meta: {
+						title: 'Дизайн окна. Мастерская по изготовлению жалюзи и штор в Москве.',
+						description: 'Современное оформление окон: жалюзи, карнизы, шторы, текстиль, рольставни в Москве.'
+					}
 				})
 				.when('/article/:slug', {
 					controller: 'ArticleCtrl',
@@ -76,12 +81,18 @@ var app = angular.module('myApp', [
 				})
 				.when('/constructor', {
 					controller: 'ConstructorPageCtrl',
-					templateUrl: 'views/constructor.html'
+					templateUrl: 'views/constructor.html',
+					meta: {
+						title: 'Конструктор жалюзи и штор онлайн. Дизайн окна.',
+						description: 'При помощи нашего конструктора вы можете легко подобрать шторы или жалюзи не выходя из дома.'
+					}
 				})
 				.otherwise({
 					redirectTo: '/'
 				});
 		}
-	]);
+	]).run(function(ngMeta) {
+		ngMeta.init();
+	});
 
 app.constant('API_PATH', 'data/');

@@ -2,7 +2,7 @@
 	'use strict';
 	angular.module('productPageCtrl', ['texturesService', 'productService', 'cartService', 'dialogService', 'configService', 'reviewsDirective'])
 		.controller('ProductPageCtrl', [
-			'$rootScope',
+			'ngMeta',
 			'$scope',
 			'$log',
 			'youtubeEmbedUtils',
@@ -19,7 +19,7 @@
 			productPageCtrl
 		]);
 
-	function productPageCtrl($rootScope, $scope, $log, youtubeEmbedUtils, $location, $routeParams,
+	function productPageCtrl(ngMeta, $scope, $log, youtubeEmbedUtils, $location, $routeParams,
 		TexturesService, ProductService, CartService, DialogService, ConfigService,
 		$sce, $timeout, ResponsiveService) {
 		/*$log.log('product page ctrl');*/
@@ -146,9 +146,8 @@
 				// Success
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.product = data;
-				$rootScope.meta = {};
-				$rootScope.meta.description = data.description.text;
-				$rootScope.meta.title = data.title;
+				ngMeta.setTag('description', data.description.text);
+				ngMeta.setTag('title', data.title + ' Дизайн окна.');
 				$scope.product.allowHeight = data.isHeightVisible;
 				$scope.totalColors = data.colors;
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);

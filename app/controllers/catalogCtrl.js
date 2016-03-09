@@ -2,7 +2,7 @@
 	'use strict';
 	angular.module('catalogCtrl', ['productCtrl', 'productService', 'catalogService', 'configService', 'catalogResponsiveDirective'])
 		.controller('CatalogCtrl', [
-			'$rootScope',
+			'ngMeta',
 			'$scope',
 			'$log',
 			'$routeParams',
@@ -15,7 +15,7 @@
 			catalogCtrl
 		]);
 
-	function catalogCtrl($rootScope, $scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService, ResponsiveService, $timeout) {
+	function catalogCtrl(ngMeta, $scope, $log, $routeParams, $location, ProductService, CatalogService, ConfigService, ResponsiveService, $timeout) {
 		/*$log.log('catalog ctrl');*/
 		$scope.init = function(){
 			$scope.responsive = ResponsiveService;
@@ -97,9 +97,8 @@
 			ProductService.getList($scope.searchOptions)
 				.then(function (data) {
 					// Success
-					$rootScope.meta = {};
-					$rootScope.meta.description = data.description;
-					$rootScope.meta.title = data.title;
+					ngMeta.setTag('description', data.description);
+					ngMeta.setTag('title', data.title + ' Дизайн окна.');
 					var maxPrice = parseInt(data.maxPrice);
 					if (maxPrice !== $scope.maxPrice){
 						$scope.priceSlider = null;

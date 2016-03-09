@@ -85,9 +85,13 @@
 				</a>
 			</div>
 			<!-- Add new review -->
-			<button class="btn btn_blue btn_size-2" ng-click="toggleReviewForm()">
+			<button class="btn btn_blue btn_size-2 hide-in-mobile" ng-click="toggleReviewForm()">
 				Написать отзыв
 			</button>
+			<button class="btn btn_blue btn_big reviews__mobBtn show-in-mobile" ng-click="toggleReviewForm()">
+				Написать отзыв
+			</button>
+			
 		</footer>
 	</div>
 	<!-- New review -->
@@ -140,7 +144,7 @@
 				<p class="form__text">
 					Ваш рейтинг товару:
 				</p>
-				<div class="form__field">
+				<div class="form__field form__rating">
 					<!-- Rating -->
 					<input-stars
 						icon-base="icon"

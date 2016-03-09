@@ -43,6 +43,10 @@
 		transition: border @checkbox-time;
 		float: left;
 		width: @checkbox-size;
+		z-index: 2;
+		cursor: pointer;
+		transform: translate3d(0,0,0);
+		-webkit-backface-visibility: hidden;
 		.icon {
 			display: none;
 			position: absolute;
@@ -58,13 +62,19 @@
 		}
 	}
 	&__label {
+		display: block;
+		padding-left: 30px;
 		color: @checkbox-label-color;
 		font-size: @checkbox-label-size;
 		font-weight: normal;
 		line-height: 20px;
 		text-align: left;
 		transition: color @checkbox-time;
+		z-index: 1;
 		.no-select();
+		cursor: pointer;
+		transform: translate3d(0,0,0);
+		-webkit-backface-visibility: hidden;
 	}
 	&:hover {
 		.checkbox__check {

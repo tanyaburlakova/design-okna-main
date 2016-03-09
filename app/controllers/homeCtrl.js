@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl', 'newsDirective', 'configService'])
+	angular.module('homeCtrl', ['benefitsDirective', 'productService', 'productCtrl', 'newsDirective', 'configService', 'ngMeta'])
 		.controller('HomeCtrl', [
 			'$rootScope',
 			'$scope',
@@ -14,9 +14,6 @@
 		/*$log.log('home ctrl');*/
 
 		$scope.init = function() {
-			$rootScope.meta = {};
-			$rootScope.meta.description = 'Современное оформление окон: жалюзи, карнизы, шторы, текстиль, рольставни в Москве.';
-			$rootScope.meta.title = 'Мастерская по изготовлению жалюзи и штор в Москве.';
 			$scope.$parent.constructorHeader = false;
 			$scope.showLoadMoreBtn = true;
 			$scope.catalogItems = [];

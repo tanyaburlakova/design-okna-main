@@ -11,12 +11,22 @@
 		padding-right: 5px;
 		padding-left: 5px;
 		cursor: pointer;
+		&:first-child{
+			padding-left: 0;
+		}
+		&:last-child{
+			padding-right: 0;
+		}
 		.active {
 			color: #FDE35E;
 			text-shadow: black 0 0 1px, 0 0 1px ;
 		}
 		&.angular-input-stars-hover {
 			text-shadow: black 0 0 3px;
+		}
+		@media @mobile-mq{
+			padding-right: 3px;
+			padding-left: 3px;
 		}
 	}
 	&[readonly]>li{

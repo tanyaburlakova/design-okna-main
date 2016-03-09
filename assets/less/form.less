@@ -8,6 +8,9 @@
 		margin: 16px 0 36px;
 		.form_sizes &{
 			margin: 0 0 20px;
+			@media @mobile-mq{
+				margin: 0 0 24px;
+			}
 		}
 		@media @tablet-mq{
 			color: fade(#363537, 89);
@@ -40,6 +43,28 @@
 				margin-bottom: 5px;
 				.label__text{
 					width: 30%;
+				}
+			}
+		}
+		@media @mobile-mq{
+			.form_sizes &{
+				width: 46%;
+				float: left;
+				.label__text{
+					width: 25px;
+					margin-right: 14px;
+					line-height: 30px;
+				}
+				.input{
+					padding: 7px 5px 7px 11px;
+				}
+				.field{
+					width: 70px;
+				}
+			}
+			& + &{
+				.form_sizes &{
+					float: right;
 				}
 			}
 		}
@@ -102,6 +127,25 @@
 		}
 		@media @mobile-mq{
 			padding: 30px 24px;
+			.form__column{
+				width: 100%;
+				padding-right: 0;
+				padding-left: 0;
+			}
+			.input{
+				padding-left: 24px;
+			}
+			.form__text{
+				display: inline-block;
+				vertical-align: top;
+			}
+			.form__rating{
+				float: right;
+				padding-bottom: 24px;
+			}
+			.rating{
+				margin: 15px 0 6px;
+			}
 		}
 	}
 	&_sizes {
