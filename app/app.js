@@ -2,6 +2,7 @@ var app = angular.module('myApp', [
 		'ngMeta',
 		'ngRoute',
 		'ngTouch',
+		'ngSVGAttributes',
 		'mainCtrl',
 		'homeCtrl',
 		'dialogCtrl',
@@ -91,8 +92,6 @@ var app = angular.module('myApp', [
 					redirectTo: '/'
 				});
 		}
-	]).run(function(ngMeta) {
-		ngMeta.init();
-	});
+	]).run(['ngMeta', function(ngMeta) { ngMeta.init(); }]);
 
 app.constant('API_PATH', 'data/');

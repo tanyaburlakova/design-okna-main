@@ -27,7 +27,7 @@
 			ArticleService.getArticle(slug)
 				.then(function(data){
 					ngMeta.setTag('description', data.description);
-					ngMeta.setTag('title', data.title + ' Дизайн окна.');
+					ngMeta.setTag('title', data.title + '. Дизайн окна.');
 					$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 					$scope.article = data;
 					$scope.article.content = $sce.trustAsHtml(data.text);

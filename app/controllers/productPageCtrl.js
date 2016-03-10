@@ -147,7 +147,7 @@
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.product = data;
 				ngMeta.setTag('description', data.description.text);
-				ngMeta.setTag('title', data.title + ' Дизайн окна.');
+				ngMeta.setTag('title', data.title + '. Дизайн окна.');
 				$scope.product.allowHeight = data.isHeightVisible;
 				$scope.totalColors = data.colors;
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);

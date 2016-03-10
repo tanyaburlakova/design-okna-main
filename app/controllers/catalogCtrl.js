@@ -98,7 +98,7 @@
 				.then(function (data) {
 					// Success
 					ngMeta.setTag('description', data.description);
-					ngMeta.setTag('title', data.title + ' Дизайн окна.');
+					ngMeta.setTag('title', data.title + '. Дизайн окна.');
 					var maxPrice = parseInt(data.maxPrice);
 					if (maxPrice !== $scope.maxPrice){
 						$scope.priceSlider = null;
