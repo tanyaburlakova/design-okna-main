@@ -12,8 +12,8 @@
 			<li class="order-form__item" ng-repeat="(key,product) in products track by $index">
 				<strong ng-if="products.length > 1">{{key+1}}.</strong>
 				{{product.title}}
-				<span ng-if="product.withCornice && product.cornice.name" ng-bind="' + ' + product.cornice.name"></span>
 				<span ng-if="!!product.texture">модель {{product.texture}}</span>
+				<span ng-if="product.withCornice && product.cornice.name" ng-bind="' + ' + product.cornice.name"></span>
 				<span class="dimenstions" ng-if="!!product.allowHeight && !!product.dimensions.width && !!product.dimensions.height">
 					({{product.dimensions.width}} м x {{product.dimensions.height}} м)
 				</span>
