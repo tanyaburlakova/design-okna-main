@@ -150,6 +150,7 @@
 				ngMeta.setTag('title', data.title + '. Дизайн окна.');
 				$scope.product.allowHeight = data.isHeightVisible;
 				$scope.totalColors = data.colors;
+				$scope.product.cornice.cartText = data.cornice.text;
 				$scope.product.cornice.text = $sce.trustAsHtml(data.cornice.text);
 				$scope.product.cornice.description = $sce.trustAsHtml(data.cornice.description);
 				$scope.product.description.text = $sce.trustAsHtml(data.description.text);

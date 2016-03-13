@@ -54,19 +54,19 @@
 
 		function formatProduct(product){
 			if (!!product.allowHeight && product.dimensions){
-				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.name : "")}}' +
+				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.cartText : "")}}' +
 				       (product.texture ? " модель {{product.texture}}" : " ") +
 				       ((!!product.dimensions.width && !!product.dimensions.height) ?
 				          " ({{product.dimensions.width}} м x {{product.dimensions.height}} м)" : "")
 				)({product:product});
 			} else if (!product.allowHeight && product.dimensions) {
-				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.name : "")}}' +
+				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.cartText : "")}}' +
 				       (product.texture ? " модель {{product.texture}}" : " ") +
 				       ((!!product.dimensions.width) ?
 				          " ({{product.dimensions.width}} м)" : "")
 				)({product:product});
 			} else {
-				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.name : "")}}' +
+				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.cartText : "")}}' +
 				       (product.texture ? " модель {{product.texture}}" : " ")
 				)({product:product});
 			}
