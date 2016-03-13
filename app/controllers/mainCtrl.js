@@ -15,6 +15,7 @@
 
 	function mainCtrl($rootScope, $scope, $log, $timeout, $sce, DialogService, TimeService, ResponsiveService) {
 		/*$log.log('main ctrl');*/
+		$scope.filterOpened = false;
 		$scope.showLoader = true;
 		$scope.constructorHeader = false;
 		$scope.workingHours = TimeService.getWorkingHours();
@@ -99,6 +100,10 @@
 				$scope.toggleOffCanvas($scope.offCanvasSide);
 			}
 			$scope.showLoader = false;
+		});
+
+		$scope.$on('$routeChangeSuccess', function () {
+		    window.scrollTo(0, 0);
 		});
 
 		$scope.init();

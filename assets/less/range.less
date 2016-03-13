@@ -5,6 +5,12 @@
 		font-weight: 400;
 		display: inline-block;
 		vertical-align: middle;
+		&_mobile{
+			display: none;
+			@media @tablet-mq{
+				display: inline-block;
+			}
+		}
 	}
 	.input {
 		width: 70px;

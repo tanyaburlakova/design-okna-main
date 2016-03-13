@@ -189,13 +189,28 @@
 			}
 		}
 	}
+	&__filter-mask{
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: fade(#c6d557, 80%);
+		z-index: 2;
+	}
 	&__mobile-icon{
 		display: none;
 		float: right;
 		cursor: pointer;
 		font-size: 0;
 		line-height: 0;
-		opacity: 0.6;
+		z-index: 100;
+		.icon{
+			z-index: 3;
+			position: relative;
+			opacity: 0.6;
+		}
 		&:after {
 			content: '';
 			display: none;
@@ -206,10 +221,13 @@
 			transform: rotate(45deg);
 			box-shadow: 0 0 13px rgba(0, 0, 1, 0.2);
 			margin: 5px 0 0 0;
-			z-index: 6;
+			z-index: 4;
 		}
 		&.active {
 			&:after {
+				display: block;
+			}
+			.textures__filter-mask{
 				display: block;
 			}
 		}
@@ -217,6 +235,7 @@
 			display: none;
 			right: -25px;
 			margin-top: 16px;
+			z-index: 100;
 		}
 		@media @tablet-mq{
 			display: inline-block;

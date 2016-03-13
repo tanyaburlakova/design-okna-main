@@ -14,6 +14,7 @@
 		/*$log.log('product ctrl');*/
 		$scope.init = function(){
 			$scope.product.texture_id = -1;
+
 		};
 
 		$scope.addProductToCart = function(product){

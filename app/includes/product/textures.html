@@ -2,7 +2,8 @@
 	<header class="textures__header">
 		<h2 class="textures__title">
 			Выберите цвет или текстуру
-			<span class="textures__mobile-icon" ng-click="$parent.toggleMobilePopup = !$parent.toggleMobilePopup; refreshRange()" ng-class="{'active': $parent.toggleMobilePopup}" ng-show="totalColors.length > 1 || minPrice !== maxPrice">
+			<span class="textures__mobile-icon" ng-click="mobileFilterMenu(); refreshRange()" ng-class="{'active': $parent.toggleMobilePopup}" ng-show="totalColors.length > 1 || minPrice !== maxPrice">
+				<span class="textures__filter-mask" ng-click="toggleMobilePopup = false"></span>
 				<svg class="icon icon-filter"><use xlink:href="icons/icons.svg#filter"></use></svg>
 			</span>
 			<!-- Mobile Popup -->
@@ -11,7 +12,7 @@
 					<h2 class="popup__title" ng-show="minPrice !== maxPrice">
 						Стоимость материала за м<sup>2</sup>
 					</h2>
-					<div class="popup__content" ng-if="priceSlider" ng-show="minPrice !== maxPrice">
+					<div class="popup__content popup__content_mobile" ng-if="priceSlider" ng-show="minPrice !== maxPrice">
 						<!-- Price range -->
 						<range
 							min="priceSlider.min"
@@ -35,7 +36,7 @@
 						</ul>
 					</div>
 					<footer class="popup__footer">
-						<button class="popup__link" ng-click="clearTextureColor();$parent.toggleMobilePopup = false;">
+						<button class="popup__link" ng-click="clearMobileTextureColor()">
 							<svg class="icon icon-close"><use xlink:href="icons/icons.svg#close"></use></svg>
 							Снять выделение
 						</button>

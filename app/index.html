@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="fragment" content="!" />
 	<title ng-bind="ngMeta.title">Дизайн окна</title>
+	
 	<meta name="description" ng-attr-content="{{ ngMeta.description }}">
 	<base href="/" />
 	<link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
@@ -20,7 +21,7 @@
     	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl" ng-class="filterOpened?'opened-filter':''">
 	<div class="main-wrapper off-canvas" off-canvas>
 		<div class="off-canvas__menu left show-in-portrait">
 			<div class="mobile-aside ">

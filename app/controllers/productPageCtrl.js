@@ -24,7 +24,7 @@
 		$sce, $timeout, ResponsiveService) {
 		/*$log.log('product page ctrl');*/
 		$scope.init = function () {
-
+			$scope.toggleMobilePopup = false;
 			$scope.priceSlider = null;
 			$scope.$parent.constructorHeader = false;
 			$scope.catalogItems = [];
@@ -278,6 +278,16 @@
 		$scope.clearTextureColor = function(){
 			$scope.textureColors = {};
 			$scope.$parent.toggleColorsPopup = false;
+		};
+
+		$scope.clearMobileTextureColor = function(){
+			$scope.textureColors = {};
+			$scope.toggleMobilePopup = false;
+		};
+
+		$scope.mobileFilterMenu = function () {
+			$scope.toggleMobilePopup = !$scope.toggleMobilePopup;
+			$scope.$parent.filterOpened = !$scope.$parent.filterOpened;
 		};
 
 		$scope.init();

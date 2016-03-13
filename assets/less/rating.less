@@ -5,6 +5,7 @@
 	margin: 0;
 	list-style: none;
 	float: left;
+	line-height: 1;
 	& > li {
 		font-size: 17px;
 		display: inline-block;
@@ -14,8 +15,10 @@
 		&:first-child{
 			padding-left: 0;
 		}
-		&:last-child{
-			padding-right: 0;
+		@media @mobile-mq{
+			&:last-child{
+				padding-right: 0;
+			}
 		}
 		.active {
 			color: #FDE35E;
@@ -24,7 +27,7 @@
 		&.angular-input-stars-hover {
 			text-shadow: black 0 0 3px;
 		}
-		@media @mobile-mq{
+		@media @tablet-mq{
 			padding-right: 3px;
 			padding-left: 3px;
 		}
