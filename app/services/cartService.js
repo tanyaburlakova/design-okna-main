@@ -53,7 +53,6 @@
 
 
 		function formatProduct(product){
-			console.log(product);
 			if (!!product.allowHeight && product.dimensions){
 				return $interpolate('{{product.title}}' +
 				       (product.texture ? " модель {{product.texture}}" : " ") +
