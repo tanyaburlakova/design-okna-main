@@ -13,7 +13,7 @@
 				<strong ng-if="products.length > 1">{{key+1}}.</strong>
 				{{product.title}}
 				<span ng-if="!!product.texture">модель {{product.texture}}</span>
-				<span ng-if="product.withCornice && product.cornice.text" ng-bind="' + ' + product.cornice.text"></span>
+				<span ng-if="product.withCornice && product.cornice.cartText" ng-bind="' + ' + product.cornice.cartText"></span>
 				<span class="dimenstions" ng-if="!!product.allowHeight && !!product.dimensions.width && !!product.dimensions.height">
 					({{product.dimensions.width}} м x {{product.dimensions.height}} м)
 				</span>

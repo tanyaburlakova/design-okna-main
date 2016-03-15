@@ -53,21 +53,25 @@
 
 
 		function formatProduct(product){
+			console.log(product);
 			if (!!product.allowHeight && product.dimensions){
-				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.cartText : "")}}' +
+				return $interpolate('{{product.title}}' +
 				       (product.texture ? " модель {{product.texture}}" : " ") +
 				       ((!!product.dimensions.width && !!product.dimensions.height) ?
-				          " ({{product.dimensions.width}} м x {{product.dimensions.height}} м)" : "")
+				          " ({{product.dimensions.width}} м x {{product.dimensions.height}} м)" : "") +
+				       (product.withCornice? " + {{product.cornice.cartText}}" : "")
 				)({product:product});
 			} else if (!product.allowHeight && product.dimensions) {
-				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.cartText : "")}}' +
+				return $interpolate('{{product.title}}' +
 				       (product.texture ? " модель {{product.texture}}" : " ") +
 				       ((!!product.dimensions.width) ?
-				          " ({{product.dimensions.width}} м)" : "")
+				          " ({{product.dimensions.width}} м)" : "") +
+				       (product.withCornice? " + {{product.cornice.cartText}}" : "")
 				)({product:product});
 			} else {
-				return $interpolate('{{product.title}} {{(product.withCornice?' + ' + product.cornice.cartText : "")}}' +
-				       (product.texture ? " модель {{product.texture}}" : " ")
+				return $interpolate('{{product.title}}' +
+				       (product.texture ? " модель {{product.texture}}" : " ") +
+				       (product.withCornice? " + {{product.cornice.cartText}}" : "")
 				)({product:product});
 			}
 			
@@ -79,11 +83,14 @@
 			var data = {};
 			if (params.context === 'oneclick'){
 				data.text = formatProduct(oneClickProduct);
+
 			} else if (params.context === 'order'){
 				data.text = _.reduce(products, function(result, product, key){
 					result += (key+1) + '. ' + formatProduct(product) + '\n';
+					console.log(formatProduct(product));
 					return result;
 				}, '');
+
 			}
 			data.time = params.hour.label + ' ' + params.min.label;
 			angular.extend(data, params);
