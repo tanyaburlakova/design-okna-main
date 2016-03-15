@@ -63,7 +63,7 @@
 				return {
 					url: item.url,
 					value: item.url.replace('/catalog/',''),
-					label: item.title
+					label: item.constructorTitle
 				};
 			});
 			if ($scope.models.length){

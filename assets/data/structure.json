@@ -8,19 +8,23 @@
         "children": [
           {
             "url": "/catalog/Gorizontalnye_zhaluzi/Alyuminievye",
-            "title": "Алюминиевые"
+            "title": "Алюминиевые",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Gorizontalnye_zhaluzi/Plastikovyye",
-            "title": "Пластиковыые"
+            "title": "Пластиковыые",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Gorizontalnye_zhaluzi/Bambukovye",
-            "title": "Бамбуковые"
+            "title": "Бамбуковые",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Gorizontalnye_zhaluzi/Volna",
-            "title": "Волна"
+            "title": "Волна",
+            "constructorTitle": "Алюминиевые"
           }
         ]
       },
@@ -30,19 +34,23 @@
         "children": [
           {
             "url": "/catalog/Vertikalnyye_zhaluzi/Alyuminevye",
-            "title": "Алюминевые"
+            "title": "Алюминевые",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Vertikalnyye_zhaluzi/Tkanevye",
-            "title": "Тканевые"
+            "title": "Тканевые",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Vertikalnyye_zhaluzi/Plastikovye",
-            "title": "Пластиковые"
+            "title": "Пластиковые",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Vertikalnyye_zhaluzi/Briz",
-            "title": "Бриз"
+            "title": "Бриз",
+            "constructorTitle": "Алюминиевые"
           }
         ]
       },
@@ -57,23 +65,28 @@
         "children": [
           {
             "url": "/catalog/Rulonnyye_zhaluzi/Tkanevye",
-            "title": "Тканевые"
+            "title": "Тканевые",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Rulonnyye_zhaluzi/Zebra",
-            "title": "Зебра"
+            "title": "Зебра",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Rulonnyye_zhaluzi/Mini",
-            "title": "Мини"
+            "title": "Мини",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Rulonnyye_zhaluzi/Uni",
-            "title": "Уни"
+            "title": "Уни",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Rulonnyye_zhaluzi/S_fotopechatyu",
-            "title": "С фотопечатью"
+            "title": "С фотопечатью",
+            "constructorTitle": "Алюминиевые"
           }
         ]
       }
@@ -85,11 +98,13 @@
         "children": [
           {
             "url": "/catalog/Klassicheskiye_shtory/Tkani_dlya_shtor",
-            "title": "Ткани для штор"
+            "title": "Ткани для штор",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Klassicheskiye_shtory/Karnizy",
-            "title": "Карнизы"
+            "title": "Карнизы",
+            "constructorTitle": "Алюминиевые"
           }
         ]
       },
@@ -99,11 +114,13 @@
         "children": [
           {
             "url": "/catalog/Rimskiye_shtory/Tkani_dlya_rimskix_shtor",
-            "title": "Ткани для римских штор"
+            "title": "Ткани для римских штор",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Rimskiye_shtory/Karnizy",
-            "title": "Карнизы"
+            "title": "Карнизы",
+            "constructorTitle": "Алюминиевые"
           }
         ]
       },
@@ -113,15 +130,18 @@
         "children": [
           {
             "url": "/catalog/Plisse_shtory/Gofre",
-            "title": "Гофре"
+            "title": "Гофре",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Plisse_shtory/Den-noch`",
-            "title": "День-ночь"
+            "title": "День-ночь",
+            "constructorTitle": "Алюминиевые"
           },
           {
             "url": "/catalog/Plisse_shtory/Na_okna_PVX",
-            "title": "На окна ПВХ"
+            "title": "На окна ПВХ",
+            "constructorTitle": "Алюминиевые"
           }
         ]
       },
