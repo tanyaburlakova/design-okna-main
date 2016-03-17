@@ -3,7 +3,8 @@
   "version": "0.1.2",
   "homepage": "https://github.com/fatuk/gulp-frontend-boilerplate",
   "authors": [
-    "fatuk <fatukk@gmail.com>"
+    "fatuk <fatukk@gmail.com>",
+    "Stress_TN <stress_tn@yahoo.com"
   ],
   "moduleType": [
     "amd"

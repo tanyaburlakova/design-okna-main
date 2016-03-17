@@ -46,12 +46,14 @@
 		color: #fff;
 	}
 	&__img {
-		height: 360px;
+		height: auto;
+		padding-bottom: 41.9%;
 		margin: 0 -30px 30px;
 		background: center no-repeat;
 		background-size: cover;
-		@media @mobile-mq{
-			margin: 0 -24px 30px;
+		@media @tablet-mq{
+			height: auto;
+			padding-bottom: 65%;
 		}
 	}
 	&__socials {
@@ -117,6 +119,7 @@
 		img {
 			width: 100%;
 			margin: 20px 0;
+			height: auto !important;
 		}
 		a {
 			color: #363537;
