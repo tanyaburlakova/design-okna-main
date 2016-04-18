@@ -9,10 +9,11 @@
 			'TexturesService',
 			'MenuService',
 			'CartService',
+			'ResponsiveService',
 			constructorPageCtrl
 		]);
 
-	function constructorPageCtrl($rootScope, $scope, $log, $timeout, TexturesService, MenuService, CartService) {
+	function constructorPageCtrl($rootScope, $scope, $log, $timeout, TexturesService, MenuService, CartService, ResponsiveService) {
 		/*$log.log('Constructor page ctrl');*/
 
 		$scope.priceSlider = {
@@ -25,6 +26,7 @@
 		};
 		
 		$scope.infoExpand = false;
+		$scope.firstLoad = true;
 
 		var menu = {};
 		$scope.init = function () {
@@ -32,6 +34,7 @@
 			$scope.typesModel = {};
 			$scope.textureModel = null;
 			$scope.textureId = null;
+			$scope.mobile = ResponsiveService.getState('mobileLandscape');
 			MenuService.getMenu()
 			.then(function(data){
 				menu = data.items;
@@ -104,6 +107,14 @@
 								price: $scope.texture.price,
 								texture: $scope.texture.model
 							};
+							if ($scope.mobile && !$scope.firstLoad){
+								$("html, body").animate({ scrollTop:0 }, {duration: 700});
+								$scope.infoExpand = true;
+								$scope.hideInfoExpand();
+							}
+							if ($scope.firstLoad){
+								$scope.firstLoad = false;
+							}
 						}
 					});
 					$scope.textureId = $scope.textures[0].id;
@@ -113,9 +124,23 @@
 				});
 		};
 
+		$scope.hideInfoExpand = function(){
+			_.delay(function(){
+				$scope.$apply(function(){
+					$scope.infoExpand = false;
+				});
+			}, 4000);
+		};
+
 		$scope.addToCart = function(){
 			CartService.addProduct($scope.product);
 		};
+
+		$scope.$on('ResponsiveService.updateState', function(){
+			$scope.$apply(function(){
+				$scope.mobile = ResponsiveService.getState('mobileLandscape');
+			});
+		});
 
 		$scope.init();
 

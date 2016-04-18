@@ -47,13 +47,21 @@
 	}
 	&__img {
 		height: auto;
-		padding-bottom: 41.9%;
+		width: 107%;
+		display: block;
 		margin: 0 -30px 30px;
 		background: center no-repeat;
 		background-size: cover;
 		@media @tablet-mq{
-			height: auto;
-			padding-bottom: 65%;
+			width: 110.5%;
+		}
+		@media @tablet-portrait-mq{
+			width: 124%;
+		}
+		@media @mobile-mq{
+			margin: 0 -24px 30px;
+			padding-bottom: 0;
+			width: 120%;
 		}
 	}
 	&__socials {
@@ -102,6 +110,9 @@
 		width: 100%;
 		padding: 43px 30px;
 		color: #5d5d5d;
+		@media @tablet-portrait-mq{
+			padding: 30px 30px;
+		}
 		& h1, & h2{
 			font-size: 18px;
 			font-weight: 700;

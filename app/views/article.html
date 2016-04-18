@@ -27,15 +27,12 @@
 						</div>
 					</div>
 					<!-- Image -->
-					<div
-						class="article__img"
-						style="background-image: url({{article.main_img}});">
-					</div>
+					<img class="article__img" src="{{article.main_img}}" alt="article-img">
 					<!-- Socials -->
 					<div class="article__socials">
 						<!-- Text -->
 						<div class="article__socials-text">
-							Поделиться статьей в соцсетях
+							Поделиться <span class="hide-in-portrait">статьей в соцсетях</span>
 						</div>
 						<ul class="article__socials-list">
 							<li class="article__socials-item" ng-repeat="share in socials">
@@ -46,7 +43,7 @@
 						</ul>
 					</div>
 					<!-- Date -->
-					<div class="article__date">
+					<div class="article__date hide-in-portrait">
 						{{article.date}}
 					</div>
 				</header>

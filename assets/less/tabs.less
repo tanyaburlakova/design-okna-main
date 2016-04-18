@@ -4,7 +4,8 @@
 	z-index: 11;
 	&__list {
 		list-style: none;
-		padding: 0;
+		padding: 5px 5px 0 20px;
+		overflow: hidden;
 		margin: 0;
 		display: inline-block;
 		position: absolute;
@@ -13,6 +14,9 @@
 		margin-right: 70px;
 		transform: translateY(-100%);
 		.clearfix();
+		@media @tablet-portrait-mq{
+			padding: 0;
+		}
 	}
 	&__item {
 		display: inline-block;
@@ -27,6 +31,10 @@
 		line-height: 20px;
 		text-transform: uppercase;
 		.letter-spacing(100);
+		border-radius: 3px 0 0 0;
+		& + .tabs__item{
+			border-radius: 0 3px 0 0;
+		}
 		&.active {
 			color: #fafbfd;
 			font-weight: 500;
@@ -34,6 +42,7 @@
 			padding: 17px 65px 8px;
 			position: relative;
 			border-radius: 3px 3px 0 0;
+			box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
 			&:before{
 				content: '';
 				display: block;
