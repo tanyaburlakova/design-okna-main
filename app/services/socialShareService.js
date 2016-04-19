@@ -13,10 +13,11 @@
 
 		function getShareUrl(network, params) {
 			var url = '';
+			console.log(network, params.url);
 			switch(network){
 				case 'vk':
 					url = 'https://vk.com/share.php' + 
-						'?url=' + encodeURIComponent(params.url) +
+						'?url=' + window.location.href +
 						'&title=' + encodeURIComponent(params.title) +
 						'&description=' + encodeURIComponent(params.description) +
 						'&image=' + encodeURIComponent(params.image) +
@@ -25,13 +26,13 @@
 				case 'ok':
 					url = 'http://www.ok.ru/dk?st.cmd=addShare&st.s=1' +
 						'&st.comments=' + encodeURIComponent(params.description) +
-						'&st._surl=' + encodeURIComponent(params.url)
+						'&st._surl=' + window.location.href
 				break;
 				case 'fb':
 					url = 'http://www.facebook.com/sharer.php?s=100' +
 						'&p[title]=' + encodeURIComponent(params.title) +
 						'&p[summary]=' + encodeURIComponent(params.description) +
-						'&p[url]=' + encodeURIComponent(params.url) +
+						'&p[url]=' + window.location.href +
 						'&p[images][0]=' + encodeURIComponent(params.image)
 				break;
 				default:
