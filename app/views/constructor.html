@@ -25,16 +25,21 @@
 			</label>
 		</div>
 		<!-- Constructor preview -->
-		<constructor-preview
-			ng-if="constructorBgImg.base64"
-			background="{{constructorBgImg.base64}}"
-			blind="{{texture.preview}}">
-		</constructor-preview>
-		<div
-			ng-if="!constructorBgImg.base64"
-			ng-style="{'background-color': '#333', 'background-image': 'url(' + texture.counstructorImage + ')'}"
-			class="constructor__preview-slide">
+		<div class="constructor-preview">
+			<div class="dis-loader dis-loader_consctructor" ng-class="{'active': showLoader}"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+			<constructor-preview
+				ng-if="constructorBgImg.base64"
+				background="{{constructorBgImg.base64}}"
+				blind="{{texture.preview}}">
+			</constructor-preview>
+			<div
+				ng-if="!constructorBgImg.base64"
+				ng-style="{'background-image': 'url(' + texture.counstructorImage + ')'}"
+				class="constructor__preview-slide">
+			</div>
 		</div>
+		
+		
 		<div class="container container_small container_relative container_tablet-width">
 			<!-- Info -->
 			<div class="constructor-info" ng-class="{'active': (infoExpand)}">

@@ -1,9 +1,28 @@
 .constructor-preview {
-	height: 700px;
-	background: #333 center center no-repeat;
-	overflow: hidden;
 	position: relative;
-	background-size: contain;
+	background: #333 center center no-repeat;
+	.dis-loader_consctructor{
+		position: absolute;
+		top: 50%;
+		margin-top: -10px;
+		left: 50%;
+		margin-left: -50px;
+		z-index: 1;
+	}
+	&__block{
+		height: 700px;
+		background: transparent;
+		overflow: hidden;
+		position: relative;
+		background-size: contain;
+		z-index: 10;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		@media @mobile-mq{
+			height: 0;
+			padding-bottom: 111%;
+		}
+	}
 	&__bg {
 		display: inline-block;
 		height: 600px;
@@ -41,9 +60,5 @@
 			transform: translate(-50%, -50%);
 		}
 		z-index: 10;
-	}
-	@media @mobile-mq{
-		height: 0;
-		padding-bottom: 111%;
 	}
 }

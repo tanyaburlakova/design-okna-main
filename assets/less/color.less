@@ -22,23 +22,22 @@
 			border-radius: 2px;
 			background: #fff;
 		}
-		&:after{
-			content: '';
-			display: block;
-			position: relative;
-			width: 20px;
-			height: 20px;
-			margin: 5px;
-			background: currentColor;
-			border-radius: 2px;
-			box-sizing: border-box;
-		}
+		
 		&[data-fill='#ffffff']:after{
 			border: 1px solid #d1d1d1;
 		}
 		&:hover {
 			opacity: 1;
 		}
+	}
+	&__bg-after{
+		display: block;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		margin: 5px;
+		border-radius: 2px;
+		box-sizing: border-box;
 	}
 	input {
 		position: absolute;
