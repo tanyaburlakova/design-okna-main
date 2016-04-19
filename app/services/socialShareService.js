@@ -13,7 +13,6 @@
 
 		function getShareUrl(network, params) {
 			var url = '';
-			console.log(network, params.url);
 			switch(network){
 				case 'vk':
 					url = 'https://vk.com/share.php' + 
