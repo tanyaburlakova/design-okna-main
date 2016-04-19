@@ -19,24 +19,21 @@
 			</div>
 			<label
 				class="constructor__upload-btn btn btn_red btn_big">
-				<input type="file" ng-model="constructorBgImg" ng-click="constructorBgImg.base64 = null" base-sixty-four-input>
+				<input type="file" ng-model="constructorBgImg" ng-click="constructorBgImg.base64 = null" accept="image/*" base-sixty-four-input>
 				<span class="icon icon-camera"></span>
 				<span class="text">Загрузить фото своего окна</span>
 			</label>
 		</div>
 		<!-- Constructor preview -->
-		<div class="constructor-preview">
-			<div class="dis-loader dis-loader_consctructor" ng-class="{'active': showLoader}"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-			<constructor-preview
-				ng-if="constructorBgImg.base64"
-				background="{{constructorBgImg.base64}}"
-				blind="{{texture.preview}}">
-			</constructor-preview>
-			<div
-				ng-if="!constructorBgImg.base64"
-				ng-style="{'background-image': 'url(' + texture.counstructorImage + ')'}"
-				class="constructor__preview-slide">
-			</div>
+		<constructor-preview
+			ng-if="constructorBgImg.base64"
+			background="{{constructorBgImg.base64}}"
+			blind="{{texture.preview}}">
+		</constructor-preview>
+		<div
+			ng-if="!constructorBgImg.base64"
+			ng-style="{'background-image': 'url(' + texture.counstructorImage + ')'}"
+			class="constructor__preview-slide">
 		</div>
 		
 		
