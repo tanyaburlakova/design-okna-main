@@ -1,10 +1,11 @@
 <!-- Article view -->
-<main class="main-content">
+<main class="main-content" itemscope itemtype="http://schema.org/ScholarlyArticle">
 	<!-- Image gradient -->
 	<div class="image-gradient">
 		<div
 		    class="image-gradient__image"
 		    ng-style="{'background-image': 'url(' + article.slider_img + ')'}"></div>
+		<img style="display:none;" itemprop="image" src="{{article.slider_img}}">
 	</div>
 	<div class="container container_tight">
 		<div class="column-3 article__main">
@@ -13,11 +14,11 @@
 				<!-- Header -->
 				<header class="article__header">
 					<!-- Rubric -->
-					<div class="article__rubric">
+					<div class="article__rubric"  itemprop="articleSection">
 						{{article.rubric}}
 					</div>
 					<!-- Title -->
-					<h1 class="article__title">
+					<h1 class="article__title" itemprop="headline">
 						{{article.title}}
 					</h1>
 					<!-- Label -->
@@ -43,11 +44,11 @@
 						</ul>
 					</div>
 					<!-- Date -->
-					<div class="article__date hide-in-portrait">
+					<div class="article__date hide-in-portrait" itemprop="datePublished">
 						{{article.date}}
 					</div>
 				</header>
-				<div class="article__content" ng-bind-html="article.content"></div>
+				<div class="article__content" ng-bind-html="article.content" itemprop="articleBody"></div>
 			</article>
 		</div>
 		<div class="column-1 article__aside">
