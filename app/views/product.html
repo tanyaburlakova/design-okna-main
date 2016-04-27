@@ -1,10 +1,11 @@
 <!-- Product view -->
-<main class="main-content">
+<main class="main-content" itemscope itemtype="http://schema.org/Product">
 	<div class="slider">
 		<div
 			ng-style="{'background-image': 'url(' + product.image_slider + ')'}"
 			class="slider__img">
 		</div>
+		<img src="{{product.image_slider}}" alt="product image" itemprop="image" style="display: none"/>
 	</div>
 	<div class="container container_product-page">
 		<!-- Ribbon title -->
@@ -132,7 +133,7 @@
 					<h2 class="text-block__title">
 						{{product.description.title}}
 					</h2>
-					<p class="text-block__text" ng-bind-html="product.description.text"></p>
+					<p class="text-block__text" itemprop="description" ng-bind-html="product.description.text"></p>
 				</div>
 			</div>
 			<div ng-if="!desktop" ng-include="'views/directives/construction.html'"></div>
@@ -153,7 +154,7 @@
 		<!-- Right -->
 		<div class="column-2 product-page__aside">
 			<!-- Service Block Desktop -->
-			<div ng-if="!mobile">
+			<div ng-if="!mobile" itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
 				<!-- Price block -->
 				<div ng-include="'includes/product/price.html'"></div>
 				<!-- Textures -->

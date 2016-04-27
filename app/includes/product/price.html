@@ -12,6 +12,8 @@
 				<span ng-if="!product.priceExactly">от</span>
 				{{product.price | number:0}} р.</strong><span ng-if="!product.priceExactly">/м<sup>2</sup></span>
 		</div>
+		<span style="display:none;" itemprop="price">{{product.price | number:0}}</span>
+		<span style="display:none;" itemprop="priceCurrency">Руб.</span>
 	</div>
 	<!-- Description -->
 	<p class="price-block__text">

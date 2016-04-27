@@ -1,4 +1,6 @@
 <footer class="site-footer">
+	<span style="display: none;" itemprop="name">Дизайн окна</span>
+	<span style="display: none;" itemprop="url">https://design-okna.ru/</span>
 	<!-- Seo -->
 	<div class="seo" ng-if="!!blockContent">
 		<div class="container">
@@ -23,7 +25,7 @@
 						<ul class="contacts__list">
 							<li class="contacts__item">
 								<a href="tel:+74955426484" class="contacts__link">
-									<span class="ya-phone">+7 (495) 542-64-84</span>
+									<span class="ya-phone" itemprop="telephone">+7 (495) 542-64-84</span>
 								</a>
 							</li>
 							<li class="contacts__item">
@@ -31,8 +33,8 @@
 									info@design-okna.ru
 								</a>
 							</li>
-							<li class="contacts__item">
-								г. Москва, Новочеркасский бульвар,<br>д.41, корп.3
+							<li class="contacts__item" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+								<span itemprop="addressLocality">г. Москва</span>, <span itemprop="streetAddress">Новочеркасский бульвар,<br>д.41, корп.3</span>
 							</li>
 						</ul>
 					</div>
