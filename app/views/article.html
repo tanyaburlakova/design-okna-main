@@ -1,5 +1,5 @@
 <!-- Article view -->
-<main class="main-content" itemscope itemtype="http://schema.org/ScholarlyArticle">
+<main class="main-content" itemscope itemtype="http://schema.org/NewsArticle">
 	<!-- Image gradient -->
 	<div class="image-gradient">
 		<div
@@ -14,7 +14,7 @@
 				<!-- Header -->
 				<header class="article__header">
 					<!-- Rubric -->
-					<div class="article__rubric"  itemprop="articleSection">
+					<div class="article__rubric"  itemprop="genre">
 						{{article.rubric}}
 					</div>
 					<!-- Title -->
@@ -44,11 +44,11 @@
 						</ul>
 					</div>
 					<!-- Date -->
-					<div class="article__date hide-in-portrait" itemprop="datePublished">
+					<div class="article__date hide-in-portrait">
 						{{article.date}}
 					</div>
 				</header>
-				<div class="article__content" ng-bind-html="article.content" itemprop="articleBody"></div>
+				<div class="article__content" ng-bind-html="article.content" itemprop="description"></div>
 			</article>
 		</div>
 		<div class="column-1 article__aside">

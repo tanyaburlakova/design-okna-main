@@ -1,21 +1,21 @@
 [{
-  "url": "/catalog/Gorizontalnyye_zhalyuzi",
+  "url": "catalog/Gorizontalnyye_zhalyuzi",
   "title": "Горизонтальные"
 },
 {
-  "url": "/catalog/Gorizontalnye_zhaluzi/Alyuminievye",
+  "url": "catalog/Gorizontalnye_zhaluzi/Alyuminievye",
   "title": "Алюминиевые"
 },
 {
-  "url": "/catalog/Gorizontalnye_zhaluzi/Plastikovyye",
+  "url": "catalog/Gorizontalnye_zhaluzi/Plastikovyye",
   "title": "Пластиковыые"
 },
 {
-  "url": "/catalog/Gorizontalnye_zhaluzi/Bambukovye",
+  "url": "catalog/Gorizontalnye_zhaluzi/Bambukovye",
   "title": "Бамбуковые"
 },
 {
-  "url": "/article/Gora_Everest",
+  "url": "article/Gora_Everest",
   "title": "Гора Еверест"
 }
 ]
