@@ -32,7 +32,7 @@
 									{{product.price | number:0}} р.
 								</strong><span ng-if="!product.priceExactly">/см<sup>2</sup></span>
 								<span class="cart-product__dimensions" ng-if="!!product.allowHeight && !!product.dimensions.width && !!product.dimensions.height">
-									({{product.dimensions.width}} см x {{product.dimensions.height}} м)
+									({{product.dimensions.width}} см x {{product.dimensions.height}} cм)
 								</span>
 								<span class="cart-product__dimensions" ng-if="!product.allowHeight && !!product.dimensions.width">
 									({{product.dimensions.width}} см)
