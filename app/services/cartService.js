@@ -64,7 +64,7 @@
 				return $interpolate('{{product.title}}' +
 				       (product.texture ? " модель {{product.texture}}" : " ") +
 				       ((!!product.dimensions.width) ?
-				          " ({{product.dimensions.width}} м)" : "") +
+				          " ({{product.dimensions.width}} см)" : "") +
 				       (product.withCornice? " + {{product.cornice.cartText}}" : "")
 				)({product:product});
 			} else {
