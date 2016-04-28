@@ -13,7 +13,7 @@
 	"category_title": "Рулонные тканевые",
 	"video": "https://www.youtube.com/watch?v=DyWMkcmahxs",
 	"video_title": "Название",
-	"isHeightVisible": false,
+	"isHeightVisible": true,
 	"colors": ["green", "red", "blue", "#fee", "#fca", "#cb3", "#232fab", "#fdb1b2"],
 	"construction": {
 		"title": "Конструкция римских штор",
