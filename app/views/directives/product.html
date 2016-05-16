@@ -1,4 +1,4 @@
-<div class="product" ng-class="{'single': product.single}" ng-controller="ProductCtrl">
+<div class="product" ng-class="{'single': product.single, 'active': isHover}" ng-mouseenter="hoverIt(true)" ng-mouseleave="hoverIt(false)" ng-controller="ProductCtrl" ng-click="hoverIt(false)">
 	<!-- Product view -->
 	<div class="product__wrapper">
 		<!-- Label -->

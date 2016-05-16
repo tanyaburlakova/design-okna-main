@@ -14,7 +14,7 @@
 		/*$log.log('product ctrl');*/
 		$scope.init = function(){
 			$scope.product.texture_id = -1;
-
+			$scope.isHover = false;
 		};
 
 		$scope.addProductToCart = function(product){
@@ -41,6 +41,10 @@
 				e.stopPropagation();
 				$location.path(url, false);
 			}
+		};
+
+		$scope.hoverIt = function(bValue){
+			$scope.isHover = bValue;
 		};
 
 		$scope.init();
