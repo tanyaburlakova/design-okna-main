@@ -7,15 +7,28 @@
 			'CartService',
 			'$location',
 			'$route',
+			'ResponsiveService',
 			productCtrl
 		]);
 
-	function productCtrl($scope, $log, CartService, $location, $route) {
+	function productCtrl($scope, $log, CartService, $location, $route, ResponsiveService) {
 		/*$log.log('product ctrl');*/
+
+		$scope.touchElement = ResponsiveService.getState('tabletPortrait');
+
 		$scope.init = function(){
 			$scope.product.texture_id = -1;
 			$scope.isHover = false;
 		};
+
+		$scope.$on('ResponsiveService.updateState', function(){
+			if (ResponsiveService.getState('tabletPortrait'))
+			{
+				$scope.touchElement = true;
+			} else {
+				$scope.touchElement = false;
+			}
+		});
 
 		$scope.addProductToCart = function(product){
 			CartService.addProduct(product);
