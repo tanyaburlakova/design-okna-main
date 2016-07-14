@@ -105,7 +105,8 @@
 					subcategory = $routeParams.subcategory,
 					product = $routeParams.product,
 					texture = $routeParams.texture,
-					hash = $location.hash(),
+					oHash = $location.path().split('texture='),
+					hash = !!oHash[1] ? oHash[1] : '',
 					currentTexture = TexturesService.getTextureBySlug(hash) || {
 						id: list[0].id
 					},
@@ -119,7 +120,14 @@
 				$scope.$watch('textureModel', function (newVal) {
 					if (newVal !== "-1") {
 						$scope.getTextureById(newVal);
-						$location.hash($scope.currentTexture.slug);
+						var aLinks = $location.path().split('/'),
+							fullLink = ''
+						;
+						aLinks.pop();
+						_.each(aLinks, function(slink){
+							fullLink += slink + '/';
+						});
+						$location.path(fullLink + 'texture=' + $scope.currentTexture.slug);
 						$scope.gallery.previewImage = null;
 						$scope.calcPrice();
 					}
@@ -138,10 +146,10 @@
 		$scope.getProduct = function () {
 			$scope.totalColors = 0;
 			ProductService.getProduct({
-				category: $routeParams.category,
-				subcategory: $routeParams.subcategory,
-				slug: $routeParams.product,
-				hash: $location.hash(),
+				category: $routeParams.category && $routeParams.category.split('=')[1] ? '' : $routeParams.category,
+				subcategory: $routeParams.subcategory && $routeParams.subcategory.split('=')[1] ? '' : $routeParams.subcategory,
+				slug: $routeParams.product
+				// hash: $location.hash(),
 			}).then(function (data) {
 				// Success
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';

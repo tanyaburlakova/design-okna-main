@@ -77,6 +77,7 @@ var app = angular.module('myApp', [
 				.when('/catalog', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
 					meta: {
 						ogUrl: 'https://design-okna.ru',
 						ogTitle: 'Дизайн окна. Мастерская по изготовлению жалюзи в Москве.',
@@ -87,6 +88,7 @@ var app = angular.module('myApp', [
 				.when('/catalog/:category', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
 					meta: {
 						ogUrl: 'https://design-okna.ru',
 						ogTitle: 'Дизайн окна. Мастерская по изготовлению жалюзи в Москве.',
@@ -97,11 +99,23 @@ var app = angular.module('myApp', [
 				.when('/catalog/:category/:subcategory', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
 					meta: {
 						ogUrl: 'https://design-okna.ru',
 						ogTitle: 'Дизайн окна. Мастерская по изготовлению жалюзи в Москве.',
 						ogDescription: 'Современное оформление окон: жалюзи, карнизы, шторы, текстиль, рольставни в Москве.',
 						ogImage: 'https://design-okna.ru/img/fb.jpg',
+					}
+				})
+				.when('/catalog/:category/:subcategory/:searchtype', {
+					controller: 'CatalogCtrl',
+					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
+					meta: {
+						ogUrl: 'https://design-okna.ru',
+						ogTitle: 'Дизайн окна. Мастерская по изготовлению жалюзи в Москве.',
+						ogDescription: 'Современное оформление окон: жалюзи, карнизы, шторы, текстиль, рольставни в Москве.',
+						ogImage: 'https://design-okna.ru/img/fb.jpg'
 					}
 				})
 				.when('/product/:category/:subcategory/:product', {
