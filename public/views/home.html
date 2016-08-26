@@ -1,0 +1,147 @@
+<!-- Home view -->
+<main class="main-content" itemscope itemtype="http://schema.org/ShoppingCenter">
+	<!-- Slider big -->
+	<section class="slider slider_big">
+		<!-- pagination="true" -->
+		<div
+			id="bigCarousel"
+			single-item="true"
+			pagination="false"
+			transition-style="'fade'"
+			mouse-drag="false"
+			touch-drag="false"
+			auto-play="true"
+			single-item="true"
+			responsive="true"
+			responsive-refresh-rate="200"
+			owl-carousel="['img/slider/1.jpg','img/slider/2.jpg','img/slider/3.jpg','img/slider/4.jpg','img/slider/5.jpg']">
+			<div class="item">
+				<div
+					ng-style="{'background-image': 'url({{item}})'}"
+					class="slider__img">
+				</div>
+			</div>
+		</div>
+		<span class="slider_big__dots"></span>
+	</section>
+	<section class="container main-content__home-nav" ng-include="'includes/main-nav.html'"></section>
+	<!-- Steps -->
+	<section class="container">
+		<div class="steps">
+			<ul class="steps__list">
+				<li class="steps__item">
+					<svg class="icon icon-search-big"><use xlink:href="icons/icons.svg#search-big"></use></svg>
+					<span class="steps__counter">
+						1.
+					</span>
+					<span class="steps__text">
+						Найдите красивые жалюзи ипользуя <a href="#!/constructor" class="steps__link">конструктор</a>
+					</span>
+				</li>
+				<li class="steps__item">
+					<svg class="icon icon-phone"><use xlink:href="icons/icons.svg#phone"></use></svg>
+					<span class="steps__counter">
+						2.
+					</span>
+					<span class="steps__text">
+						Оформите заказ и наш менеджер перезвонит Вам
+					</span>
+				</li>
+				<li class="steps__item">
+					<svg class="icon icon-pen"><use xlink:href="icons/icons.svg#pen"></use></svg>
+					<span class="steps__counter">
+						3.
+					</span>
+					<span class="steps__text">
+						К Вам бесплатно приедет замерщик с образцами
+					</span>
+				</li>
+				<li class="steps__item">
+					<svg class="icon icon-worker"><use xlink:href="icons/icons.svg#worker"></use></svg>
+					<span class="steps__counter">
+						4.
+					</span>
+					<span class="steps__text">
+						Изготовление за 3&#8209;5 дней, установка специалистом
+					</span>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section class="container__holder">
+		<div class="container container_margin-bottom">
+			<!-- News -->
+			<news></news>
+			<!-- Question -->
+			<question></question>
+			<!-- Benefits -->
+			<benefits
+				title="Преимущества"
+				url="benefits.json">
+			</benefits>
+			<!-- Product -->
+			<div ng-repeat="product in [featuredProduct]">
+				<div ng-init="product.single = true;" ng-include="'views/directives/product.html'"></div>
+			</div>
+			<!-- Article preview -->
+			<!-- TODO десь должен быть блок твига article.html.twig -->
+			<article-preview
+				ng-if="!!featuredArticle"
+				slug="{{featuredArticle}}">
+			</article-preview>
+		</div>
+	</section>
+	<!-- Jumbotron -->
+	<section class="jumbotron container__holder">
+		<!-- Img -->
+		<div class="jumbotron__bg">
+			<div class="jumbotron__hand"></div>
+		</div>
+		<div class="container">
+			<div class="jumbotron__container">
+				<!-- Title -->
+				<h2 class="jumbotron__title">
+					Используйте конструктор
+				</h2>
+				<!-- Text -->
+				<p class="jumbotron__text">
+					Сложно подобрать жалюзи или шторы? Ипользуйте наш удобный конструктор, легко меняя типы жалюзи, цвет и текстуры.
+				</p>
+				<!-- Btn -->
+				<a href="#!/constructor" class="btn btn_green">
+					Перейти в конструктор
+				</a>
+			</div>
+		</div>
+	</section>
+	<!-- Catalog -->
+	<div class="container">
+		<div class="catalog">
+			<ul class="catalog__list">
+				<li
+					ng-repeat="product in catalogItems"
+					class="catalog__item">
+					<div ng-include="'views/directives/product.html'" scope="" onload=""></div>
+				</li>
+			</ul>
+			<!-- More btn -->
+			<div class="more-btn">
+				<a href class="more-btn__link" ng-click="getProductList()" ng-if="showLoadMoreBtn">
+					<span class="icon icon-more"></span>
+					<span class="more-btn__text">
+						Показать больше новинок
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<span style="display: none;">
+	    <span itemprop="name">Дизайн окна</span>
+	    <a href="https://design-okna.ru/" itemprop="url">https://design-okna.ru/</a>
+	    <span itemprop="telephone">+7 (495) 542-64-84</span>
+	    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+	        <span itemprop="addressLocality">г. Москва</span>, <span itemprop="streetAddress">Новочеркасский бульвар,<br>д.41, корп.3</span>
+	    </span>
+	    <time class="call-me__time" itemprop="openingHours"  datetime="Mo-Su 9:00-21:00">9:00-21:00</time>
+	</span>
+</main>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:boxy="http://www.boxy-svg.com/boxyNS" version="1.1" id="Layer_1" x="0px" y="0px" width="50" height="50" enable-background="new 0 0 50 50" xml:space="preserve" boxy:zoom="987" boxy:scrollX="-26" boxy:scrollY="-1" viewBox="9.83 9.52 31.58 31.46">
+  <defs/>
+  <g>
+    <rect x="22.82" y="15.556" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 61.7846 25.03)" fill="#EA6E68" width="5.777" height="19.51"/>
+    <polygon fill="#E3D0C1" points="16.757,20.456 10.169,9.78 20.861,16.368  "/>
+    <polygon fill="#262626" points="11.841,12.5 12.889,11.453 10.169,9.78  "/>
+    <polyline opacity="0.1" fill="#000100" enable-background="new    " points="10.22,9.797 32.618,32.196 34.662,30.152    20.861,16.351  "/>
+    <rect x="24.311" y="15.57" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 61.7878 25.0564)" fill="#DF5442" width="2.787" height="19.51"/>
+    <g>
+      <path fill="#DCDCDC" d="M40.98,36.47c0.389,0.389,0.422,0.963,0.101,1.284l-2.905,2.905c-0.321,0.321-0.895,0.287-1.284-0.101    l-0.27-0.27c-0.389-0.389-0.422-0.963-0.101-1.284l2.905-2.905c0.321-0.321,0.895-0.287,1.284,0.101L40.98,36.47z"/>
+      <rect x="32.893" y="30.897" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 86.1021 35.0988)" fill="#F7E37C" width="5.777" height="8.97"/>
+      <rect x="29.816" y="32.162" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 78.6361 31.9719)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="30.602" y="32.934" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 80.524 32.7343)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="30.93" y="33.281" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 81.3276 33.0941)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="31.355" y="33.696" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 82.3471 33.5018)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="31.728" y="34.065" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 83.2443 33.8685)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="32.861" y="37.176" transform="matrix(0.7071 0.7071 -0.7071 0.7071 36.2424 -12.9594)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="33.146" y="36.889" transform="matrix(0.7071 0.7071 -0.7071 0.7071 36.1234 -13.2452)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="33.503" y="36.534" transform="matrix(0.7071 0.7071 -0.7071 0.7071 35.9765 -13.6017)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="33.825" y="36.229" transform="matrix(0.7071 0.7071 -0.7071 0.7071 35.8555 -13.9181)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="34.182" y="35.874" transform="matrix(0.7071 0.7071 -0.7071 0.7071 35.7085 -14.2747)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="34.007" y="36.348" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 88.7496 36.1539)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="34.42" y="36.751" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 89.7403 36.5496)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="34.781" y="37.132" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 90.6255 36.9449)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="35.206" y="37.547" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 91.645 37.3527)" opacity="0.1" fill="#000100" enable-background="new    " width="5.76" height="0.22"/>
+      <rect x="34.515" y="35.528" transform="matrix(0.7071 0.7071 -0.7071 0.7071 35.5616 -14.6118)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="34.801" y="35.241" transform="matrix(0.7071 0.7071 -0.7071 0.7071 35.4427 -14.8975)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="35.158" y="34.886" transform="matrix(0.7071 0.7071 -0.7071 0.7071 35.2957 -15.2542)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="35.479" y="34.558" transform="matrix(0.7071 0.7071 -0.7071 0.7071 35.1579 -15.5773)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="35.836" y="34.202" transform="matrix(0.7071 0.7071 -0.7071 0.7071 35.0109 -15.934)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="36.169" y="33.883" transform="matrix(0.7071 0.7071 -0.7071 0.7071 34.8829 -16.2631)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="36.454" y="33.597" transform="matrix(0.7071 0.7071 -0.7071 0.7071 34.764 -16.5486)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="36.811" y="33.241" transform="matrix(0.7071 0.7071 -0.7071 0.7071 34.6171 -16.9053)" opacity="0.1" fill="#000100" enable-background="new    " width="1.807" height="0.186"/>
+      <rect x="36.529" y="29.397" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 87.587 31.4491)" opacity="0.02" fill="#0F1010" enable-background="new    " width="1.503" height="8.936"/>
+      <rect x="33.534" y="32.418" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 84.5547 38.7487)" opacity="0.1" fill="#FFFFFF" enable-background="new    " width="1.436" height="8.936"/>
+    </g>
+    <polyline opacity="0.2" fill="#7E7E7E" enable-background="new    " points="11.841,12.5 12.889,11.453 14.172,12.247    19.628,17.652 18.057,19.206 12.703,13.851  "/>
+    <polyline opacity="0.05" fill="#000100" enable-background="new    " points="19.814,17.466 20.878,16.402 18.091,14.662  "/>
+  </g>
+  <g>
+    <path fill="#F7E37C" d="M36.081,10.068L10.456,35.693l5.084,5.084l25.625-25.625L36.081,10.068z M35.541,15.372   c-0.439-0.439-0.439-1.149,0-1.588s1.149-0.439,1.588,0c0.439,0.439,0.439,1.149,0,1.588C36.689,15.811,35.98,15.811,35.541,15.372   z"/>
+    <rect x="15.047" y="38.117" transform="matrix(0.7071 0.7071 -0.7071 0.7071 31.7907 -0.3469)" fill="#272727" width="2.534" height="0.169"/>
+    <rect x="16.792" y="36.385" transform="matrix(0.7071 0.7071 -0.7071 0.7071 31.0771 -2.0878)" fill="#272727" width="2.534" height="0.169"/>
+    <path fill="#AB8E3F" d="M18.834,37.483"/>
+    <rect x="18.552" y="34.617" transform="matrix(0.7071 0.7071 -0.7071 0.7071 30.3424 -3.8502)" fill="#272727" width="2.534" height="0.169"/>
+    <rect x="20.297" y="32.885" transform="matrix(0.7071 0.7071 -0.7071 0.7071 29.6287 -5.5911)" fill="#272727" width="2.534" height="0.169"/>
+    <rect x="22.051" y="31.129" transform="matrix(0.7071 0.7071 -0.7071 0.7071 28.9011 -7.3456)" fill="#272727" width="2.534" height="0.169"/>
+    <rect x="23.771" y="29.398" transform="matrix(0.7071 0.7071 -0.7071 0.7071 28.1804 -9.0696)" fill="#272727" width="2.534" height="0.169"/>
+    <path fill="#AB8E3F" d="M25.828,30.49"/>
+    <rect x="25.555" y="27.63" transform="matrix(0.7071 0.7071 -0.7071 0.7071 27.4527 -10.8488)" fill="#272727" width="2.534" height="0.169"/>
+    <rect x="27.276" y="25.898" transform="matrix(0.7071 0.7071 -0.7071 0.7071 26.7321 -12.5728)" fill="#272727" width="2.534" height="0.169"/>
+    <rect x="29.021" y="24.166" transform="matrix(0.7071 0.7071 -0.7071 0.7071 26.0184 -14.3137)" fill="#272727" width="2.534" height="0.169"/>
+    <rect x="30.741" y="22.434" transform="matrix(0.7071 0.7071 -0.7071 0.7071 25.2977 -16.0378)" fill="#272727" width="2.534" height="0.169"/>
+    <path fill="#AB8E3F" d="M32.787,23.53"/>
+    <rect x="32.501" y="20.666" transform="matrix(0.7071 0.7071 -0.7071 0.7071 24.5631 -17.8001)" fill="#272727" width="2.534" height="0.169"/>
+    <rect x="34.246" y="18.934" transform="matrix(0.7071 0.7071 -0.7071 0.7071 23.8494 -19.541)" fill="#272727" width="2.534" height="0.169"/>
+  </g>
+</svg>

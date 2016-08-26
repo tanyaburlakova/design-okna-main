@@ -3,5 +3,3 @@ node_modules
 bower_components
 tmp
 .DS_Store
-public
-public.zip

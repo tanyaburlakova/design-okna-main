@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="9" height="10" viewBox="0 0 9 10">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="rouble" class="cls-1" d="M4,6V7H8V9H4v1H2V9H0V7H2V6H0V4H2V0H4S9,0.025,9,3C9,6.058,4,6,4,6ZM5.143,2H4V4H5S7,4,7,3C7,1.907,5.143,2,5.143,2Z"/>
+</svg>
