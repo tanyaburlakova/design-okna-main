@@ -89,7 +89,8 @@
     "malihu-custom-scrollbar-plugin": "3.1.3",
     "ngtouch": "^1.0.1",
     "ngMeta": "^0.3.3",
-    "angular-svg-base": "^0.0.3"
+    "angular-svg-base": "^0.0.3",
+    "gsap": "^1.19.0"
   },
   "devDependencies": {
     "svg4everybody": "^2.0.3"

@@ -22,6 +22,7 @@ var app = angular.module('myApp', [
 		'offCanvasDirective',
 		'responsiveDirective',
 		'parallaxDirective',
+		'btnAnimationDirective',
 		'questionDirective',
 		'articlePreviewDirective',
 		'dialogDirective',
@@ -153,7 +154,7 @@ var app = angular.module('myApp', [
 					}
 				})
 				.otherwise({
-					redirectTo: '/'
+					templateUrl: 'views/page404.html'
 				});
 		}
 	]).run(['ngMeta', function(ngMeta) { ngMeta.init(); }])
