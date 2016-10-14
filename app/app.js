@@ -77,6 +77,7 @@ var app = angular.module('myApp', [
 				.when('/catalog', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
 					meta: {
 						ogUrl: 'https://design-okna.ru',
 						ogTitle: 'Дизайн окна. Мастерская по изготовлению жалюзи в Москве.',
@@ -87,6 +88,7 @@ var app = angular.module('myApp', [
 				.when('/catalog/:category', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
 					meta: {
 						ogUrl: 'https://design-okna.ru',
 						ogTitle: 'Дизайн окна. Мастерская по изготовлению жалюзи в Москве.',
@@ -97,11 +99,23 @@ var app = angular.module('myApp', [
 				.when('/catalog/:category/:subcategory', {
 					controller: 'CatalogCtrl',
 					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
 					meta: {
 						ogUrl: 'https://design-okna.ru',
 						ogTitle: 'Дизайн окна. Мастерская по изготовлению жалюзи в Москве.',
 						ogDescription: 'Современное оформление окон: жалюзи, карнизы, шторы, текстиль, рольставни в Москве.',
 						ogImage: 'https://design-okna.ru/img/fb.jpg',
+					}
+				})
+				.when('/catalog/:category/:subcategory/:searchtype', {
+					controller: 'CatalogCtrl',
+					templateUrl: 'views/catalog.html',
+					reloadOnSearch: false,
+					meta: {
+						ogUrl: 'https://design-okna.ru',
+						ogTitle: 'Дизайн окна. Мастерская по изготовлению жалюзи в Москве.',
+						ogDescription: 'Современное оформление окон: жалюзи, карнизы, шторы, текстиль, рольставни в Москве.',
+						ogImage: 'https://design-okna.ru/img/fb.jpg'
 					}
 				})
 				.when('/product/:category/:subcategory/:product', {
@@ -142,6 +156,19 @@ var app = angular.module('myApp', [
 					templateUrl: 'views/page404.html'
 				});
 		}
-	]).run(['ngMeta', function(ngMeta) { ngMeta.init(); }]);
+	]).run(['ngMeta', function(ngMeta) { ngMeta.init(); }])
+	.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
+		var original = $location.path;
+		$location.path = function (path, reload) {
+			if (reload === false) {
+				var lastRoute = $route.current;
+				var un = $rootScope.$on('$locationChangeSuccess', function () {
+					$route.current = lastRoute;
+					un();
+				});
+			}
+			return original.apply($location, [path]);
+		};
+	}]);
 
 app.constant('API_PATH', 'data/');

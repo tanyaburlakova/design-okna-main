@@ -65,7 +65,6 @@
 				subcategory: $routeParams.subcategory
 			}).then(function(data){
 				ngMeta.setTitle(data.metaTitle + '. Дизайн окна.');
-				console.log(data);
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.pageOptions = data;
 				$scope.pageOptions.isCategory = false;
