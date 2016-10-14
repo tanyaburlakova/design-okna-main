@@ -64,10 +64,16 @@
 				category: $routeParams.category,
 				subcategory: $routeParams.subcategory
 			}).then(function(data){
+				ngMeta.setTitle(data.metaTitle + '. Дизайн окна.');
+				console.log(data);
 				$scope.$parent.blockContent = !!data.blockContent ? data.blockContent : '';
 				$scope.pageOptions = data;
+				$scope.pageOptions.isCategory = false;
 				angular.forEach($scope.pageOptions.subcategories, function(item){
-					item.checked = (item.slug === $routeParams.subcategory)?true:null;
+					item.checked = (item.slug === $routeParams.subcategory) ? true : null;
+					if ( item.slug === $routeParams.subcategory ) {
+						$scope.pageOptions.isCategory = true;
+					}
 				});
 				$scope.$parent.showLoader = false;
 			}, function(err){
@@ -79,7 +85,7 @@
 			ProductService.getList(angular.extend({}, $scope.searchOptions, {skip: $scope.catalogItems.length}))
 				.then(function (data) {
 					var items = data.items;
-					
+
 					// Success
 					if (items.length === 0){
 						$scope.showLoadMoreBtn = false;
@@ -98,7 +104,6 @@
 				.then(function (data) {
 					// Success
 					ngMeta.setTag('description', data.description);
-					ngMeta.setTitle(data.title + '. Дизайн окна.');
 					var maxPrice = parseInt(data.maxPrice);
 					if (maxPrice !== $scope.maxPrice){
 						$scope.priceSlider = null;
@@ -112,7 +117,7 @@
 						$scope.showLoadMoreBtn = true;
 						$scope.catalogItems = items;
 					}
-					
+
 				}, function (err) {
 					// Error
 					$log.log(err);
@@ -138,7 +143,7 @@
 					}
 				};
 			}, 10);
-			
+
 			$scope.$on('rangeDirective.updateRangeSlider', function(e){
 				$scope.searchOptions.min_price = $scope.priceSlider.min;
 				$scope.searchOptions.max_price = $scope.priceSlider.max;

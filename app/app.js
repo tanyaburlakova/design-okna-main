@@ -139,7 +139,7 @@ var app = angular.module('myApp', [
 					}
 				})
 				.otherwise({
-					redirectTo: '/'
+					templateUrl: 'views/page404.html'
 				});
 		}
 	]).run(['ngMeta', function(ngMeta) { ngMeta.init(); }]);

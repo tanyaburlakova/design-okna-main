@@ -1,8 +1,11 @@
 <div class="gallery">
 	<!-- Title -->
-	<h1 class="gallery__title">
-		<span itemprop="name">{{product.title}}</span> <span class="gallery__model-title">модель {{currentTexture.model}}</span>
-	</h1>
+	<div class="gallery__title" itemprop="name">
+		<h1 class="gallery__title-name">
+			{{product.title}}
+		</h1>
+		<span class="gallery__title-model">модель {{currentTexture.model}}</span>
+	</div>
 	<!-- Main img -->
 	<div class="gallery__container">
 		<div
@@ -26,7 +29,7 @@
 			</button>
 		</div>
 	</div>
-	
+
 	<!-- List -->
 	<ul class="gallery__list">
 		<li

@@ -1,34 +1,77 @@
 .call-me {
-	.clearfix();
-	display: inline-block;
-	margin-right: 20px;
-	margin-top: 10px;
-	vertical-align: top;
-	.icon {
-		float: left;
-		margin: 4px 12px 4px 20px;
-	}
-	&__link {
-		float: left;
-		text-decoration: none;
-		line-height: 1;
-		margin: 15px 18px 15px 0;
-		color: #373534;
-		font-size: 15px;
-		font-weight: 700;
-		border: none;
-		background: none;
-		padding: 0;
-	}
-	&__time {
-		float: left;
-		background: @yellow;
-		padding: 4px 9px;
-		margin: 12px 0;
-		border-radius: 3px;
-		color: #7e774f;
-		font-size: 11px;
-		font-weight: 500;
-		line-height: 1;
-	}
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 20px;
+    vertical-align: top;
+
+    .clearfix();
+    .icon {
+        position: relative;
+        z-index: 3;
+        float: left;
+        margin: 4px 12px 4px 20px;
+    }
+    &__link {
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1;
+        float: left;
+        margin: 15px 18px 15px 0;
+        padding: 0;
+        text-decoration: none;
+        color: #373534;
+        border: none;
+        background: none;
+    }
+    &__time {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 1;
+        float: left;
+        margin: 12px 0;
+        padding: 4px 9px;
+        color: #7e774f;
+        border-radius: 3px;
+        background: @yellow;
+    }
+    &__icon {
+        position: relative;
+        display: inline-block;
+        float: left;
+        overflow: visible;
+        padding: 0;
+        border: none;
+        background: none;
+
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        &:after {
+            position: absolute;
+            top: -2px;
+            left: 13px;
+            width: 46px;
+            height: 46px;
+            content: '';
+            animation: anim-effect-blink .9s ease-out infinite;
+            pointer-events: none;
+            opacity: 0;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 35px rgba(193,214,74,0);
+        }
+    }
+}
+
+@keyframes anim-effect-blink {
+    0% {
+        transform: scale3d(.4, .4, 1);
+        opacity: 1;
+    }
+    80% {
+        opacity: .5;
+        box-shadow: inset 0 0 0 2px rgba(193,214,74,.5);
+    }
+    100% {
+        transform: scale3d(1.2, 1.2, 1);
+        opacity: 0;
+        box-shadow: inset 0 0 0 2px rgba(193,214,74,.5);
+    }
 }
